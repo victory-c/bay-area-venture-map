@@ -1,0 +1,7 @@
+{
+  "outputDirectory": "site",
+  "trailingSlash": false,
+  "cleanUrls": true,
+  "buildCommand": null,
+  "framework": null
+}

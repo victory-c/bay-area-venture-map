@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bay Area VCs · Founder Map</title>
+  <meta name="description" content="Interactive map and table of every venture capital firm in the 5-county San Francisco Bay Area — names, AUM, and contact info." />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Alpine.js (for filtering reactivity) -->
+  <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body x-data="vcApp" x-init="init()" :class="{ 'panel-open': selectedFirm }">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <h1>Bay Area VCs</h1>
+      <span class="tagline">A founder's map of every VC firm in the 5-county Bay Area</span>
+    </div>
+    <div class="meta">
+      <span x-text="`${visibleFirms.length} of ${firms.length} firms`"></span>
+      <button @click="downloadJson" title="Download raw data">⤓ JSON</button>
+      <button @click="copyCsv" title="Copy as CSV">⎘ CSV</button>
+    </div>
+  </header>
+
+  <section class="filters">
+    <input type="search" placeholder="Search name, partner, sector, deal…"
+           x-model="search" class="search" />
+
+    <div class="filter-group">
+      <label>Stage</label>
+      <template x-for="stage in allStages" :key="stage">
+        <button class="chip"
+                :class="{ active: stageFilter.has(stage) }"
+                @click="toggleStage(stage)"
+                x-text="prettyStage(stage)"></button>
+      </template>
+    </div>
+
+    <div class="filter-group">
+      <label>Sector</label>
+      <template x-for="sector in allSectors" :key="sector">
+        <button class="chip"
+                :class="{ active: sectorFilter.has(sector) }"
+                @click="toggleSector(sector)"
+                x-text="prettySector(sector)"></button>
+      </template>
+    </div>
+
+    <div class="filter-group">
+      <label>AUM
+        <span class="aum-range" x-text="`$${formatShort(aumMin)} – $${formatShort(aumMax)}`"></span>
+      </label>
+      <input type="range" min="0" max="100000000000" step="500000000"
+             x-model.number="aumMin" />
+      <input type="range" min="0" max="100000000000" step="500000000"
+             x-model.number="aumMax" />
+    </div>
+
+    <div class="filter-group toggle">
+      <button class="reset" @click="resetFilters">Reset</button>
+    </div>
+  </section>
+
+  <div class="splitter splitter-y" data-resize="filters" role="separator"
+       aria-orientation="horizontal" aria-label="Resize filters bar" tabindex="0"></div>
+
+  <main class="layout">
+    <div id="map" aria-label="Map of VC firms"></div>
+
+    <div class="splitter splitter-x" data-resize="map" role="separator"
+         aria-orientation="vertical" aria-label="Resize map and table" tabindex="0"></div>
+
+    <section class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th @click="sortBy('name')">Firm</th>
+            <th @click="sortBy('aum_usd')" class="num">AUM</th>
+            <th>Stages</th>
+            <th>Sectors</th>
+            <th class="num">Typical check</th>
+            <th>Recent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template x-for="firm in visibleFirms" :key="firm.id">
+            <tr @click="select(firm)" :class="{ active: selectedFirm?.id === firm.id }">
+              <td>
+                <strong x-text="firm.name"></strong>
+                <small x-show="firm.on_sand_hill_road" class="badge sh">Sand Hill Rd</small>
+                <small class="addr" x-text="firm.address"></small>
+              </td>
+              <td class="num"
+                  :data-aum-bucket="aumBucket(firm.aum_usd)"
+                  x-text="firm.aum_usd ? '$' + formatShort(firm.aum_usd) : '—'"></td>
+              <td><span class="tags" x-html="(firm.stages || []).map(s => `<span class='tag'>${prettyStage(s)}</span>`).join('')"></span></td>
+              <td><span class="tags" x-html="(firm.sectors || []).slice(0,4).map(s => `<span class='tag'>${prettySector(s)}</span>`).join('')"></span></td>
+              <td class="num" x-text="firm.check_size?.typical ? '$' + formatShort(firm.check_size.typical) : '—'"></td>
+              <td>
+                <span x-text="firm.recent_portfolio_sample?.[0]?.company || '—'"></span>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Side panel with full firm detail -->
+  <aside class="panel" x-show="selectedFirm" @click.outside="selectedFirm = null">
+    <div class="panel-resizer" data-resize="panel" role="separator"
+         aria-orientation="vertical" aria-label="Resize firm detail panel" tabindex="0"></div>
+    <template x-if="selectedFirm">
+      <div>
+        <button class="close" @click="selectedFirm = null">×</button>
+        <h2 x-text="selectedFirm.name"></h2>
+        <p class="addr" x-text="selectedFirm.address"></p>
+        <template x-if="selectedFirm.website">
+          <p>
+            <a :href="selectedFirm.website" target="_blank" rel="noopener" x-text="selectedFirm.website.replace(/^https?:\/\//, '')"></a>
+            · founded <span x-text="selectedFirm.founded || '—'"></span>
+          </p>
+        </template>
+
+        <div class="stat-row">
+          <div class="stat">
+            <label>AUM</label>
+            <div class="val" x-text="selectedFirm.aum_usd ? '$' + formatShort(selectedFirm.aum_usd) : '—'"></div>
+            <small x-text="selectedFirm.aum_source"></small>
+          </div>
+        </div>
+
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div class="stat-row">
+            <div class="stat">
+              <label>Typical check</label>
+              <div class="val" x-text="'$' + formatShort(selectedFirm.check_size?.typical || 0)"></div>
+              <small x-text="`$${formatShort(selectedFirm.check_size?.min)} – $${formatShort(selectedFirm.check_size?.max)}`"></small>
+            </div>
+            <div class="stat">
+              <label>Deals / yr</label>
+              <div class="val" x-text="selectedFirm.deal_velocity_per_year ?? '—'"></div>
+              <small x-text="selectedFirm.board_seat_default ? 'Takes board seats' : 'Often passes on board'"></small>
+            </div>
+          </div>
+        </template>
+
+        <p class="caveat" x-show="selectedFirm.tier === 'lite'">
+          Lite record from SEC Form ADV. <a :href="`https://adviserinfo.sec.gov/firm/summary/${selectedFirm.sec_crd || ''}`" target="_blank" rel="noopener">View full filing on IAPD</a> for partners, fund details, and history.
+        </p>
+
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div>
+            <h3>Stages</h3>
+            <div class="tags lg">
+              <template x-for="s in selectedFirm.stages" :key="s">
+                <span class="tag" x-text="prettyStage(s)"></span>
+              </template>
+            </div>
+          </div>
+        </template>
+
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div>
+            <h3>Sectors</h3>
+            <div class="tags lg">
+              <template x-for="s in selectedFirm.sectors" :key="s">
+                <span class="tag" x-text="prettySector(s)"></span>
+              </template>
+            </div>
+          </div>
+        </template>
+
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div>
+            <h3>Partners</h3>
+            <ul class="partners">
+              <template x-for="p in (selectedFirm.partners || [])" :key="p.name">
+                <li>
+                  <strong x-text="p.name"></strong>
+                  <span class="title" x-text="p.title"></span>
+                  <span class="focus" x-text="(p.focus || []).map(prettySector).join(' · ')"></span>
+                  <span class="links">
+                    <template x-if="p.linkedin"><a :href="p.linkedin" target="_blank" rel="noopener">LI</a></template>
+                    <template x-if="p.twitter"><a :href="p.twitter" target="_blank" rel="noopener">X</a></template>
+                  </span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </template>
+
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div>
+            <h3>Public portfolio sample</h3>
+            <ul class="deals">
+              <template x-for="d in (selectedFirm.recent_portfolio_sample || [])" :key="d.company">
+                <li>
+                  <strong x-text="d.company"></strong>
+                  <span x-text="`${prettyStage(d.stage)} · ${d.year}`"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </template>
+
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div>
+            <h3>Notes</h3>
+            <p class="notes" x-text="selectedFirm.notes"></p>
+          </div>
+        </template>
+
+        <p class="caveat" x-show="selectedFirm.tier !== 'lite'">
+          AUM and partner data are best-effort from public sources. Verify against the firm's
+          most recent Form ADV<template x-if="selectedFirm.sec_crd"><span> on <a :href="`https://adviserinfo.sec.gov/firm/summary/${selectedFirm.sec_crd}`" target="_blank" rel="noopener">IAPD</a></span></template>
+          before basing fundraising decisions on it.
+        </p>
+      </div>
+    </template>
+  </aside>
+
+  <footer>
+    Data: hand-curated for marquee firms + SEC Form ADV scrape for the long tail. Source &amp; build pipeline:
+    see <code>scraper/</code>. Map tiles © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.
+    <br>This is informational, not investment advice.
+  </footer>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+name: Refresh firms data
+
+# Re-run the SEC Form ADV scraper monthly and commit a fresh firms.json.
+# Vercel auto-redeploys on push, so the live site picks up the new data
+# with no further action.
+#
+# SEC publishes the bulk Investment Adviser dataset around the 1st of each
+# month. We run on the 5th to give them a few days to finalise.
+
+on:
+  schedule:
+    - cron: "0 6 5 * *"     # 5th of each month, 06:00 UTC
+  workflow_dispatch: {}     # also allow manual trigger from the Actions tab
+
+permissions:
+  contents: write           # needed to commit + push the refreshed JSON
+
+concurrency:
+  group: refresh-firms
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Sync dependencies
+        run: uv sync --frozen
+
+      - name: Run scraper
+        run: uv run python -m scraper.build --enrich sec_bulk
+
+      - name: Sanity-check output
+        run: |
+          set -euo pipefail
+          count=$(uv run python -c "import json,sys; print(json.load(open('data/firms.json'))['firm_count'])")
+          echo "scraped firm_count: $count"
+          # Refuse to commit if the scrape collapsed — protects the live site
+          # from a bad SEC schema change or transient outage clobbering data.
+          if [ "$count" -lt 100 ]; then
+            echo "ERROR: only $count firms — refusing to commit"
+            exit 1
+          fi
+
+      - name: Commit refreshed data
+        run: |
+          set -euo pipefail
+          git config user.name  "firms-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/firms.json site/firms.json
+          if git diff --staged --quiet; then
+            echo "No changes — skipping commit"
+            exit 0
+          fi
+          git commit -m "data: monthly SEC refresh ($(date -u +%Y-%m-%d))"
+          git push

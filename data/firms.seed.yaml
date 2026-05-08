@@ -1,0 +1,584 @@
+# Sand Hill Road / Menlo Park VC cluster — seed data.
+#
+# This is a hand-curated baseline. AUM and partner data come from public sources
+# (firm websites, press releases, Wikipedia) and are marked with `aum_source` so
+# you can verify them. To refresh AUM from SEC Form ADV, run:
+#     uv run python -m scraper.build --enrich edgar
+#
+# Schema: see scraper/build.py and site/app.js for consumers.
+# `on_sand_hill_road: true` means the firm has a literal Sand Hill Rd address.
+
+firms:
+  - id: sequoia
+    name: Sequoia Capital
+    address: 2800 Sand Hill Rd, Bldg 4, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.sequoiacap.com
+    founded: 1972
+    aum_usd: 85000000000
+    aum_source: "Press estimate (2023, post-permanent-capital restructure)"
+    stages: [seed, series_a, series_b, growth]
+    sectors: [enterprise_saas, consumer, fintech, ai_infra, crypto, healthcare]
+    check_size: { min: 1000000, typical: 15000000, max: 200000000 }
+    deal_velocity_per_year: 60
+    board_seat_default: true
+    partners:
+      - { name: Roelof Botha, title: Managing Partner, focus: [fintech, consumer], linkedin: https://www.linkedin.com/in/roelofbotha, twitter: https://x.com/roelofbotha }
+      - { name: Alfred Lin, title: Partner, focus: [consumer, marketplace], linkedin: https://www.linkedin.com/in/alfredlin, twitter: https://x.com/Alfred_Lin }
+      - { name: Pat Grady, title: Partner, focus: [enterprise_saas, ai_infra], linkedin: https://www.linkedin.com/in/patgrady, twitter: https://x.com/gradypb }
+      - { name: Sonya Huang, title: Partner, focus: [ai_infra, dev_tools], linkedin: null, twitter: https://x.com/sonyatweetybird }
+    recent_portfolio_sample:
+      - { company: Harvey, year: 2024, stage: series_d }
+      - { company: Glean, year: 2024, stage: series_e }
+      - { company: Stripe, year: 2010, stage: seed }
+    notes: "Permanent-capital structure since 2021. Long-hold thesis. Famously rigorous diligence."
+
+  - id: kleiner-perkins
+    name: Kleiner Perkins
+    address: 2750 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.kleinerperkins.com
+    founded: 1972
+    aum_usd: 10000000000
+    aum_source: "Press estimate (2024)"
+    stages: [seed, series_a, series_b, growth]
+    sectors: [enterprise_saas, consumer, fintech, ai_infra, healthcare, climate]
+    check_size: { min: 500000, typical: 8000000, max: 50000000 }
+    deal_velocity_per_year: 35
+    board_seat_default: true
+    partners:
+      - { name: Mamoon Hamid, title: Managing Partner, focus: [enterprise_saas], linkedin: https://www.linkedin.com/in/mamoonha, twitter: https://x.com/mamoonha }
+      - { name: Ilya Fushman, title: Partner, focus: [enterprise_saas, dev_tools], linkedin: https://www.linkedin.com/in/ifushman, twitter: https://x.com/ilyaf }
+      - { name: Bucky Moore, title: Partner, focus: [ai_infra, data], linkedin: https://www.linkedin.com/in/buckymoore, twitter: https://x.com/buckymoore }
+    recent_portfolio_sample:
+      - { company: Figma, year: 2018, stage: series_b }
+      - { company: Loom, year: 2018, stage: series_b }
+      - { company: Rippling, year: 2018, stage: series_a }
+    notes: "Revitalized under Mamoon Hamid post-2017. Founder-friendly reorientation."
+
+  - id: nea
+    name: New Enterprise Associates (NEA)
+    address: 2855 Sand Hill Rd, Bldg 4, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.nea.com
+    founded: 1977
+    aum_usd: 25000000000
+    aum_source: "Press estimate (2023, NEA 18 fund close)"
+    stages: [series_a, series_b, growth, late]
+    sectors: [enterprise_saas, healthcare, ai_infra, fintech]
+    check_size: { min: 5000000, typical: 20000000, max: 150000000 }
+    deal_velocity_per_year: 50
+    board_seat_default: true
+    partners:
+      - { name: Scott Sandell, title: Managing General Partner, focus: [enterprise_saas], linkedin: https://www.linkedin.com/in/scottsandell, twitter: null }
+      - { name: Carmen Chang, title: General Partner, focus: [cross_border, infra], linkedin: null, twitter: null }
+      - { name: Tony Florence, title: General Partner, focus: [enterprise_saas, fintech], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Databricks, year: 2017, stage: series_e }
+      - { company: Plaid, year: 2018, stage: series_b }
+      - { company: Tempus, year: 2017, stage: series_c }
+    notes: "Bicoastal (Menlo + DC). Half tech, half healthcare. Large fund sizes; gravitates to growth."
+
+  - id: greylock
+    name: Greylock Partners
+    address: 2550 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://greylock.com
+    founded: 1965
+    aum_usd: 20000000000
+    aum_source: "Press estimate (2024, Greylock 17 close)"
+    stages: [seed, series_a, series_b]
+    sectors: [enterprise_saas, ai_infra, consumer, dev_tools]
+    check_size: { min: 1000000, typical: 10000000, max: 30000000 }
+    deal_velocity_per_year: 25
+    board_seat_default: true
+    partners:
+      - { name: Reid Hoffman, title: Partner, focus: [ai_infra, consumer_social], linkedin: https://www.linkedin.com/in/reidhoffman, twitter: https://x.com/reidhoffman }
+      - { name: Sarah Guo, title: Former Partner (now Conviction), focus: [ai_infra], linkedin: https://www.linkedin.com/in/saraduiguo, twitter: https://x.com/saranormous }
+      - { name: Saam Motamedi, title: Partner, focus: [ai_infra, security], linkedin: https://www.linkedin.com/in/saammotamedi, twitter: https://x.com/saammotamedi }
+      - { name: Asheem Chandna, title: Partner, focus: [security, infra], linkedin: https://www.linkedin.com/in/asheemchandna, twitter: null }
+    recent_portfolio_sample:
+      - { company: Discord, year: 2018, stage: series_d }
+      - { company: Figma, year: 2018, stage: series_b }
+      - { company: Adept, year: 2022, stage: seed }
+    notes: "Heavy AI infra concentration since 2022. Early-stage focused."
+
+  - id: a16z
+    name: Andreessen Horowitz (a16z)
+    address: 2865 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://a16z.com
+    founded: 2009
+    aum_usd: 45000000000
+    aum_source: "Press estimate (2024, multiple specialty funds)"
+    stages: [seed, series_a, series_b, growth]
+    sectors: [crypto, ai_infra, bio, consumer, fintech, gaming, defense]
+    check_size: { min: 250000, typical: 12000000, max: 100000000 }
+    deal_velocity_per_year: 100
+    board_seat_default: false
+    partners:
+      - { name: Marc Andreessen, title: Co-founder & GP, focus: [ai_infra, defense], linkedin: null, twitter: https://x.com/pmarca }
+      - { name: Ben Horowitz, title: Co-founder & GP, focus: [enterprise_saas, crypto], linkedin: null, twitter: https://x.com/bhorowitz }
+      - { name: Chris Dixon, title: GP, focus: [crypto, consumer], linkedin: https://www.linkedin.com/in/cdixon, twitter: https://x.com/cdixon }
+      - { name: Martin Casado, title: GP, focus: [ai_infra, infra], linkedin: https://www.linkedin.com/in/martincasado, twitter: https://x.com/martin_casado }
+    recent_portfolio_sample:
+      - { company: Mistral, year: 2024, stage: series_a }
+      - { company: Character.ai, year: 2023, stage: series_a }
+      - { company: Coinbase, year: 2013, stage: series_b }
+    notes: "Operates as an RIA, enabling crypto/secondaries. HQ-virtual model since 2022; partners distributed."
+
+  - id: khosla
+    name: Khosla Ventures
+    address: 2128 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.khoslaventures.com
+    founded: 2004
+    aum_usd: 15000000000
+    aum_source: "Press estimate (2024)"
+    stages: [seed, series_a, series_b]
+    sectors: [ai_infra, climate, healthcare, consumer, deep_tech]
+    check_size: { min: 100000, typical: 5000000, max: 50000000 }
+    deal_velocity_per_year: 60
+    board_seat_default: true
+    partners:
+      - { name: Vinod Khosla, title: Founder, focus: [deep_tech, climate, ai_infra], linkedin: https://www.linkedin.com/in/vinodkhosla, twitter: https://x.com/vkhosla }
+      - { name: Keith Rabois, title: Managing Director, focus: [consumer, fintech], linkedin: https://www.linkedin.com/in/keithrabois, twitter: https://x.com/rabois }
+      - { name: Samir Kaul, title: Founding Partner, focus: [bio, climate], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: OpenAI, year: 2019, stage: pre_seed }
+      - { company: DoorDash, year: 2014, stage: series_a }
+      - { company: Commonwealth Fusion, year: 2018, stage: series_a }
+    notes: "Contrarian / 'science experiment' bets. Famously hands-on. OpenAI's first institutional check."
+
+  - id: lightspeed
+    name: Lightspeed Venture Partners
+    address: 2200 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://lsvp.com
+    founded: 2000
+    aum_usd: 25000000000
+    aum_source: "Press estimate (2024, multi-fund close)"
+    stages: [seed, series_a, series_b, growth]
+    sectors: [enterprise_saas, consumer, fintech, ai_infra, crypto, healthcare]
+    check_size: { min: 500000, typical: 10000000, max: 100000000 }
+    deal_velocity_per_year: 70
+    board_seat_default: true
+    partners:
+      - { name: Ravi Mhatre, title: Co-founder, focus: [enterprise_saas], linkedin: null, twitter: null }
+      - { name: Jeremy Liew, title: Partner, focus: [consumer, fintech], linkedin: https://www.linkedin.com/in/jeremysliew, twitter: https://x.com/jeremysliew }
+      - { name: Arif Janmohamed, title: Partner, focus: [enterprise_saas, ai_infra], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Mistral, year: 2024, stage: series_a }
+      - { company: Snap, year: 2013, stage: series_a }
+      - { company: Affirm, year: 2014, stage: series_b }
+    notes: "Global presence (US, India, China, Israel). Multi-stage."
+
+  - id: mayfield
+    name: Mayfield Fund
+    address: 2484 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.mayfield.com
+    founded: 1969
+    aum_usd: 3000000000
+    aum_source: "Press estimate (2023, Mayfield XVII)"
+    stages: [seed, series_a]
+    sectors: [enterprise_saas, ai_infra, consumer, healthcare]
+    check_size: { min: 1000000, typical: 5000000, max: 15000000 }
+    deal_velocity_per_year: 15
+    board_seat_default: true
+    partners:
+      - { name: Navin Chaddha, title: Managing Partner, focus: [enterprise_saas, infra], linkedin: https://www.linkedin.com/in/navinchaddha, twitter: null }
+      - { name: Patrick Salyer, title: Partner, focus: [enterprise_saas], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Lyft, year: 2010, stage: seed }
+      - { company: HashiCorp, year: 2014, stage: series_a }
+      - { company: Marketo, year: 2007, stage: series_a }
+    notes: "One of the oldest VC firms. People-first thesis."
+
+  - id: ivp
+    name: Institutional Venture Partners (IVP)
+    address: 3000 Sand Hill Rd, Bldg 3, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.ivp.com
+    founded: 1980
+    aum_usd: 11000000000
+    aum_source: "Press estimate (2023, IVP XVIII)"
+    stages: [series_b, growth, late]
+    sectors: [enterprise_saas, consumer, fintech, ai_infra]
+    check_size: { min: 10000000, typical: 30000000, max: 100000000 }
+    deal_velocity_per_year: 12
+    board_seat_default: true
+    partners:
+      - { name: Todd Chaffee, title: General Partner, focus: [consumer, fintech], linkedin: null, twitter: null }
+      - { name: Somesh Dash, title: General Partner, focus: [enterprise_saas, healthcare], linkedin: https://www.linkedin.com/in/someshdash, twitter: null }
+    recent_portfolio_sample:
+      - { company: Discord, year: 2018, stage: series_d }
+      - { company: Datadog, year: 2016, stage: series_d }
+      - { company: GitHub, year: 2015, stage: series_b }
+    notes: "Pure growth-stage. Picks winners post-PMF."
+
+  - id: redpoint
+    name: Redpoint Ventures
+    address: 3000 Sand Hill Rd, Bldg 2, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.redpoint.com
+    founded: 1999
+    aum_usd: 10000000000
+    aum_source: "Press estimate (2024)"
+    stages: [seed, series_a, series_b, growth]
+    sectors: [enterprise_saas, consumer, ai_infra, fintech, crypto]
+    check_size: { min: 1000000, typical: 8000000, max: 50000000 }
+    deal_velocity_per_year: 40
+    board_seat_default: true
+    partners:
+      - { name: Tomasz Tunguz, title: Former Partner (Theory Ventures now), focus: [enterprise_saas], linkedin: https://www.linkedin.com/in/tomasztunguz, twitter: https://x.com/ttunguz }
+      - { name: Logan Bartlett, title: Managing Director, focus: [enterprise_saas], linkedin: https://www.linkedin.com/in/loganbartlett, twitter: https://x.com/loganbartlett }
+      - { name: Annie Kadavy, title: Managing Director, focus: [consumer, marketplace], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: HashiCorp, year: 2017, stage: series_d }
+      - { company: Snowflake, year: 2014, stage: series_a }
+      - { company: Stripe, year: 2014, stage: series_b }
+    notes: "Two funds: early (Redpoint) and growth (Redpoint Omega)."
+
+  - id: dcm
+    name: DCM Ventures
+    address: 2420 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.dcm.com
+    founded: 1996
+    aum_usd: 5000000000
+    aum_source: "Press estimate (2023)"
+    stages: [seed, series_a, series_b]
+    sectors: [enterprise_saas, consumer, fintech]
+    check_size: { min: 500000, typical: 5000000, max: 25000000 }
+    deal_velocity_per_year: 25
+    board_seat_default: true
+    partners:
+      - { name: David Chao, title: Co-founder, focus: [cross_border], linkedin: null, twitter: null }
+      - { name: Kyle Lui, title: Partner, focus: [consumer, fintech], linkedin: https://www.linkedin.com/in/kylelui, twitter: null }
+    recent_portfolio_sample:
+      - { company: 51job, year: 2002, stage: series_b }
+      - { company: SoFi, year: 2012, stage: series_a }
+    notes: "US-Asia bridge fund (Tokyo, Beijing, Menlo)."
+
+  - id: battery
+    name: Battery Ventures
+    address: 2884 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.battery.com
+    founded: 1983
+    aum_usd: 13000000000
+    aum_source: "Press estimate (2022, Battery XIII)"
+    stages: [seed, series_a, growth, buyout]
+    sectors: [enterprise_saas, infra, industrial, consumer]
+    check_size: { min: 2000000, typical: 15000000, max: 100000000 }
+    deal_velocity_per_year: 30
+    board_seat_default: true
+    partners:
+      - { name: Neeraj Agrawal, title: General Partner, focus: [enterprise_saas], linkedin: https://www.linkedin.com/in/neerajagrawal, twitter: https://x.com/NeerajVC }
+      - { name: Roger Lee, title: General Partner, focus: [consumer, fintech], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Coupa, year: 2008, stage: series_a }
+      - { company: Splunk, year: 2007, stage: series_b }
+    notes: "Multistage, multi-strategy (VC + buyout)."
+
+  - id: threshold
+    name: Threshold Ventures (formerly DFJ)
+    address: 2882 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.thresholdvc.com
+    founded: 2018
+    aum_usd: 1000000000
+    aum_source: "Press estimate (2022); Threshold spun out of DFJ Venture in 2018"
+    stages: [series_a, series_b]
+    sectors: [enterprise_saas, consumer, ai_infra]
+    check_size: { min: 5000000, typical: 12000000, max: 25000000 }
+    deal_velocity_per_year: 8
+    board_seat_default: true
+    partners:
+      - { name: Josh Stein, title: Managing Director, focus: [enterprise_saas], linkedin: https://www.linkedin.com/in/joshstein, twitter: null }
+      - { name: Heidi Roizen, title: Operating Partner, focus: [consumer, governance], linkedin: https://www.linkedin.com/in/heidiroizen, twitter: https://x.com/heidiroizen }
+    recent_portfolio_sample:
+      - { company: Box, year: 2007, stage: series_a }
+      - { company: SolarCity, year: 2008, stage: series_b }
+    notes: "Successor to DFJ Venture (early-stage arm). Smaller, partner-led."
+
+  - id: crv
+    name: Charles River Ventures (CRV)
+    address: 3000 Sand Hill Rd, Bldg 1, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.crv.com
+    founded: 1970
+    aum_usd: 5000000000
+    aum_source: "Press estimate (2023, CRV XVIII)"
+    stages: [seed, series_a]
+    sectors: [enterprise_saas, ai_infra, consumer, dev_tools]
+    check_size: { min: 500000, typical: 5000000, max: 15000000 }
+    deal_velocity_per_year: 30
+    board_seat_default: true
+    partners:
+      - { name: Saar Gur, title: General Partner, focus: [consumer], linkedin: https://www.linkedin.com/in/saargur, twitter: https://x.com/saarsaar }
+      - { name: Annie Kadavy, title: General Partner, focus: [marketplace], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: DoorDash, year: 2014, stage: series_a }
+      - { company: Patreon, year: 2014, stage: series_a }
+    notes: "Bicoastal (Menlo + Cambridge MA). Concentrated bets, partner-led."
+
+  - id: foundation
+    name: Foundation Capital
+    address: 250 Middlefield Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: false
+    website: https://foundationcapital.com
+    founded: 1995
+    aum_usd: 3500000000
+    aum_source: "Press estimate (2023)"
+    stages: [seed, series_a]
+    sectors: [enterprise_saas, fintech, ai_infra, crypto]
+    check_size: { min: 500000, typical: 4000000, max: 12000000 }
+    deal_velocity_per_year: 20
+    board_seat_default: true
+    partners:
+      - { name: Charles Moldow, title: General Partner, focus: [fintech], linkedin: https://www.linkedin.com/in/charlesmoldow, twitter: null }
+      - { name: Ashu Garg, title: General Partner, focus: [ai_infra], linkedin: https://www.linkedin.com/in/ashugarg, twitter: https://x.com/ashugarg }
+    recent_portfolio_sample:
+      - { company: LendingClub, year: 2007, stage: series_a }
+      - { company: Solana, year: 2018, stage: seed }
+    notes: "Originally on Sand Hill; now Middlefield. Early-stage."
+
+  - id: menlo
+    name: Menlo Ventures
+    address: 250 Middlefield Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: false
+    website: https://www.menlovc.com
+    founded: 1976
+    aum_usd: 5000000000
+    aum_source: "Press estimate (2023, Menlo XV)"
+    stages: [series_a, series_b, growth]
+    sectors: [enterprise_saas, consumer, ai_infra, fintech]
+    check_size: { min: 5000000, typical: 15000000, max: 50000000 }
+    deal_velocity_per_year: 18
+    board_seat_default: true
+    partners:
+      - { name: Matt Murphy, title: Partner, focus: [enterprise_saas], linkedin: null, twitter: https://x.com/mmurph }
+      - { name: Shawn Carolan, title: Partner, focus: [consumer], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Uber, year: 2011, stage: series_b }
+      - { company: Anthropic, year: 2023, stage: series_c }
+    notes: "Anthropic backer. Multi-stage."
+
+  - id: norwest
+    name: Norwest Venture Partners
+    address: 525 University Ave, Palo Alto, CA 94301
+    county: Santa Clara
+    on_sand_hill_road: false
+    website: https://www.nvp.com
+    founded: 1961
+    aum_usd: 15500000000
+    aum_source: "Press estimate (2024, NVP XVII)"
+    stages: [series_a, series_b, growth]
+    sectors: [enterprise_saas, consumer, healthcare, fintech]
+    check_size: { min: 5000000, typical: 20000000, max: 75000000 }
+    deal_velocity_per_year: 35
+    board_seat_default: true
+    partners:
+      - { name: Promod Haque, title: Senior Managing Partner, focus: [enterprise_saas], linkedin: null, twitter: null }
+      - { name: Jeff Crowe, title: Senior Managing Partner, focus: [consumer], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Uber, year: 2014, stage: series_d }
+      - { company: Plaid, year: 2018, stage: series_b }
+    notes: "Wells Fargo-backed evergreen capital. Multi-stage."
+
+  - id: bessemer
+    name: Bessemer Venture Partners
+    address: 1865 El Camino Real, Menlo Park, CA 94027
+    county: San Mateo
+    on_sand_hill_road: false
+    website: https://www.bvp.com
+    founded: 1911
+    aum_usd: 20000000000
+    aum_source: "Press estimate (2024, Bessemer XII)"
+    stages: [seed, series_a, series_b, growth]
+    sectors: [enterprise_saas, fintech, healthcare, consumer, crypto]
+    check_size: { min: 250000, typical: 10000000, max: 75000000 }
+    deal_velocity_per_year: 65
+    board_seat_default: true
+    partners:
+      - { name: Byron Deeter, title: Partner, focus: [enterprise_saas, cloud], linkedin: https://www.linkedin.com/in/byrondeeter, twitter: https://x.com/bdeeter }
+      - { name: Talia Goldberg, title: Partner, focus: [consumer, ai_infra], linkedin: null, twitter: https://x.com/taliagold }
+      - { name: Ethan Kurzweil, title: Former Partner (Chemistry now), focus: [dev_tools], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: LinkedIn, year: 2005, stage: series_b }
+      - { company: Shopify, year: 2010, stage: series_a }
+      - { company: Pinterest, year: 2011, stage: series_a }
+    notes: "Famous 'Anti-Portfolio' (deals they passed on). Cloud index thesis."
+
+  - id: versant
+    name: Versant Ventures
+    address: One Sansome St, Suite 3630, San Francisco, CA 94104
+    county: San Francisco
+    on_sand_hill_road: false
+    website: https://www.versantventures.com
+    founded: 1999
+    aum_usd: 4000000000
+    aum_source: "Press estimate (2023, Versant VIII)"
+    stages: [seed, series_a, series_b]
+    sectors: [bio, healthcare, therapeutics]
+    check_size: { min: 5000000, typical: 15000000, max: 50000000 }
+    deal_velocity_per_year: 12
+    board_seat_default: true
+    partners:
+      - { name: Brad Bolzon, title: Managing Director, focus: [therapeutics], linkedin: null, twitter: null }
+      - { name: Tom Woiwode, title: Managing Director, focus: [therapeutics], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: CRISPR Therapeutics, year: 2014, stage: series_a }
+    notes: "Life sciences only. Company-creation model."
+
+  - id: tcv
+    name: TCV (Technology Crossover Ventures)
+    address: 250 Middlefield Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: false
+    website: https://www.tcv.com
+    founded: 1995
+    aum_usd: 25000000000
+    aum_source: "Press estimate (2024, TCV XII)"
+    stages: [growth, late]
+    sectors: [enterprise_saas, consumer, fintech]
+    check_size: { min: 25000000, typical: 75000000, max: 250000000 }
+    deal_velocity_per_year: 15
+    board_seat_default: true
+    partners:
+      - { name: Jay Hoag, title: Founding General Partner, focus: [growth], linkedin: null, twitter: null }
+      - { name: Woody Marshall, title: General Partner, focus: [enterprise_saas], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Spotify, year: 2014, stage: late }
+      - { company: Airbnb, year: 2015, stage: late }
+      - { company: Netflix, year: 1999, stage: growth }
+    notes: "Pure growth/late-stage. Crossover with public equity strategy."
+
+  - id: trinity
+    name: Trinity Ventures
+    address: 3000 Sand Hill Rd, Bldg 4, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://trinityventures.com
+    founded: 1986
+    aum_usd: 1000000000
+    aum_source: "Press estimate (2018, Trinity XII; firm has wound down active investing)"
+    stages: [series_a, series_b]
+    sectors: [enterprise_saas, consumer]
+    check_size: { min: 3000000, typical: 8000000, max: 20000000 }
+    deal_velocity_per_year: 5
+    board_seat_default: true
+    partners:
+      - { name: Ajay Chopra, title: General Partner, focus: [enterprise_saas], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Starbucks (early), year: 1987, stage: series_a }
+    notes: "Long-running but de-prioritized new investing post-2018. Verify activity before pitching."
+
+  - id: usvp
+    name: US Venture Partners (USVP)
+    address: 2735 Sand Hill Rd, Menlo Park, CA 94025
+    county: San Mateo
+    on_sand_hill_road: true
+    website: https://www.usvp.com
+    founded: 1981
+    aum_usd: 2000000000
+    aum_source: "Press estimate (2022, USVP XIII)"
+    stages: [series_a, series_b]
+    sectors: [enterprise_saas, healthcare, security]
+    check_size: { min: 3000000, typical: 8000000, max: 20000000 }
+    deal_velocity_per_year: 12
+    board_seat_default: true
+    partners:
+      - { name: Steve Krausz, title: General Partner, focus: [enterprise_saas], linkedin: null, twitter: null }
+      - { name: Jacques Benkoski, title: General Partner, focus: [security, infra], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Sun Microsystems (early), year: 1982, stage: series_a }
+    notes: "Long-tenured. Smaller fund sizes; partner-led concentrated portfolios."
+
+  - id: accel
+    name: Accel
+    address: 500 University Ave, Palo Alto, CA 94301
+    county: Santa Clara
+    on_sand_hill_road: false
+    website: https://www.accel.com
+    founded: 1983
+    aum_usd: 50000000000
+    aum_source: "Press estimate (2024, global multi-fund)"
+    stages: [seed, series_a, series_b, growth]
+    sectors: [enterprise_saas, consumer, fintech, ai_infra, security]
+    check_size: { min: 500000, typical: 12000000, max: 100000000 }
+    deal_velocity_per_year: 80
+    board_seat_default: true
+    partners:
+      - { name: Rich Wong, title: Partner, focus: [enterprise_saas, mobile], linkedin: null, twitter: null }
+      - { name: Ryan Sweeney, title: Partner, focus: [enterprise_saas], linkedin: null, twitter: null }
+      - { name: Sameer Gandhi, title: Partner, focus: [consumer, fintech], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Facebook, year: 2005, stage: series_a }
+      - { company: Slack, year: 2014, stage: series_b }
+      - { company: Linear, year: 2020, stage: series_a }
+    notes: "Global (US, EU, India). 'Prepared mind' thesis."
+
+  - id: felicis
+    name: Felicis Ventures
+    address: 530 Lytton Ave, Palo Alto, CA 94301
+    county: Santa Clara
+    on_sand_hill_road: false
+    website: https://www.felicis.com
+    founded: 2006
+    aum_usd: 3000000000
+    aum_source: "Press estimate (2023, Felicis IX)"
+    stages: [seed, series_a]
+    sectors: [enterprise_saas, consumer, ai_infra, fintech, healthcare]
+    check_size: { min: 500000, typical: 5000000, max: 15000000 }
+    deal_velocity_per_year: 35
+    board_seat_default: false
+    partners:
+      - { name: Aydin Senkut, title: Founder & Managing Partner, focus: [enterprise_saas], linkedin: https://www.linkedin.com/in/aydins, twitter: https://x.com/asenkut }
+      - { name: Niki Pezeshki, title: General Partner, focus: [enterprise_saas, ai_infra], linkedin: null, twitter: null }
+    recent_portfolio_sample:
+      - { company: Shopify, year: 2010, stage: series_a }
+      - { company: Plaid, year: 2014, stage: series_a }
+      - { company: Adyen, year: 2014, stage: series_b }
+    notes: "Founder-friendly reputation. Generalist, multi-thesis."
+
+  - id: pear
+    name: Pear VC
+    address: 2475 Hanover St, Palo Alto, CA 94304
+    county: Santa Clara
+    on_sand_hill_road: false
+    website: https://pear.vc
+    founded: 2013
+    aum_usd: 1000000000
+    aum_source: "Press estimate (2023, Pear V)"
+    stages: [pre_seed, seed]
+    sectors: [enterprise_saas, ai_infra, healthcare, consumer]
+    check_size: { min: 250000, typical: 1500000, max: 5000000 }
+    deal_velocity_per_year: 50
+    board_seat_default: false
+    partners:
+      - { name: Pejman Nozad, title: Founder & Managing Partner, focus: [generalist], linkedin: https://www.linkedin.com/in/pejmannozad, twitter: https://x.com/pejman }
+      - { name: Mar Hershenson, title: Founder & Managing Partner, focus: [enterprise_saas, healthcare], linkedin: https://www.linkedin.com/in/marhershenson, twitter: null }
+    recent_portfolio_sample:
+      - { company: DoorDash, year: 2013, stage: pre_seed }
+      - { company: Guardant Health, year: 2013, stage: seed }
+      - { company: Gusto, year: 2012, stage: pre_seed }
+    notes: "Pre-seed/seed only. Stanford/MIT entrepreneur network. PearX accelerator."
