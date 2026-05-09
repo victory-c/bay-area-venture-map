@@ -27,3 +27,4 @@ data/.sec-bulk-cache.csv
 
 # OS junk
 .DS_Store
+.vercel

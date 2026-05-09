@@ -151,7 +151,10 @@ document.addEventListener("alpine:init", () => {
 
     get allStages() {
       const seen = new Set();
-      this.firms.forEach((f) => f.stages.forEach((s) => seen.add(s)));
+      // Guard: lite firms may lack stages if firms.json predates the schema
+      // fix. Without this, Alpine throws on every reactive read and the page
+      // locks up under exception spam.
+      this.firms.forEach((f) => (f.stages || []).forEach((s) => seen.add(s)));
       return Array.from(seen).sort((a, b) =>
         Object.keys(STAGE_LABELS).indexOf(a) - Object.keys(STAGE_LABELS).indexOf(b),
       );
@@ -159,7 +162,7 @@ document.addEventListener("alpine:init", () => {
 
     get allSectors() {
       const counts = new Map();
-      this.firms.forEach((f) => f.sectors.forEach((s) => counts.set(s, (counts.get(s) || 0) + 1)));
+      this.firms.forEach((f) => (f.sectors || []).forEach((s) => counts.set(s, (counts.get(s) || 0) + 1)));
       return Array.from(counts.entries())
         .sort((a, b) => b[1] - a[1])
         .map(([s]) => s);
@@ -178,8 +181,8 @@ document.addEventListener("alpine:init", () => {
       // At the default extent we keep them visible.
       const aumNarrowed = aumMin > 0 || aumMax < 100_000_000_000;
       let firms = this.firms.filter((f) => {
-        if (stageF.size && !f.stages.some((s) => stageF.has(s))) return false;
-        if (sectorF.size && !f.sectors.some((s) => sectorF.has(s))) return false;
+        if (stageF.size && !(f.stages || []).some((s) => stageF.has(s))) return false;
+        if (sectorF.size && !(f.sectors || []).some((s) => sectorF.has(s))) return false;
         if (f.aum_usd == null) {
           if (aumNarrowed) return false;
         } else if (f.aum_usd < aumMin || f.aum_usd > aumMax) {

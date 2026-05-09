@@ -1847,6 +1847,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1858,6 +1860,8 @@
       "aum_usd": 11805284922,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1869,6 +1873,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -1880,6 +1886,8 @@
       "aum_usd": 2700278178,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1891,6 +1899,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1902,6 +1912,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -1913,6 +1925,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -1924,6 +1938,8 @@
       "aum_usd": 1084259034,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1935,6 +1951,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1946,6 +1964,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1957,6 +1977,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1968,6 +1990,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1979,6 +2003,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -1990,6 +2016,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2001,6 +2029,8 @@
       "aum_usd": 767467698,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2012,6 +2042,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -2023,6 +2055,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2034,6 +2068,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2045,6 +2081,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2056,6 +2094,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -2067,6 +2107,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2078,6 +2120,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -2089,6 +2133,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2100,6 +2146,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2111,6 +2159,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2122,6 +2172,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2133,6 +2185,8 @@
       "aum_usd": 540337305,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2144,6 +2198,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -2155,6 +2211,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -2166,6 +2224,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -2177,6 +2237,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2188,6 +2250,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.323,
       "lng": -122.0322
     },
@@ -2199,6 +2263,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2210,6 +2276,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2221,6 +2289,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2232,6 +2302,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -2243,6 +2315,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2254,6 +2328,8 @@
       "aum_usd": 2998752187,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2265,6 +2341,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -2276,6 +2354,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2287,6 +2367,8 @@
       "aum_usd": 18753715687,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2298,6 +2380,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2309,6 +2393,8 @@
       "aum_usd": 5448790139,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -2320,6 +2406,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2331,6 +2419,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -2342,6 +2432,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2353,6 +2445,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2364,6 +2458,8 @@
       "aum_usd": 1737465804,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2375,6 +2471,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2386,6 +2484,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -2397,6 +2497,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2408,6 +2510,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2419,6 +2523,8 @@
       "aum_usd": 476538169,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2430,6 +2536,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2441,6 +2549,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3541,
       "lng": -121.9552
     },
@@ -2452,6 +2562,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9735,
       "lng": -122.5311
     },
@@ -2463,6 +2575,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2474,6 +2588,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2485,6 +2601,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8735,
       "lng": -122.4569
     },
@@ -2496,6 +2614,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3541,
       "lng": -121.9552
     },
@@ -2507,6 +2627,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2518,6 +2640,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2529,6 +2653,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2540,6 +2666,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6138,
       "lng": -122.4869
     },
@@ -2551,6 +2679,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -2562,6 +2692,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2573,6 +2705,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2584,6 +2718,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2595,6 +2731,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6624,
       "lng": -121.8747
     },
@@ -2606,6 +2744,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3541,
       "lng": -121.9552
     },
@@ -2617,6 +2757,8 @@
       "aum_usd": 201179040,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -2628,6 +2770,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2639,6 +2783,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2650,6 +2796,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2661,6 +2809,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2672,6 +2822,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2683,6 +2835,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2694,6 +2848,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2705,6 +2861,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2716,6 +2874,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2727,6 +2887,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2738,6 +2900,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2749,6 +2913,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8716,
       "lng": -122.2727
     },
@@ -2760,6 +2926,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2771,6 +2939,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2782,6 +2952,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2793,6 +2965,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2804,6 +2978,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9735,
       "lng": -122.5311
     },
@@ -2815,6 +2991,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2826,6 +3004,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2837,6 +3017,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2848,6 +3030,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5485,
       "lng": -121.9886
     },
@@ -2859,6 +3043,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4297,
       "lng": -122.2538
     },
@@ -2870,6 +3056,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8716,
       "lng": -122.2727
     },
@@ -2881,6 +3069,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -2892,6 +3082,8 @@
       "aum_usd": 432997312,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -2903,6 +3095,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2914,6 +3108,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -2925,6 +3121,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2936,6 +3134,8 @@
       "aum_usd": 2857244723,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2947,6 +3147,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6547,
       "lng": -122.4077
     },
@@ -2958,6 +3160,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -2969,6 +3173,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2980,6 +3186,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -2991,6 +3199,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3002,6 +3212,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3013,6 +3225,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9735,
       "lng": -122.5311
     },
@@ -3024,6 +3238,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3035,6 +3251,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3046,6 +3264,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3057,6 +3277,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8716,
       "lng": -122.2727
     },
@@ -3068,6 +3290,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3079,6 +3303,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3090,6 +3316,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3101,6 +3329,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3112,6 +3342,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3123,6 +3355,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3134,6 +3368,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3145,6 +3381,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3156,6 +3394,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -3167,6 +3407,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3178,6 +3420,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3189,6 +3433,8 @@
       "aum_usd": 2081348308,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3200,6 +3446,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3211,6 +3459,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -3222,6 +3472,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3233,6 +3485,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3244,6 +3498,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3255,6 +3511,8 @@
       "aum_usd": 2368715300,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3266,6 +3524,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3277,6 +3537,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3288,6 +3550,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3299,6 +3563,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3310,6 +3576,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3321,6 +3589,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8735,
       "lng": -122.4569
     },
@@ -3332,6 +3602,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -3343,6 +3615,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3354,6 +3628,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3365,6 +3641,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -3376,6 +3654,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3387,6 +3667,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3398,6 +3680,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3409,6 +3693,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3420,6 +3706,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3431,6 +3719,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -3442,6 +3732,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3453,6 +3745,8 @@
       "aum_usd": 1167876554,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3464,6 +3758,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3475,6 +3771,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3486,6 +3784,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3497,6 +3797,8 @@
       "aum_usd": 746742881,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3508,6 +3810,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -3519,6 +3823,8 @@
       "aum_usd": 3913547829,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3530,6 +3836,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3541,6 +3849,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3552,6 +3862,8 @@
       "aum_usd": 218521015,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3563,6 +3875,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3574,6 +3888,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3585,6 +3901,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3596,6 +3914,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3607,6 +3927,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3618,6 +3940,8 @@
       "aum_usd": 2728192342,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3629,6 +3953,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3640,6 +3966,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3651,6 +3979,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3662,6 +3992,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4297,
       "lng": -122.2538
     },
@@ -3673,6 +4005,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3684,6 +4018,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3695,6 +4031,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3706,6 +4044,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3717,6 +4057,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3728,6 +4070,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3739,6 +4083,8 @@
       "aum_usd": 671426250,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -3750,6 +4096,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3761,6 +4109,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3772,6 +4122,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3783,6 +4135,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3794,6 +4148,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3805,6 +4161,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3816,6 +4174,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3827,6 +4187,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3838,6 +4200,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3849,6 +4213,8 @@
       "aum_usd": 3437541969,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3860,6 +4226,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3871,6 +4239,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3882,6 +4252,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3893,6 +4265,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -3904,6 +4278,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3915,6 +4291,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3926,6 +4304,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -3937,6 +4317,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3948,6 +4330,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -3959,6 +4343,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -3970,6 +4356,8 @@
       "aum_usd": 3424668843,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -3981,6 +4369,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9518,
       "lng": -122.5394
     },
@@ -3992,6 +4382,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4003,6 +4395,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -4014,6 +4408,8 @@
       "aum_usd": 2877301822,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4025,6 +4421,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -4036,6 +4434,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4047,6 +4447,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4058,6 +4460,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4069,6 +4473,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4080,6 +4486,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4091,6 +4499,8 @@
       "aum_usd": 410582676,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -4102,6 +4512,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4113,6 +4525,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4124,6 +4538,8 @@
       "aum_usd": 967009419,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4135,6 +4551,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4146,6 +4564,8 @@
       "aum_usd": 332450000,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -4157,6 +4577,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 38.0641,
       "lng": -122.7036
     },
@@ -4168,6 +4590,8 @@
       "aum_usd": 2905319288,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4179,6 +4603,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.2872,
       "lng": -121.95
     },
@@ -4190,6 +4616,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4201,6 +4629,8 @@
       "aum_usd": 1351113806,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4212,6 +4642,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -4223,6 +4655,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4234,6 +4668,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4245,6 +4681,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4256,6 +4694,8 @@
       "aum_usd": 9516683687,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -4267,6 +4707,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4278,6 +4720,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -4289,6 +4733,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4300,6 +4746,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4311,6 +4759,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4322,6 +4772,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -4333,6 +4785,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -4344,6 +4798,8 @@
       "aum_usd": 1670590619,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.2872,
       "lng": -121.95
     },
@@ -4355,6 +4811,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4366,6 +4824,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4377,6 +4837,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9341,
       "lng": -122.5353
     },
@@ -4388,6 +4850,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4399,6 +4863,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4410,6 +4876,8 @@
       "aum_usd": 6966857739,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4421,6 +4889,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -4432,6 +4902,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9735,
       "lng": -122.5311
     },
@@ -4443,6 +4915,8 @@
       "aum_usd": 777200000,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4454,6 +4928,8 @@
       "aum_usd": 11858092963,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4465,6 +4941,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4476,6 +4954,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4487,6 +4967,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4498,6 +4980,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -4509,6 +4993,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4520,6 +5006,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4531,6 +5019,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -4542,6 +5032,8 @@
       "aum_usd": 6977934255,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4553,6 +5045,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4564,6 +5058,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4575,6 +5071,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4586,6 +5084,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5585,
       "lng": -122.2711
     },
@@ -4597,6 +5097,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4608,6 +5110,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9341,
       "lng": -122.5353
     },
@@ -4619,6 +5123,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4630,6 +5136,8 @@
       "aum_usd": 1517358015,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4641,6 +5149,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4652,6 +5162,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4663,6 +5175,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4674,6 +5188,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -4685,6 +5201,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4696,6 +5214,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4707,6 +5227,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4718,6 +5240,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4729,6 +5253,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4740,6 +5266,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4751,6 +5279,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4762,6 +5292,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4773,6 +5305,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4784,6 +5318,8 @@
       "aum_usd": 439168640,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -4795,6 +5331,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4806,6 +5344,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -4817,6 +5357,8 @@
       "aum_usd": 822849691,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4828,6 +5370,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4839,6 +5383,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4850,6 +5396,8 @@
       "aum_usd": 3995640574,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4861,6 +5409,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4872,6 +5422,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -4883,6 +5435,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4894,6 +5448,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4905,6 +5461,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4916,6 +5474,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4927,6 +5487,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4938,6 +5500,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -4949,6 +5513,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -4960,6 +5526,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8591,
       "lng": -122.4853
     },
@@ -4971,6 +5539,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4982,6 +5552,8 @@
       "aum_usd": 114617817,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -4993,6 +5565,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5004,6 +5578,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5015,6 +5591,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -5026,6 +5604,8 @@
       "aum_usd": 23608854383,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5037,6 +5617,8 @@
       "aum_usd": 4376992745,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5048,6 +5630,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5059,6 +5643,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5072,
       "lng": -122.2603
     },
@@ -5070,6 +5656,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -5081,6 +5669,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5092,6 +5682,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5103,6 +5695,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5114,6 +5708,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5125,6 +5721,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -5136,6 +5734,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3541,
       "lng": -121.9552
     },
@@ -5147,6 +5747,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5585,
       "lng": -122.2711
     },
@@ -5158,6 +5760,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5169,6 +5773,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5180,6 +5786,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5191,6 +5799,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5202,6 +5812,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5213,6 +5825,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5224,6 +5838,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5235,6 +5851,8 @@
       "aum_usd": 365495434,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5246,6 +5864,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5257,6 +5877,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5268,6 +5890,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5279,6 +5903,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5290,6 +5916,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5301,6 +5929,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5312,6 +5942,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5323,6 +5955,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5334,6 +5968,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5345,6 +5981,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5356,6 +5994,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5367,6 +6007,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5378,6 +6020,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5389,6 +6033,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5400,6 +6046,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5411,6 +6059,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -5422,6 +6072,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5433,6 +6085,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5444,6 +6098,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5455,6 +6111,8 @@
       "aum_usd": 622482147,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5466,6 +6124,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5477,6 +6137,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -5488,6 +6150,8 @@
       "aum_usd": 410087852,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5499,6 +6163,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -5510,6 +6176,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5521,6 +6189,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5532,6 +6202,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -5543,6 +6215,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5554,6 +6228,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5565,6 +6241,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5576,6 +6254,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5587,6 +6267,8 @@
       "aum_usd": 2252473038,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5598,6 +6280,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5609,6 +6293,8 @@
       "aum_usd": 2440493000,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5620,6 +6306,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5631,6 +6319,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5642,6 +6332,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5653,6 +6345,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -5664,6 +6358,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5675,6 +6371,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5686,6 +6384,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -5697,6 +6397,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5708,6 +6410,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5719,6 +6423,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5730,6 +6436,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -5741,6 +6449,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5752,6 +6462,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3382,
       "lng": -121.8863
     },
@@ -5763,6 +6475,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5774,6 +6488,8 @@
       "aum_usd": 7609155605,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5785,6 +6501,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5796,6 +6514,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8735,
       "lng": -122.4569
     },
@@ -5807,6 +6527,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6547,
       "lng": -122.4077
     },
@@ -5818,6 +6540,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5829,6 +6553,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -5840,6 +6566,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5851,6 +6579,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5862,6 +6592,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5873,6 +6605,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -5884,6 +6618,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5895,6 +6631,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -5906,6 +6644,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5917,6 +6657,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5928,6 +6670,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5939,6 +6683,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -5950,6 +6696,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -5961,6 +6709,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -5972,6 +6722,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -5983,6 +6735,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -5994,6 +6748,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.2872,
       "lng": -121.95
     },
@@ -6005,6 +6761,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6016,6 +6774,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -6027,6 +6787,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -6038,6 +6800,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6049,6 +6813,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6060,6 +6826,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6071,6 +6839,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6082,6 +6852,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6093,6 +6865,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4297,
       "lng": -122.2538
     },
@@ -6104,6 +6878,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -6115,6 +6891,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6126,6 +6904,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6137,6 +6917,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5485,
       "lng": -121.9886
     },
@@ -6148,6 +6930,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6159,6 +6943,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6170,6 +6956,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6181,6 +6969,8 @@
       "aum_usd": 4410438207,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -6192,6 +6982,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6203,6 +6995,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6214,6 +7008,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6225,6 +7021,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6236,6 +7034,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6247,6 +7047,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -6258,6 +7060,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6269,6 +7073,8 @@
       "aum_usd": 90000000,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6280,6 +7086,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6291,6 +7099,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -6302,6 +7112,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6313,6 +7125,8 @@
       "aum_usd": 334170960,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -6324,6 +7138,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -6335,6 +7151,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6346,6 +7164,8 @@
       "aum_usd": 1103958958,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6357,6 +7177,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6368,6 +7190,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5485,
       "lng": -121.9886
     },
@@ -6379,6 +7203,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6390,6 +7216,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6401,6 +7229,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -6412,6 +7242,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3382,
       "lng": -121.8863
     },
@@ -6423,6 +7255,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6434,6 +7268,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9746,
       "lng": -122.5616
     },
@@ -6445,6 +7281,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6456,6 +7294,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6467,6 +7307,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -6478,6 +7320,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -6489,6 +7333,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6500,6 +7346,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6511,6 +7359,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6522,6 +7372,8 @@
       "aum_usd": 2503637298,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6533,6 +7385,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3688,
       "lng": -122.0363
     },
@@ -6544,6 +7398,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6555,6 +7411,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3382,
       "lng": -121.8863
     },
@@ -6566,6 +7424,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4297,
       "lng": -122.2538
     },
@@ -6577,6 +7437,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6588,6 +7450,8 @@
       "aum_usd": 3961135217,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6599,6 +7463,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9255,
       "lng": -122.5275
     },
@@ -6610,6 +7476,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -6621,6 +7489,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6632,6 +7502,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6643,6 +7515,8 @@
       "aum_usd": 2581136068,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3382,
       "lng": -121.8863
     },
@@ -6654,6 +7528,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6665,6 +7541,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6676,6 +7554,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6687,6 +7567,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -6698,6 +7580,8 @@
       "aum_usd": 568043382,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6709,6 +7593,8 @@
       "aum_usd": 13717473648,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6720,6 +7606,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6731,6 +7619,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6742,6 +7632,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6753,6 +7645,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3688,
       "lng": -122.0363
     },
@@ -6764,6 +7658,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3688,
       "lng": -122.0363
     },
@@ -6775,6 +7671,8 @@
       "aum_usd": 2907317093,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6786,6 +7684,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -6797,6 +7697,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6808,6 +7710,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -6819,6 +7723,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8044,
       "lng": -122.2712
     },
@@ -6830,6 +7736,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6841,6 +7749,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6547,
       "lng": -122.4077
     },
@@ -6852,6 +7762,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6863,6 +7775,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6874,6 +7788,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -6885,6 +7801,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6896,6 +7814,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6907,6 +7827,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6918,6 +7840,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6929,6 +7853,8 @@
       "aum_usd": 703611534,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5072,
       "lng": -122.2603
     },
@@ -6940,6 +7866,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -6951,6 +7879,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6962,6 +7892,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6973,6 +7905,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -6984,6 +7918,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -6995,6 +7931,8 @@
       "aum_usd": 5390979083,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7006,6 +7944,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4297,
       "lng": -122.2538
     },
@@ -7017,6 +7957,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7028,6 +7970,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7039,6 +7983,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7050,6 +7996,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7061,6 +8009,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -7072,6 +8022,8 @@
       "aum_usd": 4701099967,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7083,6 +8035,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -7094,6 +8048,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7105,6 +8061,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7116,6 +8074,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7127,6 +8087,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3382,
       "lng": -121.8863
     },
@@ -7138,6 +8100,8 @@
       "aum_usd": 1605060063,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8591,
       "lng": -122.4853
     },
@@ -7149,6 +8113,8 @@
       "aum_usd": 20775390188,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7160,6 +8126,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7171,6 +8139,8 @@
       "aum_usd": 346724229,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7182,6 +8152,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7193,6 +8165,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3688,
       "lng": -122.0363
     },
@@ -7204,6 +8178,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7215,6 +8191,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9341,
       "lng": -122.5353
     },
@@ -7226,6 +8204,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -7237,6 +8217,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7248,6 +8230,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7259,6 +8243,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -7270,6 +8256,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7281,6 +8269,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -7292,6 +8282,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5585,
       "lng": -122.2711
     },
@@ -7303,6 +8295,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7314,6 +8308,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8716,
       "lng": -122.2727
     },
@@ -7325,6 +8321,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7336,6 +8334,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -7347,6 +8347,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7358,6 +8360,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7369,6 +8373,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7380,6 +8386,8 @@
       "aum_usd": 590032567,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7391,6 +8399,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -7402,6 +8412,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7413,6 +8425,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7424,6 +8438,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7435,6 +8451,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7446,6 +8464,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -7457,6 +8477,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7468,6 +8490,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -7479,6 +8503,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.2872,
       "lng": -121.95
     },
@@ -7490,6 +8516,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.2872,
       "lng": -121.95
     },
@@ -7501,6 +8529,8 @@
       "aum_usd": 4517610900,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7512,6 +8542,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8728,
       "lng": -122.4641
     },
@@ -7523,6 +8555,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3541,
       "lng": -121.9552
     },
@@ -7534,6 +8568,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7545,6 +8581,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7556,6 +8594,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7567,6 +8607,8 @@
       "aum_usd": 5368491884,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7578,6 +8620,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7589,6 +8633,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5072,
       "lng": -122.2603
     },
@@ -7600,6 +8646,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6547,
       "lng": -122.4077
     },
@@ -7611,6 +8659,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7622,6 +8672,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -7633,6 +8685,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7644,6 +8698,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7655,6 +8711,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7666,6 +8724,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -7677,6 +8737,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7688,6 +8750,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6547,
       "lng": -122.4077
     },
@@ -7699,6 +8763,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7710,6 +8776,8 @@
       "aum_usd": 7636498100,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7721,6 +8789,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7732,6 +8802,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7743,6 +8815,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7754,6 +8828,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7765,6 +8841,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -7776,6 +8854,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7787,6 +8867,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7798,6 +8880,8 @@
       "aum_usd": 1344508676,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -7809,6 +8893,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7820,6 +8906,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7831,6 +8919,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -7842,6 +8932,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7853,6 +8945,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7864,6 +8958,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7875,6 +8971,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7886,6 +8984,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7897,6 +8997,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3688,
       "lng": -122.0363
     },
@@ -7908,6 +9010,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7919,6 +9023,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7930,6 +9036,8 @@
       "aum_usd": 4379631229,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7941,6 +9049,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3541,
       "lng": -121.9552
     },
@@ -7952,6 +9062,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9255,
       "lng": -122.5275
     },
@@ -7963,6 +9075,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -7974,6 +9088,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7985,6 +9101,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -7996,6 +9114,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8007,6 +9127,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8018,6 +9140,8 @@
       "aum_usd": 933955126,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8029,6 +9153,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -8040,6 +9166,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8051,6 +9179,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8062,6 +9192,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8073,6 +9205,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8084,6 +9218,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8095,6 +9231,8 @@
       "aum_usd": null,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.8716,
       "lng": -122.2727
     },
@@ -8106,6 +9244,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8117,6 +9257,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -8128,6 +9270,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3838,
       "lng": -122.2353
     },
@@ -8139,6 +9283,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8150,6 +9296,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -8161,6 +9309,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8172,6 +9322,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8183,6 +9335,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8194,6 +9348,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8205,6 +9361,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -8216,6 +9374,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8227,6 +9387,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8238,6 +9400,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8249,6 +9413,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8260,6 +9426,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8271,6 +9439,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8282,6 +9452,8 @@
       "aum_usd": 3439823691,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -8293,6 +9465,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -8304,6 +9478,8 @@
       "aum_usd": 1070369396,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8315,6 +9491,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8326,6 +9504,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8337,6 +9517,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141
     },
@@ -8348,6 +9530,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8359,6 +9543,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8370,6 +9556,8 @@
       "aum_usd": 31297806,
       "county": "Alameda",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.6624,
       "lng": -121.8747
     },
@@ -8381,6 +9569,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8392,6 +9582,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8403,6 +9595,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8414,6 +9608,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -8425,6 +9621,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -8436,6 +9634,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8447,6 +9647,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -8458,6 +9660,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8469,6 +9673,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8480,6 +9686,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8491,6 +9699,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8502,6 +9712,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8513,6 +9725,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8524,6 +9738,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8535,6 +9751,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.323,
       "lng": -122.0322
     },
@@ -8546,6 +9764,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8557,6 +9777,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8568,6 +9790,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8579,6 +9803,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8590,6 +9816,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8601,6 +9829,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8612,6 +9842,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8623,6 +9855,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -8634,6 +9868,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8645,6 +9881,8 @@
       "aum_usd": 6095582206,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8656,6 +9894,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8667,6 +9907,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -8678,6 +9920,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8689,6 +9933,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -8700,6 +9946,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8711,6 +9959,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8722,6 +9972,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8733,6 +9985,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8744,6 +9998,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5072,
       "lng": -122.2603
     },
@@ -8755,6 +10011,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8766,6 +10024,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8777,6 +10037,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.9341,
       "lng": -122.5353
     },
@@ -8788,6 +10050,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8799,6 +10063,8 @@
       "aum_usd": 146180175,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8810,6 +10076,8 @@
       "aum_usd": 7861558000,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -8821,6 +10089,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
     },
@@ -8832,6 +10102,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -8843,6 +10115,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8854,6 +10128,8 @@
       "aum_usd": 2265758587,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8865,6 +10141,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.563,
       "lng": -122.3255
     },
@@ -8876,6 +10154,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8887,6 +10167,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4852,
       "lng": -122.2364
     },
@@ -8898,6 +10180,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8909,6 +10193,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8920,6 +10206,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8931,6 +10219,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839
     },
@@ -8942,6 +10232,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8953,6 +10245,8 @@
       "aum_usd": null,
       "county": "San Mateo",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.5779,
       "lng": -122.3478
     },
@@ -8964,6 +10258,8 @@
       "aum_usd": null,
       "county": "Marin",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.906,
       "lng": -122.545
     },
@@ -8975,6 +10271,8 @@
       "aum_usd": 1135655536,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     },
@@ -8986,6 +10284,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -8997,6 +10297,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -9008,6 +10310,8 @@
       "aum_usd": null,
       "county": "Santa Clara",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
     },
@@ -9019,6 +10323,8 @@
       "aum_usd": null,
       "county": "San Francisco",
       "tier": "lite",
+      "stages": [],
+      "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
     }
