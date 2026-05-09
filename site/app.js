@@ -72,14 +72,6 @@ document.addEventListener("alpine:init", () => {
           ...(f.recent_portfolio_sample || []).map((d) => d.company),
         ].filter(Boolean).join(" ").toLowerCase();
       });
-      // City-centroid fallback geocoding stamps dozens of firms onto the
-      // exact same lat/lng (e.g. ~200 firms at the SF centroid). Without
-      // spreading them, those pins render as one unreadable pile of stacked
-      // names. Distribute colocated firms in a deterministic spiral so the
-      // layout is stable across reloads. Radius scales with group size so
-      // a SF pile-up gets ~2 km of breathing room while a small Marin
-      // cluster only spreads ~150 m.
-      this.spreadColocatedFirms(data.firms);
       this.firms = data.firms;
       this.renderMap();
       // Re-render markers whenever the visible set changes
@@ -88,42 +80,6 @@ document.addEventListener("alpine:init", () => {
         if (firm && this.map && firm.lat && firm.lng) {
           this.map.flyTo([firm.lat, firm.lng], 16, { duration: 0.6 });
         }
-      });
-    },
-
-    // Spread firms that share the exact same lat/lng (an artefact of the
-    // scraper's city-centroid geocoding fallback) into a deterministic
-    // spiral pattern around their original point. Radius grows with group
-    // size: a 200-firm SF pile-up spreads over ~2 km, a 5-firm Marin one
-    // over ~250 m. Order is stable per reload because we sort the group
-    // by sec_crd before laying out. Real street-geocoded firms (groups of
-    // size 1) are untouched.
-    spreadColocatedFirms(firms) {
-      const groups = new Map();
-      firms.forEach((f) => {
-        if (f.lat == null || f.lng == null) return;
-        const key = `${f.lat.toFixed(6)},${f.lng.toFixed(6)}`;
-        if (!groups.has(key)) groups.set(key, []);
-        groups.get(key).push(f);
-      });
-      groups.forEach((group) => {
-        if (group.length < 2) return;
-        group.sort((a, b) => (a.sec_crd || a.id).localeCompare(b.sec_crd || b.id));
-        const centerLat = group[0].lat;
-        const centerLng = group[0].lng;
-        // ~0.001° lat ≈ 111 m. Cap radius at ~2 km even for huge groups.
-        const radius = Math.min(0.018, 0.0015 * Math.sqrt(group.length));
-        // Latitude correction so spiral looks circular, not elongated, at
-        // SF/Bay Area latitudes (cos(37.7°) ≈ 0.79).
-        const lngScale = 1 / Math.cos((centerLat * Math.PI) / 180);
-        group.forEach((f, i) => {
-          if (i === 0) return; // anchor stays at the centroid
-          // Sunflower / phyllotaxis spiral keeps points evenly spaced.
-          const angle = i * 2.39996;            // golden angle in radians
-          const r = radius * Math.sqrt(i / group.length);
-          f.lat = centerLat + Math.sin(angle) * r;
-          f.lng = centerLng + Math.cos(angle) * r * lngScale;
-        });
       });
     },
 
@@ -332,20 +288,23 @@ document.addEventListener("alpine:init", () => {
     },
 
     renderMap() {
-      this.map = L.map("map", { scrollWheelZoom: true, preferCanvas: true })
-        .setView([37.65, -122.30], 10);
+      this.map = L.map("map", { scrollWheelZoom: true }).setView([37.65, -122.30], 10);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
         attribution: "© OpenStreetMap contributors",
       }).addTo(this.map);
+      // Marker cluster group folds 678 nearby pins into ~30 cluster bubbles
+      // at default zoom. Hover/zoom to expand. Massive perf win on initial
+      // render and on every filter change.
+      this.cluster = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        maxClusterRadius: 60,
+        chunkedLoading: true,         // yields to the browser between batches
+      });
+      this.map.addLayer(this.cluster);
       this.refreshMarkers();
       this.fitVisibleBounds();
-      // Re-render pins on every pan/zoom so only those inside the visible
-      // viewport are kept in the DOM. Without this, all 678 named pins
-      // stayed mounted regardless of where the user was looking and the
-      // page slowed under its own marker count. moveend fires once after
-      // the gesture settles, not every frame, so the cost is bounded.
-      this.map.on("moveend", () => this.refreshMarkers());
     },
 
     fitVisibleBounds() {
@@ -358,26 +317,25 @@ document.addEventListener("alpine:init", () => {
     },
 
     refreshMarkers() {
-      if (!this.map) return;
-      // Viewport culling: only keep pins for firms inside the current map
-      // bounds. This is what stops 678 named pins from all mounting at once.
-      // Padded by 20% so a small pan doesn't churn pins at the edges.
-      const bounds = this.map.getBounds().pad(0.2);
-      const inViewport = this.visibleFirms.filter(
-        (f) => f.lat != null && f.lng != null && bounds.contains([f.lat, f.lng])
-      );
-      const visibleIds = new Set(inViewport.map((f) => f.id));
+      if (!this.map || !this.cluster) return;
+      const visibleIds = new Set(this.visibleFirms.map((f) => f.id));
 
-      // Remove markers for firms that scrolled out of view or were filtered.
+      // Remove markers for firms no longer visible.
+      const toRemove = [];
       Object.entries(this.markers).forEach(([id, marker]) => {
         if (!visibleIds.has(id)) {
-          this.map.removeLayer(marker);
+          toRemove.push(marker);
           delete this.markers[id];
         }
       });
+      if (toRemove.length) this.cluster.removeLayers(toRemove);
 
-      // Add markers for firms newly entering the viewport.
-      inViewport.forEach((f) => {
+      // Build new markers in a batch and add them all at once. The cluster
+      // group's chunked addLayers yields to the browser between chunks so a
+      // big filter change doesn't lock the main thread.
+      const toAdd = [];
+      this.visibleFirms.forEach((f) => {
+        if (!f.lat || !f.lng) return;
         if (this.markers[f.id]) return;
         const bucket = this.aumBucket(f.aum_usd);
         const label = f.name.length > 14 ? f.name.slice(0, 13) + "…" : f.name;
@@ -397,9 +355,10 @@ document.addEventListener("alpine:init", () => {
         const marker = L.marker([f.lat, f.lng], { icon, title: f.name })
           .bindTooltip(tooltipBody + stagesPart, { direction: "top", opacity: 0.95 })
           .on("click", () => this.select(f));
-        marker.addTo(this.map);
+        toAdd.push(marker);
         this.markers[f.id] = marker;
       });
+      if (toAdd.length) this.cluster.addLayers(toAdd);
     },
 
     downloadJson() {

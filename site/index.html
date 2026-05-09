@@ -12,10 +12,15 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
+  <!-- Leaflet.markercluster — folds 678 markers into ~30 cluster bubbles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body x-data="vcApp" x-init="init()" :class="{ 'panel-open': selectedFirm }">
 
@@ -236,6 +241,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
