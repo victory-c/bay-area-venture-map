@@ -59,19 +59,6 @@ document.addEventListener("alpine:init", () => {
       this.initSplitters();
       const resp = await fetch("firms.json");
       const data = await resp.json();
-      // Precompute the searchable "hay" string per firm once at load time.
-      // Drops per-keystroke string-build cost from O(N × per-firm-build) to
-      // a single .includes() lookup against a precomputed string. The leading
-      // "_" marks it as a non-data field; we strip it from the JSON download.
-      data.firms.forEach((f) => {
-        f._hay = [
-          f.name,
-          f.notes,
-          ...(f.sectors || []).map((s) => SECTOR_LABELS[s] || s),
-          ...(f.partners || []).map((p) => p.name),
-          ...(f.recent_portfolio_sample || []).map((d) => d.company),
-        ].filter(Boolean).join(" ").toLowerCase();
-      });
       this.firms = data.firms;
       this.renderMap();
       // Re-render markers whenever the visible set changes
@@ -127,29 +114,16 @@ document.addEventListener("alpine:init", () => {
           try { handle.setPointerCapture(e.pointerId); } catch {}
 
           const limit = axis === "x" ? window.innerWidth : window.innerHeight;
-          // rAF-throttle: pointermove fires at the input device's poll rate
-          // (often >120 Hz on modern mice/trackpads). Each fire calls
-          // map.invalidateSize() which redraws all visible tiles. Coalesce
-          // them into one update per animation frame.
-          let rafPending = false;
-          let latestEv = null;
           const onMove = (ev) => {
-            latestEv = ev;
-            if (rafPending) return;
-            rafPending = true;
-            requestAnimationFrame(() => {
-              rafPending = false;
-              if (!latestEv) return;
-              const delta = (latestEv[clientCoord] - start) * sign;
-              const newSize = Math.max(120, Math.min(limit - 160, startSize + delta));
-              if (isPanel) {
-                target.style[dim] = newSize + "px";
-              } else {
-                target.style.flex = `0 0 ${newSize}px`;
-                target.style[dim] = newSize + "px";
-              }
-              if (axis === "x" && this.map) this.map.invalidateSize();
-            });
+            const delta = (ev[clientCoord] - start) * sign;
+            const newSize = Math.max(120, Math.min(limit - 160, startSize + delta));
+            if (isPanel) {
+              target.style[dim] = newSize + "px";
+            } else {
+              target.style.flex = `0 0 ${newSize}px`;
+              target.style[dim] = newSize + "px";
+            }
+            if (axis === "x" && this.map) this.map.invalidateSize();
           };
           const onUp = () => {
             document.removeEventListener("pointermove", onMove);
@@ -214,7 +188,16 @@ document.addEventListener("alpine:init", () => {
         } else if (f.aum_usd < aumMin || f.aum_usd > aumMax) {
           return false;
         }
-        if (q && !(f._hay || "").includes(q)) return false;
+        if (q) {
+          const hay = [
+            f.name,
+            f.notes,
+            ...(f.sectors || []).map((s) => SECTOR_LABELS[s] || s),
+            ...(f.partners || []).map((p) => p.name),
+            ...(f.recent_portfolio_sample || []).map((d) => d.company),
+          ].join(" ").toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
         return true;
       });
 
@@ -288,21 +271,12 @@ document.addEventListener("alpine:init", () => {
     },
 
     renderMap() {
+      // Centered on Sand Hill Rd, zoomed to show the whole cluster.
       this.map = L.map("map", { scrollWheelZoom: true }).setView([37.65, -122.30], 10);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
         attribution: "© OpenStreetMap contributors",
       }).addTo(this.map);
-      // Marker cluster group folds 678 nearby pins into ~30 cluster bubbles
-      // at default zoom. Hover/zoom to expand. Massive perf win on initial
-      // render and on every filter change.
-      this.cluster = L.markerClusterGroup({
-        showCoverageOnHover: false,
-        spiderfyOnMaxZoom: true,
-        maxClusterRadius: 60,
-        chunkedLoading: true,         // yields to the browser between batches
-      });
-      this.map.addLayer(this.cluster);
       this.refreshMarkers();
       this.fitVisibleBounds();
     },
@@ -317,23 +291,18 @@ document.addEventListener("alpine:init", () => {
     },
 
     refreshMarkers() {
-      if (!this.map || !this.cluster) return;
+      if (!this.map) return;
       const visibleIds = new Set(this.visibleFirms.map((f) => f.id));
 
-      // Remove markers for firms no longer visible.
-      const toRemove = [];
+      // Remove markers for firms no longer visible
       Object.entries(this.markers).forEach(([id, marker]) => {
         if (!visibleIds.has(id)) {
-          toRemove.push(marker);
+          this.map.removeLayer(marker);
           delete this.markers[id];
         }
       });
-      if (toRemove.length) this.cluster.removeLayers(toRemove);
 
-      // Build new markers in a batch and add them all at once. The cluster
-      // group's chunked addLayers yields to the browser between chunks so a
-      // big filter change doesn't lock the main thread.
-      const toAdd = [];
+      // Add markers for visible firms
       this.visibleFirms.forEach((f) => {
         if (!f.lat || !f.lng) return;
         if (this.markers[f.id]) return;
@@ -355,19 +324,14 @@ document.addEventListener("alpine:init", () => {
         const marker = L.marker([f.lat, f.lng], { icon, title: f.name })
           .bindTooltip(tooltipBody + stagesPart, { direction: "top", opacity: 0.95 })
           .on("click", () => this.select(f));
-        toAdd.push(marker);
+        marker.addTo(this.map);
         this.markers[f.id] = marker;
       });
-      if (toAdd.length) this.cluster.addLayers(toAdd);
     },
 
     downloadJson() {
-      // Strip the precomputed _hay search index from the export; it's an
-      // implementation detail that bloats the file and isn't part of the
-      // schema users expect.
-      const cleanFirms = this.firms.map(({ _hay, ...rest }) => rest);
       const blob = new Blob(
-        [JSON.stringify({ firm_count: cleanFirms.length, firms: cleanFirms }, null, 2)],
+        [JSON.stringify({ firm_count: this.firms.length, firms: this.firms }, null, 2)],
         { type: "application/json" },
       );
       const url = URL.createObjectURL(blob);
