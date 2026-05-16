@@ -25,6 +25,7 @@ import yaml
 from scraper.edgar import IapdClient
 from scraper.geocode import Geocoder
 from scraper.llm_enrich import GeminiEnricher, QuotaExceeded, merge_into_firm
+from scraper.nvca import NvcaClient
 from scraper.sec_bulk import fetch_bay_area_vc_firms
 from scraper.wikipedia import WikipediaClient
 
@@ -36,8 +37,9 @@ OUT_PATH = REPO_ROOT / "data" / "firms.json"
 SITE_OUT_PATH = REPO_ROOT / "site" / "firms.json"
 GEOCODE_CACHE = REPO_ROOT / "data" / ".geocode-cache.json"
 SEC_BULK_CACHE = REPO_ROOT / "data" / ".sec-bulk-cache.csv"
+NVCA_CACHE = REPO_ROOT / "data" / ".nvca-cache.json"
 
-VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia", "llm"}
+VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia", "nvca", "llm"}
 
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
@@ -216,6 +218,63 @@ def enrich_wikipedia(firms: list[dict]) -> None:
         client.close()
 
 
+def enrich_nvca(firms: list[dict]) -> None:
+    """Flag firms that appear in the NVCA member directory.
+
+    Sets ``nvca_member: true`` on every match (later surfaced as a UI
+    credibility badge) and backfills ``website`` and ``sectors`` only when
+    the firm currently has no value. Existing values always win — this
+    pass is strictly additive.
+
+    Matching is by normalised firm name via ``_dedup_key_from_name``, the
+    same key used to dedup seed vs. SEC-bulk firms, so legal suffixes
+    (LLC / LP / etc.) and parenthetical aliases don't break matches.
+
+    NVCA membership is ~400 firms nationally; expected Bay Area hit
+    count against our firms list is ~30-60.
+    """
+    client = NvcaClient(cache_path=NVCA_CACHE)
+    try:
+        members = client.fetch_members()
+    finally:
+        client.close()
+
+    # Build a key -> member index. If NVCA lists two firms that normalise to
+    # the same key (rare, but possible with reused brand names), keep the
+    # first one — they're alphabetical so this is stable.
+    by_key: dict[str, object] = {}
+    for m in members:
+        key = _dedup_key_from_name(m.name)
+        if not key:
+            continue
+        by_key.setdefault(key, m)
+
+    hits = 0
+    backfilled_website = 0
+    backfilled_sectors = 0
+    for firm in firms:
+        key = _dedup_key_from_name(firm["name"])
+        member = by_key.get(key)
+        if member is None:
+            continue
+        hits += 1
+        firm["nvca_member"] = True
+        if not firm.get("website") and member.website:
+            firm["website"] = member.website
+            backfilled_website += 1
+        # Sector focus isn't exposed by the NVCA directory; nothing to
+        # backfill into `sectors` today. The hook stays here so future
+        # NVCA schema additions (or a separate sector-inference pass) can
+        # populate it without re-touching this function.
+        if not firm.get("sectors") and member.sector_focus:
+            firm["sectors"] = [member.sector_focus]
+            backfilled_sectors += 1
+    log.info(
+        "NVCA: %d / %d firms flagged as members (backfilled %d websites, %d sectors)",
+        hits, len(firms), backfilled_website, backfilled_sectors,
+    )
+
+
 def enrich_llm(firms: list[dict]) -> None:
     """Fill missing partners/stages/sectors/recent_investments via Gemini
     2.5 Flash with native Google Search. Only touches lite firms — rich
@@ -320,6 +379,12 @@ def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
     # and can backfill founded/AUM for firms that came in via the bulk scrape.
     if "wikipedia" in enricher_set:
         enrich_wikipedia(firms)
+    # NVCA flags membership and backfills website/sectors *before* the LLM
+    # pass, so LLM credits aren't spent on fields a free, authoritative
+    # source already covered. Runs after sec_bulk/wikipedia so the full
+    # merged firm list (seed + scraped) gets flagged in one shot.
+    if "nvca" in enricher_set:
+        enrich_nvca(firms)
     # LLM runs LAST so it only fills gaps the earlier (free, reliable) sources
     # couldn't. Rich firms (seed YAML) are skipped — they already have
     # hand-curated data we trust more than any model output.
