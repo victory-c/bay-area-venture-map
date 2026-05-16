@@ -23,8 +23,13 @@ from typing import Iterable
 import yaml
 
 from scraper.edgar import IapdClient
+from scraper.form_d import FormDClient
 from scraper.geocode import Geocoder
+from scraper.llm_enrich import GeminiEnricher, QuotaExceeded, merge_into_firm
+from scraper.nvca import NvcaClient
 from scraper.sec_bulk import fetch_bay_area_vc_firms
+from scraper.website_enrich import WebsiteEnricher
+from scraper.wikipedia import WikipediaClient
 
 log = logging.getLogger(__name__)
 
@@ -34,8 +39,14 @@ OUT_PATH = REPO_ROOT / "data" / "firms.json"
 SITE_OUT_PATH = REPO_ROOT / "site" / "firms.json"
 GEOCODE_CACHE = REPO_ROOT / "data" / ".geocode-cache.json"
 SEC_BULK_CACHE = REPO_ROOT / "data" / ".sec-bulk-cache.csv"
+NVCA_CACHE = REPO_ROOT / "data" / ".nvca-cache.json"
+FORM_D_CACHE = REPO_ROOT / "data" / ".form-d-cache.json"
+WEBSITE_CACHE = REPO_ROOT / "data" / ".website-enrich-cache.json"
 
-VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk"}
+VALID_ENRICHERS = {
+    "geocode", "edgar", "sec_bulk", "wikipedia",
+    "nvca", "form_d", "llm", "website",
+}
 
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
@@ -173,6 +184,249 @@ def enrich_edgar(firms: list[dict]) -> None:
         iapd.close()
 
 
+def enrich_wikipedia(firms: list[dict]) -> None:
+    """Pull founded/founders/key_people/AUM from Wikipedia infoboxes when an
+    article exists. Purely additive — never overwrites a non-null seed value.
+
+    Adds two new fields on a hit: ``wikipedia_url`` and ``wikipedia_key_people``
+    (founders + key people, deduped against existing partners). Backfills
+    ``founded`` and ``aum_usd`` only when they are currently missing.
+    Coverage is typically 10-25% of firms — only well-known shops have articles.
+    """
+    client = WikipediaClient()
+    try:
+        hits = 0
+        for firm in firms:
+            info = client.lookup(firm["name"])
+            if info is None:
+                continue
+            hits += 1
+            firm["wikipedia_url"] = info.url
+            if firm.get("founded") is None and info.founded:
+                firm["founded"] = info.founded
+            if not firm.get("aum_usd") and info.aum_usd:
+                firm["aum_usd"] = info.aum_usd
+                firm["aum_source"] = f"Wikipedia ({info.title})"
+            wiki_people: list[str] = []
+            seen = {
+                p["name"].lower()
+                for p in firm.get("partners", []) or []
+                if isinstance(p, dict) and "name" in p
+            }
+            for name in info.founders + info.key_people:
+                if name.lower() not in seen:
+                    seen.add(name.lower()); wiki_people.append(name)
+            if wiki_people:
+                firm["wikipedia_key_people"] = wiki_people
+            if info.industry and not firm.get("wikipedia_industry"):
+                firm["wikipedia_industry"] = info.industry
+        log.info("Wikipedia: matched %d / %d firms", hits, len(firms))
+    finally:
+        client.close()
+
+
+def enrich_nvca(firms: list[dict]) -> None:
+    """Flag firms that appear in the NVCA member directory.
+
+    Sets ``nvca_member: true`` on every match (later surfaced as a UI
+    credibility badge) and backfills ``website`` and ``sectors`` only when
+    the firm currently has no value. Existing values always win — this
+    pass is strictly additive.
+
+    Matching is by normalised firm name via ``_dedup_key_from_name``, the
+    same key used to dedup seed vs. SEC-bulk firms, so legal suffixes
+    (LLC / LP / etc.) and parenthetical aliases don't break matches.
+
+    NVCA membership is ~400 firms nationally; expected Bay Area hit
+    count against our firms list is ~30-60.
+    """
+    client = NvcaClient(cache_path=NVCA_CACHE)
+    try:
+        members = client.fetch_members()
+    finally:
+        client.close()
+
+    # Build a key -> member index. If NVCA lists two firms that normalise to
+    # the same key (rare, but possible with reused brand names), keep the
+    # first one — they're alphabetical so this is stable.
+    by_key: dict[str, object] = {}
+    for m in members:
+        key = _dedup_key_from_name(m.name)
+        if not key:
+            continue
+        by_key.setdefault(key, m)
+
+    hits = 0
+    backfilled_website = 0
+    backfilled_sectors = 0
+    for firm in firms:
+        key = _dedup_key_from_name(firm["name"])
+        member = by_key.get(key)
+        if member is None:
+            continue
+        hits += 1
+        firm["nvca_member"] = True
+        if not firm.get("website") and member.website:
+            firm["website"] = member.website
+            backfilled_website += 1
+        # Sector focus isn't exposed by the NVCA directory; nothing to
+        # backfill into `sectors` today. The hook stays here so future
+        # NVCA schema additions (or a separate sector-inference pass) can
+        # populate it without re-touching this function.
+        if not firm.get("sectors") and member.sector_focus:
+            firm["sectors"] = [member.sector_focus]
+            backfilled_sectors += 1
+    log.info(
+        "NVCA: %d / %d firms flagged as members (backfilled %d websites, %d sectors)",
+        hits, len(firms), backfilled_website, backfilled_sectors,
+    )
+
+
+def enrich_form_d(firms: list[dict]) -> None:
+    """Aggregate SEC Form D filings per firm via EDGAR full-text search.
+
+    Adds (only when at least one filing matches):
+        ``form_d_total_filings``         — count of validated filings
+        ``form_d_latest_filing_date``    — ISO date of most recent close
+        ``form_d_distinct_funds``        — up to 10 fund-entity names
+        ``form_d_fund_ciks``             — up to 10 fund-entity CIKs
+        ``form_d_recent_filings``        — top 5 most recent filings
+
+    Purely additive: never overwrites seed values. Coverage is heavily
+    skewed toward brand-recognisable firms; obscure shell entities
+    return zero and are skipped (and cached as null so re-runs don't
+    re-query them).
+    """
+    client = FormDClient(cache_path=FORM_D_CACHE)
+    try:
+        hits = 0
+        for firm in firms:
+            info = client.lookup(firm["name"])
+            if info is None or info.total_filings == 0:
+                continue
+            hits += 1
+            firm["form_d_total_filings"] = info.total_filings
+            firm["form_d_latest_filing_date"] = info.latest_filing_date
+            firm["form_d_distinct_funds"] = info.distinct_funds
+            firm["form_d_fund_ciks"] = info.fund_ciks
+            firm["form_d_recent_filings"] = [
+                {
+                    "accession": f.accession,
+                    "file_date": f.file_date,
+                    "form": f.form,
+                    "cik": f.cik,
+                    "filer_name": f.filer_name,
+                }
+                for f in info.recent_filings
+            ]
+        log.info("Form D: matched %d / %d firms", hits, len(firms))
+    finally:
+        client.close()
+
+
+def enrich_llm(firms: list[dict]) -> None:
+    """Fill missing partners/stages/sectors/recent_investments via Gemini
+    2.5 Flash with native Google Search. Only touches lite firms — rich
+    firms are seed-curated and we trust those over any model output.
+
+    Resumable: every successful query is cached, so if you stop the run
+    (Ctrl-C or quota exhausted), re-running picks up exactly where it left
+    off. Cache lives at ``data/.llm-enrich-cache.json``.
+
+    Gates: only enriches firms missing partners/stages/sectors AND with a
+    fund_count > 0 (skip obvious shell entities). Quota-exceeded errors
+    are surfaced cleanly so the user knows to retry tomorrow.
+    """
+    enricher = GeminiEnricher()
+    try:
+        candidates = [
+            f for f in firms
+            if f.get("tier") == "lite"
+            and not (f.get("partners") or f.get("stages") or f.get("sectors"))
+            and (f.get("fund_count") or 0) > 0
+        ]
+        log.info(
+            "LLM enrich: %d candidate firms (skipping %d rich + %d already-enriched)",
+            len(candidates),
+            sum(1 for f in firms if f.get("tier") == "rich"),
+            len(firms) - len(candidates) - sum(1 for f in firms if f.get("tier") == "rich"),
+        )
+        merged = 0
+        skipped_low_conf = 0
+        for i, firm in enumerate(candidates, 1):
+            try:
+                info = enricher.enrich(firm)
+            except QuotaExceeded as e:
+                log.warning(
+                    "Stopped at firm %d/%d — %s. Re-run later to resume.",
+                    i, len(candidates), e,
+                )
+                break
+            if info is None:
+                continue
+            if merge_into_firm(firm, info):
+                merged += 1
+            else:
+                skipped_low_conf += 1
+            if i % 25 == 0:
+                log.info("LLM enrich: %d/%d done, %d merged, %d low-conf",
+                         i, len(candidates), merged, skipped_low_conf)
+        log.info(
+            "LLM enrich: %d firms got LLM-sourced data; %d firms returned with confidence < %.2f",
+            merged, skipped_low_conf,
+            __import__("scraper.llm_enrich", fromlist=["MIN_CONFIDENCE_TO_MERGE"]).MIN_CONFIDENCE_TO_MERGE,
+        )
+    finally:
+        enricher.close()
+
+
+def enrich_websites(firms: list[dict]) -> None:
+    """E-lite: scrape the firm's own website (home + /team + /about etc)
+    and extract structured partners / sectors / stages via Vertex AI.
+
+    Targets only lite firms that still have no Tier-D LLM data AND have
+    a real (non-social) website. Result is merged through the same
+    confidence gate as the LLM pass, so it cleanly augments rather than
+    replaces. Resumable: every page-set + Gemini call is cached at
+    ``data/.website-enrich-cache.json``.
+    """
+    enricher = WebsiteEnricher(cache_path=WEBSITE_CACHE)
+    try:
+        candidates = [
+            f for f in firms
+            if f.get("tier") == "lite"
+            and not f.get("llm_enriched")
+            and f.get("website")
+        ]
+        log.info("Website enrich: %d candidate firms", len(candidates))
+        merged = 0
+        skipped_low_conf = 0
+        for i, firm in enumerate(candidates, 1):
+            try:
+                info = enricher.enrich(firm)
+            except QuotaExceeded as e:
+                log.warning(
+                    "Stopped at firm %d/%d — %s. Re-run later to resume.",
+                    i, len(candidates), e,
+                )
+                break
+            if info is None:
+                continue
+            if merge_into_firm(firm, info):
+                merged += 1
+                # Distinguish website-scrape provenance from Tier-D so the
+                # UI can label it differently if it ever wants to.
+                firm["website_enriched"] = True
+            else:
+                skipped_low_conf += 1
+        log.info(
+            "Website enrich: %d firms got website-sourced data; %d below confidence threshold",
+            merged, skipped_low_conf,
+        )
+    finally:
+        enricher.close()
+
+
 def enrich_sec_bulk(seed_firms: list[dict], use_nominatim: bool = False) -> list[dict]:
     """Fetch the SEC bulk Form ADV scrape and merge with the seed firms.
 
@@ -217,6 +471,34 @@ def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
         # If the user also asked for geocode, we already ran it on seed
         # firms above; flip use_nominatim so scraped firms are geocoded too.
         firms = enrich_sec_bulk(firms, use_nominatim="geocode" in enricher_set)
+    # Wikipedia runs after SEC bulk so it sees the merged seed+scraped list
+    # and can backfill founded/AUM for firms that came in via the bulk scrape.
+    if "wikipedia" in enricher_set:
+        enrich_wikipedia(firms)
+    # NVCA flags membership and backfills website/sectors *before* the LLM
+    # pass, so LLM credits aren't spent on fields a free, authoritative
+    # source already covered. Runs after sec_bulk/wikipedia so the full
+    # merged firm list (seed + scraped) gets flagged in one shot.
+    if "nvca" in enricher_set:
+        enrich_nvca(firms)
+    # Form D runs before the LLM pass so the LLM prompt could in
+    # principle reference recent fund-raising activity (though today it
+    # doesn't). It's also a free, authoritative source — same tier as
+    # NVCA — so it goes ahead of the LLM by the same logic.
+    if "form_d" in enricher_set:
+        enrich_form_d(firms)
+    # LLM runs LAST so it only fills gaps the earlier (free, reliable) sources
+    # couldn't. Rich firms (seed YAML) are skipped — they already have
+    # hand-curated data we trust more than any model output.
+    if "llm" in enricher_set:
+        enrich_llm(firms)
+    # Website scrape (E-lite): last-mile pass for the ~24 lite firms that
+    # still have no partners / sectors / stages AND have a real (non-
+    # social) website. Reads the firm's own /team /about pages and asks
+    # Vertex AI to extract structured data from the supplied text (no
+    # Google Search grounding). Same merge gate as the LLM pass.
+    if "website" in enricher_set:
+        enrich_websites(firms)
 
     output = {
         "generated_with_enrichers": sorted(enricher_set),

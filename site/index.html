@@ -15,7 +15,7 @@
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body x-data="vcApp" x-init="init()" :class="{ 'panel-open': selectedFirm }">
 
@@ -141,10 +141,53 @@
           <dl class="lite-meta">
             <div>
               <dt>AUM</dt>
-              <dd x-text="selectedFirm.aum_usd
-                ? '$' + formatShort(selectedFirm.aum_usd)
-                : 'Not reported in latest Form ADV'"></dd>
+              <dd>
+                <span x-text="selectedFirm.aum_usd
+                  ? '$' + formatShort(selectedFirm.aum_usd)
+                  : 'Not reported in latest Form ADV'"></span>
+                <small x-show="selectedFirm.aum_source" class="aum-src"
+                       x-text="selectedFirm.aum_source"></small>
+              </dd>
             </div>
+            <template x-if="(selectedFirm.firm_type_tags || []).length">
+              <div>
+                <dt>Fund types</dt>
+                <dd>
+                  <span class="tags">
+                    <template x-for="t in selectedFirm.firm_type_tags" :key="t">
+                      <span class="tag" x-text="t.toUpperCase().replace('_', ' ')"></span>
+                    </template>
+                  </span>
+                </dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.fund_count">
+              <div>
+                <dt>Private funds</dt>
+                <dd x-text="selectedFirm.fund_count + (selectedFirm.fund_count === 1 ? ' fund' : ' funds')"></dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.employee_count">
+              <div>
+                <dt>Employees</dt>
+                <dd x-text="selectedFirm.employee_count"></dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.website">
+              <div>
+                <dt>Website</dt>
+                <dd>
+                  <a :href="selectedFirm.website" target="_blank" rel="noopener"
+                     x-text="selectedFirm.website.replace(/^https?:\/\//, '').replace(/\/$/, '')"></a>
+                </dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.phone">
+              <div>
+                <dt>Phone</dt>
+                <dd x-text="selectedFirm.phone"></dd>
+              </div>
+            </template>
             <div>
               <dt>County</dt>
               <dd x-text="(selectedFirm.county || '—') + (selectedFirm.county ? ' County' : '')"></dd>
@@ -153,6 +196,42 @@
               <dt>SEC CRD</dt>
               <dd><span class="tag mono" x-text="selectedFirm.sec_crd || '—'"></span></dd>
             </div>
+            <template x-if="selectedFirm.latest_filing_date">
+              <div>
+                <dt>Last filed</dt>
+                <dd x-text="selectedFirm.latest_filing_date"></dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.form_d_total_filings">
+              <div>
+                <dt>Form D filings</dt>
+                <dd>
+                  <span x-text="selectedFirm.form_d_total_filings + (selectedFirm.form_d_total_filings === 1 ? ' filing' : ' filings')"></span>
+                  <small x-show="selectedFirm.form_d_latest_filing_date" class="aum-src"
+                         x-text="`latest close ${selectedFirm.form_d_latest_filing_date}`"></small>
+                </dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.founded">
+              <div>
+                <dt>Founded</dt>
+                <dd x-text="selectedFirm.founded"></dd>
+              </div>
+            </template>
+            <template x-if="(selectedFirm.wikipedia_key_people || []).length">
+              <div>
+                <dt>Key people (Wikipedia)</dt>
+                <dd x-text="selectedFirm.wikipedia_key_people.slice(0,6).join(', ')"></dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.wikipedia_url">
+              <div>
+                <dt>More</dt>
+                <dd>
+                  <a :href="selectedFirm.wikipedia_url" target="_blank" rel="noopener">Wikipedia article</a>
+                </dd>
+              </div>
+            </template>
           </dl>
         </template>
 
@@ -193,7 +272,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.stages || []).length">
           <div>
             <h3>Stages</h3>
             <div class="tags lg">
@@ -204,7 +283,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.sectors || []).length">
           <div>
             <h3>Sectors</h3>
             <div class="tags lg">
@@ -215,7 +294,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.partners || []).length">
           <div>
             <h3>Partners</h3>
             <ul class="partners">
@@ -234,7 +313,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.recent_portfolio_sample || []).length">
           <div>
             <h3>Public portfolio sample</h3>
             <ul class="deals">
@@ -248,11 +327,37 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.form_d_recent_filings || []).length">
+          <div>
+            <h3>Recent Form D filings</h3>
+            <ul class="form-d-list">
+              <template x-for="f in selectedFirm.form_d_recent_filings" :key="f.accession">
+                <li>
+                  <span class="form-d-date" x-text="f.file_date"></span>
+                  <a :href="`https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${f.cik}&type=D&dateb=&owner=include&count=40`"
+                     target="_blank" rel="noopener" x-text="f.filer_name"></a>
+                  <span class="form-d-form" x-text="f.form"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </template>
+
+        <template x-if="selectedFirm.notes">
           <div>
             <h3>Notes</h3>
             <p class="notes" x-text="selectedFirm.notes"></p>
           </div>
+        </template>
+
+        <template x-if="selectedFirm.tier === 'lite' && (selectedFirm.llm_enriched || selectedFirm.website_enriched)">
+          <p class="enrich-src">
+            Partner / sector data sourced via
+            <span x-text="selectedFirm.website_enriched ? 'firm website scrape' : 'web search'"></span>
+            <template x-if="selectedFirm.llm_confidence">
+              <span> · confidence <span x-text="selectedFirm.llm_confidence.toFixed(2)"></span></span>
+            </template>
+          </p>
         </template>
 
         <p class="caveat" x-show="selectedFirm.tier !== 'lite'">
@@ -270,6 +375,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
