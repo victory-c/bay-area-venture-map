@@ -202,6 +202,26 @@
                 <dd x-text="selectedFirm.latest_filing_date"></dd>
               </div>
             </template>
+            <template x-if="selectedFirm.founded">
+              <div>
+                <dt>Founded</dt>
+                <dd x-text="selectedFirm.founded"></dd>
+              </div>
+            </template>
+            <template x-if="(selectedFirm.wikipedia_key_people || []).length">
+              <div>
+                <dt>Key people (Wikipedia)</dt>
+                <dd x-text="selectedFirm.wikipedia_key_people.slice(0,6).join(', ')"></dd>
+              </div>
+            </template>
+            <template x-if="selectedFirm.wikipedia_url">
+              <div>
+                <dt>More</dt>
+                <dd>
+                  <a :href="selectedFirm.wikipedia_url" target="_blank" rel="noopener">Wikipedia article</a>
+                </dd>
+              </div>
+            </template>
           </dl>
         </template>
 

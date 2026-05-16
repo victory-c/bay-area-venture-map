@@ -1,6 +1,7 @@
 {
   "generated_with_enrichers": [
-    "sec_bulk"
+    "sec_bulk",
+    "wikipedia"
   ],
   "firm_count": 678,
   "firms": [
@@ -97,7 +98,15 @@
       "notes": "Permanent-capital structure since 2021. Long-hold thesis. Famously rigorous diligence.",
       "lat": 37.42175,
       "lng": -122.2014,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sequoia_Capital",
+      "wikipedia_key_people": [
+        "Don Valentine",
+        "Michael Moritz",
+        "Douglas Leone",
+        "Jim Goetz"
+      ],
+      "wikipedia_industry": "Financial services"
     },
     {
       "id": "kleiner-perkins",
@@ -181,7 +190,15 @@
       "notes": "Revitalized under Mamoon Hamid post-2017. Founder-friendly reorientation.",
       "lat": 37.422,
       "lng": -122.2017,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Kleiner_Perkins",
+      "wikipedia_key_people": [
+        "Eugene Kleiner",
+        "Thomas Perkins",
+        "Frank J. Caufield",
+        "Brook Byers"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "nea",
@@ -354,7 +371,13 @@
       "notes": "Heavy AI infra concentration since 2022. Early-stage focused.",
       "lat": 37.4214,
       "lng": -122.2029,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Greylock_Partners",
+      "wikipedia_key_people": [
+        "Bill Elfers",
+        "Dan Gregory"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "a16z",
@@ -534,7 +557,9 @@
       "notes": "Contrarian / 'science experiment' bets. Famously hands-on. OpenAI's first institutional check.",
       "lat": 37.4181,
       "lng": -122.201,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Khosla_Ventures",
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "lightspeed",
@@ -618,7 +643,14 @@
       "notes": "Global presence (US, India, China, Israel). Multi-stage.",
       "lat": 37.4189,
       "lng": -122.2024,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Lightspeed_Venture_Partners",
+      "wikipedia_key_people": [
+        "Barry Eggers",
+        "Christopher Schaepe",
+        "Peter Nieh",
+        "Bejul Somaia"
+      ]
     },
     {
       "id": "mayfield",
@@ -842,7 +874,9 @@
       "notes": "Two funds: early (Redpoint) and growth (Redpoint Omega).",
       "lat": 37.4228,
       "lng": -122.1998,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Redpoint_Ventures",
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "dcm",
@@ -907,7 +941,12 @@
       "notes": "US-Asia bridge fund (Tokyo, Beijing, Menlo).",
       "lat": 37.4204,
       "lng": -122.2028,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/DCM_Ventures",
+      "wikipedia_key_people": [
+        "Dixon Doll and David Chao"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "battery",
@@ -974,7 +1013,14 @@
       "notes": "Multistage, multi-strategy (VC + buyout).",
       "lat": 37.4224,
       "lng": -122.2002,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Battery_Ventures",
+      "wikipedia_key_people": [
+        "Rick Frisbie",
+        "Howard Anderson",
+        "Bob Barrett"
+      ],
+      "wikipedia_industry": "Private equity"
     },
     {
       "id": "threshold",
@@ -1166,7 +1212,14 @@
       "notes": "Originally on Sand Hill; now Middlefield. Early-stage.",
       "lat": 37.452,
       "lng": -122.1818,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Foundation_Capital",
+      "wikipedia_key_people": [
+        "Bill Elmore",
+        "Kathryn Gould",
+        "Jim Anderson"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "menlo",
@@ -1231,7 +1284,9 @@
       "notes": "Anthropic backer. Multi-stage.",
       "lat": 37.452,
       "lng": -122.1818,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Menlo_Ventures",
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "norwest",
@@ -1296,7 +1351,12 @@
       "notes": "Wells Fargo-backed evergreen capital. Multi-stage.",
       "lat": 37.4475,
       "lng": -122.1644,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Norwest_Venture_Partners",
+      "wikipedia_key_people": [
+        "Jon Kossow"
+      ],
+      "wikipedia_industry": "Venture Capital + Growth Equity"
     },
     {
       "id": "bessemer",
@@ -1379,7 +1439,9 @@
       "notes": "Famous 'Anti-Portfolio' (deals they passed on). Cloud index thesis.",
       "lat": 37.4435,
       "lng": -122.1914,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Bessemer_Venture_Partners",
+      "wikipedia_industry": "Investment management"
     },
     {
       "id": "versant",
@@ -1438,7 +1500,9 @@
       "notes": "Life sciences only. Company-creation model.",
       "lat": 37.7905,
       "lng": -122.4017,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Versant_Ventures",
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "tcv",
@@ -1837,7 +1901,9 @@
       "notes": "Pre-seed/seed only. Stanford/MIT entrepreneur network. PearX accelerator.",
       "lat": 37.4178,
       "lng": -122.1556,
-      "tier": "rich"
+      "tier": "rich",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pear_VC",
+      "wikipedia_industry": "Financial, Venture Capital, startup accelerator"
     },
     {
       "id": "sec-301237",
@@ -2546,7 +2612,15 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/AKO_Capital",
+      "founded": 2005,
+      "wikipedia_key_people": [
+        "Nicolai Tangen",
+        "Gorm Thomassen",
+        "Patrick Hargreaves"
+      ],
+      "wikipedia_industry": "Investment management"
     },
     {
       "id": "sec-341123",
@@ -2859,7 +2933,17 @@
       "stages": [],
       "sectors": [],
       "lat": 37.3838,
-      "lng": -122.2353
+      "lng": -122.2353,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Almaz_Capital",
+      "founded": 2008,
+      "wikipedia_key_people": [
+        "Managing Partner: Alexander Galitsky",
+        "General Partners: Geoffrey Baehr",
+        "Pavel Bogdanov",
+        "Charles E. Ryan",
+        "Aniruddha Nazar\u00e9"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-163299",
@@ -5335,7 +5419,14 @@
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/CircleUp",
+      "founded": 2011,
+      "wikipedia_key_people": [
+        "Ryan Caldbeck",
+        "Rory Eakin"
+      ],
+      "wikipedia_industry": "Financial technology"
     },
     {
       "id": "sec-314911",
@@ -5939,7 +6030,14 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/DAG_Ventures",
+      "founded": 2004,
+      "wikipedia_key_people": [
+        "Tom Goodrich",
+        "John Cadeddu"
+      ],
+      "wikipedia_industry": "Private equity"
     },
     {
       "id": "sec-170108",
@@ -6409,7 +6507,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/DCM_Ventures",
+      "founded": 1996,
+      "wikipedia_key_people": [
+        "Dixon Doll and David Chao"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-301664",
@@ -6435,7 +6539,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/DCM_Ventures",
+      "founded": 1996,
+      "wikipedia_key_people": [
+        "Dixon Doll and David Chao"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-333872",
@@ -6461,7 +6571,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/DCM_Ventures",
+      "founded": 1996,
+      "wikipedia_key_people": [
+        "Dixon Doll and David Chao"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-333875",
@@ -6487,7 +6603,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/DCM_Ventures",
+      "founded": 1996,
+      "wikipedia_key_people": [
+        "Dixon Doll and David Chao"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-336680",
@@ -6513,7 +6635,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/DCM_Ventures",
+      "founded": 1996,
+      "wikipedia_key_people": [
+        "Dixon Doll and David Chao"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-313971",
@@ -6646,7 +6774,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Draper_Fisher_Jurvetson",
+      "founded": 1985,
+      "wikipedia_key_people": [
+        "Tim Draper"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-289448",
@@ -7461,7 +7595,15 @@
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Flint_Capital",
+      "founded": 2013,
+      "wikipedia_key_people": [
+        "Dmitry Smirnov",
+        "Sergey Gribov",
+        "Andrew Gershfeld"
+      ],
+      "wikipedia_industry": "venture capital"
     },
     {
       "id": "sec-171737",
@@ -7670,7 +7812,14 @@
       "stages": [],
       "sectors": [],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Floodgate_Fund",
+      "founded": 2010,
+      "wikipedia_key_people": [
+        "Mike Maples Jr.",
+        "Ann Miura-Ko"
+      ],
+      "wikipedia_industry": "Finance"
     },
     {
       "id": "sec-315000",
@@ -11356,7 +11505,16 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Meritech_Capital_Partners",
+      "founded": 1999,
+      "wikipedia_key_people": [
+        "Mike Gordon",
+        "Paul Madera",
+        "Rob Ward",
+        "Craig Sherman"
+      ],
+      "wikipedia_industry": "Late-Stage Venture Firm"
     },
     {
       "id": "sec-340399",
@@ -13129,7 +13287,12 @@
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pantera_Capital",
+      "founded": 2003,
+      "wikipedia_key_people": [
+        "Dan Morehead"
+      ]
     },
     {
       "id": "sec-310746",
@@ -13496,7 +13659,17 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Playground_Global",
+      "founded": 2015,
+      "wikipedia_key_people": [
+        "Peter Barrett",
+        "Matt Hershenson",
+        "Bruce Leak",
+        "Jory Bell",
+        "Laurie Yoler"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-321635",
@@ -14466,7 +14639,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ribbit_Capital",
+      "founded": 2012,
+      "wikipedia_key_people": [
+        "Micky Malka"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-162304",
@@ -14804,7 +14983,10 @@
       "stages": [],
       "sectors": [],
       "lat": 37.5585,
-      "lng": -122.2711
+      "lng": -122.2711,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Scale_Venture_Partners",
+      "founded": 2000,
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-315808",
@@ -15430,7 +15612,15 @@
       "stages": [],
       "sectors": [],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Social_Capital_(venture_capital_firm)",
+      "founded": 2011,
+      "wikipedia_key_people": [
+        "Chamath Palihapitiya",
+        "Mamoon Hamid",
+        "Ted Maidenberg"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-160297",
@@ -16189,7 +16379,14 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sutter_Hill_Ventures",
+      "founded": 1964,
+      "wikipedia_key_people": [
+        "Paul M. Wythes",
+        "Bill Draper"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-162285",
@@ -16580,7 +16777,10 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Tenaya_Capital",
+      "founded": 1995,
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-333189",
@@ -17154,7 +17354,15 @@
       "stages": [],
       "sectors": [],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Tribe_Capital",
+      "founded": 2018,
+      "wikipedia_key_people": [
+        "Arjun Sethi",
+        "Jonathan Hsu",
+        "Ted Maidenberg"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-160095",
@@ -17443,7 +17651,16 @@
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Uncork_Capital",
+      "founded": 2004,
+      "wikipedia_key_people": [
+        "Jeff Clavier",
+        "Founder and Managing Partner",
+        "Andy McLoughlin",
+        "Managing Partner"
+      ],
+      "wikipedia_industry": "Venture Capital"
     },
     {
       "id": "sec-312102",
@@ -17495,7 +17712,13 @@
       "stages": [],
       "sectors": [],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Unusual_Ventures",
+      "founded": 2018,
+      "wikipedia_key_people": [
+        "John Vrionis and Jyoti Bansal"
+      ],
+      "wikipedia_industry": "Financial"
     },
     {
       "id": "sec-174730",
@@ -18174,7 +18397,14 @@
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Walden_International",
+      "founded": 1987,
+      "wikipedia_key_people": [
+        "Lip-Bu Tan",
+        "Peter Liu"
+      ],
+      "wikipedia_industry": "Venture capital"
     },
     {
       "id": "sec-299004",
@@ -18305,7 +18535,15 @@
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Wefunder",
+      "founded": 2011,
+      "wikipedia_key_people": [
+        "Nick Tommarello",
+        "Mike Norman",
+        "Greg Belote"
+      ],
+      "wikipedia_industry": "Crowdfunding"
     },
     {
       "id": "sec-300828",
@@ -18698,7 +18936,19 @@
       "stages": [],
       "sectors": [],
       "lat": 37.3861,
-      "lng": -122.0839
+      "lng": -122.0839,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Y_Combinator",
+      "founded": 2005,
+      "wikipedia_key_people": [
+        "Paul Graham",
+        "Jessica Livingston",
+        "Robert Tappan Morris",
+        "Trevor Blackwell",
+        "Garry Tan",
+        "Jared Friedman",
+        "Harj Taggar"
+      ],
+      "wikipedia_industry": "Startup accelerator"
     },
     {
       "id": "sec-298042",

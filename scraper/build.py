@@ -25,6 +25,7 @@ import yaml
 from scraper.edgar import IapdClient
 from scraper.geocode import Geocoder
 from scraper.sec_bulk import fetch_bay_area_vc_firms
+from scraper.wikipedia import WikipediaClient
 
 log = logging.getLogger(__name__)
 
@@ -35,7 +36,7 @@ SITE_OUT_PATH = REPO_ROOT / "site" / "firms.json"
 GEOCODE_CACHE = REPO_ROOT / "data" / ".geocode-cache.json"
 SEC_BULK_CACHE = REPO_ROOT / "data" / ".sec-bulk-cache.csv"
 
-VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk"}
+VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia"}
 
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
@@ -173,6 +174,47 @@ def enrich_edgar(firms: list[dict]) -> None:
         iapd.close()
 
 
+def enrich_wikipedia(firms: list[dict]) -> None:
+    """Pull founded/founders/key_people/AUM from Wikipedia infoboxes when an
+    article exists. Purely additive — never overwrites a non-null seed value.
+
+    Adds two new fields on a hit: ``wikipedia_url`` and ``wikipedia_key_people``
+    (founders + key people, deduped against existing partners). Backfills
+    ``founded`` and ``aum_usd`` only when they are currently missing.
+    Coverage is typically 10-25% of firms — only well-known shops have articles.
+    """
+    client = WikipediaClient()
+    try:
+        hits = 0
+        for firm in firms:
+            info = client.lookup(firm["name"])
+            if info is None:
+                continue
+            hits += 1
+            firm["wikipedia_url"] = info.url
+            if firm.get("founded") is None and info.founded:
+                firm["founded"] = info.founded
+            if not firm.get("aum_usd") and info.aum_usd:
+                firm["aum_usd"] = info.aum_usd
+                firm["aum_source"] = f"Wikipedia ({info.title})"
+            wiki_people: list[str] = []
+            seen = {
+                p["name"].lower()
+                for p in firm.get("partners", []) or []
+                if isinstance(p, dict) and "name" in p
+            }
+            for name in info.founders + info.key_people:
+                if name.lower() not in seen:
+                    seen.add(name.lower()); wiki_people.append(name)
+            if wiki_people:
+                firm["wikipedia_key_people"] = wiki_people
+            if info.industry and not firm.get("wikipedia_industry"):
+                firm["wikipedia_industry"] = info.industry
+        log.info("Wikipedia: matched %d / %d firms", hits, len(firms))
+    finally:
+        client.close()
+
+
 def enrich_sec_bulk(seed_firms: list[dict], use_nominatim: bool = False) -> list[dict]:
     """Fetch the SEC bulk Form ADV scrape and merge with the seed firms.
 
@@ -217,6 +259,10 @@ def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
         # If the user also asked for geocode, we already ran it on seed
         # firms above; flip use_nominatim so scraped firms are geocoded too.
         firms = enrich_sec_bulk(firms, use_nominatim="geocode" in enricher_set)
+    # Wikipedia runs last so it sees the merged seed+scraped list and can
+    # backfill founded/AUM for firms that came in via the bulk scrape.
+    if "wikipedia" in enricher_set:
+        enrich_wikipedia(firms)
 
     output = {
         "generated_with_enrichers": sorted(enricher_set),
