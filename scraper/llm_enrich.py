@@ -1,25 +1,27 @@
-"""LLM-assisted enrichment via Gemini 2.5 Flash with native Google Search.
+"""LLM-assisted enrichment via Gemini 2.5 Flash on Vertex AI with Google Search.
 
 For each lite firm without a hand-curated profile (no seed YAML entry), call
-``gemini-2.5-flash`` with the ``google_search`` tool to research the firm
-on the live web and return a JSON profile: website, founded year, stages,
-sectors, partners (max 6), recent investments (max 5), 1-2 sentence notes,
-and a self-assessed confidence score (0.0-1.0).
+``gemini-2.5-flash`` via the Vertex AI endpoint with the ``googleSearch``
+tool to research the firm on the live web and return a JSON profile: website,
+founded year, stages, sectors, partners (max 6), recent investments (max 5),
+1-2 sentence notes, and a self-assessed confidence score (0.0-1.0).
 
-Why Gemini
-----------
-Gemini is the only platform we found where native web-search grounding is
-free *and* the daily quota on the free tier (~500-1500 req/day for 2.5
-Flash) is high enough to cover the 653-firm Bay Area set in 1-2 days. The
-Perplexity Sonar models offer comparable grounding but cost money per
-token; OpenRouter's free models don't have web search at all.
+Auth
+----
+Uses Application Default Credentials (ADC) via ``gcloud``. Set up once:
 
-API quirk: Gemini does not allow combining the ``google_search`` tool
-with ``responseMimeType: "application/json"`` — see
-https://ai.google.dev/api/generate-content#FunctionCalling. We work
-around this by asking for JSON in the prompt and parsing the response
-ourselves, with a regex fallback for cases where the model wraps the
-JSON in ``\`\`\`json ... \`\`\``` fences.
+    gcloud auth application-default login
+    gcloud auth application-default set-quota-project PROJECT_NUMBER
+
+Tokens auto-refresh when they expire (~1 hour).  Falls back to API-key
+auth against the AI Studio endpoint if ``GEMINI_API_KEY`` is set (useful
+for testing on the free tier).
+
+API quirk: Gemini does not allow combining the ``googleSearch`` tool
+with ``responseMimeType: "application/json"``. We work around this by
+asking for JSON in the prompt and parsing the response ourselves, with
+a regex fallback for cases where the model wraps the JSON in
+triple-backtick fences.
 
 Cache
 -----
@@ -29,8 +31,8 @@ so re-runs are free and we can audit which firms got fresh data.
 
 Throttling
 ----------
-Default: 6.5s between calls (well under 10 req/min free-tier cap). Override
-with the ``GEMINI_MIN_INTERVAL`` env var if you have a paid quota.
+Default: 2s between calls on the paid Vertex AI tier (~30 RPM).
+Override with the ``GEMINI_MIN_INTERVAL`` env var.
 """
 
 from __future__ import annotations
@@ -40,6 +42,7 @@ import logging
 import os
 import pathlib
 import re
+import subprocess
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -49,16 +52,30 @@ import httpx
 
 log = logging.getLogger(__name__)
 
-GEMINI_URL = (
+# ---------------------------------------------------------------------------
+# Vertex AI endpoint (primary) — bills to GCP project.
+# Falls back to AI Studio endpoint if GEMINI_API_KEY is set.
+# ---------------------------------------------------------------------------
+VERTEX_URL = (
+    "https://{region}-aiplatform.googleapis.com/v1/projects/{project}"
+    "/locations/{region}/publishers/google/models/{model}:generateContent"
+)
+AI_STUDIO_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "{model}:generateContent?key={key}"
 )
 DEFAULT_MODEL = "gemini-2.5-flash"
+DEFAULT_REGION = os.environ.get("GEMINI_REGION", "us-central1")
+DEFAULT_PROJECT = os.environ.get("GCP_PROJECT", "889202875087")
 DEFAULT_CACHE = pathlib.Path("data/.llm-enrich-cache.json")
 CACHE_VERSION = 1
 
-# Throttle: 10 RPM on free tier == 6s. Pad to 6.5s to leave headroom.
-DEFAULT_MIN_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL", "6.5"))
+# Throttle: Vertex AI paid tier supports ~360 RPM for Flash.  2s/call is
+# conservative (~30 RPM) and avoids bursting the grounding-search quota.
+DEFAULT_MIN_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL", "2.0"))
+
+# On 429, sleep this long and retry once before giving up on a firm.
+QUOTA_BACKOFF_SECONDS = 30.0
 
 # Allowed taxonomy values — mirror site/app.js STAGE_LABELS / SECTOR_LABELS
 # so the LLM doesn't invent tags the frontend can't render.
@@ -132,8 +149,10 @@ class EnrichmentResult:
 # ---------------------------------------------------------------------------
 # Response parsing
 # ---------------------------------------------------------------------------
-_JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL)
-_JSON_OBJECT_RE = re.compile(r"\{.*\}", re.DOTALL)
+# Greedy fence match — non-greedy `\{.*?\}` would stop at the first nested `}`
+# (e.g. inside a partner entry) and break parsing for any non-flat JSON.
+# Greedy is fine here because we anchor on the closing ``` fence.
+_JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
 
 def _extract_json(text: str) -> Optional[dict]:
@@ -143,10 +162,25 @@ def _extract_json(text: str) -> Optional[dict]:
     m = _JSON_FENCE_RE.search(text)
     candidate = m.group(1) if m else None
     if candidate is None:
-        m = _JSON_OBJECT_RE.search(text)
-        candidate = m.group(0) if m else None
-    if candidate is None:
-        return None
+        # No fence — find the first balanced {...} block via brace counting,
+        # since regex alone can't handle nested objects reliably.
+        start = text.find("{")
+        if start == -1:
+            return None
+        depth = 0
+        end = -1
+        for i in range(start, len(text)):
+            ch = text[i]
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    end = i + 1
+                    break
+        if end == -1:
+            return None
+        candidate = text[start:end]
     try:
         return json.loads(candidate)
     except json.JSONDecodeError:
@@ -268,6 +302,31 @@ def _grounding_sources(candidate: dict) -> list[str]:
 
 
 # ---------------------------------------------------------------------------
+# OAuth token management (Vertex AI)
+# ---------------------------------------------------------------------------
+def _get_access_token() -> str:
+    """Get an OAuth access token via gcloud ADC. Raises RuntimeError on failure."""
+    try:
+        result = subprocess.run(
+            ["gcloud", "auth", "application-default", "print-access-token"],
+            capture_output=True, text=True, timeout=10,
+        )
+        if result.returncode != 0:
+            raise RuntimeError(
+                f"gcloud auth failed (exit {result.returncode}): {result.stderr.strip()}"
+            )
+        token = result.stdout.strip()
+        if not token:
+            raise RuntimeError("gcloud returned empty access token")
+        return token
+    except FileNotFoundError:
+        raise RuntimeError(
+            "gcloud CLI not found. Install: brew install google-cloud-sdk\n"
+            "Then: gcloud auth application-default login"
+        )
+
+
+# ---------------------------------------------------------------------------
 # Client
 # ---------------------------------------------------------------------------
 class GeminiEnricher:
@@ -275,16 +334,25 @@ class GeminiEnricher:
         self,
         api_key: Optional[str] = None,
         model: str = DEFAULT_MODEL,
+        project: str = DEFAULT_PROJECT,
+        region: str = DEFAULT_REGION,
         client: Optional[httpx.Client] = None,
         cache_path: Optional[pathlib.Path] = None,
         min_interval: float = DEFAULT_MIN_INTERVAL,
     ) -> None:
         self._api_key = api_key or os.environ.get("GEMINI_API_KEY")
-        if not self._api_key:
-            raise RuntimeError(
-                "GEMINI_API_KEY env var not set. Get a key from "
-                "https://aistudio.google.com/apikey and export it."
-            )
+        self._project = project
+        self._region = region
+        self._use_vertex = not self._api_key  # Vertex AI when no API key
+        if self._use_vertex:
+            # Verify gcloud works before starting the long run.
+            self._access_token = _get_access_token()
+            self._token_fetched_at = time.monotonic()
+            log.info("Using Vertex AI endpoint (project=%s, region=%s)", project, region)
+        else:
+            self._access_token = ""
+            self._token_fetched_at = 0.0
+            log.info("Using AI Studio endpoint (API key)")
         self._model = model
         self._client = client or httpx.Client(timeout=120.0)
         self._cache_path = cache_path or DEFAULT_CACHE
@@ -327,11 +395,41 @@ class GeminiEnricher:
             stages=list(STAGES),
             sectors=list(SECTORS),
         )
+        # Vertex AI requires "role" in contents; AI Studio accepts it too.
+        # Vertex AI uses camelCase "googleSearch"; AI Studio uses "google_search".
+        tool_key = "googleSearch" if self._use_vertex else "google_search"
         return {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "tools": [{"google_search": {}}],
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "tools": [{tool_key: {}}],
             "generationConfig": {"temperature": 0.2},
         }
+
+    def _refresh_token_if_needed(self) -> None:
+        """Refresh the OAuth token if it's older than 45 minutes."""
+        if not self._use_vertex:
+            return
+        age = time.monotonic() - self._token_fetched_at
+        if age > 2700:  # 45 min (tokens expire at 60 min)
+            log.info("Refreshing OAuth token (age=%.0fs)", age)
+            self._access_token = _get_access_token()
+            self._token_fetched_at = time.monotonic()
+
+    def _get_url(self) -> str:
+        if self._use_vertex:
+            return VERTEX_URL.format(
+                region=self._region,
+                project=self._project,
+                model=self._model,
+            )
+        return AI_STUDIO_URL.format(model=self._model, key=self._api_key)
+
+    def _get_headers(self) -> dict[str, str]:
+        if self._use_vertex:
+            return {
+                "Authorization": f"Bearer {self._access_token}",
+                "Content-Type": "application/json",
+            }
+        return {"Content-Type": "application/json"}
 
     def enrich(self, firm: dict, *, force: bool = False) -> Optional[EnrichmentResult]:
         """Return EnrichmentResult or None. Reads/writes the cache."""
@@ -342,17 +440,29 @@ class GeminiEnricher:
             cached = self._cache[firm_id]
             return EnrichmentResult(**cached)
 
-        self._throttle()
-        url = GEMINI_URL.format(model=self._model, key=self._api_key)
-        try:
-            resp = self._client.post(url, json=self._build_body(firm))
-        except httpx.HTTPError as e:
-            log.warning("Gemini request failed for %s: %s", firm_id, e)
-            return None
-        if resp.status_code == 429:
-            # Free-tier daily quota or per-minute burst exhausted. Surface
-            # so the caller can decide whether to wait or abort the run.
-            raise QuotaExceeded(f"429 from Gemini for {firm_id}: {resp.text[:200]}")
+        self._refresh_token_if_needed()
+        url = self._get_url()
+        body = self._build_body(firm)
+        # One implicit retry: a 429 often clears in <30s on the paid tier
+        # once the rolling window slides. Beyond that we re-raise
+        # QuotaExceeded so the caller can stop the run.
+        for attempt in (1, 2):
+            self._throttle()
+            try:
+                resp = self._client.post(url, json=body, headers=self._get_headers())
+            except httpx.HTTPError as e:
+                log.warning("Gemini request failed for %s: %s", firm_id, e)
+                return None
+            if resp.status_code != 429:
+                break
+            if attempt == 1:
+                log.info(
+                    "429 from Gemini for %s; waiting %.0fs then retrying once",
+                    firm_id, QUOTA_BACKOFF_SECONDS,
+                )
+                time.sleep(QUOTA_BACKOFF_SECONDS)
+                continue
+            raise QuotaExceeded(f"429 persists for {firm_id}: {resp.text[:200]}")
         if resp.status_code != 200:
             log.warning(
                 "Gemini %s for %s: %s", resp.status_code, firm_id, resp.text[:300]
