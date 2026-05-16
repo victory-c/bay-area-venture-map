@@ -24,6 +24,7 @@ import yaml
 
 from scraper.edgar import IapdClient
 from scraper.geocode import Geocoder
+from scraper.llm_enrich import GeminiEnricher, QuotaExceeded, merge_into_firm
 from scraper.sec_bulk import fetch_bay_area_vc_firms
 from scraper.wikipedia import WikipediaClient
 
@@ -36,7 +37,7 @@ SITE_OUT_PATH = REPO_ROOT / "site" / "firms.json"
 GEOCODE_CACHE = REPO_ROOT / "data" / ".geocode-cache.json"
 SEC_BULK_CACHE = REPO_ROOT / "data" / ".sec-bulk-cache.csv"
 
-VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia"}
+VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia", "llm"}
 
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
@@ -215,6 +216,62 @@ def enrich_wikipedia(firms: list[dict]) -> None:
         client.close()
 
 
+def enrich_llm(firms: list[dict]) -> None:
+    """Fill missing partners/stages/sectors/recent_investments via Gemini
+    2.5 Flash with native Google Search. Only touches lite firms — rich
+    firms are seed-curated and we trust those over any model output.
+
+    Resumable: every successful query is cached, so if you stop the run
+    (Ctrl-C or quota exhausted), re-running picks up exactly where it left
+    off. Cache lives at ``data/.llm-enrich-cache.json``.
+
+    Gates: only enriches firms missing partners/stages/sectors AND with a
+    fund_count > 0 (skip obvious shell entities). Quota-exceeded errors
+    are surfaced cleanly so the user knows to retry tomorrow.
+    """
+    enricher = GeminiEnricher()
+    try:
+        candidates = [
+            f for f in firms
+            if f.get("tier") == "lite"
+            and not (f.get("partners") or f.get("stages") or f.get("sectors"))
+            and (f.get("fund_count") or 0) > 0
+        ]
+        log.info(
+            "LLM enrich: %d candidate firms (skipping %d rich + %d already-enriched)",
+            len(candidates),
+            sum(1 for f in firms if f.get("tier") == "rich"),
+            len(firms) - len(candidates) - sum(1 for f in firms if f.get("tier") == "rich"),
+        )
+        merged = 0
+        skipped_low_conf = 0
+        for i, firm in enumerate(candidates, 1):
+            try:
+                info = enricher.enrich(firm)
+            except QuotaExceeded as e:
+                log.warning(
+                    "Stopped at firm %d/%d — %s. Re-run later to resume.",
+                    i, len(candidates), e,
+                )
+                break
+            if info is None:
+                continue
+            if merge_into_firm(firm, info):
+                merged += 1
+            else:
+                skipped_low_conf += 1
+            if i % 25 == 0:
+                log.info("LLM enrich: %d/%d done, %d merged, %d low-conf",
+                         i, len(candidates), merged, skipped_low_conf)
+        log.info(
+            "LLM enrich: %d firms got LLM-sourced data; %d firms returned with confidence < %.2f",
+            merged, skipped_low_conf,
+            __import__("scraper.llm_enrich", fromlist=["MIN_CONFIDENCE_TO_MERGE"]).MIN_CONFIDENCE_TO_MERGE,
+        )
+    finally:
+        enricher.close()
+
+
 def enrich_sec_bulk(seed_firms: list[dict], use_nominatim: bool = False) -> list[dict]:
     """Fetch the SEC bulk Form ADV scrape and merge with the seed firms.
 
@@ -259,10 +316,15 @@ def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
         # If the user also asked for geocode, we already ran it on seed
         # firms above; flip use_nominatim so scraped firms are geocoded too.
         firms = enrich_sec_bulk(firms, use_nominatim="geocode" in enricher_set)
-    # Wikipedia runs last so it sees the merged seed+scraped list and can
-    # backfill founded/AUM for firms that came in via the bulk scrape.
+    # Wikipedia runs after SEC bulk so it sees the merged seed+scraped list
+    # and can backfill founded/AUM for firms that came in via the bulk scrape.
     if "wikipedia" in enricher_set:
         enrich_wikipedia(firms)
+    # LLM runs LAST so it only fills gaps the earlier (free, reliable) sources
+    # couldn't. Rich firms (seed YAML) are skipped — they already have
+    # hand-curated data we trust more than any model output.
+    if "llm" in enricher_set:
+        enrich_llm(firms)
 
     output = {
         "generated_with_enrichers": sorted(enricher_set),
