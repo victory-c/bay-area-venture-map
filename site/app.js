@@ -59,6 +59,18 @@ document.addEventListener("alpine:init", () => {
       this.initSplitters();
       const resp = await fetch("firms.json");
       const data = await resp.json();
+      // Stamp a lowercase search string on each firm once, so the visibleFirms
+      // filter is a single .includes() call instead of rebuilding + lowercasing
+      // an array of strings for every firm on every keystroke.
+      data.firms.forEach((f) => {
+        f._hay = [
+          f.name,
+          f.notes,
+          ...(f.sectors || []).map((s) => SECTOR_LABELS[s] || s),
+          ...(f.partners || []).map((p) => p.name),
+          ...(f.recent_portfolio_sample || []).map((d) => d.company),
+        ].filter(Boolean).join(" ").toLowerCase();
+      });
       this.firms = data.firms;
       this.renderMap();
       // Re-render markers whenever the visible set changes
@@ -151,7 +163,7 @@ document.addEventListener("alpine:init", () => {
 
     get allStages() {
       const seen = new Set();
-      this.firms.forEach((f) => f.stages.forEach((s) => seen.add(s)));
+      this.firms.forEach((f) => (f.stages || []).forEach((s) => seen.add(s)));
       return Array.from(seen).sort((a, b) =>
         Object.keys(STAGE_LABELS).indexOf(a) - Object.keys(STAGE_LABELS).indexOf(b),
       );
@@ -159,7 +171,7 @@ document.addEventListener("alpine:init", () => {
 
     get allSectors() {
       const counts = new Map();
-      this.firms.forEach((f) => f.sectors.forEach((s) => counts.set(s, (counts.get(s) || 0) + 1)));
+      this.firms.forEach((f) => (f.sectors || []).forEach((s) => counts.set(s, (counts.get(s) || 0) + 1)));
       return Array.from(counts.entries())
         .sort((a, b) => b[1] - a[1])
         .map(([s]) => s);
@@ -178,23 +190,14 @@ document.addEventListener("alpine:init", () => {
       // At the default extent we keep them visible.
       const aumNarrowed = aumMin > 0 || aumMax < 100_000_000_000;
       let firms = this.firms.filter((f) => {
-        if (stageF.size && !f.stages.some((s) => stageF.has(s))) return false;
-        if (sectorF.size && !f.sectors.some((s) => sectorF.has(s))) return false;
+        if (stageF.size && !(f.stages || []).some((s) => stageF.has(s))) return false;
+        if (sectorF.size && !(f.sectors || []).some((s) => sectorF.has(s))) return false;
         if (f.aum_usd == null) {
           if (aumNarrowed) return false;
         } else if (f.aum_usd < aumMin || f.aum_usd > aumMax) {
           return false;
         }
-        if (q) {
-          const hay = [
-            f.name,
-            f.notes,
-            ...(f.sectors || []).map((s) => SECTOR_LABELS[s] || s),
-            ...(f.partners || []).map((p) => p.name),
-            ...(f.recent_portfolio_sample || []).map((d) => d.company),
-          ].join(" ").toLowerCase();
-          if (!hay.includes(q)) return false;
-        }
+        if (q && !(f._hay || "").includes(q)) return false;
         return true;
       });
 
@@ -327,8 +330,10 @@ document.addEventListener("alpine:init", () => {
     },
 
     downloadJson() {
+      // Strip the internal _hay search index before exporting.
+      const cleanFirms = this.firms.map(({ _hay, ...rest }) => rest);
       const blob = new Blob(
-        [JSON.stringify({ firm_count: this.firms.length, firms: this.firms }, null, 2)],
+        [JSON.stringify({ firm_count: cleanFirms.length, firms: cleanFirms }, null, 2)],
         { type: "application/json" },
       );
       const url = URL.createObjectURL(blob);
