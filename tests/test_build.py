@@ -107,6 +107,83 @@ def test_sec_bulk_filters_to_bay_area_cities(tmp_path) -> None:
     assert all(f["sectors"] == [] for f in firms)
 
 
+def test_sec_bulk_emits_enrichment_fields(tmp_path) -> None:
+    """Each lite firm carries the Form ADV signal columns we ingest from the
+    monthly CSV: website, phone, fund count, firm-type tags, and the AUM
+    fallback priority (regulatory AUM > private-fund gross assets)."""
+    cache = tmp_path / "fixture.csv"
+    _write_fixture_cache(
+        cache,
+        [
+            # Registered IA with full reporting — uses 5F(2)(c).
+            {
+                "crd": "100", "name": "Big Fund, LP",
+                "addr1": "1 Sand Hill", "city": "MENLO PARK",
+                "state": "CA", "postal": "94025",
+                "firm_type": "Registered IA", "any_vc": "Y", "any_pe": "Y",
+                "num_vc": "3", "num_pe": "1", "fund_count": "4",
+                "aum_raw": "5000000000",
+                "aum_pf_raw": "4500000000",
+                "website": "bigfund.com",
+                "phone": "+1 650-555-0100",
+                "latest_filing": "2025-04-15",
+                "employees": "42",
+            },
+            # ERA with only Schedule D AUM — falls back to aum_pf_raw.
+            {
+                "crd": "200", "name": "Era Capital, LLC",
+                "addr1": "100 Market St", "city": "SAN FRANCISCO",
+                "state": "CA", "postal": "94105",
+                "firm_type": "Exempt Reporting Adviser", "any_vc": "Y",
+                "num_vc": "2", "fund_count": "2",
+                "aum_raw": "",
+                "aum_pf_raw": "350000000",
+                "website": "https://era.vc",
+                "phone": "(415) 555-0200",
+                "latest_filing": "2025-03-01",
+            },
+            # Bare-minimum row — every enrichment field blank/null.
+            {
+                "crd": "300", "name": "Quiet Fund, LP",
+                "addr1": "50 California St", "city": "SAN FRANCISCO",
+                "state": "CA", "postal": "94111",
+                "firm_type": "Exempt Reporting Adviser", "any_vc": "Y",
+            },
+        ],
+    )
+    firms = {f["sec_crd"]: f for f in fetch_bay_area_vc_firms(cache_path=cache)}
+
+    big = firms["100"]
+    assert big["aum_usd"] == 5_000_000_000
+    assert big["aum_source"].startswith("SEC Form ADV Item 5.F(2)(c)")
+    assert "filed 2025-04-15" in big["aum_source"]
+    assert big["aum_as_of"] == "2025-04-15"
+    assert big["website"] == "https://bigfund.com"
+    assert big["phone"] == "+1 650-555-0100"
+    assert big["fund_count"] == 4
+    assert big["vc_fund_count"] == 3
+    assert big["pe_fund_count"] == 1
+    assert big["employee_count"] == 42
+    assert big["firm_type_tags"] == ["vc", "pe"]
+    assert big["latest_filing_date"] == "2025-04-15"
+
+    era = firms["200"]
+    assert era["aum_usd"] == 350_000_000
+    assert era["aum_source"].startswith("SEC Form ADV Schedule D 7.B(1)")
+    assert era["website"] == "https://era.vc"  # already had scheme; preserved
+    assert era["fund_count"] == 2
+    assert era["firm_type_tags"] == ["vc"]
+    assert era["employee_count"] is None  # 5A only populated for registered IAs
+
+    quiet = firms["300"]
+    assert quiet["aum_usd"] is None
+    assert quiet["aum_source"] is None
+    assert quiet["website"] is None
+    assert quiet["phone"] is None
+    assert quiet["fund_count"] is None
+    assert quiet["firm_type_tags"] == ["vc"]
+
+
 def test_merge_dedups_by_crd() -> None:
     seed = [
         {"id": "sequoia", "name": "Sequoia Capital", "sec_crd": "157518", "tier": "rich"},

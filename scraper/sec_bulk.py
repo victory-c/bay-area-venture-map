@@ -23,10 +23,22 @@ including:
   - "Primary Business Name"                 (DBA)
   - "Main Office Street Address 1/2"
   - "Main Office City" / "...State" / "...Postal Code"
-  - "Any VC Funds"                          ('Y' if Schedule D 7.B.1 has a
-                                             "Venture Capital Fund" entry)
+  - "Main Office Telephone Number"
+  - "Website Address"                       (firm's primary URL)
+  - "Latest ADV Filing Date"
+  - "Any VC Funds" / "Any PE Funds" /       ('Y' if Schedule D 7.B.1 has a
+    "Any Hedge Funds" / ...                  fund of that type)
+  - "Total number of VC funds" / ...        (per-firm fund counts by type)
+  - "Count of Private Funds - 7B(1)"        (total fund count, all types)
   - "5F(2)(c)"                              (total regulatory AUM, IA file
                                              only — ERAs do not report it)
+  - "Total Gross Assets of Private Funds"   (sum of Schedule D 7.B(1) per-fund
+                                             gross asset values, pre-aggregated
+                                             by SEC; populated for both IAs and
+                                             ERAs — our AUM fallback for ERAs,
+                                             which lifts AUM coverage from ~12%
+                                             of Bay Area VCs to ~99%)
+  - "5A"                                    (employee count, IA file only)
 
 Filtering logic
 ---------------
@@ -40,9 +52,12 @@ Path A (this module):
 
 Cache semantics
 ---------------
-The default cache path is ``data/.sec-bulk-cache.csv``. To reduce SEC load,
+The default cache path is ``data/.sec-bulk-cache-v2.csv``. To reduce SEC load,
 the cache stores the joined+filtered intermediate (CA-only rows from both
 files) along with a ``# fetched: <isodate>`` header line. Honors a 7-day TTL.
+The ``-v2`` suffix bumps when the cache columns change so old caches don't
+get read with the new schema; old ``.sec-bulk-cache.csv`` files are orphaned
+and can be deleted by hand.
 
 CLI
 ---
@@ -72,7 +87,7 @@ USER_AGENT = "Sand Hill VC Map sandhillmap@example.com"
 INDEX_URL = "https://www.sec.gov/foia/docs/invafoia.htm"
 MIN_INTERVAL_SECONDS = 0.15  # ~6 req/s; same as IapdClient
 CACHE_TTL = timedelta(days=7)
-DEFAULT_CACHE = pathlib.Path("data/.sec-bulk-cache.csv")
+DEFAULT_CACHE = pathlib.Path("data/.sec-bulk-cache-v2.csv")
 
 # ---------------------------------------------------------------------------
 # County mapping — 5-county core Bay Area
@@ -441,9 +456,44 @@ def _parse_aum(raw: Optional[str]) -> Optional[int]:
     if not cleaned or cleaned in {".", ".00"}:
         return None
     try:
-        return int(round(float(cleaned)))
+        n = int(round(float(cleaned)))
     except ValueError:
         return None
+    return n if n > 0 else None
+
+
+def _parse_int(raw: Optional[str]) -> Optional[int]:
+    if not raw:
+        return None
+    cleaned = str(raw).replace(",", "").strip()
+    if not cleaned:
+        return None
+    try:
+        return int(float(cleaned))
+    except ValueError:
+        return None
+
+
+def _normalize_website(raw: Optional[str]) -> Optional[str]:
+    if not raw:
+        return None
+    s = raw.strip()
+    if not s or s.upper() in {"N/A", "NONE", "NULL"}:
+        return None
+    # SEC entries vary: bare domains, www.x.com, http://x.com, X.COM. Force a
+    # scheme so the frontend can render it as an <a href> without rewriting.
+    if not re.match(r"^https?://", s, re.IGNORECASE):
+        s = "https://" + s.lstrip("/")
+    return s
+
+
+def _normalize_phone(raw: Optional[str]) -> Optional[str]:
+    if not raw:
+        return None
+    s = raw.strip()
+    if not s or s.upper() in {"N/A", "NONE", "NULL"}:
+        return None
+    return s
 
 
 def _is_vc_firm(row: dict) -> bool:
@@ -474,7 +524,21 @@ _CACHE_FIELDS = [
     "postal",
     "firm_type",
     "any_vc",
+    "any_pe",
+    "any_hedge",
+    "any_re",
+    "any_securitized",
+    "any_other",
+    "num_vc",
+    "num_pe",
+    "num_hedge",
+    "fund_count",
     "aum_raw",
+    "aum_pf_raw",
+    "website",
+    "phone",
+    "latest_filing",
+    "employees",
 ]
 
 
@@ -519,6 +583,9 @@ def _save_cache(cache_path: pathlib.Path, rows: list[dict]) -> None:
 
 
 def _row_to_cache_dict(row: dict) -> dict:
+    # Both REG (448 cols) and ERA (171 cols) files share the column names we
+    # read here; the ERA file simply lacks Item 5 columns (`5F(2)(c)`, `5A`),
+    # which `row.get` returns None for — caller treats blank == not reported.
     return {
         "crd": (row.get("Organization CRD#") or "").strip(),
         "name": (row.get("Primary Business Name") or row.get("Legal Name") or "").strip(),
@@ -529,7 +596,21 @@ def _row_to_cache_dict(row: dict) -> dict:
         "postal": (row.get("Main Office Postal Code") or "").strip(),
         "firm_type": (row.get("Firm Type") or "").strip(),
         "any_vc": (row.get("Any VC Funds") or "").strip(),
+        "any_pe": (row.get("Any PE Funds") or "").strip(),
+        "any_hedge": (row.get("Any Hedge Funds") or "").strip(),
+        "any_re": (row.get("Any Real Estate Funds") or "").strip(),
+        "any_securitized": (row.get("Any Securitized Funds") or "").strip(),
+        "any_other": (row.get("Any Other Funds") or "").strip(),
+        "num_vc": (row.get("Total number of VC funds") or "").strip(),
+        "num_pe": (row.get("Total number of PE funds") or "").strip(),
+        "num_hedge": (row.get("Total number of Hedge funds") or "").strip(),
+        "fund_count": (row.get("Count of Private Funds - 7B(1)") or "").strip(),
         "aum_raw": (row.get("5F(2)(c)") or "").strip(),
+        "aum_pf_raw": (row.get("Total Gross Assets of Private Funds") or "").strip(),
+        "website": (row.get("Website Address") or "").strip(),
+        "phone": (row.get("Main Office Telephone Number") or "").strip(),
+        "latest_filing": (row.get("Latest ADV Filing Date") or "").strip(),
+        "employees": (row.get("5A") or "").strip(),
     }
 
 
@@ -626,16 +707,55 @@ def fetch_bay_area_vc_firms(
             "Main Office Postal Code": r.get("postal", ""),
         }
         address = _format_address(synthetic_row)
-        aum = _parse_aum(r.get("aum_raw"))
+        aum_reg = _parse_aum(r.get("aum_raw"))
+        aum_pf = _parse_aum(r.get("aum_pf_raw"))
+        # Priority: regulatory AUM (Item 5.F(2)(c)) when populated — it's the
+        # canonical SEC figure and includes non-private-fund assets. Fall back
+        # to Schedule D 7.B(1) gross asset sum, which is what ERAs report.
+        latest_filing = r.get("latest_filing") or None
+        if aum_reg is not None:
+            aum_usd = aum_reg
+            aum_source = "SEC Form ADV Item 5.F(2)(c) regulatory AUM"
+        elif aum_pf is not None:
+            aum_usd = aum_pf
+            aum_source = "SEC Form ADV Schedule D 7.B(1) private-fund gross assets"
+        else:
+            aum_usd = None
+            aum_source = None
+        if aum_source and latest_filing:
+            aum_source = f"{aum_source} (filed {latest_filing})"
+
+        firm_type_tags: list[str] = []
+        for flag, tag in (
+            ("any_vc", "vc"),
+            ("any_pe", "pe"),
+            ("any_hedge", "hedge"),
+            ("any_re", "real_estate"),
+            ("any_securitized", "securitized"),
+            ("any_other", "other"),
+        ):
+            if (r.get(flag) or "").strip().upper() == "Y":
+                firm_type_tags.append(tag)
 
         firm: dict = {
             "id": f"sec-{crd}",
             "name": _normalize_name(name),
             "address": address,
             "sec_crd": crd,
-            "aum_usd": aum,
+            "aum_usd": aum_usd,
+            "aum_source": aum_source,
+            "aum_as_of": latest_filing,
             "county": county,
             "tier": "lite",
+            "website": _normalize_website(r.get("website")),
+            "phone": _normalize_phone(r.get("phone")),
+            "fund_count": _parse_int(r.get("fund_count")),
+            "vc_fund_count": _parse_int(r.get("num_vc")),
+            "pe_fund_count": _parse_int(r.get("num_pe")),
+            "hedge_fund_count": _parse_int(r.get("num_hedge")),
+            "firm_type_tags": firm_type_tags,
+            "employee_count": _parse_int(r.get("employees")),
+            "latest_filing_date": latest_filing,
             # Empty schema invariants so frontend consumers (allStages,
             # allSectors, visibleFirms in site/app.js) can iterate without
             # null guards. SEC bulk records carry no stage/sector taxonomy.
