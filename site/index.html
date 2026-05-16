@@ -15,7 +15,7 @@
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body x-data="vcApp" x-init="init()" :class="{ 'panel-open': selectedFirm }">
 
@@ -202,6 +202,16 @@
                 <dd x-text="selectedFirm.latest_filing_date"></dd>
               </div>
             </template>
+            <template x-if="selectedFirm.form_d_total_filings">
+              <div>
+                <dt>Form D filings</dt>
+                <dd>
+                  <span x-text="selectedFirm.form_d_total_filings + (selectedFirm.form_d_total_filings === 1 ? ' filing' : ' filings')"></span>
+                  <small x-show="selectedFirm.form_d_latest_filing_date" class="aum-src"
+                         x-text="`latest close ${selectedFirm.form_d_latest_filing_date}`"></small>
+                </dd>
+              </div>
+            </template>
             <template x-if="selectedFirm.founded">
               <div>
                 <dt>Founded</dt>
@@ -262,7 +272,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.stages || []).length">
           <div>
             <h3>Stages</h3>
             <div class="tags lg">
@@ -273,7 +283,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.sectors || []).length">
           <div>
             <h3>Sectors</h3>
             <div class="tags lg">
@@ -284,7 +294,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.partners || []).length">
           <div>
             <h3>Partners</h3>
             <ul class="partners">
@@ -303,7 +313,7 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.recent_portfolio_sample || []).length">
           <div>
             <h3>Public portfolio sample</h3>
             <ul class="deals">
@@ -317,11 +327,37 @@
           </div>
         </template>
 
-        <template x-if="selectedFirm.tier !== 'lite'">
+        <template x-if="(selectedFirm.form_d_recent_filings || []).length">
+          <div>
+            <h3>Recent Form D filings</h3>
+            <ul class="form-d-list">
+              <template x-for="f in selectedFirm.form_d_recent_filings" :key="f.accession">
+                <li>
+                  <span class="form-d-date" x-text="f.file_date"></span>
+                  <a :href="`https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${f.cik}&type=D&dateb=&owner=include&count=40`"
+                     target="_blank" rel="noopener" x-text="f.filer_name"></a>
+                  <span class="form-d-form" x-text="f.form"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </template>
+
+        <template x-if="selectedFirm.notes">
           <div>
             <h3>Notes</h3>
             <p class="notes" x-text="selectedFirm.notes"></p>
           </div>
+        </template>
+
+        <template x-if="selectedFirm.tier === 'lite' && (selectedFirm.llm_enriched || selectedFirm.website_enriched)">
+          <p class="enrich-src">
+            Partner / sector data sourced via
+            <span x-text="selectedFirm.website_enriched ? 'firm website scrape' : 'web search'"></span>
+            <template x-if="selectedFirm.llm_confidence">
+              <span> · confidence <span x-text="selectedFirm.llm_confidence.toFixed(2)"></span></span>
+            </template>
+          </p>
         </template>
 
         <p class="caveat" x-show="selectedFirm.tier !== 'lite'">
