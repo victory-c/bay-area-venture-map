@@ -15,7 +15,7 @@
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body x-data="vcApp" x-init="init()" :class="{ 'panel-open': selectedFirm }">
 
@@ -124,7 +124,11 @@
       <div>
         <button class="close" @click="selectedFirm = null">×</button>
         <h2 x-text="selectedFirm.name"></h2>
-        <p class="addr" x-text="selectedFirm.address"></p>
+        <p class="addr">
+          <span x-text="selectedFirm.address"></span>
+          <small x-show="selectedFirm.tier === 'lite' && /sand hill/i.test(selectedFirm.address || '')"
+                 class="badge sh">Sand Hill Rd</small>
+        </p>
         <template x-if="selectedFirm.website">
           <p>
             <a :href="selectedFirm.website" target="_blank" rel="noopener" x-text="selectedFirm.website.replace(/^https?:\/\//, '')"></a>
@@ -132,13 +136,36 @@
           </p>
         </template>
 
-        <div class="stat-row">
-          <div class="stat">
-            <label>AUM</label>
-            <div class="val" x-text="selectedFirm.aum_usd ? '$' + formatShort(selectedFirm.aum_usd) : '—'"></div>
-            <small x-text="selectedFirm.aum_source"></small>
+        <!-- Lite-record summary: what we DO know from SEC Form ADV. -->
+        <template x-if="selectedFirm.tier === 'lite'">
+          <dl class="lite-meta">
+            <div>
+              <dt>AUM</dt>
+              <dd x-text="selectedFirm.aum_usd
+                ? '$' + formatShort(selectedFirm.aum_usd)
+                : 'Not reported in latest Form ADV'"></dd>
+            </div>
+            <div>
+              <dt>County</dt>
+              <dd x-text="(selectedFirm.county || '—') + (selectedFirm.county ? ' County' : '')"></dd>
+            </div>
+            <div>
+              <dt>SEC CRD</dt>
+              <dd><span class="tag mono" x-text="selectedFirm.sec_crd || '—'"></span></dd>
+            </div>
+          </dl>
+        </template>
+
+        <!-- Rich-record AUM stat — keep the existing visual treatment. -->
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div class="stat-row">
+            <div class="stat">
+              <label>AUM</label>
+              <div class="val" x-text="selectedFirm.aum_usd ? '$' + formatShort(selectedFirm.aum_usd) : '—'"></div>
+              <small x-text="selectedFirm.aum_source"></small>
+            </div>
           </div>
-        </div>
+        </template>
 
         <template x-if="selectedFirm.tier !== 'lite'">
           <div class="stat-row">
@@ -155,9 +182,16 @@
           </div>
         </template>
 
-        <p class="caveat" x-show="selectedFirm.tier === 'lite'">
-          Lite record from SEC Form ADV. <a :href="`https://adviserinfo.sec.gov/firm/summary/${selectedFirm.sec_crd || ''}`" target="_blank" rel="noopener">View full filing on IAPD</a> for partners, fund details, and history.
-        </p>
+        <!-- IAPD CTA for lite records, promoted from caveat to primary action. -->
+        <template x-if="selectedFirm.tier === 'lite'">
+          <div class="iapd-cta">
+            <a class="iapd-link" target="_blank" rel="noopener"
+               :href="`https://adviserinfo.sec.gov/firm/summary/${selectedFirm.sec_crd || ''}`">
+              View full Form ADV on IAPD →
+            </a>
+            <p>Partners, fund details, and filing history live on the SEC's adviser site. We only ingest the public summary fields here.</p>
+          </div>
+        </template>
 
         <template x-if="selectedFirm.tier !== 'lite'">
           <div>
@@ -236,6 +270,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
