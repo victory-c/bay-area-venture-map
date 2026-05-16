@@ -28,6 +28,7 @@ from scraper.geocode import Geocoder
 from scraper.llm_enrich import GeminiEnricher, QuotaExceeded, merge_into_firm
 from scraper.nvca import NvcaClient
 from scraper.sec_bulk import fetch_bay_area_vc_firms
+from scraper.website_enrich import WebsiteEnricher
 from scraper.wikipedia import WikipediaClient
 
 log = logging.getLogger(__name__)
@@ -40,8 +41,12 @@ GEOCODE_CACHE = REPO_ROOT / "data" / ".geocode-cache.json"
 SEC_BULK_CACHE = REPO_ROOT / "data" / ".sec-bulk-cache.csv"
 NVCA_CACHE = REPO_ROOT / "data" / ".nvca-cache.json"
 FORM_D_CACHE = REPO_ROOT / "data" / ".form-d-cache.json"
+WEBSITE_CACHE = REPO_ROOT / "data" / ".website-enrich-cache.json"
 
-VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia", "nvca", "form_d", "llm"}
+VALID_ENRICHERS = {
+    "geocode", "edgar", "sec_bulk", "wikipedia",
+    "nvca", "form_d", "llm", "website",
+}
 
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
@@ -375,6 +380,53 @@ def enrich_llm(firms: list[dict]) -> None:
         enricher.close()
 
 
+def enrich_websites(firms: list[dict]) -> None:
+    """E-lite: scrape the firm's own website (home + /team + /about etc)
+    and extract structured partners / sectors / stages via Vertex AI.
+
+    Targets only lite firms that still have no Tier-D LLM data AND have
+    a real (non-social) website. Result is merged through the same
+    confidence gate as the LLM pass, so it cleanly augments rather than
+    replaces. Resumable: every page-set + Gemini call is cached at
+    ``data/.website-enrich-cache.json``.
+    """
+    enricher = WebsiteEnricher(cache_path=WEBSITE_CACHE)
+    try:
+        candidates = [
+            f for f in firms
+            if f.get("tier") == "lite"
+            and not f.get("llm_enriched")
+            and f.get("website")
+        ]
+        log.info("Website enrich: %d candidate firms", len(candidates))
+        merged = 0
+        skipped_low_conf = 0
+        for i, firm in enumerate(candidates, 1):
+            try:
+                info = enricher.enrich(firm)
+            except QuotaExceeded as e:
+                log.warning(
+                    "Stopped at firm %d/%d — %s. Re-run later to resume.",
+                    i, len(candidates), e,
+                )
+                break
+            if info is None:
+                continue
+            if merge_into_firm(firm, info):
+                merged += 1
+                # Distinguish website-scrape provenance from Tier-D so the
+                # UI can label it differently if it ever wants to.
+                firm["website_enriched"] = True
+            else:
+                skipped_low_conf += 1
+        log.info(
+            "Website enrich: %d firms got website-sourced data; %d below confidence threshold",
+            merged, skipped_low_conf,
+        )
+    finally:
+        enricher.close()
+
+
 def enrich_sec_bulk(seed_firms: list[dict], use_nominatim: bool = False) -> list[dict]:
     """Fetch the SEC bulk Form ADV scrape and merge with the seed firms.
 
@@ -440,6 +492,13 @@ def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
     # hand-curated data we trust more than any model output.
     if "llm" in enricher_set:
         enrich_llm(firms)
+    # Website scrape (E-lite): last-mile pass for the ~24 lite firms that
+    # still have no partners / sectors / stages AND have a real (non-
+    # social) website. Reads the firm's own /team /about pages and asks
+    # Vertex AI to extract structured data from the supplied text (no
+    # Google Search grounding). Same merge gate as the LLM pass.
+    if "website" in enricher_set:
+        enrich_websites(firms)
 
     output = {
         "generated_with_enrichers": sorted(enricher_set),

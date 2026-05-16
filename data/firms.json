@@ -4,6 +4,7 @@
     "llm",
     "nvca",
     "sec_bulk",
+    "website",
     "wikipedia"
   ],
   "firm_count": 678,
@@ -6096,10 +6097,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/03/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "deep_tech",
+        "bio",
+        "healthcare",
+        "climate",
+        "industrial",
+        "security"
+      ],
       "lat": 37.323,
-      "lng": -122.0322
+      "lng": -122.0322,
+      "notes": "AimTop Ventures is a venture capital firm headquartered in Silicon Valley (Cupertino, CA). They focus on seed or early-stage investments in technology application companies. Their investment areas include Artificial Intelligence, autonomous driving, navigation, biomedical, battery, robotics, logistics, security software, and digital health.",
+      "llm_enriched": true,
+      "llm_confidence": 0.6,
+      "llm_sources": [
+        "https://www.aimtopvc.com/",
+        "https://www.aimtopvc.com/portfolio"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-322702",
@@ -10157,9 +10178,58 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "deep_tech",
+        "climate",
+        "security",
+        "data",
+        "infra",
+        "industrial",
+        "defense"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "partners": [
+        {
+          "name": "Nicole Conner",
+          "title": "Partner"
+        },
+        {
+          "name": "Thomas d\u2019Halluin",
+          "title": "Managing Partner"
+        },
+        {
+          "name": "Mathieu Costes",
+          "title": "Operating Partner"
+        }
+      ],
+      "recent_portfolio_sample": [
+        {
+          "company": "Venus Aerospace",
+          "year": null,
+          "stage": null
+        },
+        {
+          "company": "CesiumAstro",
+          "year": 2026,
+          "stage": "growth"
+        },
+        {
+          "company": "Aerospacelab",
+          "year": null,
+          "stage": null
+        }
+      ],
+      "notes": "Airbus Ventures invests in deeptech entrepreneurs developing complex engineering products. Their focus areas include autonomous mobility, electrification, low-carbon economy, advanced materials, manufacturing systems, next-generation computing, sensing, security, space mobility, dual-use, energy, data, advanced manufacturing, and logistics.",
+      "llm_enriched": true,
+      "llm_confidence": 0.9,
+      "llm_sources": [
+        "https://www.airbusventures.vc/",
+        "https://www.airbusventures.vc/team",
+        "https://www.airbusventures.vc/about",
+        "https://www.airbusventures.vc/portfolio"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-285846",
@@ -15860,10 +15930,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "growth"
+      ],
+      "sectors": [
+        "security"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "recent_portfolio_sample": [
+        {
+          "company": "Vicarius",
+          "year": null,
+          "stage": null
+        }
+      ],
+      "notes": "AllegisCyber is described as the \"world's original cyber-focused venture firm,\" specializing in early-stage venture capital. They invest in cyber startups from seed to preliminary growth stages, leveraging deep domain expertise and operating experience in the cyber ecosystem. The firm aims to provide strategic capital and market awareness to help build great cyber companies.",
+      "llm_enriched": true,
+      "llm_confidence": 0.7,
+      "llm_sources": [
+        "https://allegiscyber.com/",
+        "https://allegiscyber.com/about/"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-173380",
@@ -31916,10 +32006,69 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "security",
+        "healthcare",
+        "consumer",
+        "ai_infra"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "founded": 2003,
+      "partners": [
+        {
+          "name": "Joe Horowitz",
+          "title": "Managing General Partner"
+        },
+        {
+          "name": "Tom Mawhinney",
+          "title": "General Partner"
+        },
+        {
+          "name": "Jeb Miller",
+          "title": "General Partner"
+        },
+        {
+          "name": "Preeti Rathi",
+          "title": "General Partner"
+        },
+        {
+          "name": "Ben Shih",
+          "title": "Partner"
+        },
+        {
+          "name": "Peter Yi",
+          "title": "Partner"
+        }
+      ],
+      "recent_portfolio_sample": [
+        {
+          "company": "Eppo",
+          "year": null,
+          "stage": null
+        },
+        {
+          "company": "Rockset",
+          "year": null,
+          "stage": null
+        }
+      ],
+      "notes": "Founded in 2003, Icon Ventures is a venture capital firm with $1.4B under management across 7 funds. They invest in AI-focused companies from Seed to Series B stages, primarily in sectors like Enterprise, Data Management, Cybersecurity, Digital Health, and Consumer.",
+      "llm_enriched": true,
+      "llm_confidence": 0.95,
+      "llm_sources": [
+        "https://iconventures.com/",
+        "https://iconventures.com/team/",
+        "https://iconventures.com/about/"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-286062",
@@ -32121,10 +32270,68 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/10/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.5779,
-      "lng": -122.3478
+      "lng": -122.3478,
+      "partners": [
+        {
+          "name": "Kanwal Rekhi",
+          "title": "Managing Director & Co-Founder"
+        },
+        {
+          "name": "John Dougery",
+          "title": "Managing Director & Co-Founder"
+        },
+        {
+          "name": "Manu Rekhi",
+          "title": "Managing Director"
+        },
+        {
+          "name": "Raju Reddy",
+          "title": "Venture Partner"
+        },
+        {
+          "name": "BV Jagadeesh",
+          "title": "Venture Partner"
+        },
+        {
+          "name": "Ricardo Araujo",
+          "title": "Partner, Data Science & AI"
+        }
+      ],
+      "recent_portfolio_sample": [
+        {
+          "company": "Poshmark",
+          "year": null,
+          "stage": "pre_seed"
+        },
+        {
+          "company": "PolicyBazaar",
+          "year": null,
+          "stage": "seed"
+        },
+        {
+          "company": "Button",
+          "year": null,
+          "stage": "seed"
+        }
+      ],
+      "notes": "Inventus leads Pre-Seed and Seed rounds for Silicon Valley startups, providing $3-4 million in Seed capital. They support portfolio companies through Series A milestones and beyond, with a stated focus on being an AI-first venture firm. The firm emphasizes a collaborative approach, leveraging their network of CXOs for customer introductions.",
+      "llm_enriched": true,
+      "llm_confidence": 0.95,
+      "llm_sources": [
+        "https://www.inventuscap.com/",
+        "https://www.inventuscap.com/about"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-161594",
@@ -37588,10 +37795,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "notes": "Allegis Capital is a global early-stage venture capital firm that invests in all types of technology. They focus on supporting early-stage startups with disruptive potential, providing strategic guidance and and financial support to help turn visions into reality.",
+      "llm_enriched": true,
+      "llm_confidence": 0.6,
+      "llm_sources": [
+        "https://www.allegiscapital.com/about"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-317950",
@@ -39586,10 +39805,47 @@
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech",
+        "ai_infra",
+        "marketplace",
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.3838,
       "lng": -122.2353,
-      "nvca_member": true
+      "nvca_member": true,
+      "partners": [
+        {
+          "name": "Gary Little",
+          "title": "Partner"
+        },
+        {
+          "name": "Rebecca Lynn",
+          "title": "Partner"
+        },
+        {
+          "name": "Gary Morgenthaler",
+          "title": "Partner"
+        },
+        {
+          "name": "Bob Pavey",
+          "title": "Partner"
+        }
+      ],
+      "notes": "Morgenthaler is a venture capital and private equity firm with over 40 years of experience, focusing on Information Technology and Life Sciences. In 2013, members of its IT team formed Canvas Ventures, which invests in early-stage technology companies in areas like AI, fintech, and enterprise software, though Canvas and Morgenthaler are separate entities.",
+      "llm_enriched": true,
+      "llm_confidence": 0.85,
+      "llm_sources": [
+        "https://www.morgenthaler.com/",
+        "https://www.morgenthaler.com/information-technology/team/",
+        "https://www.morgenthaler.com/information-technology/about/",
+        "https://www.morgenthaler.com/news-item/peopleclues-assessments-awarded-best-online-candidate-experience/"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-339276",
@@ -41715,10 +41971,50 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/07/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.3861,
-      "lng": -122.0839
+      "lng": -122.0839,
+      "recent_portfolio_sample": [
+        {
+          "company": "EndoStream",
+          "year": null,
+          "stage": null
+        },
+        {
+          "company": "Radical Catheter Technologies",
+          "year": null,
+          "stage": null
+        },
+        {
+          "company": "Synchron",
+          "year": null,
+          "stage": null
+        },
+        {
+          "company": "RIST",
+          "year": null,
+          "stage": null
+        },
+        {
+          "company": "Neuroradial Technologies, Inc.",
+          "year": null,
+          "stage": null
+        }
+      ],
+      "notes": "Nti Managers, LLC, operating as MD Advantage, is a network of physicians that identifies, evaluates, and supports emerging Medtech companies. They invest in Seed and Series A deals, providing clinical expertise and operational support alongside capital.",
+      "llm_enriched": true,
+      "llm_confidence": 0.75,
+      "llm_sources": [
+        "https://themdadvantage.com/",
+        "https://themdadvantage.com/portfolio/"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-173187",
@@ -42096,8 +42392,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "deep_tech",
+        "healthcare",
+        "bio",
+        "crypto",
+        "generalist"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 11,
@@ -42158,6 +42465,27 @@
           "cik": "2070666",
           "filer_name": "Olive Partners Select I, LP  (CIK 0002070666)"
         }
+      ],
+      "founded": 2025,
+      "partners": [
+        {
+          "name": "Byron Ye",
+          "title": "Executive"
+        },
+        {
+          "name": "Eric (Wei) Zhou",
+          "title": "Executive"
+        }
+      ],
+      "notes": "Olive Partners Management is a U.S.-based private equity funds of funds manager that provides qualified investors with diversified exposure to private equity and venture capital through fund investments and select direct investments. The firm focuses on long-term value creation by investing in leading venture capital fund managers and direct opportunities, primarily within technology, life sciences, and crypto in the U.S..",
+      "llm_enriched": true,
+      "llm_confidence": 0.85,
+      "llm_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPeOAP-KtGLObMWuEKInd01cK7rcuaECfLFV17_mIMxh6rtBYLCR4MuAwxLshljYL8CquhWhQFeDvqY40aydEDk2b_az8Bq9rDVVv-Bbbsy_WTZ84=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz11-nrOPN84qeIPt2Xzr0I3Rn3KksfdeEh-IVA3qrHaBRzTaLcTTBVQq6N5eY8o3IkVY7D8SzjfZf4X3y7oOgkF55vWG4b5E7rXISjB7oZfStJ7Mnn-hTUEdKK7fwMA90lCvWbV0nK9YomFxiAeaaBPfqq0zJK0qFngfvgrDv0XiW1kOYEoSAhfVRhWukhuUW8nbhuDtJvu4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2JxBm_A-hJrofLEEzQrsmBKGk-nqgOHp5M5jpCGqSShVsk93ImVIme_QRDl1jI1MJ3Fpt4X-NeddfZYZ9EJgd-zqk87jAPk3nmwcJ17m3hF22h4yZW6lyyyYXI0k0Gn0BDy57JxQGrzDYlbFuQiVmqAXRBLgHNVozVfm8y-U5r2G95K8PF3bkPgWOUg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG6HHciiLdlv4157aT1wVD6Y-1nTkK5J1ySQquv0qmwXzlYhDZafoWgT8nTXVd65jH7c1_Ad1q7i2RvgzlWY0QgMtaRZ1eKmJmaS3PgVu5fkSLCRu7VccYtQSY8a4LrW0z18iVbiFN0wGT-0l55FHrdL1h0DUyOSft1DRDOtcwopm8QuT5",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMp0-0RwjTcY8kBgOsmax7M16xHxomKhKqElIjic3awS-wEqe9lyIq8ombFNxS5g0CXWMMV3_gcGJmEXBZzHewXwQl-56gz9IicJx7RpelFUpBEiX5Xc9MW-UVJyOzbrxWn2PYPjH9IJxzXLgKmuK9ACXOqV0vTrr1r6drcDlKugVD0Qh9qvJc"
       ]
     },
     {
@@ -43721,8 +44049,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/04/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "fintech",
+        "ai_infra",
+        "security",
+        "deep_tech",
+        "cloud",
+        "data",
+        "defense",
+        "dev_tools"
+      ],
       "lat": 37.3688,
       "lng": -122.0363,
       "form_d_total_filings": 3,
@@ -43755,7 +44094,15 @@
           "cik": "2021782",
           "filer_name": "PALO ALTO GROWTH CAPITAL LLC  (CIK 0002021782)"
         }
-      ]
+      ],
+      "notes": "Palo Alto Growth Capital invests in growth stage transformative technology companies, providing primary equity financing and liquidity through direct secondary transactions. Their focus areas include AI, FinTech, Cybersecurity, SpaceTech, Quantum Computing, Robotics, Autonomous Systems, Cloud Technologies, Data, Defense Tech, and Devops. The firm emphasizes hands-on support and operational expertise to help companies scale.",
+      "llm_enriched": true,
+      "llm_confidence": 0.6,
+      "llm_sources": [
+        "https://paloalto.capital/",
+        "https://paloalto.capital/portfolio/"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-163248",
@@ -46434,7 +46781,14 @@
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "notes": "Prime Set Management, LLC is a group of senior engineers, engineering leaders, and experienced operators in product, sales, and marketing. They co-invest alongside top-tier VCs, providing founders with their network and expertise. The firm also helps startups privately explore opportunities for senior talent.",
+      "llm_enriched": true,
+      "llm_confidence": 0.5,
+      "llm_sources": [
+        "https://www.primeset.com/"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-327512",
@@ -56927,10 +57281,79 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "healthcare",
+        "consumer",
+        "infra",
+        "dev_tools"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "founded": 2021,
+      "partners": [
+        {
+          "name": "Girish Mathrubootham",
+          "title": "Co-founder & Managing Partner"
+        },
+        {
+          "name": "Lakshmi Shankar",
+          "title": "General Partner"
+        },
+        {
+          "name": "Manav Garg",
+          "title": "Co-founder & Managing Partner"
+        },
+        {
+          "name": "Shubham Gupta",
+          "title": "Founding General Partner"
+        },
+        {
+          "name": "Sethu Chidambaram",
+          "title": "Venture Partner"
+        }
+      ],
+      "recent_portfolio_sample": [
+        {
+          "company": "ArchitectChips",
+          "year": 2025,
+          "stage": "seed"
+        },
+        {
+          "company": "Capitol",
+          "year": 2025,
+          "stage": "series_a"
+        },
+        {
+          "company": "Coreworks",
+          "year": 2025,
+          "stage": "seed"
+        },
+        {
+          "company": "Gibran",
+          "year": 2025,
+          "stage": "seed"
+        },
+        {
+          "company": "Nex",
+          "year": 2025,
+          "stage": "seed"
+        }
+      ],
+      "notes": "Together Fund is an operator-led, AI-first venture capital firm founded in 2021, focusing on early-stage (Seed and Series A) AI startups in the US-India corridor. The firm emphasizes hands-on support from partners who are experienced founders themselves, investing across various AI-native sectors.",
+      "llm_enriched": true,
+      "llm_confidence": 0.95,
+      "llm_sources": [
+        "https://www.together.fund/",
+        "https://www.together.fund/team",
+        "https://www.together.fund/about",
+        "https://www.together.fund/portfolio"
+      ],
+      "website_enriched": true
     },
     {
       "id": "sec-285321",
