@@ -23,6 +23,7 @@ from typing import Iterable
 import yaml
 
 from scraper.edgar import IapdClient
+from scraper.form_d import FormDClient
 from scraper.geocode import Geocoder
 from scraper.llm_enrich import GeminiEnricher, QuotaExceeded, merge_into_firm
 from scraper.nvca import NvcaClient
@@ -38,8 +39,9 @@ SITE_OUT_PATH = REPO_ROOT / "site" / "firms.json"
 GEOCODE_CACHE = REPO_ROOT / "data" / ".geocode-cache.json"
 SEC_BULK_CACHE = REPO_ROOT / "data" / ".sec-bulk-cache.csv"
 NVCA_CACHE = REPO_ROOT / "data" / ".nvca-cache.json"
+FORM_D_CACHE = REPO_ROOT / "data" / ".form-d-cache.json"
 
-VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia", "nvca", "llm"}
+VALID_ENRICHERS = {"geocode", "edgar", "sec_bulk", "wikipedia", "nvca", "form_d", "llm"}
 
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
@@ -275,6 +277,48 @@ def enrich_nvca(firms: list[dict]) -> None:
     )
 
 
+def enrich_form_d(firms: list[dict]) -> None:
+    """Aggregate SEC Form D filings per firm via EDGAR full-text search.
+
+    Adds (only when at least one filing matches):
+        ``form_d_total_filings``         — count of validated filings
+        ``form_d_latest_filing_date``    — ISO date of most recent close
+        ``form_d_distinct_funds``        — up to 10 fund-entity names
+        ``form_d_fund_ciks``             — up to 10 fund-entity CIKs
+        ``form_d_recent_filings``        — top 5 most recent filings
+
+    Purely additive: never overwrites seed values. Coverage is heavily
+    skewed toward brand-recognisable firms; obscure shell entities
+    return zero and are skipped (and cached as null so re-runs don't
+    re-query them).
+    """
+    client = FormDClient(cache_path=FORM_D_CACHE)
+    try:
+        hits = 0
+        for firm in firms:
+            info = client.lookup(firm["name"])
+            if info is None or info.total_filings == 0:
+                continue
+            hits += 1
+            firm["form_d_total_filings"] = info.total_filings
+            firm["form_d_latest_filing_date"] = info.latest_filing_date
+            firm["form_d_distinct_funds"] = info.distinct_funds
+            firm["form_d_fund_ciks"] = info.fund_ciks
+            firm["form_d_recent_filings"] = [
+                {
+                    "accession": f.accession,
+                    "file_date": f.file_date,
+                    "form": f.form,
+                    "cik": f.cik,
+                    "filer_name": f.filer_name,
+                }
+                for f in info.recent_filings
+            ]
+        log.info("Form D: matched %d / %d firms", hits, len(firms))
+    finally:
+        client.close()
+
+
 def enrich_llm(firms: list[dict]) -> None:
     """Fill missing partners/stages/sectors/recent_investments via Gemini
     2.5 Flash with native Google Search. Only touches lite firms — rich
@@ -385,6 +429,12 @@ def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
     # merged firm list (seed + scraped) gets flagged in one shot.
     if "nvca" in enricher_set:
         enrich_nvca(firms)
+    # Form D runs before the LLM pass so the LLM prompt could in
+    # principle reference recent fund-raising activity (though today it
+    # doesn't). It's also a free, authoritative source — same tier as
+    # NVCA — so it goes ahead of the LLM by the same logic.
+    if "form_d" in enricher_set:
+        enrich_form_d(firms)
     # LLM runs LAST so it only fills gaps the earlier (free, reliable) sources
     # couldn't. Rich firms (seed YAML) are skipped — they already have
     # hand-curated data we trust more than any model output.
