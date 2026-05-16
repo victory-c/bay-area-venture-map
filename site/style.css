@@ -261,6 +261,40 @@ ul.deals li span { color: var(--muted); font-size: 12px; }
   font-size: 12px; color: var(--muted); border-radius: 0 6px 6px 0;
 }
 
+/* ── Lite-record panel ── */
+.lite-meta {
+  margin: 18px 0 8px; padding: 12px 14px;
+  background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px;
+}
+.lite-meta > div:first-child { grid-column: 1 / -1; }
+.lite-meta dt {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted); margin-bottom: 2px;
+}
+.lite-meta dd {
+  margin: 0; font-size: 14px; color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.lite-meta dd .tag.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px; color: var(--text);
+}
+
+.iapd-cta { margin: 18px 0 8px; }
+.iapd-link {
+  display: inline-block; padding: 8px 14px;
+  background: rgba(247, 129, 102, 0.12); color: var(--accent);
+  border: 1px solid rgba(247, 129, 102, 0.4); border-radius: 6px;
+  font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: background 0.1s;
+}
+.iapd-link:hover { background: rgba(247, 129, 102, 0.22); }
+.iapd-cta p {
+  margin: 8px 2px 0; font-size: 12px; color: var(--muted); line-height: 1.5;
+}
+
 footer {
   padding: 12px 22px; color: var(--muted); font-size: 12px;
   border-top: 1px solid var(--border); text-align: center;

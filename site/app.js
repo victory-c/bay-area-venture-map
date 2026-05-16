@@ -315,15 +315,21 @@ document.addEventListener("alpine:init", () => {
           iconSize: [110, 22],
           iconAnchor: [55, 11],
         });
-        const tooltipBody = f.aum_usd
-          ? `<strong>${f.name}</strong><br>$${this.formatShort(f.aum_usd)}`
-          : `<strong>${f.name}</strong>`;
-        const stagesPart = (f.stages && f.stages.length)
-          ? ` · ${f.stages.map(s => this.prettyStage(s)).join(", ")}`
-          : "";
-        const marker = L.marker([f.lat, f.lng], { icon, title: f.name })
-          .bindTooltip(tooltipBody + stagesPart, { direction: "top", opacity: 0.95 })
-          .on("click", () => this.select(f));
+        // Pin already shows the (possibly truncated) name. Only bind a tooltip
+        // when it actually adds info — full name if truncated, AUM, or stages.
+        // Skip Leaflet's `title:` option entirely so the native browser tooltip
+        // doesn't fire a third copy of the name after a 1s hover.
+        const parts = [];
+        if (f.name.length > 14) parts.push(`<strong>${f.name}</strong>`);
+        if (f.aum_usd) parts.push(`$${this.formatShort(f.aum_usd)}`);
+        if (f.stages && f.stages.length) {
+          parts.push(f.stages.map((s) => this.prettyStage(s)).join(", "));
+        }
+        const marker = L.marker([f.lat, f.lng], { icon });
+        if (parts.length) {
+          marker.bindTooltip(parts.join(" · "), { direction: "top", opacity: 0.95 });
+        }
+        marker.on("click", () => this.select(f));
         marker.addTo(this.map);
         this.markers[f.id] = marker;
       });
