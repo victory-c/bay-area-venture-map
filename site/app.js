@@ -41,6 +41,20 @@ const SECTOR_LABELS = {
   governance: "Governance",
 };
 
+// Escape untrusted text before interpolating into HTML strings (Leaflet
+// divIcon `html` and bindTooltip render their content as HTML, not text).
+// Firm names originate from the SEC Form ADV bulk scrape and are
+// filer-controlled, so they must never be treated as trusted markup.
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (ch) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[ch]);
+}
+
 document.addEventListener("alpine:init", () => {
   Alpine.data("vcApp", () => ({
     firms: [],
@@ -311,7 +325,7 @@ document.addEventListener("alpine:init", () => {
         const liteCls = f.tier === "lite" ? " pin-lite" : "";
         const icon = L.divIcon({
           className: `pin pin-${bucket}${liteCls}`,
-          html: `<span>${label}</span>`,
+          html: `<span>${escapeHtml(label)}</span>`,
           iconSize: [110, 22],
           iconAnchor: [55, 11],
         });
@@ -320,7 +334,7 @@ document.addEventListener("alpine:init", () => {
         // Skip Leaflet's `title:` option entirely so the native browser tooltip
         // doesn't fire a third copy of the name after a 1s hover.
         const parts = [];
-        if (f.name.length > 14) parts.push(`<strong>${f.name}</strong>`);
+        if (f.name.length > 14) parts.push(`<strong>${escapeHtml(f.name)}</strong>`);
         if (f.aum_usd) parts.push(`$${this.formatShort(f.aum_usd)}`);
         if (f.stages && f.stages.length) {
           parts.push(f.stages.map((s) => this.prettyStage(s)).join(", "));
