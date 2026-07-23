@@ -6,16 +6,24 @@
   <title>Bay Area VCs · Founder Map</title>
   <meta name="description" content="Interactive map and table of every venture capital firm in the 5-county San Francisco Bay Area — names, AUM, and contact info." />
 
-  <!-- Leaflet -->
+  <!-- Resource hints: warm up the CDN + tile origins and start the data
+       fetch as early as the parser sees it, before any JS has run. -->
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preconnect" href="https://tile.openstreetmap.org" />
+  <link rel="preload" href="firms.json" as="fetch" crossorigin="anonymous" />
+
+  <!-- Leaflet. Script is deferred so it no longer blocks HTML parsing; it
+       still executes before Alpine's script below (defer preserves document
+       order), so `L` is guaranteed to exist before vcApp.init() runs. -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=8" />
 </head>
 <body x-data="vcApp" x-init="init()" :class="{ 'panel-open': selectedFirm }">
 
@@ -75,6 +83,12 @@
        aria-orientation="horizontal" aria-label="Resize filters bar" tabindex="0"></div>
 
   <main class="layout">
+    <div class="status-overlay" x-show="loading" style="display: none">Loading firms…</div>
+    <div class="status-overlay error" x-show="loadError" style="display: none">
+      Couldn't load firm data<span x-show="loadError"> — <span x-text="loadError"></span></span>.
+      <button @click="loadData()">Retry</button>
+    </div>
+
     <div id="map" aria-label="Map of VC firms"></div>
 
     <div class="splitter splitter-x" data-resize="map" role="separator"
@@ -93,7 +107,7 @@
           </tr>
         </thead>
         <tbody>
-          <template x-for="firm in visibleFirms" :key="firm.id">
+          <template x-for="firm in visibleRows" :key="firm.id">
             <tr @click="select(firm)" :class="{ active: selectedFirm?.id === firm.id }">
               <td>
                 <strong x-text="firm.name"></strong>
@@ -112,6 +126,15 @@
             </tr>
           </template>
         </tbody>
+        <tfoot x-show="visibleRows.length < visibleFirms.length" style="display: none">
+          <tr>
+            <td colspan="6" class="load-more-row">
+              <button class="load-more" @click="loadMore()">
+                Load more (<span x-text="visibleFirms.length - visibleRows.length"></span> remaining)
+              </button>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </section>
   </main>
@@ -375,6 +398,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

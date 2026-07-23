@@ -58,6 +58,12 @@ function escapeHtml(value) {
 document.addEventListener("alpine:init", () => {
   Alpine.data("vcApp", () => ({
     firms: [],
+    // Computed once per relevant state change by recomputeVisible(), instead
+    // of being a getter that the table, map, header count, CSV export, etc.
+    // would each independently re-run (re-filtering + re-sorting all firms
+    // every time any of them was read during a reactive tick).
+    visibleFirms: [],
+    tableLimit: 75,
     search: "",
     stageFilter: new Set(),
     sectorFilter: new Set(),
@@ -66,34 +72,71 @@ document.addEventListener("alpine:init", () => {
     sortKey: "aum_usd",
     sortDir: -1,
     selectedFirm: null,
+    loading: true,
+    loadError: null,
     map: null,
     markers: {},
 
     async init() {
       this.initSplitters();
-      const resp = await fetch("firms.json");
-      const data = await resp.json();
-      // Stamp a lowercase search string on each firm once, so the visibleFirms
-      // filter is a single .includes() call instead of rebuilding + lowercasing
-      // an array of strings for every firm on every keystroke.
-      data.firms.forEach((f) => {
-        f._hay = [
-          f.name,
-          f.notes,
-          ...(f.sectors || []).map((s) => SECTOR_LABELS[s] || s),
-          ...(f.partners || []).map((p) => p.name),
-          ...(f.recent_portfolio_sample || []).map((d) => d.company),
-        ].filter(Boolean).join(" ").toLowerCase();
-      });
-      this.firms = data.firms;
-      this.renderMap();
-      // Re-render markers whenever the visible set changes
-      this.$watch("visibleFirms", () => this.refreshMarkers());
+
+      // Re-render markers exactly once per recompute (see recomputeVisible),
+      // not on every template read of visibleFirms.
       this.$watch("selectedFirm", (firm) => {
         if (firm && this.map && firm.lat && firm.lng) {
           this.map.flyTo([firm.lat, firm.lng], 16, { duration: 0.6 });
         }
       });
+
+      // Filter-affecting inputs reset the table's paging window; sorting
+      // just re-orders the same set, so it leaves the window alone.
+      const onFilterChange = () => {
+        this.tableLimit = 75;
+        this.recomputeVisible();
+      };
+      this.$watch("search", onFilterChange);
+      this.$watch("stageFilter", onFilterChange);
+      this.$watch("sectorFilter", onFilterChange);
+      this.$watch("aumMin", onFilterChange);
+      this.$watch("aumMax", onFilterChange);
+      this.$watch("sortKey", () => this.recomputeVisible());
+      this.$watch("sortDir", () => this.recomputeVisible());
+
+      await this.loadData();
+    },
+
+    async loadData() {
+      this.loading = true;
+      this.loadError = null;
+      try {
+        const resp = await fetch("firms.json");
+        if (!resp.ok) throw new Error(`request failed (HTTP ${resp.status})`);
+        const data = await resp.json();
+        // Stamp a lowercase search string on each firm once, so the visible-
+        // firms filter is a single .includes() call instead of rebuilding +
+        // lowercasing an array of strings for every firm on every keystroke.
+        data.firms.forEach((f) => {
+          f._hay = [
+            f.name,
+            f.notes,
+            ...(f.sectors || []).map((s) => SECTOR_LABELS[s] || s),
+            ...(f.partners || []).map((p) => p.name),
+            ...(f.recent_portfolio_sample || []).map((d) => d.company),
+          ].filter(Boolean).join(" ").toLowerCase();
+        });
+        this.firms = data.firms;
+        this.tableLimit = 75;
+        this.recomputeVisible();
+        if (this.map) {
+          this.fitVisibleBounds();
+        } else {
+          this.renderMap();
+        }
+      } catch (err) {
+        this.loadError = err instanceof Error ? err.message : String(err);
+      } finally {
+        this.loading = false;
+      }
     },
 
     // Wire every .splitter / .panel-resizer element. Each one resizes its
@@ -191,7 +234,13 @@ document.addEventListener("alpine:init", () => {
         .map(([s]) => s);
     },
 
-    get visibleFirms() {
+    // Filters + sorts the full firm list exactly once per relevant state
+    // change (called from the $watch handlers set up in init(), and once
+    // right after data loads). Writes the result into the plain
+    // `visibleFirms` array property rather than returning it, so every
+    // consumer (table, map, header count, CSV/JSON export) reads a cached
+    // array instead of re-running this work themselves.
+    recomputeVisible() {
       const q = this.search.trim().toLowerCase();
       const stageF = this.stageFilter;
       const sectorF = this.sectorFilter;
@@ -223,7 +272,21 @@ document.addEventListener("alpine:init", () => {
         if (typeof av === "string") return d * av.localeCompare(bv);
         return d * (av - bv);
       });
-      return firms;
+
+      this.visibleFirms = firms;
+      // Single marker update per state change (diffs by id; see refreshMarkers).
+      this.refreshMarkers();
+    },
+
+    // Bounded slice for the table, independent of how many firms match the
+    // filters — keeps initial render + re-render cost flat instead of
+    // scaling with the full result set.
+    get visibleRows() {
+      return this.visibleFirms.slice(0, this.tableLimit);
+    },
+
+    loadMore() {
+      this.tableLimit += 75;
     },
 
     sortBy(key) {
