@@ -15,6 +15,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.sequoiacap.com
+    sec_crd: "157373"
     founded: 1972
     aum_usd: 85000000000
     aum_source: "Press estimate (2023, post-permanent-capital restructure)"
@@ -40,6 +41,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.kleinerperkins.com
+    sec_crd: "161035"
     founded: 1972
     aum_usd: 10000000000
     aum_source: "Press estimate (2024)"
@@ -64,6 +66,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.nea.com
+    sec_crd: "161004"
     founded: 1977
     aum_usd: 25000000000
     aum_source: "Press estimate (2023, NEA 18 fund close)"
@@ -88,6 +91,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://greylock.com
+    sec_crd: "161537"
     founded: 1965
     aum_usd: 20000000000
     aum_source: "Press estimate (2024, Greylock 17 close)"
@@ -113,6 +117,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://a16z.com
+    sec_crd: "160489"
     founded: 2009
     aum_usd: 45000000000
     aum_source: "Press estimate (2024, multiple specialty funds)"
@@ -138,6 +143,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.khoslaventures.com
+    sec_crd: "162910"
     founded: 2004
     aum_usd: 15000000000
     aum_source: "Press estimate (2024)"
@@ -162,6 +168,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://lsvp.com
+    sec_crd: "160187"
     founded: 2000
     aum_usd: 25000000000
     aum_source: "Press estimate (2024, multi-fund close)"
@@ -186,6 +193,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.mayfield.com
+    sec_crd: "161685"
     founded: 1969
     aum_usd: 3000000000
     aum_source: "Press estimate (2023, Mayfield XVII)"
@@ -232,6 +240,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.redpoint.com
+    sec_crd: "161680"
     founded: 1999
     aum_usd: 10000000000
     aum_source: "Press estimate (2024)"
@@ -256,6 +265,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.dcm.com
+    sec_crd: "160285"
     founded: 1996
     aum_usd: 5000000000
     aum_source: "Press estimate (2023)"
@@ -278,6 +288,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.battery.com
+    sec_crd: "160921"
     founded: 1983
     aum_usd: 13000000000
     aum_source: "Press estimate (2022, Battery XIII)"
@@ -322,6 +333,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.crv.com
+    sec_crd: "160470"
     founded: 1970
     aum_usd: 5000000000
     aum_source: "Press estimate (2023, CRV XVIII)"
@@ -344,6 +356,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: false
     website: https://foundationcapital.com
+    sec_crd: "159838"
     founded: 1995
     aum_usd: 3500000000
     aum_source: "Press estimate (2023)"
@@ -410,6 +423,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: false
     website: https://www.bvp.com
+    sec_crd: "159279"
     founded: 1911
     aum_usd: 20000000000
     aum_source: "Press estimate (2024, Bessemer XII)"
@@ -434,6 +448,7 @@ firms:
     county: San Francisco
     on_sand_hill_road: false
     website: https://www.versantventures.com
+    sec_crd: "161130"
     founded: 1999
     aum_usd: 4000000000
     aum_source: "Press estimate (2023, Versant VIII)"
@@ -455,6 +470,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: false
     website: https://www.tcv.com
+    sec_crd: "160389"
     founded: 1995
     aum_usd: 25000000000
     aum_source: "Press estimate (2024, TCV XII)"
@@ -498,6 +514,7 @@ firms:
     county: San Mateo
     on_sand_hill_road: true
     website: https://www.usvp.com
+    sec_crd: "160112"
     founded: 1981
     aum_usd: 2000000000
     aum_source: "Press estimate (2022, USVP XIII)"
@@ -519,6 +536,7 @@ firms:
     county: Santa Clara
     on_sand_hill_road: false
     website: https://www.accel.com
+    sec_crd: "331435"
     founded: 1983
     aum_usd: 50000000000
     aum_source: "Press estimate (2024, global multi-fund)"
@@ -543,6 +561,7 @@ firms:
     county: Santa Clara
     on_sand_hill_road: false
     website: https://www.felicis.com
+    sec_crd: "162301"
     founded: 2006
     aum_usd: 3000000000
     aum_source: "Press estimate (2023, Felicis IX)"
@@ -566,6 +585,7 @@ firms:
     county: Santa Clara
     on_sand_hill_road: false
     website: https://pear.vc
+    sec_crd: "170211"
     founded: 2013
     aum_usd: 1000000000
     aum_source: "Press estimate (2023, Pear V)"
