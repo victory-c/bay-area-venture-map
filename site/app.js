@@ -41,6 +41,36 @@ const SECTOR_LABELS = {
   governance: "Governance",
 };
 
+// Related sectors, used to suggest "adjacent tags" when a stage+sector filter
+// combination returns zero firms. Only the marquee (rich-tier) firms carry
+// sector/stage tags today, so narrow combinations collapse to an empty set;
+// these adjacencies give the founder a one-click way out. Suggestions are
+// always re-counted against the live data, so an adjacency that would itself
+// return nothing is never shown.
+const SECTOR_ADJACENCY = {
+  enterprise_saas: ["ai_infra", "dev_tools", "fintech", "data", "cloud", "security"],
+  consumer: ["consumer_social", "marketplace", "mobile", "gaming", "fintech"],
+  fintech: ["enterprise_saas", "consumer", "crypto", "marketplace"],
+  ai_infra: ["dev_tools", "infra", "data", "deep_tech", "enterprise_saas", "cloud"],
+  crypto: ["fintech", "ai_infra", "infra"],
+  healthcare: ["bio", "therapeutics"],
+  bio: ["healthcare", "therapeutics", "deep_tech"],
+  therapeutics: ["bio", "healthcare"],
+  climate: ["deep_tech", "industrial", "infra"],
+  deep_tech: ["ai_infra", "industrial", "climate", "defense"],
+  dev_tools: ["ai_infra", "enterprise_saas", "infra", "security"],
+  security: ["enterprise_saas", "dev_tools", "ai_infra", "infra"],
+  data: ["ai_infra", "enterprise_saas", "infra"],
+  infra: ["ai_infra", "cloud", "dev_tools", "enterprise_saas"],
+  cloud: ["infra", "ai_infra", "enterprise_saas", "dev_tools"],
+  industrial: ["climate", "deep_tech", "defense"],
+  defense: ["deep_tech", "industrial", "security", "ai_infra"],
+  gaming: ["consumer", "consumer_social", "mobile"],
+  marketplace: ["consumer", "fintech", "consumer_social"],
+  consumer_social: ["consumer", "marketplace", "gaming", "mobile"],
+  mobile: ["consumer", "consumer_social", "gaming"],
+};
+
 // Escape untrusted text before interpolating into HTML strings (Leaflet
 // divIcon `html` and bindTooltip render their content as HTML, not text).
 // Firm names originate from the SEC Form ADV bulk scrape and are
@@ -191,29 +221,35 @@ document.addEventListener("alpine:init", () => {
         .map(([s]) => s);
     },
 
-    get visibleFirms() {
-      const q = this.search.trim().toLowerCase();
-      const stageF = this.stageFilter;
-      const sectorF = this.sectorFilter;
-      const aumMin = this.aumMin;
-      const aumMax = this.aumMax;
+    // Single source of truth for "does this firm pass a filter set?". Shared by
+    // visibleFirms and the empty-state suggestion counters so the two can never
+    // drift. `opts` overrides the live filter state (used to count hypothetical
+    // "what if I swapped the sector" results).
+    matches(f, opts = {}) {
+      const stageF = opts.stageF ?? this.stageFilter;
+      const sectorF = opts.sectorF ?? this.sectorFilter;
+      const aumMin = opts.aumMin ?? this.aumMin;
+      const aumMax = opts.aumMax ?? this.aumMax;
+      const q = opts.q ?? this.search.trim().toLowerCase();
 
+      if (stageF.size && !(f.stages || []).some((s) => stageF.has(s))) return false;
+      if (sectorF.size && !(f.sectors || []).some((s) => sectorF.has(s))) return false;
       // The default AUM range covers the full slider extent; treat any
       // narrowing as "the user wants only firms with AUM in this range",
       // which means firms with unknown AUM (lite SEC records) get hidden.
       // At the default extent we keep them visible.
       const aumNarrowed = aumMin > 0 || aumMax < 100_000_000_000;
-      let firms = this.firms.filter((f) => {
-        if (stageF.size && !(f.stages || []).some((s) => stageF.has(s))) return false;
-        if (sectorF.size && !(f.sectors || []).some((s) => sectorF.has(s))) return false;
-        if (f.aum_usd == null) {
-          if (aumNarrowed) return false;
-        } else if (f.aum_usd < aumMin || f.aum_usd > aumMax) {
-          return false;
-        }
-        if (q && !(f._hay || "").includes(q)) return false;
-        return true;
-      });
+      if (f.aum_usd == null) {
+        if (aumNarrowed) return false;
+      } else if (f.aum_usd < aumMin || f.aum_usd > aumMax) {
+        return false;
+      }
+      if (q && !(f._hay || "").includes(q)) return false;
+      return true;
+    },
+
+    get visibleFirms() {
+      let firms = this.firms.filter((f) => this.matches(f));
 
       const k = this.sortKey;
       const d = this.sortDir;
@@ -253,6 +289,67 @@ document.addEventListener("alpine:init", () => {
       this.sectorFilter = new Set();
       this.aumMin = 0;
       this.aumMax = 100_000_000_000;
+    },
+
+    get hasActiveFilters() {
+      return (
+        this.search.trim() !== "" ||
+        this.stageFilter.size > 0 ||
+        this.sectorFilter.size > 0 ||
+        this.aumMin > 0 ||
+        this.aumMax < 100_000_000_000
+      );
+    },
+
+    // Adjacent sectors that WOULD return firms if swapped in for the current
+    // sector filter (keeping every other active filter). Powers the empty-state
+    // "try adjacent tags" fallback. Never suggests a dead end — each candidate
+    // is re-counted against live data and dropped if it yields nothing.
+    get sectorSuggestions() {
+      if (!this.sectorFilter.size) return [];
+      const active = this.sectorFilter;
+      const candidates = new Set();
+      active.forEach((s) =>
+        (SECTOR_ADJACENCY[s] || []).forEach((a) => {
+          if (!active.has(a)) candidates.add(a);
+        }),
+      );
+      const out = [];
+      candidates.forEach((sector) => {
+        const count = this.firms.filter((f) =>
+          this.matches(f, { sectorF: new Set([sector]) }),
+        ).length;
+        if (count > 0) out.push({ sector, count });
+      });
+      return out.sort((a, b) => b.count - a.count).slice(0, 6);
+    },
+
+    // True when dropping just the stage (resp. sector) filter would surface at
+    // least one firm — so the empty-state only offers the quick-fix that helps.
+    get canClearStageHelp() {
+      return (
+        this.stageFilter.size > 0 &&
+        this.firms.some((f) => this.matches(f, { stageF: new Set() }))
+      );
+    },
+
+    get canClearSectorHelp() {
+      return (
+        this.sectorFilter.size > 0 &&
+        this.firms.some((f) => this.matches(f, { sectorF: new Set() }))
+      );
+    },
+
+    applySectorSuggestion(sector) {
+      this.sectorFilter = new Set([sector]);
+    },
+
+    clearStage() {
+      this.stageFilter = new Set();
+    },
+
+    clearSector() {
+      this.sectorFilter = new Set();
     },
 
     select(firm) {

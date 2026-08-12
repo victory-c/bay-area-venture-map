@@ -15,7 +15,7 @@
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=8" />
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -125,6 +125,37 @@
           </template>
         </tbody>
       </table>
+
+      <!-- Empty state: a stage/sector filter combination matched no firm.
+           Offer one-click ways out instead of a blank table. -->
+      <div class="empty-state" x-show="firms.length && !visibleFirms.length" x-cloak>
+        <div class="empty-emoji">🔍</div>
+        <p class="empty-title">No firms match these filters</p>
+        <p class="empty-sub">
+          Only marquee firms carry stage &amp; sector tags today, so narrow
+          combinations can come up empty. Try one of these:
+        </p>
+
+        <template x-if="sectorSuggestions.length">
+          <div class="empty-block">
+            <span class="empty-label">Try adjacent sectors</span>
+            <div class="empty-chips">
+              <template x-for="s in sectorSuggestions" :key="s.sector">
+                <button class="chip" @click="applySectorSuggestion(s.sector)">
+                  <span x-text="prettySector(s.sector)"></span>
+                  <small x-text="s.count"></small>
+                </button>
+              </template>
+            </div>
+          </div>
+        </template>
+
+        <div class="empty-actions">
+          <button class="chip" x-show="canClearStageHelp" @click="clearStage()">Clear stage filter</button>
+          <button class="chip" x-show="canClearSectorHelp" @click="clearSector()">Clear sector filter</button>
+          <button class="reset" x-show="hasActiveFilters" @click="resetFilters()">Reset all filters</button>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -372,10 +403,52 @@
           </p>
         </template>
 
+        <!-- SEC / Form ADV lookup for rich (curated) firms. Filtering by
+             stage/sector surfaces these marquee firms, whose curated cards
+             otherwise carried no phone, SEC CRD, or Form ADV route — the exact
+             gap founders hit. Show whatever regulatory identity we have and
+             always give a working IAPD lookup so the path is never a dead end. -->
+        <template x-if="selectedFirm.tier !== 'lite'">
+          <div class="sec-lookup">
+            <h3>SEC / Form ADV</h3>
+            <dl class="lite-meta sec-meta">
+              <template x-if="selectedFirm.county">
+                <div>
+                  <dt>County</dt>
+                  <dd x-text="selectedFirm.county + ' County'"></dd>
+                </div>
+              </template>
+              <template x-if="selectedFirm.phone">
+                <div>
+                  <dt>Phone</dt>
+                  <dd x-text="selectedFirm.phone"></dd>
+                </div>
+              </template>
+              <template x-if="selectedFirm.sec_crd">
+                <div>
+                  <dt>SEC CRD</dt>
+                  <dd><span class="tag mono" x-text="selectedFirm.sec_crd"></span></dd>
+                </div>
+              </template>
+            </dl>
+            <a class="iapd-link" target="_blank" rel="noopener"
+               :href="selectedFirm.sec_crd
+                 ? `https://adviserinfo.sec.gov/firm/summary/${selectedFirm.sec_crd}`
+                 : 'https://adviserinfo.sec.gov'"
+               x-text="selectedFirm.sec_crd
+                 ? 'View Form ADV on SEC IAPD →'
+                 : 'Search SEC IAPD for Form ADV →'"></a>
+            <p>
+              Phone, SEC CRD, and Form ADV filing history live on the SEC adviser
+              site. This curated profile focuses on stage, sector, check size, and
+              partners; not every marquee firm is an SEC-registered adviser.
+            </p>
+          </div>
+        </template>
+
         <p class="caveat" x-show="selectedFirm.tier !== 'lite'">
           AUM and partner data are best-effort from public sources. Verify against the firm's
-          most recent Form ADV<template x-if="selectedFirm.sec_crd"><span> on <a :href="`https://adviserinfo.sec.gov/firm/summary/${selectedFirm.sec_crd}`" target="_blank" rel="noopener">IAPD</a></span></template>
-          before basing fundraising decisions on it.
+          most recent Form ADV before basing fundraising decisions on it.
         </p>
       </div>
     </template>
@@ -387,6 +460,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>
