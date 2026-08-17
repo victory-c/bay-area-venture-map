@@ -15,7 +15,7 @@
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=9" />
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -109,6 +109,10 @@
             <tr @click="select(firm)" :class="{ active: selectedFirm?.id === firm.id }">
               <td>
                 <strong x-text="firm.name"></strong>
+                <template x-if="firm._act">
+                  <span class="act-dot" :class="`act-${firm._act.tone}`"
+                        :title="`Most recent Form D: ${firm._act.date} · ${firm._act.count} filing(s)`"></span>
+                </template>
                 <small x-show="firm.on_sand_hill_road" class="badge sh">Sand Hill Rd</small>
                 <small class="addr" x-text="firm.address"></small>
               </td>
@@ -179,6 +183,20 @@
           </p>
         </template>
 
+        <!-- Fundraising activity: recency of the firm's most recent Form D
+             (a fund raise/close). This is the "is this firm deploying now?"
+             signal founders repeatedly asked for. Shown for any tier that has
+             Form D on record; the colour encodes recency. -->
+        <template x-if="selectedFirm._act">
+          <div class="activity" :class="`activity-${selectedFirm._act.tone}`">
+            <span class="act-dot" :class="`act-${selectedFirm._act.tone}`"></span>
+            <div class="activity-text">
+              <b x-text="`Most recent Form D · ${selectedFirm._act.date}`"></b>
+              <small x-text="`${selectedFirm._act.count} Form D ${selectedFirm._act.count === 1 ? 'filing' : 'filings'} on record. Form D is filed when a fund raises or closes, so recency is a proxy for active deployment — not a guarantee.`"></small>
+            </div>
+          </div>
+        </template>
+
         <!-- Lite-record summary: what we DO know from SEC Form ADV. -->
         <template x-if="selectedFirm.tier === 'lite'">
           <dl class="lite-meta">
@@ -243,16 +261,6 @@
               <div>
                 <dt>Last filed</dt>
                 <dd x-text="selectedFirm.latest_filing_date"></dd>
-              </div>
-            </template>
-            <template x-if="selectedFirm.form_d_total_filings">
-              <div>
-                <dt>Form D filings</dt>
-                <dd>
-                  <span x-text="selectedFirm.form_d_total_filings + (selectedFirm.form_d_total_filings === 1 ? ' filing' : ' filings')"></span>
-                  <small x-show="selectedFirm.form_d_latest_filing_date" class="aum-src"
-                         x-text="`latest close ${selectedFirm.form_d_latest_filing_date}`"></small>
-                </dd>
               </div>
             </template>
             <template x-if="selectedFirm.founded">
@@ -460,6 +468,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
