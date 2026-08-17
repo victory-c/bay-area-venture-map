@@ -114,6 +114,9 @@ document.addEventListener("alpine:init", () => {
           ...(f.partners || []).map((p) => p.name),
           ...(f.recent_portfolio_sample || []).map((d) => d.company),
         ].filter(Boolean).join(" ").toLowerCase();
+        // Stamp Form D fund-raising activity once (recency is "now"-relative
+        // but stable for the page session), so table rows read a cached value.
+        f._act = this.fundActivity(f);
       });
       this.firms = data.firms;
       this.renderMap();
@@ -381,6 +384,30 @@ document.addEventListener("alpine:init", () => {
       return SECTOR_LABELS[s] || s;
     },
 
+    // Fund-raising activity derived from the firm's most recent Form D — the
+    // notice a fund files when it closes/raises capital. Recency is a much
+    // better "is this firm actively deploying?" proxy than the annual Form ADV
+    // compliance filing. Returns null when the firm has no Form D on record.
+    fundActivity(firm) {
+      const iso = firm.form_d_latest_filing_date;
+      if (!iso) return null;
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return null;
+      const now = new Date();
+      const months =
+        (now.getFullYear() - d.getFullYear()) * 12 + (now.getMonth() - d.getMonth());
+      let tone;
+      if (months <= 18) tone = "hot";
+      else if (months <= 48) tone = "warm";
+      else tone = "cool";
+      return {
+        tone,
+        months,
+        date: d.toLocaleString("en-US", { month: "short", year: "numeric" }),
+        count: firm.form_d_total_filings || 0,
+      };
+    },
+
     renderMap() {
       // Centered on Sand Hill Rd, zoomed to show the whole cluster.
       this.map = L.map("map", { scrollWheelZoom: true }).setView([37.65, -122.30], 10);
@@ -448,7 +475,7 @@ document.addEventListener("alpine:init", () => {
 
     downloadJson() {
       // Strip the internal _hay search index before exporting.
-      const cleanFirms = this.firms.map(({ _hay, ...rest }) => rest);
+      const cleanFirms = this.firms.map(({ _hay, _act, ...rest }) => rest);
       const blob = new Blob(
         [JSON.stringify({ firm_count: cleanFirms.length, firms: cleanFirms }, null, 2)],
         { type: "application/json" },
