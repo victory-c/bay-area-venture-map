@@ -44,3 +44,4 @@ data/.llm-enrich-cache.json
 # OS junk
 .DS_Store
 .gstack/
+data/.glm-enrich-cache.json

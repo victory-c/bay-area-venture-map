@@ -15,7 +15,7 @@
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -79,6 +79,8 @@
     </div>
 
     <div class="filter-group toggle">
+      <button class="chip" :class="{ active: verifiedOnly }" @click="verifiedOnly = !verifiedOnly"
+              title="When on, only the hand-verified marquee firms match sector/stage filters (AI-inferred tags excluded)">✓ Verified only</button>
       <button class="reset" @click="resetFilters">Reset</button>
     </div>
   </section>
@@ -120,7 +122,7 @@
                   :data-aum-bucket="aumBucket(firm.aum_usd)"
                   x-text="firm.aum_usd ? '$' + formatShort(firm.aum_usd) : '—'"></td>
               <td><span class="tags" x-html="(firm.stages || []).map(s => `<span class='tag'>${prettyStage(s)}</span>`).join('')"></span></td>
-              <td><span class="tags" x-html="(firm.sectors || []).slice(0,4).map(s => `<span class='tag'>${prettySector(s)}</span>`).join('')"></span></td>
+              <td><span class="tags" :class="{ inferred: firm.inferred }" x-html="(firm.sectors || []).slice(0,4).map(s => `<span class='tag'>${prettySector(s)}</span>`).join('')"></span></td>
               <td class="num" x-text="firm.check_size?.typical ? '$' + formatShort(firm.check_size.typical) : '—'"></td>
               <td>
                 <span x-text="firm.recent_portfolio_sample?.[0]?.company || '—'"></span>
@@ -336,13 +338,28 @@
 
         <template x-if="(selectedFirm.sectors || []).length">
           <div>
-            <h3>Sectors</h3>
-            <div class="tags lg">
+            <h3>Sectors <span x-show="selectedFirm.inferred" class="inferred-pill">AI-inferred</span></h3>
+            <div class="tags lg" :class="{ inferred: selectedFirm.inferred }">
               <template x-for="s in selectedFirm.sectors" :key="s">
                 <span class="tag" x-text="prettySector(s)"></span>
               </template>
             </div>
           </div>
+        </template>
+
+        <!-- Provenance for AI-inferred lite firms: these tags come from a model
+             (GLM-4.6) reading the firm name + SEC Form D fund names, gated at
+             >=0.7 confidence. Distinct from the 25 hand-curated marquee firms. -->
+        <template x-if="selectedFirm.inferred">
+          <p class="inferred-note">
+            Sector &amp; stage tags inferred by AI
+            (<span x-text="selectedFirm.inference_model || 'model'"></span>,
+            confidence <span x-text="selectedFirm.inference_confidence"></span>) — not hand-verified.
+            Use the <b>“✓ Verified only”</b> filter to exclude these.
+            <template x-if="selectedFirm.inference_basis">
+              <span class="basis" x-text="`Basis: ${selectedFirm.inference_basis}`"></span>
+            </template>
+          </p>
         </template>
 
         <template x-if="(selectedFirm.partners || []).length">
@@ -468,6 +485,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>

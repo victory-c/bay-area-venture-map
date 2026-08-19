@@ -1,6 +1,7 @@
 {
   "generated_with_enrichers": [
     "form_d",
+    "glm_sectors",
     "sec_bulk"
   ],
   "firm_count": 675,
@@ -3150,8 +3151,16 @@
       ],
       "employee_count": 32,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 9,
@@ -3206,7 +3215,11 @@
           "cik": "1589315",
           "filer_name": "5AM Ventures IV, L.P.  (CIK 0001589315)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Well-known biotech/healthcare specialist investing in early-stage companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-313557",
@@ -3298,10 +3311,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes enterprise SaaS and consumer brands; early-stage focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-163520",
@@ -3902,10 +3925,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "bio",
+        "healthcare"
+      ],
       "lat": 37.8044,
-      "lng": -122.2712
+      "lng": -122.2712,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on biotech and healthcare companies.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-326839",
@@ -4034,10 +4067,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known pre-seed specialist investing in B2B and B2C software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310823",
@@ -4658,8 +4701,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/28/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "infra"
+      ],
       "lat": 37.3838,
       "lng": -122.2353,
       "form_d_total_filings": 1,
@@ -4678,7 +4727,11 @@
           "cik": "1582050",
           "filer_name": "Almaz Capital Russia Fund II, L.P.  (CIK 0001582050)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes Yandex, Acronis, Parallels; known for early-stage enterprise/infra",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-163299",
@@ -4701,10 +4754,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "security"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and firm website descriptions",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160017",
@@ -4728,8 +4792,14 @@
       ],
       "employee_count": 35,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 1,
@@ -4748,7 +4818,11 @@
           "cik": "1833087",
           "filer_name": "Altimeter Offshore Ltd.  (CIK 0001833087)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public portfolio includes Snowflake, Uber, Grab; known for growth/late stage tech.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-312632",
@@ -4981,8 +5055,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/04/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "deep_tech",
+        "bio"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 2,
@@ -5010,7 +5091,11 @@
           "cik": "1664680",
           "filer_name": "Amino Capital Special Opportunity Fund, L.P.  (CIK 0001664680)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on AI, biotech, and early-stage tech startups",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-290313",
@@ -5077,8 +5162,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/29/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "dev_tools",
+        "security",
+        "data"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 13,
@@ -5143,7 +5235,11 @@
           "cik": "1917403",
           "filer_name": "Amplify Partners V, L.P.  (CIK 0001917403)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public portfolio and thesis focus on technical founders building deep tech infrastructure.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-169160",
@@ -5377,8 +5473,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/28/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "deep_tech",
+        "industrial"
+      ],
       "lat": 37.3541,
       "lng": -121.9552,
       "form_d_total_filings": 2,
@@ -5406,7 +5508,11 @@
           "cik": "1709966",
           "filer_name": "Applied Ventures Innovation Fund I, L.P.  (CIK 0001709966)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Corporate VC of Applied Materials; invests in semiconductors, materials, and industrial tech.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-338922",
@@ -5502,8 +5608,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/03/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "healthcare",
+        "enterprise_saas"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 11,
@@ -5566,7 +5679,11 @@
           "cik": "1606204",
           "filer_name": "ARTIMAN VENTURES 2014, L.P.  (CIK 0001606204)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio focus on white space tech, medtech, and enterprise software.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-168686",
@@ -5589,10 +5706,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio shows focus on healthcare and technology seed/Series A",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-318935",
@@ -5745,10 +5871,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "climate",
+        "deep_tech"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm website and public profile emphasize climate tech and deep tech early stage investments.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-317485",
@@ -6439,8 +6575,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "security"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 11,
@@ -6495,7 +6636,11 @@
           "cik": "2004592",
           "filer_name": "Ballistic Ventures II Advisors, LP  (CIK 0002004592)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Publicly known cybersecurity-focused firm investing in early-stage startups",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-323761",
@@ -6570,10 +6715,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on automation, enterprise, and fintech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-317334",
@@ -6697,10 +6853,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public portfolio and thesis focus on AI-first companies and early-stage B2B software.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160525",
@@ -6934,10 +7101,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "marketplace"
+      ],
       "lat": 37.4297,
-      "lng": -122.2538
+      "lng": -122.2538,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Well-known early-stage investments in Uber, eBay, Snap, and Zillow.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-332647",
@@ -6960,8 +7138,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "healthcare"
+      ],
       "lat": 37.8716,
       "lng": -122.2727,
       "form_d_total_filings": 2,
@@ -6987,7 +7172,11 @@
           "cik": "1725752",
           "filer_name": "Berkeley SkyDeck Fund I, LP  (CIK 0001725752)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known UC Berkeley accelerator fund focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-170793",
@@ -7180,8 +7369,13 @@
       ],
       "employee_count": 28,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 5,
@@ -7235,7 +7429,11 @@
           "cik": "1719278",
           "filer_name": "Blockchain Capital IV, LP  (CIK 0001719278)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Firm name and fund vehicles explicitly indicate blockchain/crypto specialization.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-321168",
@@ -7423,8 +7621,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 19,
@@ -7477,7 +7683,11 @@
           "cik": "1585243",
           "filer_name": "AHCO Bond Fund, LLC  (CIK 0001585243)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Canva, Square, OnDeck, and Roblox.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-285148",
@@ -7500,10 +7710,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "crypto",
+        "deep_tech"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for Sci-Fi accelerator focused on crypto and VR",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-285101",
@@ -7621,10 +7841,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/12/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "industrial",
+        "deep_tech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known focus on construction tech, robotics, and physical world innovation.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160704",
@@ -7751,10 +7981,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "dev_tools",
+        "data"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm website and public profile emphasize early-stage B2B software and infrastructure.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-166060",
@@ -7777,10 +8018,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and website focus on seed/SaaS/consumer",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-319667",
@@ -7933,8 +8184,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.3838,
       "lng": -122.2353,
       "form_d_total_filings": 3,
@@ -7969,7 +8227,11 @@
           "cik": "1660763",
           "filer_name": "Canvas Ventures 2, L.P.  (CIK 0001660763)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Sift, Everlane, and Databricks.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-338657",
@@ -8069,8 +8331,13 @@
       ],
       "employee_count": 17,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 18,
@@ -8135,7 +8402,11 @@
           "cik": "1911386",
           "filer_name": "Carrick Capital Partners IV, L.P.  (CIK 0001911386)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known B2B software buyout and growth equity focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-304948",
@@ -8376,8 +8647,12 @@
       ],
       "employee_count": 13,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 42,
@@ -8442,7 +8717,11 @@
           "cik": "2035011",
           "filer_name": "Cendana Capital VI, L.P.  (CIK 0002035011)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund of funds investing in top-tier seed firms",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-283170",
@@ -8465,10 +8744,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "ai_infra",
+        "dev_tools"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on early-stage B2B and AI",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-334360",
@@ -8593,8 +8884,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 13,
@@ -8655,7 +8952,11 @@
           "cik": "1825974",
           "filer_name": "Players' Impact Ventures, LP - TPI CircleUp Investment I  (CIK 0001825974)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for data-driven consumer brand investing; Growth funds indicate later stages.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-314911",
@@ -8704,10 +9005,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare",
+        "security",
+        "enterprise_saas"
+      ],
       "lat": 37.8044,
-      "lng": -122.2712
+      "lng": -122.2712,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on IT security, digital health, and enterprise software.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-282991",
@@ -8874,8 +9186,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "fintech",
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 13,
@@ -8936,7 +9254,11 @@
           "cik": "1987899",
           "filer_name": "Commerce Ventures V, L.P.  (CIK 0001987899)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm known for commerce/fintech; early-stage investments per public profile.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-288096",
@@ -8985,10 +9307,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "climate"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm website and public profile state focus on early-stage climate tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-324113",
@@ -9063,8 +9394,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "security"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 9,
@@ -9123,7 +9462,11 @@
           "cik": "1802904",
           "filer_name": "Costanoa Ventures Opportunity Fund II, L.P.  (CIK 0001802904)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public firm profile and investment history focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-226750",
@@ -9148,10 +9491,22 @@
       ],
       "employee_count": 16,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on enterprise, data, and growth",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310398",
@@ -9252,10 +9607,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Tesla, Facebook, BitGo, and SaaS companies.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160976",
@@ -9307,10 +9673,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/19/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "climate",
+        "healthcare"
+      ],
       "lat": 37.8044,
-      "lng": -122.2712
+      "lng": -122.2712,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm website and public profile emphasize deep tech, climate, and health investments.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-109948",
@@ -9334,8 +9711,15 @@
       ],
       "employee_count": 34,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 1,
@@ -9354,7 +9738,11 @@
           "cik": "1836738",
           "filer_name": "Crosslink Ventures C, LLC  (CIK 0001836738)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes AvidXchange, Databricks, and Tinder.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-289267",
@@ -9378,7 +9766,9 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2025",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 1,
@@ -9397,7 +9787,11 @@
           "cik": "1729101",
           "filer_name": "Crypto Lotus Fund B, LLC  (CIK 0001729101)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund vehicle name 'Crypto Lotus Fund B' indicates crypto focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-283270",
@@ -9446,8 +9840,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/14/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 4,
@@ -9493,7 +9894,11 @@
           "cik": "1471986",
           "filer_name": "DAG Ventures IV, L.P.  (CIK 0001471986)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes Box, LendingClub, Tango; multi-stage history",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-170108",
@@ -9516,10 +9921,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "ai_infra",
+        "deep_tech",
+        "enterprise_saas"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and investment focus on AI, deep tech, and early-stage enterprise.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310088",
@@ -9594,8 +10011,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "climate",
+        "enterprise_saas",
+        "healthcare"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 12,
@@ -9652,7 +10077,11 @@
           "cik": "1805163",
           "filer_name": "DBL Partners IV, L.P.  (CIK 0001805163)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for Double Bottom Line impact investing in climate, health, and tech.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-293073",
@@ -9702,8 +10131,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "deep_tech",
+        "climate",
+        "bio"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 19,
@@ -9768,7 +10204,11 @@
           "cik": "1914435",
           "filer_name": "DCVC Climate Select, L.P.  (CIK 0001914435)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Fund names: DCVC Bio, DCVC Climate, DCVC Energy; known deep tech focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-297640",
@@ -9791,8 +10231,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "bio",
+        "deep_tech"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 6,
@@ -9845,7 +10291,11 @@
           "cik": "1735069",
           "filer_name": "DCVC Bio, L.P.  (CIK 0001735069)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Firm name and public bio focus on deep tech biology.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-299671",
@@ -9868,10 +10318,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known early-stage healthcare/digital health focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-290048",
@@ -9894,10 +10353,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "consumer"
+      ],
       "lat": 37.4297,
-      "lng": -122.2538
+      "lng": -122.2538,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Ayasdi, Ionic Security, and Coinbase",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-337756",
@@ -10062,8 +10533,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "ai_infra"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 45,
@@ -10128,7 +10604,11 @@
           "cik": "2070647",
           "filer_name": "DFJ Growth NL Investors II, L.P.  (CIK 0002070647)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm name 'Growth' and fund names 'AI Investors' indicate stage and sector focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-306743",
@@ -10273,10 +10753,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio focus on B2B software and cybersecurity",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-301664",
@@ -10299,10 +10789,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "security",
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and thesis focus on B2B security and software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-333872",
@@ -10325,10 +10826,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "security",
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on cybersecurity, B2B SaaS, and early-stage enterprise software.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-333875",
@@ -10351,10 +10863,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "security",
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on B2B security and software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-336680",
@@ -10377,10 +10901,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "security",
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on cybersecurity, B2B SaaS, and developer tools",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-313971",
@@ -10429,10 +10965,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes deep tech, consumer, and enterprise SaaS at Seed/Series A.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-304564",
@@ -10510,8 +11057,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 7,
@@ -10566,7 +11119,11 @@
           "cik": "1451791",
           "filer_name": "Draper Fisher Jurvetson Partners X, LLC  (CIK 0001451791)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Historical reputation for early-stage tech investing across diverse sectors.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-289448",
@@ -10615,10 +11172,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "cross_border",
+        "deep_tech",
+        "gaming"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and investment focus spanning US and China markets",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-329183",
@@ -10641,10 +11209,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and investment focus on deep tech and cross-border US-China deals.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-309084",
@@ -10693,8 +11272,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "fintech"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 1,
@@ -10713,7 +11300,11 @@
           "cik": "1780856",
           "filer_name": "e.ventures US VI, L.P.  (CIK 0001780856)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes companies like Uber, Angi, and Credit Karma.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-325056",
@@ -10779,8 +11370,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "climate"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 1,
@@ -10799,7 +11395,11 @@
           "cik": "1823058",
           "filer_name": "Earthshot Ventures Fund I, LP  (CIK 0001823058)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm website and public profile state climate tech focus and early-stage investing.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-171406",
@@ -10848,8 +11448,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "dev_tools",
+        "infra"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 68,
@@ -10914,7 +11522,11 @@
           "cik": "2098219",
           "filer_name": "Eclipse SPV XXIX, L.P.  (CIK 0002098219)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes companies like GitLab, Docker, and Postman.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-167121",
@@ -10938,8 +11550,15 @@
       ],
       "employee_count": 22,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_c",
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "bio",
+        "healthcare"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 33,
@@ -10994,7 +11613,11 @@
           "cik": "1598292",
           "filer_name": "EcoR1 Capital Fund Qualified, L.P.  (CIK 0001598292)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on biotech and late-stage healthcare companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-338309",
@@ -11097,8 +11720,13 @@
       ],
       "employee_count": 30,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 2,
@@ -11126,7 +11754,11 @@
           "cik": "1732419",
           "filer_name": "Electric Capital Partners Core Fund, LP  (CIK 0001732419)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known crypto specialist; Frontier/Core funds imply early-stage focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-289501",
@@ -11224,10 +11856,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for SaaS and cloud computing investments",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-307613",
@@ -11276,10 +11918,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "data"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes Cylance, Sumo Logic, and Nimble Storage",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-328575",
@@ -11629,7 +12283,9 @@
       "employee_count": 12,
       "latest_filing_date": "04/29/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "industrial"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 1,
@@ -11648,7 +12304,11 @@
           "cik": "1776282",
           "filer_name": "Fall Line Impossible SPV, LLC  (CIK 0001776282)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public knowledge of Fall Line Capital's agriculture and farmland focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-135545",
@@ -11773,10 +12433,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "climate",
+        "bio"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known thesis backing positive impact deep tech and science",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-298492",
@@ -11800,8 +12471,14 @@
       ],
       "employee_count": 23,
       "latest_filing_date": "03/03/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 44,
@@ -11866,7 +12543,11 @@
           "cik": "1659521",
           "filer_name": "One Fin Capital LP  (CIK 0001659521)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm name and SBIC fund vehicle indicate fintech and growth focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-171737",
@@ -12148,8 +12829,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 12,
@@ -12214,7 +12901,11 @@
           "cik": "1697448",
           "filer_name": "Floodgate Fund VI, L.P.  (CIK 0001697448)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Known early-stage consumer and enterprise investor",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-315000",
@@ -12263,10 +12954,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "consumer",
+        "fintech",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Well-known consumer and fintech focus, early-stage specialist",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-281676",
@@ -12289,10 +12992,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "security"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known cybersecurity specialist investing from early to growth stage",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-163046",
@@ -12315,8 +13028,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "deep_tech"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 2,
@@ -12342,7 +13061,11 @@
           "cik": "1543731",
           "filer_name": "Formation8 Partners Fund I, L.P.  (CIK 0001543731)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Known for Series A/B enterprise and deep tech investments.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-166012",
@@ -12392,8 +13115,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 15,
@@ -12458,7 +13188,11 @@
           "cik": "2021018",
           "filer_name": "Witness Investment Founders Fund, LLC  (CIK 0002021018)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Well-known public investment history spanning tech, bio, and defense.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-331507",
@@ -12481,10 +13215,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/27/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and thesis emphasizing B2B and consumer tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-287858",
@@ -12587,10 +13331,22 @@
       ],
       "employee_count": 64,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Publicly known dedicated life sciences and biotech investor",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-170229",
@@ -12639,10 +13395,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.9735,
-      "lng": -122.5311
+      "lng": -122.5311,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on early-stage consumer and SaaS",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310407",
@@ -12692,10 +13458,21 @@
       ],
       "employee_count": 119,
       "latest_filing_date": "01/02/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth",
+        "series_c",
+        "series_d"
+      ],
+      "sectors": [
+        "fintech",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for growth equity in financial services and enterprise tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-163821",
@@ -12788,8 +13565,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 88,
@@ -12854,7 +13636,11 @@
           "cik": "1943084",
           "filer_name": "FundersClub X9Y LLC  (CIK 0001943084)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Well-known online VC platform investing across sectors at early stages.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-289902",
@@ -12877,10 +13663,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "healthcare",
+        "enterprise_saas"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and thesis focus on deep tech and enterprise",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-301700",
@@ -12903,8 +13700,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "climate",
+        "ai_infra"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 27,
@@ -12969,7 +13773,11 @@
           "cik": "2046587",
           "filer_name": "Bright Future Ventures Waxahachie LLC  (CIK 0002046587)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund names indicate AI, Fusion (energy), and deep tech focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-165977",
@@ -13135,10 +13943,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "climate",
+        "deep_tech",
+        "enterprise_saas"
+      ],
       "lat": 37.3838,
-      "lng": -122.2353
+      "lng": -122.2353,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public investment thesis focusing on sustainability, energy, and digital transformation.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-316994",
@@ -13165,10 +13985,18 @@
       ],
       "employee_count": 73,
       "latest_filing_date": "04/01/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "climate"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known global climate-focused multi-stage investment platform",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-325270",
@@ -13243,10 +14071,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and website focus on digital health and enterprise software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-269936",
@@ -13295,8 +14133,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "01/16/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "climate",
+        "deep_tech",
+        "industrial"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 1,
@@ -13315,7 +14160,11 @@
           "cik": "2084327",
           "filer_name": "Gigascale Capital Fund I, L.P.  (CIK 0002084327)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public firm profile focuses on climate tech and industrial decarbonization.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-317560",
@@ -13556,8 +14405,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "consumer",
+        "consumer_social"
+      ],
       "lat": 37.5779,
       "lng": -122.3478,
       "form_d_total_filings": 10,
@@ -13622,7 +14478,11 @@
           "cik": "1852971",
           "filer_name": "Goodwater Capital IV, L.P.  (CIK 0001852971)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known consumer tech specialist; multi-stage funds",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-163941",
@@ -13949,10 +14809,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm name explicitly states 'Cryptos' and public portfolio confirms blockchain focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-315702",
@@ -13976,10 +14845,20 @@
       ],
       "employee_count": 15,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "crypto",
+        "ai_infra"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known crypto/Web3 focus and early-stage investments",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-318906",
@@ -14166,10 +15045,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Known early-stage investments in consumer and enterprise software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-323219",
@@ -14192,10 +15081,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Known for Series B+ growth investments in SaaS, consumer, and fintech.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-323221",
@@ -14296,10 +15197,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.906,
-      "lng": -122.545
+      "lng": -122.545,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio focus on digital health and wellness companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-291776",
@@ -14322,10 +15232,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/03/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "dev_tools",
+        "infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Heavybit is a well-known developer-focused program for developer tools and infrastructure.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-333417",
@@ -14605,8 +15525,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.5779,
       "lng": -122.3478,
       "form_d_total_filings": 4,
@@ -14652,7 +15578,11 @@
           "cik": "1575183",
           "filer_name": "Homebrew Ventures I, L.P.  (CIK 0001575183)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known seed focus on consumer and enterprise SaaS",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-110877",
@@ -14765,8 +15695,15 @@
       ],
       "employee_count": 39,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "healthcare"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 17,
@@ -14828,7 +15765,11 @@
           "cik": "1791527",
           "filer_name": "Human Capital Holdings LLC  (CIK 0001791527)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for seed/SaaS focus; fund names imply standard VC structure.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-339411",
@@ -14852,7 +15793,9 @@
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 1,
@@ -14871,7 +15814,11 @@
           "cik": "1822533",
           "filer_name": "Hunniwell Lake Ventures Medical Device Fund I, LLC  (CIK 0001822533)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund vehicle name explicitly states 'Medical Device' focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-291058",
@@ -14894,8 +15841,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.5072,
       "lng": -122.2603,
       "form_d_total_filings": 1,
@@ -14914,7 +15868,11 @@
           "cik": "1905298",
           "filer_name": "Hustle Fund III, L.P.  (CIK 0001905298)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for pre-seed/seed software and consumer bets",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-283831",
@@ -15162,10 +16120,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.5585,
-      "lng": -122.2711
+      "lng": -122.2711,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known genomics and life sciences specialist",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-337264",
@@ -15266,10 +16236,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "crypto"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Well-known seed firm backing Coinbase, Instacart, and Flexport",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-288679",
@@ -15292,10 +16273,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "climate"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and thesis of Innovation Endeavors",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-312851",
@@ -15318,8 +16311,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/19/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "ai_infra"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 4,
@@ -15363,7 +16364,11 @@
           "cik": "1827229",
           "filer_name": "Innovation Endeavors IV LP  (CIK 0001827229)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm's public investment thesis and portfolio companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-170740",
@@ -15386,10 +16391,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "climate"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes deep tech, SaaS, and climate companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-311568",
@@ -15509,8 +16526,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/28/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 2,
@@ -15538,7 +16562,11 @@
           "cik": "1640274",
           "filer_name": "Institutional Venture Partners XV, L.P.  (CIK 0001640274)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "IVP is a well-known late-stage growth and tech investor",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-290647",
@@ -15561,8 +16589,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/28/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 1,
@@ -15581,7 +16616,11 @@
           "cik": "1716992",
           "filer_name": "Institutional Venture Partners XVI, L.P.  (CIK 0001716992)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "IVP is a well-known late-stage growth and expansion investor.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310356",
@@ -15604,8 +16643,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/28/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 1,
@@ -15624,7 +16670,11 @@
           "cik": "1813239",
           "filer_name": "Institutional Venture Partners XVII, L.P.  (CIK 0001813239)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Institutional Venture Partners (IVP) known for late-stage tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-324257",
@@ -15706,10 +16756,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and website focus on IT and healthcare",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-297342",
@@ -15810,10 +16870,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes companies like Auth0, Databricks, and SendGrid",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-161709",
@@ -15836,10 +16906,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes ClassPass, Dollar Shave Club, and Namely",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-277092",
@@ -15862,10 +16942,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on brain/computer interface and digital health",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310676",
@@ -15947,8 +17037,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 5,
@@ -15995,7 +17091,11 @@
           "cik": "1462627",
           "filer_name": "K9 Ventures, L.P.  (CIK 0001462627)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Known for deep tech and enterprise pre-seed/seed investments",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-317692",
@@ -16018,10 +17118,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/10/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "fintech"
+      ],
       "lat": 37.8044,
-      "lng": -122.2712
+      "lng": -122.2712,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for seed-stage social impact tech, consumer, and enterprise.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-294643",
@@ -16491,8 +17602,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.3838,
       "lng": -122.2353,
       "form_d_total_filings": 5,
@@ -16543,7 +17662,11 @@
           "cik": "1572522",
           "filer_name": "Lightstone Ventures, L.P.  (CIK 0001572522)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known healthcare/biotech focus investing in Series A-C.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-325481",
@@ -16627,10 +17750,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Rappi, Reddit, and multiple seed-stage startups",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-319782",
@@ -16679,10 +17813,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "August Capital legacy focus on enterprise and consumer IT",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-305162",
@@ -16775,10 +17920,21 @@
       ],
       "employee_count": 27,
       "latest_filing_date": "04/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known healthcare/biotech specialist firm investing in growth stages.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-162119",
@@ -16801,8 +17957,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 8,
@@ -16857,7 +18021,11 @@
           "cik": "1610765",
           "filer_name": "LUMIA CAPITAL 2014 FUND, L.P.  (CIK 0001610765)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes high-growth enterprise, consumer, and fintech companies.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-306495",
@@ -17114,10 +18282,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and website focus on early-stage consumer and enterprise",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-309374",
@@ -17225,8 +18403,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 11,
@@ -17283,7 +18467,11 @@
           "cik": "1755352",
           "filer_name": "Maven Ventures Fund III, L.P.  (CIK 0001755352)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Zoom, Uber, NerdWallet; early-stage focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-337486",
@@ -17609,8 +18797,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_c",
+        "series_d",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 11,
@@ -17675,7 +18871,11 @@
           "cik": "1812133",
           "filer_name": "Meritech Capital Entrepreneurs VII L.P.  (CIK 0001812133)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known late-stage growth investor in tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-340399",
@@ -17870,10 +19070,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and website focus on early-stage B2B and B2C software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-332782",
@@ -17948,10 +19158,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "06/26/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "climate",
+        "industrial"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Corporate VC investing in digital, energy, and mobility sectors",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310575",
@@ -18000,10 +19222,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/17/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "consumer"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Historical investments in cybersecurity, cloud infrastructure, and early-stage tech companies.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-283450",
@@ -18026,8 +19260,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 1,
@@ -18046,7 +19286,11 @@
           "cik": "1596879",
           "filer_name": "Moment Ventures I, L.P.  (CIK 0001596879)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes enterprise SaaS and consumer brands; early-stage focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-315988",
@@ -18246,10 +19490,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "deep_tech"
+      ],
       "lat": 37.3852,
-      "lng": -122.1141
+      "lng": -122.1141,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes AI, robotics, and space tech companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-161509",
@@ -18273,10 +19527,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "healthcare",
+        "enterprise_saas"
+      ],
       "lat": 37.3838,
-      "lng": -122.2353
+      "lng": -122.2353,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Historical investments in IT and healthcare across growth stages",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-339276",
@@ -18682,10 +19947,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and website focus on deep tech and early-stage enterprise.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-321649",
@@ -18854,10 +20129,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "marketplace"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known thesis on network effects and marketplace investing",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160838",
@@ -18880,10 +20165,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "deep_tech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and investment thesis focus on intelligent enterprise and consumer tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310767",
@@ -18906,10 +20203,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "security"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known cybersecurity and safety investor",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-317440",
@@ -19178,8 +20485,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "climate",
+        "healthcare",
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 12,
@@ -19234,7 +20548,11 @@
           "cik": "1772693",
           "filer_name": "OBVIOUS VENTURES III, L.P.  (CIK 0001772693)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public portfolio and thesis focused on world-positive systems",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-168062",
@@ -19424,8 +20742,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "enterprise_saas"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 5,
@@ -19474,7 +20798,11 @@
           "cik": "1815762",
           "filer_name": "Omega Venture Partners I, L.P.  (CIK 0001815762)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on AI and enterprise software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-332362",
@@ -19523,10 +20851,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "deep_tech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public mandate to invest in early-stage AI companies leveraging OpenAI technology.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-304960",
@@ -19549,10 +20888,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "data"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known focus on B2B SaaS, security, and data at Seed/Series A.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160159",
@@ -19743,10 +21093,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/17/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for early-stage open source crypto investments",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-161847",
@@ -20025,8 +21384,15 @@
       ],
       "employee_count": 20,
       "latest_filing_date": "03/16/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 22,
@@ -20091,7 +21457,11 @@
           "cik": "1895473",
           "filer_name": "Owl Opportunity II GP Participation Fund, L.P.  (CIK 0001895473)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Publicly known as largest Edtech VC; invests Series A-Growth",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-331619",
@@ -20278,8 +21648,15 @@
       ],
       "employee_count": 72,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 90,
@@ -20344,7 +21721,11 @@
           "cik": "2030043",
           "filer_name": "Pantera Fund V Beta Bridge Offshore LP  (CIK 0002030043)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Firm is a major crypto investor; fund names include 'Token' and 'Venture'",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310746",
@@ -20462,10 +21843,22 @@
       ],
       "employee_count": 46,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "ai_infra",
+        "consumer"
+      ],
       "lat": 37.3382,
-      "lng": -121.8863
+      "lng": -121.8863,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Airbnb, SpaceX, and multiple AI/enterprise companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-317719",
@@ -20746,8 +22139,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "06/24/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 6,
@@ -20802,7 +22201,11 @@
           "cik": "1695076",
           "filer_name": "Pivotal bioVenture Partners Fund I, L.P.  (CIK 0001695076)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund names include 'bioVenture' and 'CNS', indicating biotech/therapeutics focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-330348",
@@ -20851,8 +22254,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/07/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 3,
@@ -20885,7 +22295,11 @@
           "cik": "1638842",
           "filer_name": "Playground Global, LLC  (CIK 0001638842)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for deep tech, hard science, and early-stage investments.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-321635",
@@ -21140,8 +22554,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "climate"
+      ],
       "lat": 37.8044,
       "lng": -122.2712,
       "form_d_total_filings": 3,
@@ -21178,7 +22597,11 @@
           "cik": "1743435",
           "filer_name": "POWERHOUSE VENTURES FUND I LP  (CIK 0001743435)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known climate tech focus; fund vehicles imply early-stage",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-281895",
@@ -21201,8 +22624,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 2,
@@ -21230,7 +22658,11 @@
           "cik": "1765859",
           "filer_name": "Precursor Ventures Outgrowth, LP - Series 3  (CIK 0001765859)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for diverse pre-seed/seed investments",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-340898",
@@ -21479,10 +22911,19 @@
       ],
       "employee_count": 4,
       "latest_filing_date": "04/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.5072,
-      "lng": -122.2603
+      "lng": -122.2603,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known fintech focus; early-stage investments",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310165",
@@ -21688,7 +23129,9 @@
       "employee_count": 39,
       "latest_filing_date": "04/29/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 3,
@@ -21725,7 +23168,11 @@
           "cik": "1929152",
           "filer_name": "Quiet Crypto LP  (CIK 0001929152)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund vehicle name 'Quiet Crypto LP' indicates crypto focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-323993",
@@ -21789,10 +23236,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "crypto",
+        "infra"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Solana, Lightning Network, and dYdX",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-335966",
@@ -21921,8 +23378,16 @@
       ],
       "employee_count": 30,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth",
+        "series_c",
+        "series_d"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 87,
@@ -21987,7 +23452,11 @@
           "cik": "1407247",
           "filer_name": "Redmile Capital Fund LP  (CIK 0001407247)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known healthcare/bio focus; 'Growth Investments' fund vehicle name",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-308137",
@@ -22039,7 +23508,9 @@
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "crypto"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 7,
@@ -22092,7 +23563,11 @@
           "cik": "1933125",
           "filer_name": "Reflexive Capital Quantstamp Venture (Cayman) Fund LP  (CIK 0001933125)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund vehicle names explicitly reference 'Digital Asset' and 'Quantstamp'",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-300001",
@@ -22220,8 +23695,16 @@
       ],
       "employee_count": 31,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "fintech",
+        "crypto"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 14,
@@ -22286,7 +23769,11 @@
           "cik": "1937574",
           "filer_name": "Ribbit Capital X, L.P.  (CIK 0001937574)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Publicly known fintech/crypto specialist; multi-stage investor",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-162304",
@@ -22309,8 +23796,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/09/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "dev_tools",
+        "security"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 11,
@@ -22375,7 +23869,11 @@
           "cik": "1885989",
           "filer_name": "Ridge Ventures V Affiliates, L.P.  (CIK 0001885989)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on early-stage B2B software and infrastructure",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-166062",
@@ -22398,8 +23896,14 @@
       ],
       "employee_count": 12,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "fintech"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 1,
@@ -22418,7 +23922,11 @@
           "cik": "1504756",
           "filer_name": "Right Side Capital Management, LLC  (CIK 0001504756)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for seed/SaaS/fintech focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-328031",
@@ -22467,10 +23975,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/01/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.3688,
-      "lng": -122.0363
+      "lng": -122.0363,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on early-stage software and marketplaces",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-175079",
@@ -22493,10 +24011,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "01/22/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and thesis focus on technical founders and seed stage",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-163820",
@@ -22694,10 +24223,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for biotech and healthcare investments across Series A-C.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-338297",
@@ -22789,8 +24330,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "cloud"
+      ],
       "lat": 37.5585,
       "lng": -122.2711,
       "form_d_total_filings": 6,
@@ -22847,7 +24395,11 @@
           "cik": "1575666",
           "filer_name": "Scale Venture Partners IV, L.P.  (CIK 0001575666)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Known for Enterprise SaaS and Cloud; Growth stage investments",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-315808",
@@ -22872,7 +24424,9 @@
       "employee_count": null,
       "latest_filing_date": "03/19/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 1,
@@ -22891,7 +24445,11 @@
           "cik": "2026696",
           "filer_name": "Scenic Co-Invest Anthropic LLC  (CIK 0002026696)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Fund vehicle name 'Scenic Co-Invest Anthropic LLC' indicates AI focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-342034",
@@ -22940,8 +24498,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/03/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "fintech"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 3,
@@ -22978,7 +24542,11 @@
           "cik": "1769313",
           "filer_name": "Schematic Ventures Fund, LP  (CIK 0001769313)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and thesis focus on enterprise and fintech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-313359",
@@ -23058,10 +24626,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "gaming",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio and program focus on gaming, foodtech, and cross-border startups.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-330660",
@@ -23163,10 +24742,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "deep_tech",
+        "healthcare",
+        "ai_infra"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public portfolio and thesis focus on deep tech, AI, and life sciences",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-314618",
@@ -23267,8 +24858,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 10,
@@ -23323,7 +24919,11 @@
           "cik": "1919633",
           "filer_name": "SemperVirens Capital Fund III NQP LP  (CIK 0001919633)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known digital health focus; SPV name 'Stepful' indicates healthcare sector investment.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-335150",
@@ -23533,8 +25133,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "defense",
+        "security",
+        "deep_tech"
+      ],
       "lat": 37.5779,
       "lng": -122.3478,
       "form_d_total_filings": 10,
@@ -23589,7 +25197,11 @@
           "cik": "2029575",
           "filer_name": "Shield Capital Fund II, L.P.  (CIK 0002029575)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public mandate for dual-use, defense, and security technologies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-317255",
@@ -23638,10 +25250,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/16/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "consumer"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and firm website focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160560",
@@ -23749,8 +25373,14 @@
       ],
       "employee_count": 50,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 65,
@@ -23815,7 +25445,11 @@
           "cik": "2059426",
           "filer_name": "SIGNALFIRE XIR OPPORTUNITIES II, L.P. - SERIES SPR  (CIK 0002059426)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for early-stage tech investing in enterprise and consumer.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-301473",
@@ -23864,10 +25498,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/05/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "mobile",
+        "ai_infra"
+      ],
       "lat": 37.3541,
-      "lng": -121.9552
+      "lng": -121.9552,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Corporate VC of SK Telecom investing in ICT, AI, and mobile",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-171144",
@@ -23890,10 +25535,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "crypto",
+        "deep_tech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes consumer, crypto, and deep tech companies at seed/Series A.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-327303",
@@ -23942,8 +25598,17 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "fintech",
+        "consumer"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 36,
@@ -24008,7 +25673,11 @@
           "cik": "1676142",
           "filer_name": "MCE Social Capital  (CIK 0001676142)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Well-known portfolio includes Slack, Box, and SurveyMonkey; funds indicate growth.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160297",
@@ -24032,10 +25701,22 @@
       ],
       "employee_count": 41,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known life sciences and healthcare investment focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160391",
@@ -24058,10 +25739,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "mobile"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Jeff Clavier's firm known for early-stage internet/mobile/consumer/enterprise",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-314021",
@@ -24136,10 +25828,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Publicly known pre-seed/seed community fund investing broadly across tech.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-288073",
@@ -24162,8 +25863,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.4852,
       "lng": -122.2364,
       "form_d_total_filings": 12,
@@ -24220,7 +25928,11 @@
           "cik": "1841542",
           "filer_name": "Sozo Ventures III, L.P.  (CIK 0001841542)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes enterprise SaaS and consumer brands; growth-stage focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-330129",
@@ -24243,10 +25955,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "11/18/2024",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "ai_infra"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and firm website description",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-330082",
@@ -24269,8 +25992,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "11/18/2024",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "fintech",
+        "cloud"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 4,
@@ -24316,7 +26045,11 @@
           "cik": "1899763",
           "filer_name": "SparkLabs Global Ventures FinTech II LLC  (CIK 0001899763)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Fund names include FinTech and Cloud vehicles; known for early-stage global investing.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-330130",
@@ -24431,8 +26164,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/21/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 4,
@@ -24478,7 +26217,11 @@
           "cik": "1640093",
           "filer_name": "Spider Capital Partners I, L.P.  (CIK 0001640093)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio focus on early-stage SaaS and consumer startups",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-170820",
@@ -24854,8 +26597,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 12,
@@ -24910,7 +26659,11 @@
           "cik": "1758618",
           "filer_name": "Storm Ventures Fund VI, L.P.  (CIK 0001758618)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio focus on enterprise SaaS and security, early-stage investments.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-169007",
@@ -25118,10 +26871,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/17/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known as a venture studio for B2B data and AI companies.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-172760",
@@ -25144,10 +26908,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on early-stage software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-162959",
@@ -25170,10 +26945,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "data"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Well-known enterprise focus; early-stage leader in security and data infrastructure.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-162285",
@@ -25196,10 +26983,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Well-known early-stage investor with broad sector focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-286312",
@@ -25457,10 +27253,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "01/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "data",
+        "enterprise_saas"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Firm website and public profile state focus on AI, data, and early-stage.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-297332",
@@ -25719,10 +27526,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "security"
+      ],
       "lat": 37.5779,
-      "lng": -122.3478
+      "lng": -122.3478,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known cybersecurity specialist firm investing in early-stage security companies.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-162804",
@@ -25745,8 +27561,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "healthcare"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 2,
@@ -25774,7 +27598,11 @@
           "cik": "1524528",
           "filer_name": "Tenaya Capital VI, LP  (CIK 0001524528)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Box, LendingClub, and 23andMe; growth-stage focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-333189",
@@ -25823,8 +27651,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 15,
@@ -25885,7 +27719,11 @@
           "cik": "1906038",
           "filer_name": "THAYER VENTURES AFFILIATES FUND IV, L.P.  (CIK 0001906038)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known travel/transport fintech specialist; multiple funds imply growth stage",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-161912",
@@ -25908,10 +27746,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/19/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known for biotech and therapeutics Series A and B investments.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-321178",
@@ -25960,10 +27808,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "deep_tech",
+        "consumer"
+      ],
       "lat": 37.8716,
-      "lng": -122.2727
+      "lng": -122.2727,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for Berkeley/Deep Tech and early-stage focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-330301",
@@ -26012,10 +27870,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "climate"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known climate tech and sustainability focus",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-326119",
@@ -26038,10 +27906,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "dev_tools",
+        "data"
+      ],
       "lat": 37.3838,
-      "lng": -122.2353
+      "lng": -122.2353,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public investment thesis focuses on Series A/B B2B software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-318340",
@@ -26220,10 +28099,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "06/23/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "climate",
+        "ai_infra"
+      ],
       "lat": 37.3852,
-      "lng": -122.1141
+      "lng": -122.1141,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public portfolio and thesis focus on frontier tech, AI, robotics, and climate.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-308595",
@@ -26357,10 +28247,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and investment focus on US-Asia cross-border tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-243789",
@@ -26454,8 +28356,14 @@
       ],
       "employee_count": 27,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "fintech",
+        "ai_infra"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 100,
@@ -26520,7 +28428,11 @@
           "cik": "2136788",
           "filer_name": "Tribe Capital AI Fund VII, L.P.  (CIK 0002136788)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Fund names include Fintech and AI funds; known for early-stage tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-160095",
@@ -26543,10 +28455,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "fintech",
+        "security"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for growth equity in fintech, security, and business services.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-287741",
@@ -26698,8 +28619,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 57,
@@ -26764,7 +28692,11 @@
           "cik": "1881252",
           "filer_name": "TRUE Latin Ventures, LLC  (CIK 0001881252)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public reputation for early-stage consumer, SaaS, and dev tools (e.g., Fitbit, RingCentral).",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-315790",
@@ -26848,10 +28780,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/28/2024",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio includes consumer and SaaS; known for early-stage",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-330705",
@@ -26979,10 +28921,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Well-known early-stage firm focused on software and consumer internet",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-312102",
@@ -27064,8 +29017,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "dev_tools"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 5,
@@ -27120,7 +29080,11 @@
           "cik": "1736042",
           "filer_name": "Unusual Ventures Fund I, L.P.  (CIK 0001736042)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Public firm profile and thesis focusing on early-stage B2B software",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-174730",
@@ -27169,8 +29133,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer"
+      ],
       "lat": 37.906,
       "lng": -122.545,
       "form_d_total_filings": 4,
@@ -27214,7 +29183,11 @@
           "cik": "1611869",
           "filer_name": "Upside Partnership I, L.P.  (CIK 0001611869)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Fund name 'Wellness' and public brand focus on consumer seed",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-297392",
@@ -27237,10 +29210,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/10/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "dev_tools",
+        "security"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known focus on Israeli B2B/Enterprise founders and early-stage acceleration.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-325983",
@@ -27456,8 +29440,18 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/12/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "series_d",
+        "series_e",
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "bio",
+        "healthcare"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 11,
@@ -27510,7 +29504,11 @@
           "cik": "1634632",
           "filer_name": "venBio Global Strategic Fund II L.P.  (CIK 0001634632)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known biotech specialist; funds indicate global strategic/late-stage focus.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-334930",
@@ -27559,10 +29557,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/28/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Well-known multi-stage firm investing in IT and healthcare",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-307665",
@@ -27680,8 +29689,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/21/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "deep_tech"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 13,
@@ -27740,7 +29757,11 @@
           "cik": "1870782",
           "filer_name": "Vertex Ventures Collaborators Fund III, L.P.  (CIK 0001870782)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Square, Stripe, Roblox, and Wiz",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-288845",
@@ -27899,10 +29920,23 @@
       ],
       "employee_count": 62,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Publicly known healthcare/biotech focus across US and Asia markets",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-339254",
@@ -28111,10 +30145,22 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "deep_tech",
+        "enterprise_saas",
+        "security"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public investment focus on deep tech, enterprise, and security",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-163393",
@@ -28137,10 +30183,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public profile emphasizes IT, semiconductors, and cross-border expansion investing.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-299004",
@@ -28331,8 +30387,12 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 43,
@@ -28397,7 +30457,11 @@
           "cik": "1641389",
           "filer_name": "WEFUNDER, INC.  (CIK 0001641389)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known equity crowdfunding platform investing across sectors at seed stage.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-300828",
@@ -28567,10 +30631,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "climate",
+        "enterprise_saas"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and firm website emphasize clean tech and enterprise growth.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-290174",
@@ -28619,10 +30694,19 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "Public portfolio focus on healthcare and technology companies",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-170737",
@@ -28672,10 +30756,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/17/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security",
+        "data"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio and website focus on enterprise software, security, data.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-168461",
@@ -28698,8 +30793,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "cloud",
+        "data"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 1,
@@ -28718,7 +30820,11 @@
           "cik": "1579703",
           "filer_name": "Wing Venture Partners, L.P.  (CIK 0001579703)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public profile focuses on enterprise cloud, data, and Series A/B.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-318443",
@@ -28741,8 +30847,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "consumer",
+        "consumer_social",
+        "gaming"
+      ],
       "lat": 37.4852,
       "lng": -122.2364,
       "form_d_total_filings": 8,
@@ -28795,7 +30909,11 @@
           "cik": "1924350",
           "filer_name": "WndrCo Holdings II LP  (CIK 0001924350)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Public portfolio includes Quibi, DAZN, and Headspace; fund names include Seed and Ventures.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-310495",
@@ -28887,8 +31005,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "deep_tech"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 4,
@@ -28932,7 +31057,11 @@
           "cik": "1763789",
           "filer_name": "Xfund 3, L.P.  (CIK 0001763789)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Publicly known for university seed investments and deep tech",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-171730",
@@ -28955,8 +31084,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.3861,
       "lng": -122.0839,
       "form_d_total_filings": 10,
@@ -29017,7 +31151,11 @@
           "cik": "1970280",
           "filer_name": "Stonks Y Combinator Winter 2023 Access Fund, a series of Stonks Funds, LP  (CIK 0001970280)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "Publicly known as the largest seed accelerator investing broadly.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-298042",
@@ -29040,10 +31178,20 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Catherine Hulot's firm focuses on early-stage consumer and enterprise",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-332081",
@@ -29067,7 +31215,9 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "bio"
+      ],
       "lat": 37.5779,
       "lng": -122.3478,
       "form_d_total_filings": 2,
@@ -29095,7 +31245,11 @@
           "cik": "2038022",
           "filer_name": "YK Bioventures Opportunities Fund II, L.P.  (CIK 0002038022)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "Firm name 'YK Bioventures' explicitly indicates biotechnology specialization.",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-168740",
@@ -29222,8 +31376,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 25,
@@ -29288,7 +31449,11 @@
           "cik": "1966435",
           "filer_name": "Bookman - Zeev Ventures IX LLC  (CIK 0001966435)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.95,
+      "inference_basis": "Well-known portfolio includes Audible, Chegg, Houzz, Tipalti, and Wix",
+      "inference_model": "glm-4.6"
     },
     {
       "id": "sec-338283",
