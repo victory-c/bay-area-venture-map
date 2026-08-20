@@ -498,7 +498,7 @@ document.addEventListener("alpine:init", () => {
 
     copyCsv() {
       const rows = [
-        ["name", "address", "website", "aum_usd", "stages", "sectors", "typical_check", "deal_velocity"],
+        ["name", "address", "website", "aum_usd", "stages", "sectors", "tags_source", "typical_check", "deal_velocity"],
         ...this.visibleFirms.map((f) => [
           f.name,
           f.address,
@@ -506,6 +506,9 @@ document.addEventListener("alpine:init", () => {
           f.aum_usd ?? "",
           (f.stages || []).join("|"),
           (f.sectors || []).join("|"),
+          // Flag which rows' stage/sector tags are AI-inferred vs hand-verified,
+          // so an exported list carries the same provenance the UI shows.
+          (f.sectors || []).length ? (f.inferred ? "ai_inferred" : "curated") : "",
           f.check_size?.typical ?? "",
           f.deal_velocity_per_year ?? "",
         ]),
