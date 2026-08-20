@@ -45,3 +45,4 @@ data/.llm-enrich-cache.json
 .DS_Store
 .gstack/
 data/.glm-enrich-cache.json
+data/.glm-thesis-cache.json

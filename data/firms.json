@@ -2,6 +2,7 @@
   "generated_with_enrichers": [
     "form_d",
     "glm_sectors",
+    "glm_thesis",
     "sec_bulk"
   ],
   "firm_count": 675,
@@ -3219,7 +3220,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Well-known biotech/healthcare specialist investing in early-stage companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage venture firm focused on building biotechnology and therapeutics companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-313557",
@@ -3324,7 +3327,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes enterprise SaaS and consumer brands; early-stage focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-163520",
@@ -3938,7 +3943,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on biotech and healthcare companies.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B bio and healthcare startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-326839",
@@ -4080,7 +4087,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known pre-seed specialist investing in B2B and B2C software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Pre-seed and seed investor backing enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-310823",
@@ -4731,7 +4740,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes Yandex, Acronis, Parallels; known for early-stage enterprise/infra",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS and infrastructure startups with a focus on cross-border opportunities.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-163299",
@@ -4768,7 +4779,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and firm website descriptions",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A startups in consumer, enterprise SaaS, and security sectors.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-160017",
@@ -4822,7 +4835,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public portfolio includes Snowflake, Uber, Grab; known for growth/late stage tech.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor backing high-growth enterprise SaaS and consumer companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-312632",
@@ -5095,7 +5110,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on AI, biotech, and early-stage tech startups",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep-tech focused firm backing seed and Series A startups in AI infrastructure and bio.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-290313",
@@ -5239,7 +5256,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public portfolio and thesis focus on technical founders building deep tech infrastructure.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Technical seed and Series A investor focused on developer tools, security, and data infrastructure.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-169160",
@@ -5512,7 +5531,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Corporate VC of Applied Materials; invests in semiconductors, materials, and industrial tech.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Corporate-backed firm investing in Series A and B deep tech and industrial startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-338922",
@@ -5683,7 +5704,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio focus on white space tech, medtech, and enterprise software.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage deep tech, healthcare, and enterprise SaaS companies through its specialized fund vehicles.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-168686",
@@ -5718,7 +5741,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio shows focus on healthcare and technology seed/Series A",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A healthcare startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-318935",
@@ -5884,7 +5909,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm website and public profile emphasize climate tech and deep tech early stage investments.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A startups tackling climate challenges through deep technology innovation.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-317485",
@@ -6640,7 +6667,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Publicly known cybersecurity-focused firm investing in early-stage startups",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Operator-led firm backing seed and Series A cybersecurity startups founded by former security practitioners.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-323761",
@@ -6729,7 +6758,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on automation, enterprise, and fintech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B enterprise SaaS and fintech startups leveraging automation for manual business processes.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-317334",
@@ -6867,7 +6898,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public portfolio and thesis focus on AI-first companies and early-stage B2B software.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage firm investing in AI infrastructure, enterprise SaaS, and developer tools.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-160525",
@@ -7115,7 +7148,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Well-known early-stage investments in Uber, eBay, Snap, and Zillow.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage investor backing enterprise SaaS, consumer, and marketplace startups with a focus on equal partnerships.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-332647",
@@ -7176,7 +7211,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known UC Berkeley accelerator fund focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A deep tech, enterprise SaaS, and healthcare startups affiliated with UC Berkeley.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-170793",
@@ -7433,7 +7470,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Firm name and fund vehicles explicitly indicate blockchain/crypto specialization.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Crypto-native firm backing seed and Series A blockchain infrastructure and DeFi protocols.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-321168",
@@ -7687,7 +7726,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Canva, Square, OnDeck, and Roblox.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C enterprise, consumer, and fintech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-285148",
@@ -7723,7 +7764,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for Sci-Fi accelerator focused on crypto and VR",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Pre-seed and seed firm investing in crypto and deep tech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-285101",
@@ -7854,7 +7897,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known focus on construction tech, robotics, and physical world innovation.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A industrial and deep tech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-160704",
@@ -7995,7 +8040,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm website and public profile emphasize early-stage B2B software and infrastructure.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS, dev tools, and data startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-166060",
@@ -8031,7 +8078,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and website focus on seed/SaaS/consumer",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A consumer and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-319667",
@@ -8231,7 +8280,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Sift, Everlane, and Databricks.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS, consumer, and fintech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-338657",
@@ -8406,7 +8457,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known B2B software buyout and growth equity focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth equity firm partnering with founders of enterprise SaaS companies to scale operations and accelerate revenue.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-304948",
@@ -8721,7 +8774,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund of funds investing in top-tier seed firms",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Leading fund-of-funds manager providing diversified access to top-tier seed-stage venture capital firms.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-283170",
@@ -8759,7 +8814,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on early-stage B2B and AI",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage firm investing in enterprise SaaS, AI infrastructure, and developer tools.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-334360",
@@ -8956,7 +9013,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for data-driven consumer brand investing; Growth funds indicate later stages.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Data-driven firm investing capital and credit in Series A to growth-stage consumer brands.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-314911",
@@ -9019,7 +9078,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on IT security, digital health, and enterprise software.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage investor partnering with technical founders to build transformative companies in healthcare, security, and enterprise SaaS.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-282991",
@@ -9258,7 +9319,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm known for commerce/fintech; early-stage investments per public profile.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A fintech and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-288096",
@@ -9319,7 +9382,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm website and public profile state focus on early-stage climate tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A climate startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-324113",
@@ -9466,7 +9531,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public firm profile and investment history focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B enterprise SaaS, data, and security startups with dedicated opportunity funds.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-226750",
@@ -9506,7 +9573,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on enterprise, data, and growth",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor backing enterprise SaaS, data, and AI infrastructure companies at Series B and C.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-310398",
@@ -9621,7 +9690,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Tesla, Facebook, BitGo, and SaaS companies.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS, consumer, and fintech startups founded by repeat entrepreneurs.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-160976",
@@ -9687,7 +9758,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm website and public profile emphasize deep tech, climate, and health investments.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A deep tech, climate, and healthcare startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-109948",
@@ -9742,7 +9815,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes AvidXchange, Databricks, and Tinder.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed through Series B enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-289267",
@@ -9791,7 +9866,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund vehicle name 'Crypto Lotus Fund B' indicates crypto focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Invests in crypto assets and blockchain technology across sectors.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-283270",
@@ -9898,7 +9975,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes Box, LendingClub, Tango; multi-stage history",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-170108",
@@ -9936,7 +10015,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and investment focus on AI, deep tech, and early-stage enterprise.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B startups in AI infrastructure, deep tech, and enterprise SaaS.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-310088",
@@ -10081,7 +10162,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for Double Bottom Line impact investing in climate, health, and tech.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Venture firm backing Series A to C companies in climate, enterprise SaaS, and healthcare sectors.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-293073",
@@ -10208,7 +10291,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Fund names: DCVC Bio, DCVC Climate, DCVC Energy; known deep tech focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech firm backing Series A and B startups in climate, biology, and computational science.",
+      "thesis_confidence": 0.95
     },
     {
       "id": "sec-297640",
@@ -10295,7 +10380,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Firm name and public bio focus on deep tech biology.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech firm backing Series A and B bio startups leveraging computational science to solve planetary challenges.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-299671",
@@ -10330,7 +10417,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known early-stage healthcare/digital health focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A healthcare startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-290048",
@@ -10368,7 +10457,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Ayasdi, Ionic Security, and Coinbase",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C enterprise SaaS, security, and consumer startups led by experienced founders.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-337756",
@@ -10608,7 +10699,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm name 'Growth' and fund names 'AI Investors' indicate stage and sector focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage firm backing enterprise SaaS and AI infrastructure leaders with dedicated AI and resiliency funds.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-306743",
@@ -10766,7 +10859,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio focus on B2B software and cybersecurity",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS and security startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-301664",
@@ -10803,7 +10898,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and thesis focus on B2B security and software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A startups in security, enterprise SaaS, and developer tools.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-333872",
@@ -10840,7 +10937,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on cybersecurity, B2B SaaS, and early-stage enterprise software.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A startups in security, enterprise SaaS, and dev tools.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-333875",
@@ -10878,7 +10977,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on B2B security and software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B startups in security, enterprise SaaS, and developer tools.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-336680",
@@ -10916,7 +11017,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on cybersecurity, B2B SaaS, and developer tools",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B startups in security, enterprise SaaS, and developer tools.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-313971",
@@ -10979,7 +11082,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes deep tech, consumer, and enterprise SaaS at Seed/Series A.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A deep tech, consumer, and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-304564",
@@ -11123,7 +11228,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Historical reputation for early-stage tech investing across diverse sectors.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Generalist firm backing seed through Series B startups across all sectors.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-289448",
@@ -11186,7 +11293,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and investment focus spanning US and China markets",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B cross-border, deep tech, and gaming startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-329183",
@@ -11223,7 +11332,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and investment focus on deep tech and cross-border US-China deals.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Cross-border venture firm backing seed and Series A deep tech, enterprise SaaS, and consumer startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-309084",
@@ -11304,7 +11415,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes companies like Uber, Angi, and Credit Karma.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Global venture firm investing in seed to Series B consumer, enterprise SaaS, and fintech startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-325056",
@@ -11399,7 +11512,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm website and public profile state climate tech focus and early-stage investing.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage climate startups focused on carbon removal and sustainable systems.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-171406",
@@ -11526,7 +11641,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes companies like GitLab, Docker, and Postman.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B enterprise SaaS, dev tools, and infrastructure startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-167121",
@@ -11617,7 +11734,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on biotech and late-stage healthcare companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor specializing in late-stage biotechnology and healthcare companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-338309",
@@ -11758,7 +11877,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known crypto specialist; Frontier/Core funds imply early-stage focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Crypto-native firm backing seed and Series A crypto infrastructure and DeFi protocols.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-289501",
@@ -11869,7 +11990,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for SaaS and cloud computing investments",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A, Series B, and growth-stage enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-307613",
@@ -11933,7 +12056,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes Cylance, Sumo Logic, and Nimble Storage",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A, Series B, and growth-stage enterprise SaaS, security, and data startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-328575",
@@ -12308,7 +12433,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public knowledge of Fall Line Capital's agriculture and farmland focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Industrial-focused firm investing through special purpose vehicles like the Fall Line Impossible SPV.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-135545",
@@ -12447,7 +12574,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known thesis backing positive impact deep tech and science",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech and climate-focused firm backing seed and Series A founders building scientific solutions to existential problems.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-298492",
@@ -12547,7 +12676,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm name and SBIC fund vehicle indicate fintech and growth focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Fintech-focused firm backing Series A, Series B, and growth-stage companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-171737",
@@ -12905,7 +13036,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Known early-stage consumer and enterprise investor",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage firm backing pre-seed and seed consumer and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-315000",
@@ -12969,7 +13102,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Well-known consumer and fintech focus, early-stage specialist",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Consumer-focused firm backing seed to Series B brands in fintech and enterprise SaaS.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-281676",
@@ -13005,7 +13140,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known cybersecurity specialist investing from early to growth stage",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Cybersecurity-focused firm backing Series A, Series B, and growth-stage companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-163046",
@@ -13065,7 +13202,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Known for Series A/B enterprise and deep tech investments.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS and deep tech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-166012",
@@ -13192,7 +13331,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Well-known public investment history spanning tech, bio, and defense.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Generalist firm backing seed to growth-stage technology companies across all sectors.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-331507",
@@ -13228,7 +13369,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and thesis emphasizing B2B and consumer tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-287858",
@@ -13346,7 +13489,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Publicly known dedicated life sciences and biotech investor",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C healthcare, bio, and therapeutics companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-170229",
@@ -13408,7 +13553,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on early-stage consumer and SaaS",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A consumer and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-310407",
@@ -13472,7 +13619,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for growth equity in financial services and enterprise tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth equity firm partnering with profitable fintech and enterprise SaaS companies at Series C and D stages.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-163821",
@@ -13640,7 +13789,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Well-known online VC platform investing across sectors at early stages.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Online venture capital platform deploying capital into seed and Series A startups across all sectors.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-289902",
@@ -13677,7 +13828,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and thesis focus on deep tech and enterprise",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage deep tech, healthcare, and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-301700",
@@ -13777,7 +13930,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund names indicate AI, Fusion (energy), and deep tech focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech and climate specialist firm backing seed and Series A innovators in AI infrastructure and hard science.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-165977",
@@ -13958,7 +14113,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public investment thesis focusing on sustainability, energy, and digital transformation.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and growth-stage companies in climate, deep tech, and enterprise SaaS.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-316994",
@@ -13996,7 +14153,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known global climate-focused multi-stage investment platform",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage climate investor founded by former US Secretary of State John Kerry and billionaire investor Tom Steyer.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-325270",
@@ -14084,7 +14243,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and website focus on digital health and enterprise software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A healthcare and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-269936",
@@ -14164,7 +14325,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public firm profile focuses on climate tech and industrial decarbonization.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B climate, deep tech, and industrial startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-317560",
@@ -14482,7 +14645,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known consumer tech specialist; multi-stage funds",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Consumer-focused firm backing Series A through C consumer and social startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-163941",
@@ -14821,7 +14986,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm name explicitly states 'Cryptos' and public portfolio confirms blockchain focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage crypto and blockchain startups at the seed and Series A stages.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-315702",
@@ -14858,7 +15025,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known crypto/Web3 focus and early-stage investments",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A crypto and AI infrastructure startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-318906",
@@ -15058,7 +15227,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Known early-stage investments in consumer and enterprise software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage firm backing seed and Series A consumer and enterprise SaaS startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-323219",
@@ -15096,7 +15267,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Known for Series B+ growth investments in SaaS, consumer, and fintech.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor backing enterprise SaaS, consumer, and fintech companies at Series B and C.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-323221",
@@ -15209,7 +15382,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio focus on digital health and wellness companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A healthcare startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-291776",
@@ -15245,7 +15420,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Heavybit is a well-known developer-focused program for developer tools and infrastructure.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Seed and Series A investor dedicated to developer tools and infrastructure startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-333417",
@@ -15582,7 +15759,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known seed focus on consumer and enterprise SaaS",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Seed and Series A investor backing independent consumer and enterprise SaaS founders.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-110877",
@@ -15769,7 +15948,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for seed/SaaS focus; fund names imply standard VC structure.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS, consumer, and healthcare startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-339411",
@@ -15818,7 +15999,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund vehicle name explicitly states 'Medical Device' focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Venture firm investing in medical device companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-291058",
@@ -15872,7 +16055,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for pre-seed/seed software and consumer bets",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Pre-seed and seed firm backing enterprise SaaS, consumer, and fintech startups founded by diverse operators.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-283831",
@@ -16135,7 +16320,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known genomics and life sciences specialist",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A-C healthcare and bio startups with strategic ties to Illumina's genomics platform.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-337264",
@@ -16250,7 +16437,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Well-known seed firm backing Coinbase, Instacart, and Flexport",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A consumer, enterprise SaaS, and crypto startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-288679",
@@ -16288,7 +16477,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and thesis of Innovation Endeavors",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech and climate-focused firm backing seed to Series B founders building transformative enterprise solutions.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-312851",
@@ -16368,7 +16559,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm's public investment thesis and portfolio companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B deep tech, AI infrastructure, and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-170740",
@@ -16406,7 +16599,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes deep tech, SaaS, and climate companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage deep tech, enterprise SaaS, and climate startups founded by technical visionaries.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-311568",
@@ -16566,7 +16761,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "IVP is a well-known late-stage growth and tech investor",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-290647",
@@ -16620,7 +16817,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "IVP is a well-known late-stage growth and expansion investor.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-310356",
@@ -16674,7 +16873,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Institutional Venture Partners (IVP) known for late-stage tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-324257",
@@ -16769,7 +16970,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and website focus on IT and healthcare",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A, Series B, and growth-stage healthcare companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-297342",
@@ -16883,7 +17086,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes companies like Auth0, Databricks, and SendGrid",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and dev tools startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-161709",
@@ -16919,7 +17124,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes ClassPass, Dollar Shave Club, and Namely",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-277092",
@@ -16955,7 +17162,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on brain/computer interface and digital health",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage deep tech and healthcare startups at the intersection of science and technology.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-310676",
@@ -17095,7 +17304,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Known for deep tech and enterprise pre-seed/seed investments",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech and enterprise SaaS specialist investing at the pre-seed and seed stages.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-317692",
@@ -17132,7 +17343,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for seed-stage social impact tech, consumer, and enterprise.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Social impact investor backing seed and Series A startups in consumer, fintech, and enterprise SaaS that close gaps of access and opportunity.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-294643",
@@ -17666,7 +17879,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known healthcare/biotech focus investing in Series A-C.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C healthcare, bio, and therapeutics companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-325481",
@@ -17764,7 +17979,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Rappi, Reddit, and multiple seed-stage startups",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A consumer, enterprise SaaS, and fintech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-319782",
@@ -17827,7 +18044,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "August Capital legacy focus on enterprise and consumer IT",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed through Series B enterprise SaaS and consumer startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-305162",
@@ -17934,7 +18153,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known healthcare/biotech specialist firm investing in growth stages.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth equity firm backing healthcare and bio companies at Series B, Series C, and later stages.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-162119",
@@ -18025,7 +18246,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes high-growth enterprise, consumer, and fintech companies.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage firm backing Series B and C enterprise SaaS, consumer, and fintech companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-306495",
@@ -18295,7 +18518,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and website focus on early-stage consumer and enterprise",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs pre-seed and seed-stage consumer and enterprise SaaS startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-309374",
@@ -18471,7 +18696,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Zoom, Uber, NerdWallet; early-stage focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Seed and Series A investor backing consumer and enterprise SaaS founders.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-337486",
@@ -18875,7 +19102,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known late-stage growth investor in tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Late-stage growth investor backing enterprise SaaS, consumer, and fintech leaders at Series C and D.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-340399",
@@ -19083,7 +19312,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and website focus on early-stage B2B and B2C software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and consumer startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-332782",
@@ -19173,7 +19404,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Corporate VC investing in digital, energy, and mobility sectors",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor backing enterprise SaaS, climate, and industrial companies leveraging Mitsui & Co.'s global corporate network.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-310575",
@@ -19237,7 +19470,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Historical investments in cybersecurity, cloud infrastructure, and early-stage tech companies.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage investor backing enterprise SaaS, security, and consumer startups from seed through Series B.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-283450",
@@ -19290,7 +19525,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes enterprise SaaS and consumer brands; early-stage focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-315988",
@@ -19503,7 +19740,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes AI, robotics, and space tech companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A AI infrastructure and deep tech startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-161509",
@@ -19541,7 +19780,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Historical investments in IT and healthcare across growth stages",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through growth-stage healthcare and enterprise SaaS companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-339276",
@@ -19960,7 +20201,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and website focus on deep tech and early-stage enterprise.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A deep tech and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-321649",
@@ -20142,7 +20385,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known thesis on network effects and marketplace investing",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs pre-seed to Series A marketplace startups leveraging network effects.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-160838",
@@ -20180,7 +20425,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and investment thesis focus on intelligent enterprise and consumer tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor backing enterprise SaaS, consumer, and deep tech companies at Series B and C.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-310767",
@@ -20216,7 +20463,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known cybersecurity and safety investor",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor focused exclusively on cybersecurity companies at Series B and C.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-317440",
@@ -20552,7 +20801,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public portfolio and thesis focused on world-positive systems",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A startups in climate, healthcare, and consumer sectors.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-168062",
@@ -20802,7 +21053,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on AI and enterprise software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A AI infrastructure and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-332362",
@@ -20865,7 +21118,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public mandate to invest in early-stage AI companies leveraging OpenAI technology.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage AI infrastructure and deep tech startups leveraging OpenAI's ecosystem and expertise.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-304960",
@@ -20902,7 +21157,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known focus on B2B SaaS, security, and data at Seed/Series A.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Operator-led firm backing seed and Series A enterprise SaaS, security, and data startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-160159",
@@ -21105,7 +21362,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for early-stage open source crypto investments",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A crypto startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-161847",
@@ -21461,7 +21720,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Publicly known as largest Edtech VC; invests Series A-Growth",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Largest global VC dedicated to education technology, backing Series A to growth-stage enterprise and consumer edtech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-331619",
@@ -21725,7 +21986,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Firm is a major crypto investor; fund names include 'Token' and 'Venture'",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Crypto-native firm backing early-stage infrastructure and DeFi protocols across seed to growth stages.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-310746",
@@ -21858,7 +22121,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Airbnb, SpaceX, and multiple AI/enterprise companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A to C enterprise SaaS, AI infrastructure, and consumer startups leveraging a corporate-backed venture model.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-317719",
@@ -22205,7 +22470,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund names include 'bioVenture' and 'CNS', indicating biotech/therapeutics focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B bio and therapeutics companies, including a dedicated CNS fund.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-330348",
@@ -22299,7 +22566,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for deep tech, hard science, and early-stage investments.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep-tech venture firm providing engineering resources and capital to seed and Series A hard-tech startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-321635",
@@ -22601,7 +22870,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known climate tech focus; fund vehicles imply early-stage",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A climate startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-281895",
@@ -22662,7 +22933,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for diverse pre-seed/seed investments",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Generalist firm providing pre-seed and seed capital to early-stage startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-340898",
@@ -22923,7 +23196,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known fintech focus; early-stage investments",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A fintech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-310165",
@@ -23172,7 +23447,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund vehicle name 'Quiet Crypto LP' indicates crypto focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Crypto-focused investment firm deploying capital across digital assets and blockchain protocols through dedicated fund vehicles.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-323993",
@@ -23249,7 +23526,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Solana, Lightning Network, and dYdX",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A crypto and infrastructure startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-335966",
@@ -23456,7 +23735,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known healthcare/bio focus; 'Growth Investments' fund vehicle name",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Cross-asset healthcare investor backing growth-stage bio and therapeutics companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-308137",
@@ -23567,7 +23848,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund vehicle names explicitly reference 'Digital Asset' and 'Quantstamp'",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Crypto-native firm backing digital asset and blockchain infrastructure projects through dedicated US and Cayman funds.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-300001",
@@ -23773,7 +24056,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Publicly known fintech/crypto specialist; multi-stage investor",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Global fintech and crypto specialist backing growth-stage companies transforming financial services.",
+      "thesis_confidence": 0.95
     },
     {
       "id": "sec-162304",
@@ -23873,7 +24158,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on early-stage B2B software and infrastructure",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS, dev tools, and security startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-166062",
@@ -23926,7 +24213,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for seed/SaaS/fintech focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "High-volume investor backing pre-seed and seed enterprise SaaS and fintech startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-328031",
@@ -23988,7 +24277,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on early-stage software and marketplaces",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Data-driven venture firm backing seed and Series A enterprise SaaS and consumer startups using a proprietary sourcing model.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-175079",
@@ -24025,7 +24316,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and thesis focus on technical founders and seed stage",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs pre-seed and seed deep tech, enterprise SaaS, and dev tools startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-163820",
@@ -24238,7 +24531,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for biotech and healthcare investments across Series A-C.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C healthcare, bio, and therapeutics companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-338297",
@@ -24399,7 +24694,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Known for Enterprise SaaS and Cloud; Growth stage investments",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage firm backing enterprise SaaS and cloud companies at Series B and C.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-315808",
@@ -24449,7 +24746,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Fund vehicle name 'Scenic Co-Invest Anthropic LLC' indicates AI focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Anthropic co-investment vehicle backing AI infrastructure opportunities.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-342034",
@@ -24546,7 +24845,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and thesis focus on enterprise and fintech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and fintech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-313359",
@@ -24640,7 +24941,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and program focus on gaming, foodtech, and cross-border startups.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage investor backing consumer, gaming, and enterprise SaaS startups with a focus on cross-border opportunities.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-330660",
@@ -24757,7 +25060,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public portfolio and thesis focus on deep tech, AI, and life sciences",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech and AI-focused firm led by Bill Maris, backing seed to Series B companies transforming healthcare and infrastructure.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-314618",
@@ -24923,7 +25228,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known digital health focus; SPV name 'Stepful' indicates healthcare sector investment.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Venture firm investing in Series A and B healthcare companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-335150",
@@ -25201,7 +25508,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public mandate for dual-use, defense, and security technologies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and growth-stage companies building defense, security, and deep tech solutions.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-317255",
@@ -25265,7 +25574,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and firm website focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B enterprise SaaS, security, and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-160560",
@@ -25449,7 +25760,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for early-stage tech investing in enterprise and consumer.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Data-driven firm leveraging proprietary technology to back seed and Series A enterprise and consumer startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-301473",
@@ -25512,7 +25825,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Corporate VC of SK Telecom investing in ICT, AI, and mobile",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Corporate VC backing Series A to growth-stage mobile and AI infrastructure startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-171144",
@@ -25549,7 +25864,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes consumer, crypto, and deep tech companies at seed/Series A.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs early-stage consumer, crypto, and deep tech startups with a long-term, operator-led investment approach.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-327303",
@@ -25677,7 +25994,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Well-known portfolio includes Slack, Box, and SurveyMonkey; funds indicate growth.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Multi-stage firm backing enterprise SaaS, fintech, and consumer startups across seed to growth.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-160297",
@@ -25716,7 +26035,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known life sciences and healthcare investment focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C healthcare, bio, and therapeutics companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-160391",
@@ -25753,7 +26074,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Jeff Clavier's firm known for early-stage internet/mobile/consumer/enterprise",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A consumer, enterprise SaaS, and mobile startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-314021",
@@ -25840,7 +26163,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Publicly known pre-seed/seed community fund investing broadly across tech.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Residential community for pre-seed and seed founders providing peer support and capital for technical and deep tech ventures.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-288073",
@@ -25932,7 +26257,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes enterprise SaaS and consumer brands; growth-stage focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage firm partnering with Series B and C enterprise SaaS and consumer companies to scale globally.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-330129",
@@ -25969,7 +26296,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and firm website description",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Global seed fund investing in enterprise SaaS, consumer, and AI infrastructure startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-330082",
@@ -26049,7 +26378,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Fund names include FinTech and Cloud vehicles; known for early-stage global investing.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Global seed and Series A investor specializing in fintech and cloud startups across dedicated funds.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-330130",
@@ -26221,7 +26552,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio focus on early-stage SaaS and consumer startups",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS and consumer startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-170820",
@@ -26663,7 +26996,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio focus on enterprise SaaS and security, early-stage investments.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS and security startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-169007",
@@ -26885,7 +27220,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known as a venture studio for B2B data and AI companies.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Studio-founded venture firm building and funding seed and Series A enterprise SaaS, data, and AI infrastructure companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-172760",
@@ -26922,7 +27259,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on early-stage software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs pre-seed and seed-stage founders building enterprise SaaS, consumer, and fintech companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-162959",
@@ -26960,7 +27299,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Well-known enterprise focus; early-stage leader in security and data infrastructure.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to Series B enterprise SaaS, security, and data startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-162285",
@@ -26995,7 +27336,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Well-known early-stage investor with broad sector focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Generalist firm providing pre-seed and seed capital to early-stage startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-286312",
@@ -27267,7 +27610,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Firm website and public profile state focus on AI, data, and early-stage.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage firm investing in AI infrastructure, data, and enterprise SaaS.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-297332",
@@ -27538,7 +27883,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known cybersecurity specialist firm investing in early-stage security companies.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A cybersecurity startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-162804",
@@ -27602,7 +27949,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Box, LendingClub, and 23andMe; growth-stage focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage investor backing Series B and C enterprise SaaS, consumer, and healthcare companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-333189",
@@ -27723,7 +28072,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known travel/transport fintech specialist; multiple funds imply growth stage",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and growth-stage fintech companies across multiple dedicated funds.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-161912",
@@ -27759,7 +28110,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known for biotech and therapeutics Series A and B investments.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Scientist-led firm backing Series A and B bio and therapeutics companies with deep technical expertise.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-321178",
@@ -27821,7 +28174,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for Berkeley/Deep Tech and early-stage focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Berkeley-rooted firm backing pre-seed and seed deep tech and consumer startups spun out of the university.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-330301",
@@ -27883,7 +28238,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known climate tech and sustainability focus",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and growth-stage climate technology companies.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-326119",
@@ -27920,7 +28277,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public investment thesis focuses on Series A/B B2B software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS, dev tools, and data startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-318340",
@@ -28113,7 +28472,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public portfolio and thesis focus on frontier tech, AI, robotics, and climate.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Corporate venture arm backing seed and Series A deep tech, climate, and AI infrastructure startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-308595",
@@ -28262,7 +28623,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and investment focus on US-Asia cross-border tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A through C enterprise SaaS, consumer, and fintech startups with a cross-border investment strategy.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-243789",
@@ -28432,7 +28795,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Fund names include Fintech and AI funds; known for early-stage tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Data-driven firm backing seed and Series A fintech and AI infrastructure startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-160095",
@@ -28467,7 +28832,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for growth equity in fintech, security, and business services.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth equity firm investing in fintech and cybersecurity companies.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-287741",
@@ -28696,7 +29063,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public reputation for early-stage consumer, SaaS, and dev tools (e.g., Fitbit, RingCentral).",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage investor partnering with founders to build consumer, enterprise SaaS, and dev tools companies from inception.",
+      "thesis_confidence": 0.95
     },
     {
       "id": "sec-315790",
@@ -28793,7 +29162,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes consumer and SaaS; known for early-stage",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A consumer and enterprise SaaS startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-330705",
@@ -28935,7 +29306,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Well-known early-stage firm focused on software and consumer internet",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs pre-seed and seed enterprise SaaS, consumer, and fintech startups with a hands-on, operator-led approach.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-312102",
@@ -29084,7 +29457,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Public firm profile and thesis focusing on early-stage B2B software",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "High-touch seed and Series A firm for enterprise SaaS, security, and dev tools, providing dedicated platform support.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-174730",
@@ -29187,7 +29562,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Fund name 'Wellness' and public brand focus on consumer seed",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Early-stage consumer investor focused on seed and Series A wellness and lifestyle brands.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-297392",
@@ -29224,7 +29601,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known focus on Israeli B2B/Enterprise founders and early-stage acceleration.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs pre-seed and seed enterprise SaaS, dev tools, and security startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-325983",
@@ -29508,7 +29887,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known biotech specialist; funds indicate global strategic/late-stage focus.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs late-stage biotech and healthcare companies through its Global Strategic Fund vehicles.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-334930",
@@ -29571,7 +29952,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Well-known multi-stage firm investing in IT and healthcare",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed to growth healthcare startups with a legacy of scientific innovation and company building.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-307665",
@@ -29761,7 +30144,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Square, Stripe, Roblox, and Wiz",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Global firm investing in Series A through C enterprise SaaS, consumer, and deep tech startups across US and China markets.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-288845",
@@ -29936,7 +30321,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Publicly known healthcare/biotech focus across US and Asia markets",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Growth-stage healthcare and biotherapeutics investor backing companies from Series A through expansion.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-339254",
@@ -30160,7 +30547,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public investment focus on deep tech, enterprise, and security",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Deep tech and enterprise SaaS investor backing Series A to C companies in security and infrastructure.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-163393",
@@ -30196,7 +30585,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public profile emphasizes IT, semiconductors, and cross-border expansion investing.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Global venture firm investing in Series A through growth-stage enterprise SaaS companies.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-299004",
@@ -30461,7 +30852,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known equity crowdfunding platform investing across sectors at seed stage.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Crowdfunding platform backing seed-stage startups through community-driven investment vehicles.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-300828",
@@ -30645,7 +31038,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and firm website emphasize clean tech and enterprise growth.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A to growth-stage companies in climate and enterprise SaaS.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-290174",
@@ -30706,7 +31101,9 @@
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio focus on healthcare and technology companies",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Cross-border venture firm investing in Series A and B healthcare companies connecting US and Asian markets.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-170737",
@@ -30770,7 +31167,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and website focus on enterprise software, security, data.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS, security, and data startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-168461",
@@ -30824,7 +31223,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public profile focuses on enterprise cloud, data, and Series A/B.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs Series A and B enterprise SaaS, cloud, and data startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-318443",
@@ -30913,7 +31314,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Quibi, DAZN, and Headspace; fund names include Seed and Ventures.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Media and entertainment-backed firm investing in seed to Series B consumer, social, and gaming startups.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-310495",
@@ -31061,7 +31464,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for university seed investments and deep tech",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A startups across consumer, enterprise SaaS, and deep tech sectors.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-171730",
@@ -31155,7 +31560,9 @@
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Publicly known as the largest seed accelerator investing broadly.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Pre-seed and seed generalist firm providing extensive startup support and network access to early-stage founders.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-298042",
@@ -31191,7 +31598,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Catherine Hulot's firm focuses on early-stage consumer and enterprise",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A consumer and enterprise SaaS startups.",
+      "thesis_confidence": 0.8
     },
     {
       "id": "sec-332081",
@@ -31249,7 +31658,9 @@
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm name 'YK Bioventures' explicitly indicates biotechnology specialization.",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs biotechnology startups through its Opportunities Funds.",
+      "thesis_confidence": 0.9
     },
     {
       "id": "sec-168740",
@@ -31453,7 +31864,9 @@
       "inferred": true,
       "inference_confidence": 0.95,
       "inference_basis": "Well-known portfolio includes Audible, Chegg, Houzz, Tipalti, and Wix",
-      "inference_model": "glm-4.6"
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "Backs seed and Series A enterprise SaaS, consumer, and fintech startups.",
+      "thesis_confidence": 1.0
     },
     {
       "id": "sec-338283",

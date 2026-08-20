@@ -65,10 +65,12 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_OUT = REPO_ROOT / "data" / "firms.json"
 SITE_OUT = REPO_ROOT / "site" / "firms.json"
 CACHE = REPO_ROOT / "data" / ".glm-enrich-cache.json"
+THESIS_CACHE = REPO_ROOT / "data" / ".glm-thesis-cache.json"
 
 BASE = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
 MODEL = "glm-4.6"
-THRESHOLD = 0.7          # min self-confidence to merge a tag into firms.json
+THRESHOLD = 0.7          # min self-confidence to merge a sector tag
+THESIS_THRESHOLD = 0.6   # min self-confidence to merge a one-line thesis
 MAX_SECTORS = 4
 CONCURRENCY = 2          # Zhipu rate cap trips above this
 BACKOFF = [8, 25, 60, 90]
@@ -92,6 +94,22 @@ Rules:
 Return ONLY JSON (no fences):
 {{"sectors":[...],"stages":[...],"confidence":0.0-1.0,"basis":"<=15 words: specifically what you based it on"}}"""
 
+THESIS_PROMPT = """Write a ONE-sentence investment thesis for this venture firm, for a founder deciding whether to pitch it.
+
+Firm: {name}
+Established focus — sectors: {sectors}, stages: {stages}
+SEC Form D fund vehicle names: {funds}
+
+Rules:
+- ONE sentence, <= 25 words, concrete and specific to THIS firm, consistent with the established focus above.
+- If you know a DISTINGUISHING angle for this exact firm — a stage specialty, a technical/thematic focus, a founder's background, a notable strategy — lead with it (e.g. "Crypto-native firm backing early-stage infrastructure and DeFi protocols, run by former Coinbase operators.").
+- Only if you have no distinguishing knowledge, fall back to a plain factual sentence from the sectors/stages (e.g. "Backs seed and Series A fintech and enterprise-software startups.").
+- Do NOT invent specific portfolio companies, fund sizes, named people, or claims you are unsure of.
+- confidence 0-1: how sure you are this thesis is accurate for THIS specific firm.
+
+Return ONLY JSON (no fences):
+{{"thesis":"...","confidence":0.0-1.0}}"""
+
 
 def _parse(content: str):
     m = re.search(r"\{.*\}", content, re.DOTALL)
@@ -104,30 +122,33 @@ class GlmSectorEnricher:
         if not key:
             raise SystemExit("ZHIPU_API_KEY not set (put it in a gitignored .env)")
         self._key = key
-        self._cache_path = cache_path
         self._lock = threading.Lock()
-        self._cache = {}
-        if cache_path.exists():
+        self._cache = self._load(cache_path)
+        self._cache_path = cache_path
+        self._thesis_cache = self._load(THESIS_CACHE)
+        self._thesis_cache_path = THESIS_CACHE
+
+    @staticmethod
+    def _load(path: pathlib.Path) -> dict:
+        if path.exists():
             try:
-                self._cache = json.loads(cache_path.read_text())
+                return json.loads(path.read_text())
             except (OSError, json.JSONDecodeError):
-                self._cache = {}
+                pass
+        return {}
 
     def _save(self):
         with self._lock:
-            tmp = self._cache_path.with_suffix(".tmp")
-            tmp.write_text(json.dumps(self._cache))
-            tmp.replace(self._cache_path)
+            for cache, path in ((self._cache, self._cache_path),
+                                (self._thesis_cache, self._thesis_cache_path)):
+                tmp = path.with_suffix(".tmp")
+                tmp.write_text(json.dumps(cache))
+                tmp.replace(path)
 
-    def _call(self, firm: dict) -> dict:
-        body = {
-            "model": MODEL, "temperature": 0.1, "thinking": {"type": "disabled"},
-            "messages": [{"role": "user", "content": PROMPT.format(
-                name=firm["name"], addr=firm.get("address", ""),
-                funds=(firm.get("form_d_distinct_funds") or [])[:6],
-                types=firm.get("firm_type_tags") or [],
-                sectors=list(SECTORS), stages=list(STAGES), threshold=THRESHOLD)}],
-        }
+    def _chat(self, content: str) -> dict:
+        """POST one prompt, return parsed JSON dict, or {"error": ...}."""
+        body = {"model": MODEL, "temperature": 0.1, "thinking": {"type": "disabled"},
+                "messages": [{"role": "user", "content": content}]}
         last = "unknown"
         for attempt in range(5):
             try:
@@ -139,25 +160,50 @@ class GlmSectorEnricher:
                     time.sleep(BACKOFF[min(attempt, len(BACKOFF) - 1)]); continue
                 if r.status_code != 200:
                     return {"error": f"HTTP {r.status_code}"}
-                p = _parse(r.json()["choices"][0]["message"]["content"]) or {}
-                secs = [s for s in (p.get("sectors") or []) if s in SECTORS][:MAX_SECTORS]
-                stgs = [s for s in (p.get("stages") or []) if s in STAGES]
-                return {"sectors": secs, "stages": stgs, "confidence": p.get("confidence"),
-                        "basis": p.get("basis")}
+                return _parse(r.json()["choices"][0]["message"]["content"]) or {}
             except Exception as e:  # noqa: BLE001 — retry any transport error
                 last = type(e).__name__
                 time.sleep(BACKOFF[min(attempt, len(BACKOFF) - 1)])
         return {"error": f"retries_exhausted:{last}"}
 
-    def lookup(self, firm: dict) -> dict:
+    def _call(self, firm: dict) -> dict:
+        p = self._chat(PROMPT.format(
+            name=firm["name"], addr=firm.get("address", ""),
+            funds=(firm.get("form_d_distinct_funds") or [])[:6],
+            types=firm.get("firm_type_tags") or [],
+            sectors=list(SECTORS), stages=list(STAGES), threshold=THRESHOLD))
+        if "error" in p:
+            return p
+        secs = [s for s in (p.get("sectors") or []) if s in SECTORS][:MAX_SECTORS]
+        stgs = [s for s in (p.get("stages") or []) if s in STAGES]
+        return {"sectors": secs, "stages": stgs, "confidence": p.get("confidence"),
+                "basis": p.get("basis")}
+
+    def _thesis_call(self, firm: dict) -> dict:
+        p = self._chat(THESIS_PROMPT.format(
+            name=firm["name"], sectors=firm.get("sectors") or [],
+            stages=firm.get("stages") or [],
+            funds=(firm.get("form_d_distinct_funds") or [])[:6]))
+        if "error" in p:
+            return p
+        thesis = (p.get("thesis") or "").strip()
+        return {"thesis": thesis, "confidence": p.get("confidence")}
+
+    def _lookup(self, firm: dict, cache: dict, fn) -> dict:
         fid = firm["id"]
-        cached = self._cache.get(fid)
+        cached = cache.get(fid)
         if cached is not None and "error" not in cached:
             return cached
-        res = self._call(firm)
+        res = fn(firm)
         with self._lock:
-            self._cache[fid] = res
+            cache[fid] = res
         return res
+
+    def lookup(self, firm: dict) -> dict:
+        return self._lookup(firm, self._cache, self._call)
+
+    def thesis(self, firm: dict) -> dict:
+        return self._lookup(firm, self._thesis_cache, self._thesis_call)
 
 
 def enrich_glm_sectors(firms: list[dict]) -> int:
@@ -189,14 +235,48 @@ def enrich_glm_sectors(firms: list[dict]) -> int:
     return merged
 
 
+def enrich_thesis(firms: list[dict]) -> int:
+    """Add a one-line ``inferred_thesis`` to already-tagged (inferred) lite
+    firms, grounded on their established sectors/stages. Returns count merged."""
+    enricher = GlmSectorEnricher()
+    targets = [f for f in firms if f.get("inferred") and (f.get("sectors") or [])]
+    done = 0
+    with ThreadPoolExecutor(max_workers=CONCURRENCY) as ex:
+        futs = {ex.submit(enricher.thesis, f): f for f in targets}
+        for fut in as_completed(futs):
+            fut.result(); done += 1
+            if done % 25 == 0:
+                enricher._save()
+    enricher._save()
+
+    merged = 0
+    for f in targets:
+        res = enricher._thesis_cache.get(f["id"]) or {}
+        thesis = (res.get("thesis") or "").strip()
+        if thesis and (res.get("confidence") or 0) >= THESIS_THRESHOLD:
+            f["inferred_thesis"] = thesis
+            f["thesis_confidence"] = res.get("confidence")
+            merged += 1
+    return merged
+
+
 def main() -> None:
+    import sys
+    mode = sys.argv[1] if len(sys.argv) > 1 else "sectors"
     payload = json.loads(DATA_OUT.read_text())
-    merged = enrich_glm_sectors(payload["firms"])
-    enr = set(payload.get("generated_with_enrichers", [])); enr.add("glm_sectors")
+    if mode == "thesis":
+        merged = enrich_thesis(payload["firms"])
+        label = f"glm_thesis: merged {merged} one-line theses"
+        tag = "glm_thesis"
+    else:
+        merged = enrich_glm_sectors(payload["firms"])
+        label = f"glm_sectors: merged {merged} lite firms (+25 hand-curated filterable)"
+        tag = "glm_sectors"
+    enr = set(payload.get("generated_with_enrichers", [])); enr.add(tag)
     payload["generated_with_enrichers"] = sorted(enr)
     DATA_OUT.write_text(json.dumps(payload, indent=2))
     SITE_OUT.write_text(DATA_OUT.read_text())
-    print(f"glm_sectors: merged {merged} lite firms (+25 hand-curated filterable)")
+    print(label)
 
 
 if __name__ == "__main__":
