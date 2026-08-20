@@ -15,7 +15,7 @@
   <!-- Alpine.js (for filtering reactivity) -->
   <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=11" />
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -182,6 +182,16 @@
           <p>
             <a :href="selectedFirm.website" target="_blank" rel="noopener" x-text="selectedFirm.website.replace(/^https?:\/\//, '')"></a>
             · founded <span x-text="selectedFirm.founded || '—'"></span>
+          </p>
+        </template>
+
+        <!-- One-line AI-inferred thesis, grounded on the firm's tagged sectors.
+             Only present for inferred lite firms; marked AI so it's distinct
+             from the 25 hand-curated firms' hand-written notes. -->
+        <template x-if="selectedFirm.inferred_thesis">
+          <p class="thesis">
+            <span class="thesis-mark" title="AI-inferred — not hand-verified">AI</span>
+            <span x-text="selectedFirm.inferred_thesis"></span>
           </p>
         </template>
 

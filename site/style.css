@@ -422,6 +422,17 @@ ul.form-d-list .form-d-form {
   display: block; margin-top: 4px; font-style: italic; opacity: 0.85;
 }
 
+/* ── One-line AI-inferred thesis ── */
+.thesis {
+  margin: 10px 0 6px; font-size: 14px; line-height: 1.5; color: var(--text);
+  font-style: italic;
+}
+.thesis .thesis-mark {
+  font-style: normal; font-size: 9px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--accent-2); border: 1px dashed var(--accent-2); border-radius: 4px;
+  padding: 1px 4px; margin-right: 6px; vertical-align: middle; cursor: help;
+}
+
 footer {
   padding: 12px 22px; color: var(--muted); font-size: 12px;
   border-top: 1px solid var(--border); text-align: center;
