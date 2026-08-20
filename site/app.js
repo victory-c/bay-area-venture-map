@@ -93,6 +93,7 @@ document.addEventListener("alpine:init", () => {
     sectorFilter: new Set(),
     aumMin: 0,
     aumMax: 100_000_000_000,
+    verifiedOnly: false,
     sortKey: "aum_usd",
     sortDir: -1,
     selectedFirm: null,
@@ -237,6 +238,11 @@ document.addEventListener("alpine:init", () => {
 
       if (stageF.size && !(f.stages || []).some((s) => stageF.has(s))) return false;
       if (sectorF.size && !(f.sectors || []).some((s) => sectorF.has(s))) return false;
+      // "Verified only": AI-inferred firms don't satisfy sector/stage filters
+      // (their tags aren't hand-checked), but still appear when neither filter
+      // is active. Only the 25 hand-curated firms are treated as verified.
+      const verifiedOnly = opts.verifiedOnly ?? this.verifiedOnly;
+      if (verifiedOnly && f.inferred && (stageF.size || sectorF.size)) return false;
       // The default AUM range covers the full slider extent; treat any
       // narrowing as "the user wants only firms with AUM in this range",
       // which means firms with unknown AUM (lite SEC records) get hidden.
@@ -292,6 +298,7 @@ document.addEventListener("alpine:init", () => {
       this.sectorFilter = new Set();
       this.aumMin = 0;
       this.aumMax = 100_000_000_000;
+      this.verifiedOnly = false;
     },
 
     get hasActiveFilters() {
