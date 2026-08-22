@@ -11,7 +11,12 @@ filings by IA brand name gives us a free, authoritative signal of:
   * the names + CIKs of those fund vehicles (handy for cross-referencing
     EDGAR later).
 
-This is *purely additive*. Lite firms already carry SEC Form ADV signal
+Unlike the other enrichers this one is *authoritative*, not additive: a
+firm's Form D block is wholly derived from the EFTS query, so a re-run
+that matches nothing clears the previous block. That is what lets a fix
+to the matcher correct data already committed.
+
+Lite firms already carry SEC Form ADV signal
 (``fund_count``, ``latest_filing_date``) sourced from the bulk CSV; the
 Form D data complements that with the *fundraising* side of the same
 firm's activity. Coverage is heavily skewed toward brand-recognisable
@@ -368,3 +373,43 @@ def _info_from_dict(d: dict) -> FormDInfo:
         fund_ciks=list(d.get("fund_ciks", [])),
         recent_filings=filings,
     )
+
+
+def main() -> None:
+    """Refresh the Form D block on every firm in ``data/firms.json``, in place.
+
+    Runs against the existing payload rather than through ``scraper.build``
+    for the same reason ``scraper.glm_enrich`` does: ``build --enrich form_d``
+    starts from the seed, so without ``sec_bulk`` it would emit 25 firms and
+    drop the 650 SEC lite records entirely.
+
+    Re-running is also how a matcher fix reaches already-committed data —
+    ``enrich_form_d`` clears the block for firms that no longer match, so
+    filings attributed to the wrong firm are removed rather than pinned.
+
+        python -m scraper.form_d
+    """
+    import json as _json
+    import logging as _logging
+
+    from scraper.build import OUT_PATH, SITE_OUT_PATH, enrich_form_d
+
+    _logging.basicConfig(level=_logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+    payload = _json.loads(OUT_PATH.read_text())
+    firms = payload["firms"]
+
+    before = sum(1 for f in firms if f.get("form_d_total_filings"))
+    enrich_form_d(firms)
+    after = sum(1 for f in firms if f.get("form_d_total_filings"))
+
+    enrichers = set(payload.get("generated_with_enrichers") or [])
+    enrichers.add("form_d")
+    payload["generated_with_enrichers"] = sorted(enrichers)
+
+    OUT_PATH.write_text(_json.dumps(payload, indent=2))
+    SITE_OUT_PATH.write_text(OUT_PATH.read_text())
+    log.info("Form D refresh: %d firms with filings before, %d after", before, after)
+
+
+if __name__ == "__main__":
+    main()
