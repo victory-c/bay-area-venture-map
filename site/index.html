@@ -211,7 +211,12 @@
     <template x-if="selectedFirm">
       <div>
         <button class="close" @click="selectedFirm = null">×</button>
-        <h2 x-text="selectedFirm.name"></h2>
+        <h2>
+          <span x-text="selectedFirm.name"></span>
+          <template x-if="selectedFirm.firm_role === 'platform'">
+            <span class="role-pill" title="Filings on this firm are third-party raises, not its own investments">Platform</span>
+          </template>
+        </h2>
         <p class="addr">
           <span x-text="selectedFirm.address"></span>
           <small x-show="selectedFirm.tier === 'lite' && /sand hill/i.test(selectedFirm.address || '')"
@@ -448,6 +453,12 @@
         <template x-if="(selectedFirm.form_d_recent_filings || []).length">
           <div>
             <h3>Recent Form D filings</h3>
+            <template x-if="selectedFirm.firm_role === 'platform'">
+              <p class="platform-note">
+                <b x-text="`${selectedFirm.form_d_total_filings} filings on record.`"></b>
+                <span x-text="selectedFirm.platform_note"></span>
+              </p>
+            </template>
             <ul class="form-d-list">
               <template x-for="f in selectedFirm.form_d_recent_filings" :key="f.accession">
                 <li>

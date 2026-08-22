@@ -393,6 +393,7 @@ def main() -> None:
     import logging as _logging
 
     from scraper.build import OUT_PATH, SITE_OUT_PATH, enrich_form_d
+    from scraper.platforms import annotate_platforms, platform_candidates
 
     _logging.basicConfig(level=_logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     payload = _json.loads(OUT_PATH.read_text())
@@ -400,6 +401,8 @@ def main() -> None:
 
     before = sum(1 for f in firms if f.get("form_d_total_filings"))
     enrich_form_d(firms)
+    annotate_platforms(firms)
+    platform_candidates(firms)
     after = sum(1 for f in firms if f.get("form_d_total_filings"))
 
     enrichers = set(payload.get("generated_with_enrichers") or [])

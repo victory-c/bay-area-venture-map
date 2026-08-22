@@ -97,10 +97,6 @@ function linkKind(url) {
   return "Website";
 }
 
-// Escape untrusted text before interpolating into HTML strings (Leaflet
-// divIcon `html` and bindTooltip render their content as HTML, not text).
-// Firm names originate from the SEC Form ADV bulk scrape and are
-// filer-controlled, so they must never be treated as trusted markup.
 // Quote a CSV cell, neutralising spreadsheet formula injection. Firm names
 // come from the SEC bulk scrape and are filer-controlled, so a name beginning
 // = + - @ (or a leading tab/CR, which Excel strips before parsing) would be
@@ -112,6 +108,10 @@ function csvCell(value) {
   return guarded.replace(/"/g, '""');
 }
 
+// Escape untrusted text before interpolating into HTML strings (Leaflet
+// divIcon `html` and bindTooltip render their content as HTML, not text).
+// Firm names originate from the SEC Form ADV bulk scrape and are
+// filer-controlled, so they must never be treated as trusted markup.
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (ch) => ({
     "&": "&amp;",
@@ -506,7 +506,14 @@ document.addEventListener("alpine:init", () => {
     // notice a fund files when it closes/raises capital. Recency is a much
     // better "is this firm actively deploying?" proxy than the annual Form ADV
     // compliance filing. Returns null when the firm has no Form D on record.
+    //
+    // Suppressed for SPV / crowdfunding platforms: their filings are third
+    // parties' raises passing through the firm's infrastructure, so volume
+    // and recency say nothing about the firm deploying its own capital.
+    // After the Form D matcher fix the two biggest filers in the dataset
+    // were platforms, ranking above Sequoia on a signal that didn't apply.
     fundActivity(firm) {
+      if (firm.firm_role === "platform") return null;
       const iso = firm.form_d_latest_filing_date;
       if (!iso) return null;
       const d = new Date(iso);
