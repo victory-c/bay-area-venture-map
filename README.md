@@ -29,6 +29,20 @@ cd site && python -m http.server 8000
 # → open http://localhost:8000
 ```
 
+### Identifying yourself to SEC and OpenStreetMap
+
+Both services require a User-Agent carrying a contact address, and SEC
+enforces it: a request whose UA has no email — or that contains a URL — is
+rejected with a 403 on both `efts.sec.gov` and `www.sec.gov`. Set a contact
+you actually read before any sizeable scrape:
+
+```bash
+export SCRAPER_CONTACT="you@example.org"
+```
+
+Unset, the scraper falls back to a placeholder that satisfies SEC's format
+check but cannot receive mail, and logs a warning on every run.
+
 Refresh AUM from SEC Form ADV (live network):
 
 ```bash

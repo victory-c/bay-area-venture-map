@@ -256,3 +256,63 @@ def test_lookup_stops_when_total_is_reached(tmp_path) -> None:
     info = fd.lookup("Sequoia Capital")
     assert info.total_filings == 7
     assert len(calls) == 1  # single page covered the total; no wasted request
+
+
+# ---------------------------------------------------------------------------
+# Clearing (regression: a bad attribution could never be retracted)
+# ---------------------------------------------------------------------------
+
+
+def test_enrich_form_d_clears_a_block_that_no_longer_matches(monkeypatch) -> None:
+    # Founders Fund's 15 filings all belonged to other shops. Once the matcher
+    # stops returning them the stale block must go, not linger.
+    from scraper import build as build_mod
+
+    firm = {
+        "id": "founders-fund",
+        "name": "Founders Fund LLC",
+        "form_d_total_filings": 15,
+        "form_d_latest_filing_date": "2025-03-01",
+        "form_d_distinct_funds": ["BWC Founders Fund, LLC  (CIK 0002058434)"],
+        "form_d_fund_ciks": ["2058434"],
+        "form_d_recent_filings": [{"accession": "x", "file_date": "2025-03-01",
+                                   "form": "D", "cik": "2058434",
+                                   "filer_name": "BWC Founders Fund, LLC"}],
+        "sectors": ["deep_tech"],
+    }
+    monkeypatch.setattr(build_mod, "FormDClient",
+                        lambda cache_path=None: _StubClient({}))
+    build_mod.enrich_form_d([firm])
+
+    for key in build_mod.FORM_D_FIELDS:
+        assert key not in firm, f"{key} should have been cleared"
+    # Untouched fields survive: clearing is scoped to the Form D block.
+    assert firm["sectors"] == ["deep_tech"]
+
+
+def test_enrich_form_d_leaves_firms_that_never_had_a_block_alone(monkeypatch) -> None:
+    from scraper import build as build_mod
+
+    firm = {"id": "x", "name": "Obscure Shell LP", "sectors": ["fintech"]}
+    monkeypatch.setattr(build_mod, "FormDClient",
+                        lambda cache_path=None: _StubClient({}))
+    build_mod.enrich_form_d([firm])
+    assert firm == {"id": "x", "name": "Obscure Shell LP", "sectors": ["fintech"]}
+
+
+def test_enrich_form_d_overwrites_a_stale_block_on_a_fresh_match(monkeypatch) -> None:
+    from scraper import build as build_mod
+
+    firm = {"id": "sequoia", "name": "Sequoia Capital", "form_d_total_filings": 99}
+    info = FormDInfo(
+        total_filings=237,
+        latest_filing_date="2026-01-05",
+        distinct_funds=["Sequoia Capital Fund, L.P."],
+        fund_ciks=["1906948"],
+        recent_filings=[FilingMeta("a", "2026-01-05", "D", "1906948",
+                                   "Sequoia Capital Fund, L.P.")],
+    )
+    monkeypatch.setattr(build_mod, "FormDClient",
+                        lambda cache_path=None: _StubClient({"Sequoia Capital": info}))
+    build_mod.enrich_form_d([firm])
+    assert firm["form_d_total_filings"] == 237

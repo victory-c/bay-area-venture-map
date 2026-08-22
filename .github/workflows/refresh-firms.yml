@@ -37,6 +37,11 @@ jobs:
         run: uv sync --frozen
 
       - name: Run scraper
+        # SEC 403s a User-Agent with no email contact. Set the repository
+        # variable SCRAPER_CONTACT to an address you monitor; without it the
+        # scraper falls back to an unreachable placeholder.
+        env:
+          SCRAPER_CONTACT: ${{ vars.SCRAPER_CONTACT }}
         run: uv run python -m scraper.build --enrich sec_bulk
 
       - name: Sanity-check output

@@ -102,46 +102,46 @@
       "lat": 37.42175,
       "lng": -122.2014,
       "tier": "rich",
-      "form_d_total_filings": 99,
+      "form_d_total_filings": 217,
       "form_d_latest_filing_date": "2026-04-06",
       "form_d_distinct_funds": [
-        "Sequoia Capital Seed VI Principals Fund, L.P.  (CIK 0002106964)",
         "Sequoia Capital Growth XI Principals Fund, L.P.  (CIK 0002106967)",
+        "Sequoia Capital Seed VI Principals Fund, L.P.  (CIK 0002106964)",
         "Sequoia Capital Venture XIX Principals Fund (Q), L.P.  (CIK 0002106961)",
+        "Sequoia Capital Venture XIX Principals Fund, L.P.  (CIK 0002106962)",
+        "Sequoia Capital Growth XI Principals Fund (Q), L.P.  (CIK 0002106966)",
         "Sequoia Capital Venture Partners Fund XIX, L.P.  (CIK 0002106963)",
         "Sequoia Capital Seed Partners Fund VI, L.P.  (CIK 0002106965)",
         "Sequoia Capital Fund, L.P.  (CIK 0001906948)",
         "Sequoia Capital Fund Feeder, L.P.  (CIK 0001906966)",
-        "Wisconsin Sequoia Capital, LLC  (CIK 0002095191)",
-        "Sequoia Capital Growth Partners Fund XI, L.P.  (CIK 0002091161)",
-        "Sequoia Capital US/E Growth X Principals Fund, L.P.  (CIK 0001943744)"
+        "Sequoia Capital Growth Partners Fund XI, L.P.  (CIK 0002091161)"
       ],
       "form_d_fund_ciks": [
-        "2106964",
         "2106967",
+        "2106964",
         "2106961",
+        "2106962",
+        "2106966",
         "2106963",
         "2106965",
         "1906948",
         "1906966",
-        "2095191",
-        "2091161",
-        "1943744"
+        "2091161"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0002106964-26-000001",
-          "file_date": "2026-04-06",
-          "form": "D",
-          "cik": "2106964",
-          "filer_name": "Sequoia Capital Seed VI Principals Fund, L.P.  (CIK 0002106964)"
-        },
         {
           "accession": "0002106967-26-000001",
           "file_date": "2026-04-06",
           "form": "D",
           "cik": "2106967",
           "filer_name": "Sequoia Capital Growth XI Principals Fund, L.P.  (CIK 0002106967)"
+        },
+        {
+          "accession": "0002106964-26-000001",
+          "file_date": "2026-04-06",
+          "form": "D",
+          "cik": "2106964",
+          "filer_name": "Sequoia Capital Seed VI Principals Fund, L.P.  (CIK 0002106964)"
         },
         {
           "accession": "0002106961-26-000001",
@@ -151,18 +151,18 @@
           "filer_name": "Sequoia Capital Venture XIX Principals Fund (Q), L.P.  (CIK 0002106961)"
         },
         {
-          "accession": "0002106963-26-000001",
-          "file_date": "2026-03-13",
+          "accession": "0002106962-26-000001",
+          "file_date": "2026-04-06",
           "form": "D",
-          "cik": "2106963",
-          "filer_name": "Sequoia Capital Venture Partners Fund XIX, L.P.  (CIK 0002106963)"
+          "cik": "2106962",
+          "filer_name": "Sequoia Capital Venture XIX Principals Fund, L.P.  (CIK 0002106962)"
         },
         {
-          "accession": "0002106965-26-000001",
-          "file_date": "2026-03-13",
+          "accession": "0002106966-26-000001",
+          "file_date": "2026-04-06",
           "form": "D",
-          "cik": "2106965",
-          "filer_name": "Sequoia Capital Seed Partners Fund VI, L.P.  (CIK 0002106965)"
+          "cik": "2106966",
+          "filer_name": "Sequoia Capital Growth XI Principals Fund (Q), L.P.  (CIK 0002106966)"
         }
       ]
     },
@@ -250,10 +250,9 @@
       "lat": 37.422,
       "lng": -122.2017,
       "tier": "rich",
-      "form_d_total_filings": 21,
-      "form_d_latest_filing_date": "2026-05-20",
+      "form_d_total_filings": 20,
+      "form_d_latest_filing_date": "2026-04-30",
       "form_d_distinct_funds": [
-        "OW Kleiner Perkins 22 & Select IV a series of Allocations 2026 Master, LLC  (CIK 0002133232)",
         "Kleiner Perkins XXII Friends, LLC  (CIK 0002114662)",
         "Kleiner Perkins Select Fund IV Friends, LLC  (CIK 0002114655)",
         "Kleiner Perkins Select Fund IV, LLC  (CIK 0002114651)",
@@ -262,10 +261,10 @@
         "Kleiner Perkins XXI Friends, LLC  (CIK 0002027883)",
         "Kleiner Perkins Select Fund III Friends, LLC  (CIK 0002027876)",
         "Kleiner Perkins XXI, LLC  (CIK 0002027881)",
-        "Kleiner Perkins Select Fund III, LLC  (CIK 0002027882)"
+        "Kleiner Perkins Select Fund III, LLC  (CIK 0002027882)",
+        "Kleiner Perkins XX Friends, LLC  (CIK 0001894913)"
       ],
       "form_d_fund_ciks": [
-        "2133232",
         "2114662",
         "2114655",
         "2114651",
@@ -274,16 +273,10 @@
         "2027883",
         "2027876",
         "2027881",
-        "2027882"
+        "2027882",
+        "1894913"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0002133232-26-000001",
-          "file_date": "2026-05-20",
-          "form": "D",
-          "cik": "2133232",
-          "filer_name": "OW Kleiner Perkins 22 & Select IV a series of Allocations 2026 Master, LLC  (CIK 0002133232)"
-        },
         {
           "accession": "0002114662-26-000001",
           "file_date": "2026-04-30",
@@ -311,6 +304,13 @@
           "form": "D",
           "cik": "2114646",
           "filer_name": "Kleiner Perkins Flex I, LLC  (CIK 0002114646)"
+        },
+        {
+          "accession": "0002115014-26-000001",
+          "file_date": "2026-04-07",
+          "form": "D",
+          "cik": "2115014",
+          "filer_name": "Kleiner Perkins XXII, LLC  (CIK 0002115014)"
         }
       ]
     },
@@ -670,8 +670,8 @@
       "lat": 37.4181,
       "lng": -122.201,
       "tier": "rich",
-      "form_d_total_filings": 41,
-      "form_d_latest_filing_date": "2026-08-05",
+      "form_d_total_filings": 42,
+      "form_d_latest_filing_date": "2026-08-18",
       "form_d_distinct_funds": [
         "Khosla Ventures MM SPV, LLC  (CIK 0002148181)",
         "Khosla Ventures GI SPV, LLC  (CIK 0002109620)",
@@ -682,7 +682,7 @@
         "Khosla Ventures OAI, LLC  (CIK 0002039800)",
         "Khosla Ventures VIII Strategic, L.P.  (CIK 0002006738)",
         "Khosla Ventures Seed F, L.P.  (CIK 0001959515)",
-        "Khosla Ventures Opportunity II, L.P.  (CIK 0001959115)"
+        "Khosla Ventures VIII, L.P.  (CIK 0001958968)"
       ],
       "form_d_fund_ciks": [
         "2148181",
@@ -694,9 +694,16 @@
         "2039800",
         "2006738",
         "1959515",
-        "1959115"
+        "1958968"
       ],
       "form_d_recent_filings": [
+        {
+          "accession": "0002148181-26-000002",
+          "file_date": "2026-08-18",
+          "form": "D/A",
+          "cik": "2148181",
+          "filer_name": "Khosla Ventures MM SPV, LLC  (CIK 0002148181)"
+        },
         {
           "accession": "0002148181-26-000001",
           "file_date": "2026-08-05",
@@ -724,13 +731,6 @@
           "form": "D",
           "cik": "2074203",
           "filer_name": "Khosla Ventures Seed G, L.P.  (CIK 0002074203)"
-        },
-        {
-          "accession": "0002074230-25-000001",
-          "file_date": "2025-07-02",
-          "form": "D",
-          "cik": "2074230",
-          "filer_name": "Khosla Ventures IX, L.P.  (CIK 0002074230)"
         }
       ]
     },
@@ -1107,31 +1107,27 @@
       "lat": 37.4228,
       "lng": -122.1998,
       "tier": "rich",
-      "form_d_total_filings": 13,
+      "form_d_total_filings": 9,
       "form_d_latest_filing_date": "2025-11-20",
       "form_d_distinct_funds": [
         "Redpoint Ventures VII Annex Fund, L.P.  (CIK 0002095664)",
         "Redpoint Ventures X, L.P.  (CIK 0002063836)",
-        "ACE Redpoint Ventures China III, L.P.  (CIK 0001887936)",
         "Redpoint Ventures IX, L.P.  (CIK 0001914828)",
         "Redpoint Ventures VIII, L.P.  (CIK 0001808534)",
-        "ACE Redpoint Ventures China II, L.P.  (CIK 0001764563)",
         "Redpoint Ventures VII, L.P.  (CIK 0001741167)",
-        "ACE Redpoint Ventures China I, L.P.  (CIK 0001686120)",
         "Redpoint Ventures VI, L.P.  (CIK 0001640344)",
-        "Redpoint Ventures V, L.P.  (CIK 0001564932)"
+        "Redpoint Ventures V, L.P.  (CIK 0001564932)",
+        "Redpoint Ventures IV, L.P.  (CIK 0001483790)"
       ],
       "form_d_fund_ciks": [
         "2095664",
         "2063836",
-        "1887936",
         "1914828",
         "1808534",
-        "1764563",
         "1741167",
-        "1686120",
         "1640344",
-        "1564932"
+        "1564932",
+        "1483790"
       ],
       "form_d_recent_filings": [
         {
@@ -1149,13 +1145,6 @@
           "filer_name": "Redpoint Ventures X, L.P.  (CIK 0002063836)"
         },
         {
-          "accession": "0001887936-22-000001",
-          "file_date": "2022-10-13",
-          "form": "D/A",
-          "cik": "1887936",
-          "filer_name": "ACE Redpoint Ventures China III, L.P.  (CIK 0001887936)"
-        },
-        {
           "accession": "0001104659-22-048400",
           "file_date": "2022-04-21",
           "form": "D",
@@ -1163,11 +1152,18 @@
           "filer_name": "Redpoint Ventures IX, L.P.  (CIK 0001914828)"
         },
         {
-          "accession": "0001887936-21-000001",
-          "file_date": "2021-10-15",
+          "accession": "0001209191-20-031237",
+          "file_date": "2020-05-21",
           "form": "D",
-          "cik": "1887936",
-          "filer_name": "ACE Redpoint Ventures China III, L.P.  (CIK 0001887936)"
+          "cik": "1808534",
+          "filer_name": "Redpoint Ventures VIII, L.P.  (CIK 0001808534)"
+        },
+        {
+          "accession": "0001209191-20-026545",
+          "file_date": "2020-05-01",
+          "form": "D",
+          "cik": "1808534",
+          "filer_name": "Redpoint Ventures VIII, L.P.  (CIK 0001808534)"
         }
       ]
     },
@@ -1614,10 +1610,9 @@
       "lat": 37.452,
       "lng": -122.1818,
       "tier": "rich",
-      "form_d_total_filings": 20,
-      "form_d_latest_filing_date": "2026-02-03",
+      "form_d_total_filings": 16,
+      "form_d_latest_filing_date": "2025-11-18",
       "form_d_distinct_funds": [
-        "PO-1201 Fund I, a series of Second Foundation Capital, LP  (CIK 0002100806)",
         "Foundation Capital X Principals Fund, L.L.C.  (CIK 0001868731)",
         "Foundation Capital Leadership Fund IV, L.P.  (CIK 0001971070)",
         "Foundation Capital XI, L.P.  (CIK 0001971069)",
@@ -1625,11 +1620,11 @@
         "Foundation Capital X, L.P.  (CIK 0001865876)",
         "Foundation Capital Leadership Fund III, L.P.  (CIK 0001865882)",
         "Foundation Capital Leadership Fund II, L.P.  (CIK 0001804258)",
-        "Atlas Foundation Investments, LP  (CIK 0001671171)",
-        "Foundation Capital IX, L.P.  (CIK 0001748267)"
+        "Foundation Capital IX, L.P.  (CIK 0001748267)",
+        "Foundation Capital IX Principals Fund, L.L.C.  (CIK 0001748258)",
+        "Foundation Capital VIII, L.P.  (CIK 0001645077)"
       ],
       "form_d_fund_ciks": [
-        "2100806",
         "1868731",
         "1971070",
         "1971069",
@@ -1637,17 +1632,11 @@
         "1865876",
         "1865882",
         "1804258",
-        "1671171",
-        "1748267"
+        "1748267",
+        "1748258",
+        "1645077"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0002100806-26-000002",
-          "file_date": "2026-02-03",
-          "form": "D",
-          "cik": "2100806",
-          "filer_name": "PO-1201 Fund I, a series of Second Foundation Capital, LP  (CIK 0002100806)"
-        },
         {
           "accession": "0001868731-25-000002",
           "file_date": "2025-11-18",
@@ -1675,6 +1664,13 @@
           "form": "D/A",
           "cik": "1971069",
           "filer_name": "Foundation Capital XI, L.P.  (CIK 0001971069)"
+        },
+        {
+          "accession": "0001973626-24-000001",
+          "file_date": "2024-04-18",
+          "form": "D/A",
+          "cik": "1973626",
+          "filer_name": "Foundation Capital Co-Investment Fund I, LP  (CIK 0001973626)"
         }
       ]
     },
@@ -1742,31 +1738,31 @@
       "lat": 37.452,
       "lng": -122.1818,
       "tier": "rich",
-      "form_d_total_filings": 47,
+      "form_d_total_filings": 45,
       "form_d_latest_filing_date": "2026-07-31",
       "form_d_distinct_funds": [
         "Menlo Inflection Cybersecurity Partners, L.P.  (CIK 0002145189)",
         "Menlo LV Partners, L.P.  (CIK 0002143703)",
-        "iCapital-Menlo Ventures Select I RCM Access Fund, L.P.  (CIK 0002137531)",
         "Menlo Inflection Atlas Partners, L.P.  (CIK 0002135027)",
         "Menlo AI Leaders II, L.P.  (CIK 0002133555)",
         "Menlo Inflection Suno Partners II, L.P.  (CIK 0002130171)",
         "Menlo Ventures XVII Private Investors, L.P.  (CIK 0002106709)",
         "Menlo Inflection IV Private Investors, L.P.  (CIK 0002106701)",
         "Menlo Ventures Axm Partners, L.P.  (CIK 0002112507)",
-        "Menlo Ventures XVII Innovators, L.P.  (CIK 0002101471)"
+        "Menlo Ventures XVII Innovators, L.P.  (CIK 0002101471)",
+        "Menlo Inflection IV Innovators, L.P.  (CIK 0002101468)"
       ],
       "form_d_fund_ciks": [
         "2145189",
         "2143703",
-        "2137531",
         "2135027",
         "2133555",
         "2130171",
         "2106709",
         "2106701",
         "2112507",
-        "2101471"
+        "2101471",
+        "2101468"
       ],
       "form_d_recent_filings": [
         {
@@ -1784,13 +1780,6 @@
           "filer_name": "Menlo LV Partners, L.P.  (CIK 0002143703)"
         },
         {
-          "accession": "0002137531-26-000001",
-          "file_date": "2026-06-03",
-          "form": "D",
-          "cik": "2137531",
-          "filer_name": "iCapital-Menlo Ventures Select I RCM Access Fund, L.P.  (CIK 0002137531)"
-        },
-        {
           "accession": "0001104659-26-067641",
           "file_date": "2026-05-28",
           "form": "D",
@@ -1803,6 +1792,13 @@
           "form": "D",
           "cik": "2133555",
           "filer_name": "Menlo AI Leaders II, L.P.  (CIK 0002133555)"
+        },
+        {
+          "accession": "0001104659-26-051404",
+          "file_date": "2026-04-29",
+          "form": "D",
+          "cik": "2130171",
+          "filer_name": "Menlo Inflection Suno Partners II, L.P.  (CIK 0002130171)"
         }
       ]
     },
@@ -2464,33 +2460,40 @@
       "lat": 37.4475,
       "lng": -122.164,
       "tier": "rich",
-      "form_d_total_filings": 95,
-      "form_d_latest_filing_date": "2026-08-11",
+      "form_d_total_filings": 104,
+      "form_d_latest_filing_date": "2026-08-19",
       "form_d_distinct_funds": [
+        "Accel Core L.P.  (CIK 0002109720)",
         "Accel 17 L.P.  (CIK 0002137992)",
         "Accel London 9 L.P.  (CIK 0002137999)",
         "Accel India 9 L.P.  (CIK 0002138003)",
+        "Accel Growth Fund 8 L.P.  (CIK 0002138027)",
+        "Accel-KKR Credit Partners III LP  (CIK 0002058617)",
         "Accel Circle Fund 2026 L.P.  (CIK 0002118098)",
         "Accel Leaders 5 Opportunities (C) L.P.  (CIK 0002127277)",
-        "Accel Core L.P.  (CIK 0002109720)",
-        "Genesis Accel Opportunity Fund Series 2 LP  (CIK 0002119235)",
-        "GENESIS ACCEL OPPORTUNITY FUND SERIES LP  (CIK 0002117294)",
-        "Accel India VIII Entrepreneurs L.P.  (CIK 0002044363)",
-        "Accel Growth Fund VII Entrepreneurs L.P.  (CIK 0002044365)"
+        "Accel Leaders 5 L.P.  (CIK 0002094109)",
+        "Accel Growth Fund VI Opportunities (S) L.P.  (CIK 0002097488)"
       ],
       "form_d_fund_ciks": [
+        "2109720",
         "2137992",
         "2137999",
         "2138003",
+        "2138027",
+        "2058617",
         "2118098",
         "2127277",
-        "2109720",
-        "2119235",
-        "2117294",
-        "2044363",
-        "2044365"
+        "2094109",
+        "2097488"
       ],
       "form_d_recent_filings": [
+        {
+          "accession": "0002109720-26-000002",
+          "file_date": "2026-08-19",
+          "form": "D/A",
+          "cik": "2109720",
+          "filer_name": "Accel Core L.P.  (CIK 0002109720)"
+        },
         {
           "accession": "0002137992-26-000001",
           "file_date": "2026-08-11",
@@ -2513,18 +2516,11 @@
           "filer_name": "Accel India 9 L.P.  (CIK 0002138003)"
         },
         {
-          "accession": "0002118098-26-000001",
-          "file_date": "2026-04-29",
+          "accession": "0002138027-26-000001",
+          "file_date": "2026-08-11",
           "form": "D",
-          "cik": "2118098",
-          "filer_name": "Accel Circle Fund 2026 L.P.  (CIK 0002118098)"
-        },
-        {
-          "accession": "0002127277-26-000001",
-          "file_date": "2026-04-07",
-          "form": "D",
-          "cik": "2127277",
-          "filer_name": "Accel Leaders 5 Opportunities (C) L.P.  (CIK 0002127277)"
+          "cik": "2138027",
+          "filer_name": "Accel Growth Fund 8 L.P.  (CIK 0002138027)"
         }
       ]
     },
@@ -2786,9 +2782,10 @@
       "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 41,
-      "form_d_latest_filing_date": "2026-07-07",
+      "form_d_total_filings": 42,
+      "form_d_latest_filing_date": "2026-08-21",
       "form_d_distinct_funds": [
+        "137 Holdings ISII, LLC  (CIK 0002146062)",
         "137 Holdings HAI, LLC  (CIK 0002140035)",
         "137 Holdings Access Fund II, LLC  (CIK 0002137295)",
         "137 Holdings SXXIV, LLC  (CIK 0002137538)",
@@ -2797,10 +2794,10 @@
         "137 Holdings SXXII, LLC  (CIK 0002129283)",
         "137 Holdings ISI, LLC  (CIK 0002124556)",
         "137 Holdings MS, LLC - Series 2025-4  (CIK 0002112037)",
-        "137 Holdings MS, LLC - Series 2025-3  (CIK 0002109707)",
-        "137 Holdings MS, LLC - Series 2025-2  (CIK 0002105344)"
+        "137 Holdings MS, LLC - Series 2025-3  (CIK 0002109707)"
       ],
       "form_d_fund_ciks": [
+        "2146062",
         "2140035",
         "2137295",
         "2137538",
@@ -2809,10 +2806,16 @@
         "2129283",
         "2124556",
         "2112037",
-        "2109707",
-        "2105344"
+        "2109707"
       ],
       "form_d_recent_filings": [
+        {
+          "accession": "0001470831-26-000849",
+          "file_date": "2026-08-21",
+          "form": "D",
+          "cik": "2146062",
+          "filer_name": "137 Holdings ISII, LLC  (CIK 0002146062)"
+        },
         {
           "accession": "0002140035-26-000001",
           "file_date": "2026-07-07",
@@ -2840,13 +2843,6 @@
           "form": "D",
           "cik": "2130767",
           "filer_name": "137 Holdings PHI, LLC  (CIK 0002130767)"
-        },
-        {
-          "accession": "0002133257-26-000001",
-          "file_date": "2026-05-11",
-          "form": "D",
-          "cik": "2133257",
-          "filer_name": "137 Holdings ABI, LLC  (CIK 0002133257)"
         }
       ]
     },
@@ -3516,40 +3512,33 @@
       "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 26,
-      "form_d_latest_filing_date": "2026-07-21",
+      "form_d_total_filings": 21,
+      "form_d_latest_filing_date": "2024-07-12",
       "form_d_distinct_funds": [
-        "CMP Acme Partners LP  (CIK 0002145825)",
         "Acme Capital Group LLC  (CIK 0002028791)",
         "Acme Credit Partners Fund I, LP  (CIK 0002011533)",
         "Acme Private Credit Fund LP  (CIK 0001977762)",
         "Acme Flip, Inc.  (CIK 0001972350)",
-        "Halsey Acme SD, LLC  (CIK 0001949909)",
         "ACME Fund IV-E, LP  (CIK 0001900853)",
         "ACME Opportunity Fund, LP  (CIK 0001878966)",
         "ACME Fund IV, LP  (CIK 0001878969)",
-        "Brown Advisory Investors 2021- ACME IV, LLLP  (CIK 0001886811)"
+        "ACME Lithium Inc.  (CIK 0001871737)",
+        "Acme Intergalactic, Inc.  (CIK 0001832015)",
+        "ACME Fund III-E, LP  (CIK 0001814596)"
       ],
       "form_d_fund_ciks": [
-        "2145825",
         "2028791",
         "2011533",
         "1977762",
         "1972350",
-        "1949909",
         "1900853",
         "1878966",
         "1878969",
-        "1886811"
+        "1871737",
+        "1832015",
+        "1814596"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0002145825-26-000001",
-          "file_date": "2026-07-21",
-          "form": "D",
-          "cik": "2145825",
-          "filer_name": "CMP Acme Partners LP  (CIK 0002145825)"
-        },
         {
           "accession": "0002028791-24-000001",
           "file_date": "2024-07-12",
@@ -3577,6 +3566,13 @@
           "form": "D",
           "cik": "1972350",
           "filer_name": "Acme Flip, Inc.  (CIK 0001972350)"
+        },
+        {
+          "accession": "0001104659-22-020220",
+          "file_date": "2022-02-11",
+          "form": "D",
+          "cik": "1900853",
+          "filer_name": "ACME Fund IV-E, LP  (CIK 0001900853)"
         }
       ]
     },
@@ -4248,67 +4244,21 @@
       "sectors": [],
       "lat": 37.3861,
       "lng": -122.0839,
-      "form_d_total_filings": 24,
-      "form_d_latest_filing_date": "2026-08-04",
+      "form_d_total_filings": 1,
+      "form_d_latest_filing_date": "2024-12-03",
       "form_d_distinct_funds": [
-        "Moringa x AI Ventures V a Series of Moringa Capital Ventures LLC  (CIK 0002147492)",
-        "Magnetar AI Ventures Fund LP  (CIK 0002032191)",
-        "Moringa x AI Ventures IV a Series of Moringa Capital Ventures LLC  (CIK 0002142899)",
-        "CADENZA AI VENTURES OPPORTUNITIES FUND SERIES TE  (CIK 0002129090)",
-        "CADENZA AI VENTURES OPPORTUNITIES FUND LP SERIES S  (CIK 0002129088)",
-        "Random Forest AI Ventures Fund II, L.P.  (CIK 0002131477)",
-        "CADENZA AI VENTURES OPPORTUNITIES FUND LP SERIES TO  (CIK 0002129091)",
-        "ATP Fund II, a series of ATP AI Ventures, LP  (CIK 0002091336)",
-        "FRONTIER AI VENTURES LLC  (CIK 0002102741)",
-        "ATP Fund I, a series of ATP AI Ventures, LP  (CIK 0002049424)"
+        "AI Ventures III, a series of Moringa Ventures, LP  (CIK 0002039672)"
       ],
       "form_d_fund_ciks": [
-        "2147492",
-        "2032191",
-        "2142899",
-        "2129090",
-        "2129088",
-        "2131477",
-        "2129091",
-        "2091336",
-        "2102741",
-        "2049424"
+        "2039672"
       ],
       "form_d_recent_filings": [
         {
-          "accession": "0002147492-26-000001",
-          "file_date": "2026-08-04",
+          "accession": "0002039672-24-000002",
+          "file_date": "2024-12-03",
           "form": "D",
-          "cik": "2147492",
-          "filer_name": "Moringa x AI Ventures V a Series of Moringa Capital Ventures LLC  (CIK 0002147492)"
-        },
-        {
-          "accession": "0000905148-26-003454",
-          "file_date": "2026-08-03",
-          "form": "D/A",
-          "cik": "2032191",
-          "filer_name": "Magnetar AI Ventures Fund LP  (CIK 0002032191)"
-        },
-        {
-          "accession": "0002142899-26-000002",
-          "file_date": "2026-07-08",
-          "form": "D/A",
-          "cik": "2142899",
-          "filer_name": "Moringa x AI Ventures IV a Series of Moringa Capital Ventures LLC  (CIK 0002142899)"
-        },
-        {
-          "accession": "0002142899-26-000001",
-          "file_date": "2026-07-02",
-          "form": "D",
-          "cik": "2142899",
-          "filer_name": "Moringa x AI Ventures IV a Series of Moringa Capital Ventures LLC  (CIK 0002142899)"
-        },
-        {
-          "accession": "0002129090-26-000001",
-          "file_date": "2026-04-27",
-          "form": "D",
-          "cik": "2129090",
-          "filer_name": "CADENZA AI VENTURES OPPORTUNITIES FUND SERIES TE  (CIK 0002129090)"
+          "cik": "2039672",
+          "filer_name": "AI Ventures III, a series of Moringa Ventures, LP  (CIK 0002039672)"
         }
       ]
     },
@@ -4519,37 +4469,19 @@
       "sectors": [],
       "lat": 37.3852,
       "lng": -122.1141,
-      "form_d_total_filings": 9,
-      "form_d_latest_filing_date": "2020-07-13",
+      "form_d_total_filings": 6,
+      "form_d_latest_filing_date": "2018-07-05",
       "form_d_distinct_funds": [
-        "NorthStar Aligned Partners 2 LLC  (CIK 0001796127)",
         "Aligned Partners Fund III, LP  (CIK 0001745365)",
-        "NorthStar Aligned Partners LLC  (CIK 0001710774)",
         "Aligned Partners Fund II, LP  (CIK 0001624463)",
         "Aligned Partners Fund I, LP  (CIK 0001536057)"
       ],
       "form_d_fund_ciks": [
-        "1796127",
         "1745365",
-        "1710774",
         "1624463",
         "1536057"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0001796127-20-000001",
-          "file_date": "2020-07-13",
-          "form": "D",
-          "cik": "1796127",
-          "filer_name": "NorthStar Aligned Partners 2 LLC  (CIK 0001796127)"
-        },
-        {
-          "accession": "0001796127-19-000001",
-          "file_date": "2019-12-06",
-          "form": "D",
-          "cik": "1796127",
-          "filer_name": "NorthStar Aligned Partners 2 LLC  (CIK 0001796127)"
-        },
         {
           "accession": "0001745365-18-000001",
           "file_date": "2018-07-05",
@@ -4558,18 +4490,32 @@
           "filer_name": "Aligned Partners Fund III, LP  (CIK 0001745365)"
         },
         {
-          "accession": "0001710774-17-000001",
-          "file_date": "2017-06-30",
-          "form": "D",
-          "cik": "1710774",
-          "filer_name": "NorthStar Aligned Partners LLC  (CIK 0001710774)"
-        },
-        {
           "accession": "0001624463-15-000001",
           "file_date": "2015-02-04",
           "form": "D/A",
           "cik": "1624463",
           "filer_name": "Aligned Partners Fund II, LP  (CIK 0001624463)"
+        },
+        {
+          "accession": "0001624463-14-000002",
+          "file_date": "2014-11-17",
+          "form": "D/A",
+          "cik": "1624463",
+          "filer_name": "Aligned Partners Fund II, LP  (CIK 0001624463)"
+        },
+        {
+          "accession": "0001624463-14-000001",
+          "file_date": "2014-11-06",
+          "form": "D",
+          "cik": "1624463",
+          "filer_name": "Aligned Partners Fund II, LP  (CIK 0001624463)"
+        },
+        {
+          "accession": "0001536057-13-000002",
+          "file_date": "2013-11-01",
+          "form": "D/A",
+          "cik": "1536057",
+          "filer_name": "Aligned Partners Fund I, LP  (CIK 0001536057)"
         }
       ]
     },
@@ -4624,47 +4570,33 @@
       "sectors": [],
       "lat": 37.4419,
       "lng": -122.143,
-      "form_d_total_filings": 66,
-      "form_d_latest_filing_date": "2026-08-07",
+      "form_d_total_filings": 39,
+      "form_d_latest_filing_date": "2026-07-28",
       "form_d_distinct_funds": [
-        "MV V - Allocate Access, L.P.  (CIK 0002142645)",
-        "MVS I - Allocate Access, L.P.  (CIK 0002144924)",
         "Allocate Venture Co-Investment Fund I, L.P.  (CIK 0002089793)",
-        "YC Allocate AF26 QP, L.P.  (CIK 0002136693)",
-        "YC Allocate AF26 AI, L.P.  (CIK 0002136695)",
-        "SMS - Allocate Access, L.P.  (CIK 0002136221)",
-        "Eldridge GP 1 - Allocate Access, L.P.  (CIK 0002102243)",
         "Allocate MQ Holdings, L.P.  (CIK 0002136235)",
         "Allocate STP Holdings, L.P.  (CIK 0002128405)",
-        "Allocate Premier Access Fund III, L.P.  (CIK 0002066082)"
+        "Allocate Premier Access Fund III, L.P.  (CIK 0002066082)",
+        "Allocate - PWH Fund 1, L.P.  (CIK 0001950288)",
+        "Allocate - Green Pen Fund I, L.P.  (CIK 0002114564)",
+        "Allocate S-D Holdings, L.P.  (CIK 0002125300)",
+        "Allocate LSVP Faction Access Fund II, L.P.  (CIK 0002102253)",
+        "Allocate SP Holdings II, L.P.  (CIK 0002114464)",
+        "Allocate SPV 3, L.P.  (CIK 0002102069)"
       ],
       "form_d_fund_ciks": [
-        "2142645",
-        "2144924",
         "2089793",
-        "2136693",
-        "2136695",
-        "2136221",
-        "2102243",
         "2136235",
         "2128405",
-        "2066082"
+        "2066082",
+        "1950288",
+        "2114564",
+        "2125300",
+        "2102253",
+        "2114464",
+        "2102069"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0001012975-26-000731",
-          "file_date": "2026-08-07",
-          "form": "D",
-          "cik": "2142645",
-          "filer_name": "MV V - Allocate Access, L.P.  (CIK 0002142645)"
-        },
-        {
-          "accession": "0001012975-26-000723",
-          "file_date": "2026-08-05",
-          "form": "D",
-          "cik": "2144924",
-          "filer_name": "MVS I - Allocate Access, L.P.  (CIK 0002144924)"
-        },
         {
           "accession": "0001012975-26-000702",
           "file_date": "2026-07-28",
@@ -4673,18 +4605,32 @@
           "filer_name": "Allocate Venture Co-Investment Fund I, L.P.  (CIK 0002089793)"
         },
         {
-          "accession": "0001012975-26-000586",
-          "file_date": "2026-06-30",
+          "accession": "0001012975-26-000524",
+          "file_date": "2026-06-04",
           "form": "D",
-          "cik": "2136693",
-          "filer_name": "YC Allocate AF26 QP, L.P.  (CIK 0002136693)"
+          "cik": "2136235",
+          "filer_name": "Allocate MQ Holdings, L.P.  (CIK 0002136235)"
         },
         {
-          "accession": "0001012975-26-000587",
-          "file_date": "2026-06-30",
+          "accession": "0001012975-26-000413",
+          "file_date": "2026-05-12",
           "form": "D",
-          "cik": "2136695",
-          "filer_name": "YC Allocate AF26 AI, L.P.  (CIK 0002136695)"
+          "cik": "2128405",
+          "filer_name": "Allocate STP Holdings, L.P.  (CIK 0002128405)"
+        },
+        {
+          "accession": "0001012975-26-000404",
+          "file_date": "2026-05-11",
+          "form": "D/A",
+          "cik": "2066082",
+          "filer_name": "Allocate Premier Access Fund III, L.P.  (CIK 0002066082)"
+        },
+        {
+          "accession": "0001012975-26-000406",
+          "file_date": "2026-05-11",
+          "form": "D/A",
+          "cik": "1950288",
+          "filer_name": "Allocate - PWH Fund 1, L.P.  (CIK 0001950288)"
         }
       ]
     },
@@ -7415,29 +7361,20 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 5,
-      "form_d_latest_filing_date": "2025-07-30",
+      "form_d_total_filings": 4,
+      "form_d_latest_filing_date": "2020-04-22",
       "form_d_distinct_funds": [
-        "Advantage Blockchain Fund, LP  (CIK 0001890193)",
         "Blockchain Capital V QP, LP  (CIK 0001808673)",
         "Blockchain Capital Parallel IV, LP  (CIK 0001719337)",
         "Blockchain Capital Parallel Fund IV, LP  (CIK 0001719337)",
         "Blockchain Capital IV, LP  (CIK 0001719278)"
       ],
       "form_d_fund_ciks": [
-        "1890193",
         "1808673",
         "1719337",
         "1719278"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0001890193-25-000002",
-          "file_date": "2025-07-30",
-          "form": "D/A",
-          "cik": "1890193",
-          "filer_name": "Advantage Blockchain Fund, LP  (CIK 0001890193)"
-        },
         {
           "accession": "0001808666-20-000001",
           "file_date": "2020-04-22",
@@ -7672,55 +7609,58 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 19,
-      "form_d_latest_filing_date": "2025-08-21",
+      "form_d_total_filings": 13,
+      "form_d_latest_filing_date": "2019-12-02",
       "form_d_distinct_funds": [
-        "AHCO Bond Fund, LLC  (CIK 0001585243)",
-        "Align Affordable Housing Bond Fund, L.P.  (CIK 0001742324)",
-        "Kroll Bond Rating Agency, Inc.  (CIK 0001500319)",
+        "Bond Index Fund, a series of The PanAgora Group Trust  (CIK 0001475786)",
+        "Bond Street Marketplace, Inc.  (CIK 0001600550)",
+        "Bond Street Holdings Inc  (CIK 0001476651)",
+        "Bond Properties LLC  (CIK 0001370138)",
+        "Bond Street Holdings LLC  (CIK 0001476651)",
         "BOND STREET INVESTORS LLC  (CIK 0001476652)"
       ],
       "form_d_fund_ciks": [
-        "1585243",
-        "1742324",
-        "1500319",
+        "1475786",
+        "1600550",
+        "1476651",
+        "1370138",
         "1476652"
       ],
       "form_d_recent_filings": [
         {
-          "accession": "0001585243-25-000007",
-          "file_date": "2025-08-21",
+          "accession": "0001794159-19-000003",
+          "file_date": "2019-12-02",
           "form": "D/A",
-          "cik": "1585243",
-          "filer_name": "AHCO Bond Fund, LLC  (CIK 0001585243)"
+          "cik": "1475786",
+          "filer_name": "Bond Index Fund, a series of The PanAgora Group Trust  (CIK 0001475786)"
         },
         {
-          "accession": "0001088968-24-000002",
-          "file_date": "2024-08-16",
+          "accession": "0001625257-17-000092",
+          "file_date": "2017-07-25",
           "form": "D/A",
-          "cik": "1585243",
-          "filer_name": "AHCO Bond Fund, LLC  (CIK 0001585243)"
+          "cik": "1475786",
+          "filer_name": "Bond Index Fund, a series of The PanAgora Group Trust  (CIK 0001475786)"
         },
         {
-          "accession": "0001585243-23-000001",
-          "file_date": "2023-08-23",
+          "accession": "0001625257-17-000092",
+          "file_date": "2017-07-25",
           "form": "D/A",
-          "cik": "1585243",
-          "filer_name": "AHCO Bond Fund, LLC  (CIK 0001585243)"
+          "cik": "1475786",
+          "filer_name": "Bond Index Fund, a series of The PanAgora Group Trust  (CIK 0001475786)"
         },
         {
-          "accession": "0001585243-22-000001",
-          "file_date": "2022-08-29",
-          "form": "D/A",
-          "cik": "1585243",
-          "filer_name": "AHCO Bond Fund, LLC  (CIK 0001585243)"
+          "accession": "0001600550-15-000001",
+          "file_date": "2015-04-22",
+          "form": "D",
+          "cik": "1600550",
+          "filer_name": "Bond Street Marketplace, Inc.  (CIK 0001600550)"
         },
         {
-          "accession": "0001585243-21-000001",
-          "file_date": "2021-08-27",
-          "form": "D/A",
-          "cik": "1585243",
-          "filer_name": "AHCO Bond Fund, LLC  (CIK 0001585243)"
+          "accession": "0001600550-14-000001",
+          "file_date": "2014-02-20",
+          "form": "D",
+          "cik": "1600550",
+          "filer_name": "Bond Street Marketplace, Inc.  (CIK 0001600550)"
         }
       ],
       "inferred": true,
@@ -8951,14 +8891,12 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 13,
+      "form_d_total_filings": 11,
       "form_d_latest_filing_date": "2025-05-29",
       "form_d_distinct_funds": [
         "CIRCLEUP LLC  (CIK 0002070482)",
         "CircleUp Credit Fund I, LP  (CIK 0001765746)",
         "CircleUp Growth Partners II, L.P.  (CIK 0001886114)",
-        "Players' Impact Ventures, LP - TPI CircleUp Investment I  (CIK 0001825974)",
-        "DVF - CircleUp - I, LP  (CIK 0001815643)",
         "CircleUp Growth Partners, L.P.  (CIK 0001700282)",
         "CircleUp Marketplace Index Fund I, L.P.  (CIK 0001664768)",
         "CircleUp Growth Capital Fund I, L.P.  (CIK 0001614463)"
@@ -8967,8 +8905,6 @@
         "2070482",
         "1765746",
         "1886114",
-        "1825974",
-        "1815643",
         "1700282",
         "1664768",
         "1614463"
@@ -9003,11 +8939,11 @@
           "filer_name": "CircleUp Credit Fund I, LP  (CIK 0001765746)"
         },
         {
-          "accession": "0001834385-21-000002",
-          "file_date": "2021-01-07",
-          "form": "D",
-          "cik": "1825974",
-          "filer_name": "Players' Impact Ventures, LP - TPI CircleUp Investment I  (CIK 0001825974)"
+          "accession": "0000902664-20-001449",
+          "file_date": "2020-03-06",
+          "form": "D/A",
+          "cik": "1765746",
+          "filer_name": "CircleUp Credit Fund I, LP  (CIK 0001765746)"
         }
       ],
       "inferred": true,
@@ -9257,7 +9193,7 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 13,
+      "form_d_total_filings": 12,
       "form_d_latest_filing_date": "2024-03-22",
       "form_d_distinct_funds": [
         "Commerce Ventures V, L.P.  (CIK 0001987899)",
@@ -9265,7 +9201,6 @@
         "Commerce Ventures IV-A, L.P.  (CIK 0001864375)",
         "Commerce Ventures IV, L.P.  (CIK 0001864392)",
         "Commerce Ventures III, L.P.  (CIK 0001752958)",
-        "ALTAVISTA RETAIL & E-COMMERCE VENTURES FUND, LP  (CIK 0001687725)",
         "Commerce Ventures II, L.P.  (CIK 0001651581)",
         "Commerce Ventures, L.P.  (CIK 0001569693)"
       ],
@@ -9275,7 +9210,6 @@
         "1864375",
         "1864392",
         "1752958",
-        "1687725",
         "1651581",
         "1569693"
       ],
@@ -11575,39 +11509,53 @@
       ],
       "lat": 37.4419,
       "lng": -122.143,
-      "form_d_total_filings": 68,
-      "form_d_latest_filing_date": "2026-07-07",
+      "form_d_total_filings": 104,
+      "form_d_latest_filing_date": "2026-08-03",
       "form_d_distinct_funds": [
+        "Eclipse SPV XXXV, L.P.  (CIK 0002147512)",
         "Eclipse SPV XXXIV, L.P.  (CIK 0002141075)",
+        "Eclipse SPV XXXIII, L.P.  (CIK 0002135267)",
         "Eclipse SPV XXXII, L.P.  (CIK 0002129852)",
         "Eclipse Capital Long Short Fund, LP  (CIK 0002018132)",
+        "Eclipse Partners Fund VI, L.P.  (CIK 0002112976)",
+        "Eclipse SPV XXXI, L.P.  (CIK 0002127474)",
         "Eclipse Fund VI, L.P.  (CIK 0002113988)",
-        "Eclipse SPV XXIX, L.P.  (CIK 0002098219)",
-        "Eclipse SPV XXX, L.P.  (CIK 0002102295)",
-        "ECLIPSE BIOINNOVATIONS, INC.  (CIK 0001881936)",
-        "Eclipse SPV XXVII, L.P.  (CIK 0002087558)",
-        "Solar Eclipse-Galaxy, LLC  (CIK 0002061821)",
-        "Two Sigma Eclipse U.S. Fund, LP  (CIK 0001283074)"
+        "Eclipse Early Growth Fund III, L.P.  (CIK 0002113986)",
+        "Eclipse SPV XXIX, L.P.  (CIK 0002098219)"
       ],
       "form_d_fund_ciks": [
+        "2147512",
         "2141075",
+        "2135267",
         "2129852",
         "2018132",
+        "2112976",
+        "2127474",
         "2113988",
-        "2098219",
-        "2102295",
-        "1881936",
-        "2087558",
-        "2061821",
-        "1283074"
+        "2113986",
+        "2098219"
       ],
       "form_d_recent_filings": [
+        {
+          "accession": "0002147512-26-000001",
+          "file_date": "2026-08-03",
+          "form": "D",
+          "cik": "2147512",
+          "filer_name": "Eclipse SPV XXXV, L.P.  (CIK 0002147512)"
+        },
         {
           "accession": "0002141075-26-000001",
           "file_date": "2026-07-07",
           "form": "D",
           "cik": "2141075",
           "filer_name": "Eclipse SPV XXXIV, L.P.  (CIK 0002141075)"
+        },
+        {
+          "accession": "0002135267-26-000001",
+          "file_date": "2026-05-26",
+          "form": "D",
+          "cik": "2135267",
+          "filer_name": "Eclipse SPV XXXIII, L.P.  (CIK 0002135267)"
         },
         {
           "accession": "0002129852-26-000001",
@@ -11622,20 +11570,6 @@
           "form": "D/A",
           "cik": "2018132",
           "filer_name": "Eclipse Capital Long Short Fund, LP  (CIK 0002018132)"
-        },
-        {
-          "accession": "0002113988-26-000001",
-          "file_date": "2026-03-31",
-          "form": "D",
-          "cik": "2113988",
-          "filer_name": "Eclipse Fund VI, L.P.  (CIK 0002113988)"
-        },
-        {
-          "accession": "0002098219-26-000001",
-          "file_date": "2026-03-24",
-          "form": "D",
-          "cik": "2098219",
-          "filer_name": "Eclipse SPV XXIX, L.P.  (CIK 0002098219)"
         }
       ],
       "inferred": true,
@@ -12610,31 +12544,31 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 44,
+      "form_d_total_filings": 14,
       "form_d_latest_filing_date": "2026-04-09",
       "form_d_distinct_funds": [
         "Fin Capital Harbor, LP  (CIK 0002054282)",
-        "Findell Capital Partners LP  (CIK 0001776724)",
         "Fin Capital Flagship III - SBIC, LP  (CIK 0002086932)",
-        "One Fin Capital Offshore Ltd.  (CIK 0001663688)",
-        "One Fin Capital LP  (CIK 0001659521)",
-        "Fin Capital Horizons III, LP  (CIK 0002018359)",
         "Fin Capital Flagship Offshore III, LP  (CIK 0002037875)",
         "Fin Capital Horizons Offshore III, LP  (CIK 0002032869)",
+        "Fin Capital Horizons III, LP  (CIK 0002018359)",
         "Fin Capital Flagship III, LP  (CIK 0002018406)",
-        "Fin Capital Horizons Offshore III Side Car, LP  (CIK 0002033296)"
+        "Fin Capital Horizons Offshore III Side Car, LP  (CIK 0002033296)",
+        "Fin Capital Horizons III Side Car, LP  (CIK 0002018746)",
+        "Fin Capital G, LP  (CIK 0001931046)",
+        "FIN Capital Partners LP  (CIK 0001776724)"
       ],
       "form_d_fund_ciks": [
         "2054282",
-        "1776724",
         "2086932",
-        "1663688",
-        "1659521",
-        "2018359",
         "2037875",
         "2032869",
+        "2018359",
         "2018406",
-        "2033296"
+        "2033296",
+        "2018746",
+        "1931046",
+        "1776724"
       ],
       "form_d_recent_filings": [
         {
@@ -12645,13 +12579,6 @@
           "filer_name": "Fin Capital Harbor, LP  (CIK 0002054282)"
         },
         {
-          "accession": "0000919574-26-001568",
-          "file_date": "2026-03-13",
-          "form": "D/A",
-          "cik": "1776724",
-          "filer_name": "Findell Capital Partners LP  (CIK 0001776724)"
-        },
-        {
           "accession": "0001123292-25-000574",
           "file_date": "2025-10-21",
           "form": "D",
@@ -12659,18 +12586,25 @@
           "filer_name": "Fin Capital Flagship III - SBIC, LP  (CIK 0002086932)"
         },
         {
-          "accession": "0000935836-25-000586",
-          "file_date": "2025-09-04",
-          "form": "D/A",
-          "cik": "1663688",
-          "filer_name": "One Fin Capital Offshore Ltd.  (CIK 0001663688)"
+          "accession": "0000929638-25-000508",
+          "file_date": "2025-02-05",
+          "form": "D",
+          "cik": "2054282",
+          "filer_name": "Fin Capital Harbor, LP  (CIK 0002054282)"
         },
         {
-          "accession": "0000935836-25-000407",
-          "file_date": "2025-05-29",
-          "form": "D/A",
-          "cik": "1659521",
-          "filer_name": "One Fin Capital LP  (CIK 0001659521)"
+          "accession": "0000929638-24-003703",
+          "file_date": "2024-10-31",
+          "form": "D",
+          "cik": "2037875",
+          "filer_name": "Fin Capital Flagship Offshore III, LP  (CIK 0002037875)"
+        },
+        {
+          "accession": "0000929638-24-003709",
+          "file_date": "2024-10-31",
+          "form": "D",
+          "cik": "2032869",
+          "filer_name": "Fin Capital Horizons Offshore III, LP  (CIK 0002032869)"
         }
       ],
       "inferred": true,
@@ -13265,69 +13199,6 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 15,
-      "form_d_latest_filing_date": "2026-06-23",
-      "form_d_distinct_funds": [
-        "StrideAI May 2026 a Series of DDS Founders Fund LLC  (CIK 0002134634)",
-        "DDS Double Lions Fund a Series of DDS Founders Fund LLC  (CIK 0002097897)",
-        "BWC Founders Fund, LLC  (CIK 0002058434)",
-        "Witness Investment Founders Fund, LLC  (CIK 0002021018)",
-        "LKCAP FOUNDERS FUND, LLC  (CIK 0001974776)",
-        "Coastal Ridge Founders Fund, LLC  (CIK 0001919240)",
-        "ARIZONA FOUNDERS FUND, LLC  (CIK 0001684894)",
-        "Aequitas ETC Founders Fund, LLC  (CIK 0001534219)",
-        "WHI L&B Founders Fund LLC  (CIK 0001523035)",
-        "Aequitas CarePayment Founders Fund, LLC  (CIK 0001492061)"
-      ],
-      "form_d_fund_ciks": [
-        "2134634",
-        "2097897",
-        "2058434",
-        "2021018",
-        "1974776",
-        "1919240",
-        "1684894",
-        "1534219",
-        "1523035",
-        "1492061"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0002134634-26-000001",
-          "file_date": "2026-06-23",
-          "form": "D",
-          "cik": "2134634",
-          "filer_name": "StrideAI May 2026 a Series of DDS Founders Fund LLC  (CIK 0002134634)"
-        },
-        {
-          "accession": "0002097897-25-000001",
-          "file_date": "2025-11-24",
-          "form": "D",
-          "cik": "2097897",
-          "filer_name": "DDS Double Lions Fund a Series of DDS Founders Fund LLC  (CIK 0002097897)"
-        },
-        {
-          "accession": "0002058434-25-000007",
-          "file_date": "2025-11-03",
-          "form": "D/A",
-          "cik": "2058434",
-          "filer_name": "BWC Founders Fund, LLC  (CIK 0002058434)"
-        },
-        {
-          "accession": "0002058434-25-000001",
-          "file_date": "2025-03-03",
-          "form": "D",
-          "cik": "2058434",
-          "filer_name": "BWC Founders Fund, LLC  (CIK 0002058434)"
-        },
-        {
-          "accession": "0002021018-24-000001",
-          "file_date": "2024-04-24",
-          "form": "D",
-          "cik": "2021018",
-          "filer_name": "Witness Investment Founders Fund, LLC  (CIK 0002021018)"
-        }
-      ],
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Well-known public investment history spanning tech, bio, and defense.",
@@ -13723,33 +13594,47 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 88,
-      "form_d_latest_filing_date": "2024-08-21",
+      "form_d_total_filings": 284,
+      "form_d_latest_filing_date": "2024-12-02",
       "form_d_distinct_funds": [
+        "FundersClub K8A LLC  (CIK 0002046641)",
+        "FundersClub UQV LLC  (CIK 0002036840)",
         "FundersClub D6H LLC  (CIK 0002033952)",
         "FundersClub GGC LLC  (CIK 0002021155)",
         "FundersClub 9PE LLC  (CIK 0002018720)",
         "FundersClub F6X LLC  (CIK 0001973271)",
+        "FundersClub F4Z LLC  (CIK 0001944381)",
         "FundersClub X9Y LLC  (CIK 0001943084)",
-        "FundersClub 644 LLC  (CIK 0001893083)",
-        "FundersClub QJB LLC  (CIK 0001858837)",
-        "FundersClub W48 LLC  (CIK 0001799726)",
-        "FundersClub 6XV LLC  (CIK 0001817044)",
-        "FundersClub 9YK LLC  (CIK 0001794169)"
+        "FundersClub WKY LLC  (CIK 0001920949)",
+        "FundersClub 644 LLC  (CIK 0001893083)"
       ],
       "form_d_fund_ciks": [
+        "2046641",
+        "2036840",
         "2033952",
         "2021155",
         "2018720",
         "1973271",
+        "1944381",
         "1943084",
-        "1893083",
-        "1858837",
-        "1799726",
-        "1817044",
-        "1794169"
+        "1920949",
+        "1893083"
       ],
       "form_d_recent_filings": [
+        {
+          "accession": "0002046641-24-000001",
+          "file_date": "2024-12-02",
+          "form": "D",
+          "cik": "2046641",
+          "filer_name": "FundersClub K8A LLC  (CIK 0002046641)"
+        },
+        {
+          "accession": "0002036840-24-000001",
+          "file_date": "2024-09-09",
+          "form": "D",
+          "cik": "2036840",
+          "filer_name": "FundersClub UQV LLC  (CIK 0002036840)"
+        },
         {
           "accession": "0002033952-24-000001",
           "file_date": "2024-08-21",
@@ -13770,20 +13655,6 @@
           "form": "D",
           "cik": "2018720",
           "filer_name": "FundersClub 9PE LLC  (CIK 0002018720)"
-        },
-        {
-          "accession": "0001973271-23-000002",
-          "file_date": "2023-08-16",
-          "form": "D/A",
-          "cik": "1973271",
-          "filer_name": "FundersClub F6X LLC  (CIK 0001973271)"
-        },
-        {
-          "accession": "0001943084-22-000001",
-          "file_date": "2022-08-26",
-          "form": "D",
-          "cik": "1943084",
-          "filer_name": "FundersClub X9Y LLC  (CIK 0001943084)"
         }
       ],
       "inferred": true,
@@ -13864,40 +13735,33 @@
       ],
       "lat": 37.3852,
       "lng": -122.1141,
-      "form_d_total_filings": 27,
-      "form_d_latest_filing_date": "2025-12-04",
+      "form_d_total_filings": 14,
+      "form_d_latest_filing_date": "2025-08-12",
       "form_d_distinct_funds": [
-        "Immersion-Safavi Future Ventures Fund I, LP  (CIK 0002099387)",
         "Future Ventures Commonwealth Fusion Fund II, LLC  (CIK 0002076582)",
         "Future Ventures IV, L.P.  (CIK 0002065683)",
         "Future Ventures Side Fund IV, L.P.  (CIK 0002065696)",
-        "Bright Future Ventures Waxahachie LLC  (CIK 0002046587)",
         "Future Ventures AI, LLC  (CIK 0002021509)",
-        "Uncharted Future Fund I, LP  (CIK 0001979847)",
         "Future Ventures III, L.P.  (CIK 0001953689)",
         "Future Ventures Side Fund III, L.P.  (CIK 0001953688)",
-        "Future Ventures Final Frontier Fund III, LLC  (CIK 0001930168)"
+        "Future Ventures Final Frontier Fund III, LLC  (CIK 0001930168)",
+        "Future Ventures Commonwealth Fusion Fund, LLC  (CIK 0001891954)",
+        "Future Ventures Final Frontier Fund II, LLC  (CIK 0001844712)",
+        "Future Ventures Side Fund II, L.P.  (CIK 0001839374)"
       ],
       "form_d_fund_ciks": [
-        "2099387",
         "2076582",
         "2065683",
         "2065696",
-        "2046587",
         "2021509",
-        "1979847",
         "1953689",
         "1953688",
-        "1930168"
+        "1930168",
+        "1891954",
+        "1844712",
+        "1839374"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0002099387-25-000001",
-          "file_date": "2025-12-04",
-          "form": "D",
-          "cik": "2099387",
-          "filer_name": "Immersion-Safavi Future Ventures Fund I, LP  (CIK 0002099387)"
-        },
         {
           "accession": "0002062351-25-000015",
           "file_date": "2025-08-12",
@@ -13920,11 +13784,18 @@
           "filer_name": "Future Ventures Side Fund IV, L.P.  (CIK 0002065696)"
         },
         {
-          "accession": "0002046587-25-000001",
-          "file_date": "2025-01-10",
+          "accession": "0002021509-24-000001",
+          "file_date": "2024-05-30",
           "form": "D",
-          "cik": "2046587",
-          "filer_name": "Bright Future Ventures Waxahachie LLC  (CIK 0002046587)"
+          "cik": "2021509",
+          "filer_name": "Future Ventures AI, LLC  (CIK 0002021509)"
+        },
+        {
+          "accession": "0001953689-22-000003",
+          "file_date": "2022-12-09",
+          "form": "D",
+          "cik": "1953689",
+          "filer_name": "Future Ventures III, L.P.  (CIK 0001953689)"
         }
       ],
       "inferred": true,
@@ -15796,8 +15667,8 @@
         "Horsley Bridge Growth 14, L.P.  (CIK 0002023505)",
         "HORSLEY BRIDGE VENTURE 15, L.P.  (CIK 0002002856)",
         "Horsley Bridge Growth 13, L.P.  (CIK 0001874120)",
-        "Horsley Bridge Venture 14, L.P.  (CIK 0001874242)",
         "Horsley Bridge Venture 14 Plus, L.P.  (CIK 0001874257)",
+        "Horsley Bridge Venture 14, L.P.  (CIK 0001874242)",
         "Horsley Bridge Strategic Fund IV, L.P.  (CIK 0001813107)",
         "Horsley Bridge Strategic Fund III, L.P.  (CIK 0001792420)",
         "Horsley Bridge XIII Venture, L.P.  (CIK 0001777310)",
@@ -15808,8 +15679,8 @@
         "2023505",
         "2002856",
         "1874120",
-        "1874242",
         "1874257",
+        "1874242",
         "1813107",
         "1792420",
         "1777310",
@@ -15885,28 +15756,21 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 17,
+      "form_d_total_filings": 9,
       "form_d_latest_filing_date": "2020-10-19",
       "form_d_distinct_funds": [
         "Human Capital Holdings LLC  (CIK 0001791527)",
         "Human Capital S2D LP  (CIK 0001820172)",
         "Human Capital S2C LP  (CIK 0001817696)",
         "Human Capital S2B LP  (CIK 0001816699)",
-        "BFF Human Capital L P  (CIK 0001788615)",
-        "Human Capital Fund, Ltd.  (CIK 0001580605)",
-        "Rock Creek Human Capital Fund, Ltd  (CIK 0001580605)",
-        "Wilson Human Capital Group, Inc.  (CIK 0001583076)",
-        "HCI HUMAN CAPITAL INSTITUTE, INC.  (CIK 0001608011)"
+        "Human Capital Fund, Ltd.  (CIK 0001580605)"
       ],
       "form_d_fund_ciks": [
         "1791527",
         "1820172",
         "1817696",
         "1816699",
-        "1788615",
-        "1580605",
-        "1583076",
-        "1608011"
+        "1580605"
       ],
       "form_d_recent_filings": [
         {
@@ -17543,8 +17407,8 @@
       "form_d_distinct_funds": [
         "Landed Homeownership Impact Fund, LP  (CIK 0001852051)",
         "Landed Funds, LLC The Bellarmine Series  (CIK 0001761263)",
-        "Landed Funds, LLC CAIS Series  (CIK 0001761210)",
         "Landed Funds, LLC Santa Clara University Series  (CIK 0001761265)",
+        "Landed Funds, LLC CAIS Series  (CIK 0001761210)",
         "Landed Educators, LLC  (CIK 0001761212)",
         "Landed Denver Educators, LLC  (CIK 0001761231)",
         "Landed Educators II, LLC  (CIK 0001761229)",
@@ -17555,8 +17419,8 @@
       "form_d_fund_ciks": [
         "1852051",
         "1761263",
-        "1761210",
         "1761265",
+        "1761210",
         "1761212",
         "1761231",
         "1761229",
@@ -17580,18 +17444,18 @@
           "filer_name": "Landed Funds, LLC The Bellarmine Series  (CIK 0001761263)"
         },
         {
-          "accession": "0001095449-19-000059",
-          "file_date": "2019-11-04",
-          "form": "D/A",
-          "cik": "1761210",
-          "filer_name": "Landed Funds, LLC CAIS Series  (CIK 0001761210)"
-        },
-        {
           "accession": "0001095449-19-000057",
           "file_date": "2019-11-04",
           "form": "D/A",
           "cik": "1761265",
           "filer_name": "Landed Funds, LLC Santa Clara University Series  (CIK 0001761265)"
+        },
+        {
+          "accession": "0001095449-19-000059",
+          "file_date": "2019-11-04",
+          "form": "D/A",
+          "cik": "1761210",
+          "filer_name": "Landed Funds, LLC CAIS Series  (CIK 0001761210)"
         },
         {
           "accession": "0001095449-19-000060",
@@ -19182,24 +19046,7 @@
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
-      "lng": -122.143,
-      "form_d_total_filings": 1,
-      "form_d_latest_filing_date": "2025-01-29",
-      "form_d_distinct_funds": [
-        "MFVP Opportunity Fund IC, LLC  (CIK 0002044786)"
-      ],
-      "form_d_fund_ciks": [
-        "2044786"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0002044786-25-000001",
-          "file_date": "2025-01-29",
-          "form": "D",
-          "cik": "2044786",
-          "filer_name": "MFVP Opportunity Fund IC, LLC  (CIK 0002044786)"
-        }
-      ]
+      "lng": -122.143
     },
     {
       "id": "sec-308886",
@@ -19904,9 +19751,11 @@
       "sectors": [],
       "lat": 37.453,
       "lng": -122.1817,
-      "form_d_total_filings": 20,
-      "form_d_latest_filing_date": "2026-05-08",
+      "form_d_total_filings": 22,
+      "form_d_latest_filing_date": "2026-08-20",
       "form_d_distinct_funds": [
+        "MVP Ventures III QP LP  (CIK 0002146031)",
+        "MVP Ventures III AI LP  (CIK 0002146032)",
         "MVPRHOA26, a series of MVP II Co-Invest LLC  (CIK 0002128258)",
         "MVPAIMA26, a series of MVP II Co-Invest LLC  (CIK 0002128253)",
         "MVPSARD26, a series of MVP II Co-Invest LLC  (CIK 0002128040)",
@@ -19914,11 +19763,11 @@
         "MVPFROD26, a series of MVP II Co-Invest LLC  (CIK 0002120649)",
         "MVP Sidecar MR, a series of MVP II Co-Invest LLC  (CIK 0002120216)",
         "MVPTRIB25, a series of MVP II Co-Invest LLC  (CIK 0002120676)",
-        "MVPJOYB25, a series of MVP II Co-Invest LLC  (CIK 0002119141)",
-        "MVPVALA25, a series of MVP II Co-Invest LLC  (CIK 0002109001)",
-        "MVPVIBP25, a series of MVP II Co-Invest LLC  (CIK 0002106458)"
+        "MVPJOYB25, a series of MVP II Co-Invest LLC  (CIK 0002119141)"
       ],
       "form_d_fund_ciks": [
+        "2146031",
+        "2146032",
         "2128258",
         "2128253",
         "2128040",
@@ -19926,11 +19775,23 @@
         "2120649",
         "2120216",
         "2120676",
-        "2119141",
-        "2109001",
-        "2106458"
+        "2119141"
       ],
       "form_d_recent_filings": [
+        {
+          "accession": "0002146031-26-000001",
+          "file_date": "2026-08-20",
+          "form": "D",
+          "cik": "2146031",
+          "filer_name": "MVP Ventures III QP LP  (CIK 0002146031)"
+        },
+        {
+          "accession": "0002146032-26-000001",
+          "file_date": "2026-08-20",
+          "form": "D",
+          "cik": "2146032",
+          "filer_name": "MVP Ventures III AI LP  (CIK 0002146032)"
+        },
         {
           "accession": "0002128258-26-000001",
           "file_date": "2026-05-08",
@@ -19951,20 +19812,6 @@
           "form": "D",
           "cik": "2128040",
           "filer_name": "MVPSARD26, a series of MVP II Co-Invest LLC  (CIK 0002128040)"
-        },
-        {
-          "accession": "0002128252-26-000001",
-          "file_date": "2026-05-08",
-          "form": "D",
-          "cik": "2128252",
-          "filer_name": "MVPAXIA26, a series of MVP II Co-Invest LLC  (CIK 0002128252)"
-        },
-        {
-          "accession": "0002120649-26-000001",
-          "file_date": "2026-03-20",
-          "form": "D",
-          "cik": "2120649",
-          "filer_name": "MVPFROD26, a series of MVP II Co-Invest LLC  (CIK 0002120649)"
         }
       ]
     },
@@ -20886,8 +20733,8 @@
       "form_d_latest_filing_date": "2026-06-02",
       "form_d_distinct_funds": [
         "Olive Partners Select V, LP  (CIK 0002128051)",
-        "Olive Partners Select II, LP  (CIK 0002128048)",
         "Olive Partners Flagship Fund III, LP  (CIK 0002128047)",
+        "Olive Partners Select II, LP  (CIK 0002128048)",
         "Olive Partners FoF III-A, LP  (CIK 0002130764)",
         "Olive Partners Select I, LP  (CIK 0002070666)",
         "Olive Partners FoF I, LP  (CIK 0002032583)",
@@ -20898,8 +20745,8 @@
       ],
       "form_d_fund_ciks": [
         "2128051",
-        "2128048",
         "2128047",
+        "2128048",
         "2130764",
         "2070666",
         "2032583",
@@ -20917,18 +20764,18 @@
           "filer_name": "Olive Partners Select V, LP  (CIK 0002128051)"
         },
         {
-          "accession": "0000905148-26-002772",
-          "file_date": "2026-06-02",
-          "form": "D",
-          "cik": "2128048",
-          "filer_name": "Olive Partners Select II, LP  (CIK 0002128048)"
-        },
-        {
           "accession": "0000905148-26-002773",
           "file_date": "2026-06-02",
           "form": "D",
           "cik": "2128047",
           "filer_name": "Olive Partners Flagship Fund III, LP  (CIK 0002128047)"
+        },
+        {
+          "accession": "0000905148-26-002772",
+          "file_date": "2026-06-02",
+          "form": "D",
+          "cik": "2128048",
+          "filer_name": "Olive Partners Select II, LP  (CIK 0002128048)"
         },
         {
           "accession": "0000905148-26-002771",
@@ -21654,10 +21501,9 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 22,
-      "form_d_latest_filing_date": "2026-03-30",
+      "form_d_total_filings": 21,
+      "form_d_latest_filing_date": "2022-01-11",
       "form_d_distinct_funds": [
-        "Invictus Blue Owl Ventures III, L.P.  (CIK 0002125348)",
         "Owl Ventures Opportunity Fund II, L.P.  (CIK 0001875794)",
         "Owl Ventures V, L.P.  (CIK 0001875795)",
         "Owl V GP Participation Fund, L.P.  (CIK 0001895470)",
@@ -21666,10 +21512,10 @@
         "Owl Ventures Partnership Holdings II, LLC  (CIK 0001851563)",
         "Owl Ventures IV, L.P.  (CIK 0001810746)",
         "Owl Ventures Opportunity Fund I, L.P.  (CIK 0001810748)",
-        "Owl Ventures Opportunity I Affiliates Fund, L.P.  (CIK 0001818285)"
+        "Owl Ventures Opportunity I Affiliates Fund, L.P.  (CIK 0001818285)",
+        "Owl Ventures IV Affiliates Fund, L.P.  (CIK 0001818196)"
       ],
       "form_d_fund_ciks": [
-        "2125348",
         "1875794",
         "1875795",
         "1895470",
@@ -21678,16 +21524,10 @@
         "1851563",
         "1810746",
         "1810748",
-        "1818285"
+        "1818285",
+        "1818196"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0001315863-26-000253",
-          "file_date": "2026-03-30",
-          "form": "D",
-          "cik": "2125348",
-          "filer_name": "Invictus Blue Owl Ventures III, L.P.  (CIK 0002125348)"
-        },
         {
           "accession": "0001875794-22-000001",
           "file_date": "2022-01-11",
@@ -21715,6 +21555,13 @@
           "form": "D",
           "cik": "1895473",
           "filer_name": "Owl Opportunity II GP Participation Fund, L.P.  (CIK 0001895473)"
+        },
+        {
+          "accession": "0001875795-21-000001",
+          "file_date": "2021-07-29",
+          "form": "D",
+          "cik": "1875795",
+          "filer_name": "Owl Ventures V, L.P.  (CIK 0001875795)"
         }
       ],
       "inferred": true,
@@ -21748,38 +21595,7 @@
       "stages": [],
       "sectors": [],
       "lat": 37.3688,
-      "lng": -122.0363,
-      "form_d_total_filings": 3,
-      "form_d_latest_filing_date": "2025-10-31",
-      "form_d_distinct_funds": [
-        "PALO ALTO GROWTH CAPITAL LLC  (CIK 0002021782)"
-      ],
-      "form_d_fund_ciks": [
-        "2021782"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0002021782-25-000002",
-          "file_date": "2025-10-31",
-          "form": "D/A",
-          "cik": "2021782",
-          "filer_name": "PALO ALTO GROWTH CAPITAL LLC  (CIK 0002021782)"
-        },
-        {
-          "accession": "0002021782-24-000003",
-          "file_date": "2024-05-10",
-          "form": "D/A",
-          "cik": "2021782",
-          "filer_name": "PALO ALTO GROWTH CAPITAL LLC  (CIK 0002021782)"
-        },
-        {
-          "accession": "0002021782-24-000002",
-          "file_date": "2024-05-02",
-          "form": "D",
-          "cik": "2021782",
-          "filer_name": "PALO ALTO GROWTH CAPITAL LLC  (CIK 0002021782)"
-        }
-      ]
+      "lng": -122.0363
     },
     {
       "id": "sec-163248",
@@ -22328,24 +22144,15 @@
       "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 2,
-      "form_d_latest_filing_date": "2023-06-20",
+      "form_d_total_filings": 1,
+      "form_d_latest_filing_date": "2022-07-08",
       "form_d_distinct_funds": [
-        "ANDINA-PIER 88 INNOVATION FUND, L.P.  (CIK 0001982054)",
         "Pier 88 Ventures Enterprise Software Fund, L.P.  (CIK 0001934288)"
       ],
       "form_d_fund_ciks": [
-        "1982054",
         "1934288"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0001982054-23-000001",
-          "file_date": "2023-06-20",
-          "form": "D",
-          "cik": "1982054",
-          "filer_name": "ANDINA-PIER 88 INNOVATION FUND, L.P.  (CIK 0001982054)"
-        },
         {
           "accession": "0001209191-22-041547",
           "file_date": "2022-07-08",
@@ -24092,31 +23899,27 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 11,
+      "form_d_total_filings": 8,
       "form_d_latest_filing_date": "2026-05-14",
       "form_d_distinct_funds": [
         "Ridge Ventures VI, L.P.  (CIK 0002129894)",
-        "Silo Ridge Ventures Property A Investors, LLC  (CIK 0002080580)",
         "Ridge Ventures V-A, L.P.  (CIK 0001916906)",
         "Ridge Ventures V Affiliates - A, L.P.  (CIK 0001916960)",
         "Ridge Ventures V Affiliates, L.P.  (CIK 0001885989)",
-        "Pine Ridge Ventures Fund II, LLC  (CIK 0001870440)",
-        "Pine Ridge Ventures Fund I, LLC  (CIK 0001870468)",
         "Ridge Ventures V, L.P.  (CIK 0001860250)",
         "Ridge Ventures Continuation Fund, L.P.  (CIK 0001858663)",
-        "RIDGE VENTURES IV, L.P.  (CIK 0001716224)"
+        "RIDGE VENTURES IV, L.P.  (CIK 0001716224)",
+        "RIDGE VENTURES IV AFFILIATES, L.P.  (CIK 0001725435)"
       ],
       "form_d_fund_ciks": [
         "2129894",
-        "2080580",
         "1916906",
         "1916960",
         "1885989",
-        "1870440",
-        "1870468",
         "1860250",
         "1858663",
-        "1716224"
+        "1716224",
+        "1725435"
       ],
       "form_d_recent_filings": [
         {
@@ -24125,13 +23928,6 @@
           "form": "D",
           "cik": "2129894",
           "filer_name": "Ridge Ventures VI, L.P.  (CIK 0002129894)"
-        },
-        {
-          "accession": "0001140361-25-035106",
-          "file_date": "2025-09-16",
-          "form": "D",
-          "cik": "2080580",
-          "filer_name": "Silo Ridge Ventures Property A Investors, LLC  (CIK 0002080580)"
         },
         {
           "accession": "0001916906-22-000001",
@@ -24153,6 +23949,13 @@
           "form": "D",
           "cik": "1885989",
           "filer_name": "Ridge Ventures V Affiliates, L.P.  (CIK 0001885989)"
+        },
+        {
+          "accession": "0001860250-21-000001",
+          "file_date": "2021-05-03",
+          "form": "D",
+          "cik": "1860250",
+          "filer_name": "Ridge Ventures V, L.P.  (CIK 0001860250)"
         }
       ],
       "inferred": true,
@@ -25452,20 +25255,16 @@
       ],
       "lat": 37.5779,
       "lng": -122.3478,
-      "form_d_total_filings": 10,
+      "form_d_total_filings": 8,
       "form_d_latest_filing_date": "2026-07-09",
       "form_d_distinct_funds": [
         "Shield Capital Fund II-Parallel, L.P.  (CIK 0002029560)",
         "Shield Capital Fund II, L.P.  (CIK 0002029575)",
-        "MACE & SHIELD INVEST LP  (CIK 0002079896)",
-        "North Shield Fund LP  (CIK 0001999691)",
         "Shield Capital Fund I, L.P.  (CIK 0001888926)"
       ],
       "form_d_fund_ciks": [
         "2029560",
         "2029575",
-        "2079896",
-        "1999691",
         "1888926"
       ],
       "form_d_recent_filings": [
@@ -25484,13 +25283,6 @@
           "filer_name": "Shield Capital Fund II, L.P.  (CIK 0002029575)"
         },
         {
-          "accession": "0002079896-25-000001",
-          "file_date": "2025-08-12",
-          "form": "D",
-          "cik": "2079896",
-          "filer_name": "MACE & SHIELD INVEST LP  (CIK 0002079896)"
-        },
-        {
           "accession": "0002029560-25-000002",
           "file_date": "2025-07-07",
           "form": "D/A",
@@ -25503,6 +25295,13 @@
           "form": "D/A",
           "cik": "2029575",
           "filer_name": "Shield Capital Fund II, L.P.  (CIK 0002029575)"
+        },
+        {
+          "accession": "0002029560-24-000001",
+          "file_date": "2024-07-10",
+          "form": "D",
+          "cik": "2029560",
+          "filer_name": "Shield Capital Fund II-Parallel, L.P.  (CIK 0002029560)"
         }
       ],
       "inferred": true,
@@ -25928,11 +25727,10 @@
       ],
       "lat": 37.453,
       "lng": -122.1817,
-      "form_d_total_filings": 36,
+      "form_d_total_filings": 21,
       "form_d_latest_filing_date": "2026-03-20",
       "form_d_distinct_funds": [
         "Social Capital Fund  (CIK 0001827788)",
-        "MCE Social Capital  (CIK 0001676142)",
         "DR Fund I, a series of Social Capital Community, LP  (CIK 0001885232)",
         "Social Capital Public Equity Partners LP  (CIK 0001679050)",
         "SOCIAL CAPITAL PUBLIC EQUITY PARTNERS OFFSHORE FUND LTD  (CIK 0001706799)",
@@ -25940,11 +25738,11 @@
         "SOCIAL CAPITAL PUBLIC EQUITY PARTNERS - A LP  (CIK 0001717995)",
         "Social Capital Partnership Opportunities Fund, L.P.  (CIK 0001637425)",
         "Social Capital Partnership Principals Fund III, L.P.  (CIK 0001631891)",
-        "Social Capital Partnership III, L.P.  (CIK 0001631888)"
+        "Social Capital Partnership III, L.P.  (CIK 0001631888)",
+        "Social Capital Partnership II, L.P.  (CIK 0001567969)"
       ],
       "form_d_fund_ciks": [
         "1827788",
-        "1676142",
         "1885232",
         "1679050",
         "1706799",
@@ -25952,7 +25750,8 @@
         "1717995",
         "1637425",
         "1631891",
-        "1631888"
+        "1631888",
+        "1567969"
       ],
       "form_d_recent_filings": [
         {
@@ -25963,20 +25762,6 @@
           "filer_name": "Social Capital Fund  (CIK 0001827788)"
         },
         {
-          "accession": "0000950103-25-010585",
-          "file_date": "2025-08-22",
-          "form": "D/A",
-          "cik": "1676142",
-          "filer_name": "MCE Social Capital  (CIK 0001676142)"
-        },
-        {
-          "accession": "0000950103-25-010586",
-          "file_date": "2025-08-22",
-          "form": "D/A",
-          "cik": "1676142",
-          "filer_name": "MCE Social Capital  (CIK 0001676142)"
-        },
-        {
           "accession": "0001104659-25-027279",
           "file_date": "2025-03-24",
           "form": "D/A",
@@ -25984,11 +25769,25 @@
           "filer_name": "Social Capital Fund  (CIK 0001827788)"
         },
         {
-          "accession": "0000950103-24-012564",
-          "file_date": "2024-08-23",
+          "accession": "0001104659-24-028710",
+          "file_date": "2024-02-28",
           "form": "D/A",
-          "cik": "1676142",
-          "filer_name": "MCE Social Capital  (CIK 0001676142)"
+          "cik": "1827788",
+          "filer_name": "Social Capital Fund  (CIK 0001827788)"
+        },
+        {
+          "accession": "0001104659-23-113735",
+          "file_date": "2023-11-02",
+          "form": "D/A",
+          "cik": "1827788",
+          "filer_name": "Social Capital Fund  (CIK 0001827788)"
+        },
+        {
+          "accession": "0001104659-22-114859",
+          "file_date": "2022-11-04",
+          "form": "D/A",
+          "cik": "1827788",
+          "filer_name": "Social Capital Fund  (CIK 0001827788)"
         }
       ],
       "inferred": true,
@@ -28729,7 +28528,7 @@
       ],
       "lat": 37.563,
       "lng": -122.3255,
-      "form_d_total_filings": 100,
+      "form_d_total_filings": 116,
       "form_d_latest_filing_date": "2026-08-12",
       "form_d_distinct_funds": [
         "Tribe Capital Western Fund I, L.P.  (CIK 0002149833)",
@@ -28997,7 +28796,7 @@
       ],
       "lat": 37.4419,
       "lng": -122.143,
-      "form_d_total_filings": 57,
+      "form_d_total_filings": 56,
       "form_d_latest_filing_date": "2025-09-12",
       "form_d_distinct_funds": [
         "True Ventures Select V, L.P.  (CIK 0002085739)",
@@ -29007,9 +28806,9 @@
         "TRUE Latin Ventures, LLC  (CIK 0001881252)",
         "True Crypto Fund, LLC  (CIK 0001854837)",
         "True VC, LLC - Series 23  (CIK 0001965252)",
-        "Huge If True Ventures, LP  (CIK 0001940440)",
         "True Culture Fund, LLC  (CIK 0001875780)",
-        "True Ventures VIII, L.P.  (CIK 0001931070)"
+        "True Ventures VIII, L.P.  (CIK 0001931070)",
+        "True Equality, LLC  (CIK 0001922835)"
       ],
       "form_d_fund_ciks": [
         "2085739",
@@ -29019,9 +28818,9 @@
         "1881252",
         "1854837",
         "1965252",
-        "1940440",
         "1875780",
-        "1931070"
+        "1931070",
+        "1922835"
       ],
       "form_d_recent_filings": [
         {
@@ -29734,31 +29533,31 @@
       "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 99,
+      "form_d_total_filings": 289,
       "form_d_latest_filing_date": "2025-01-31",
       "form_d_distinct_funds": [
         "StoneAX Ventures, a Series of Vauban Platform LP  (CIK 0002052786)",
+        "Hyperspace Mach 2, a Series of Vauban Platform LP  (CIK 0002050278)",
         "Miami Angels Taiv III 2024, a Series of Vauban Platform LP  (CIK 0002049224)",
         "BeckettLayneVentures BDI, a Series of Vauban Platform LP  (CIK 0002046775)",
+        "Impact Mill - Balto Energy SPV I, a Series of Vauban Platform LP  (CIK 0002046769)",
         "Somersault Ventures Ridepanda SPV I, a Series of Vauban Platform LP  (CIK 0002044755)",
         "Mishe Investors I, a Series of Vauban Platform LP  (CIK 0002044000)",
         "Riptide ARC SPV I, a Series of Vauban Platform LP  (CIK 0002044756)",
-        "Andres Construction DC, a Series of Vauban Platform LP  (CIK 0002040873)",
-        "Ampa SPV Jumpspace Ventures, a Series of Vauban Platform LP  (CIK 0002040681)",
-        "BTV Altscore Series A SPV, a Series of Vauban Platform LP  (CIK 0002038020)",
-        "Somersault Ventures MySky SPV I, a Series of Vauban Platform LP  (CIK 0002036899)"
+        "VVC SPV I, a Series of Vauban Platform LP  (CIK 0002040874)",
+        "Bochi Crafty Partners, a Series of Vauban Platform LP  (CIK 0002043965)"
       ],
       "form_d_fund_ciks": [
         "2052786",
+        "2050278",
         "2049224",
         "2046775",
+        "2046769",
         "2044755",
         "2044000",
         "2044756",
-        "2040873",
-        "2040681",
-        "2038020",
-        "2036899"
+        "2040874",
+        "2043965"
       ],
       "form_d_recent_filings": [
         {
@@ -29767,6 +29566,13 @@
           "form": "D",
           "cik": "2052786",
           "filer_name": "StoneAX Ventures, a Series of Vauban Platform LP  (CIK 0002052786)"
+        },
+        {
+          "accession": "0002050278-25-000001",
+          "file_date": "2025-01-31",
+          "form": "D",
+          "cik": "2050278",
+          "filer_name": "Hyperspace Mach 2, a Series of Vauban Platform LP  (CIK 0002050278)"
         },
         {
           "accession": "0002049224-24-000001",
@@ -29783,18 +29589,11 @@
           "filer_name": "BeckettLayneVentures BDI, a Series of Vauban Platform LP  (CIK 0002046775)"
         },
         {
-          "accession": "0002044755-24-000001",
-          "file_date": "2024-11-15",
+          "accession": "0002046769-24-000001",
+          "file_date": "2024-12-05",
           "form": "D",
-          "cik": "2044755",
-          "filer_name": "Somersault Ventures Ridepanda SPV I, a Series of Vauban Platform LP  (CIK 0002044755)"
-        },
-        {
-          "accession": "0002044000-24-000001",
-          "file_date": "2024-11-15",
-          "form": "D",
-          "cik": "2044000",
-          "filer_name": "Mishe Investors I, a Series of Vauban Platform LP  (CIK 0002044000)"
+          "cik": "2046769",
+          "filer_name": "Impact Mill - Balto Energy SPV I, a Series of Vauban Platform LP  (CIK 0002046769)"
         }
       ]
     },
@@ -30614,14 +30413,10 @@
       "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 21,
-      "form_d_latest_filing_date": "2026-07-23",
+      "form_d_total_filings": 7,
+      "form_d_latest_filing_date": "2024-03-28",
       "form_d_distinct_funds": [
-        "QUANT WAVE FUND LP  (CIK 0002146573)",
-        "Square Wave Partners, L.P.  (CIK 0001947907)",
-        "Square Wave Offshore, Ltd.  (CIK 0002077222)",
         "Wave Capital, LLC  (CIK 0002017143)",
-        "CU-1121 Fund I, a series of Brain Wave Capital, LP  (CIK 0002002925)",
         "WAVE CAPITAL AERO FUND I, LP  (CIK 0001944883)",
         "WAVE Capital 6P CD Fund, LP  (CIK 0001914458)",
         "BO Fund I, a series of Wave Capital, LP  (CIK 0001909497)",
@@ -30629,11 +30424,7 @@
         "WAVE Capital Fund I, LP  (CIK 0001799440)"
       ],
       "form_d_fund_ciks": [
-        "2146573",
-        "1947907",
-        "2077222",
         "2017143",
-        "2002925",
         "1944883",
         "1914458",
         "1909497",
@@ -30642,39 +30433,39 @@
       ],
       "form_d_recent_filings": [
         {
-          "accession": "0002146573-26-000001",
-          "file_date": "2026-07-23",
-          "form": "D",
-          "cik": "2146573",
-          "filer_name": "QUANT WAVE FUND LP  (CIK 0002146573)"
-        },
-        {
-          "accession": "0001947907-26-000001",
-          "file_date": "2026-02-20",
-          "form": "D/A",
-          "cik": "1947907",
-          "filer_name": "Square Wave Partners, L.P.  (CIK 0001947907)"
-        },
-        {
-          "accession": "0002077222-25-000001",
-          "file_date": "2025-07-16",
-          "form": "D",
-          "cik": "2077222",
-          "filer_name": "Square Wave Offshore, Ltd.  (CIK 0002077222)"
-        },
-        {
-          "accession": "0001947907-25-000002",
-          "file_date": "2025-02-20",
-          "form": "D/A",
-          "cik": "1947907",
-          "filer_name": "Square Wave Partners, L.P.  (CIK 0001947907)"
-        },
-        {
           "accession": "0002017143-24-000001",
           "file_date": "2024-03-28",
           "form": "D",
           "cik": "2017143",
           "filer_name": "Wave Capital, LLC  (CIK 0002017143)"
+        },
+        {
+          "accession": "0001944883-22-000001",
+          "file_date": "2022-09-13",
+          "form": "D",
+          "cik": "1944883",
+          "filer_name": "WAVE CAPITAL AERO FUND I, LP  (CIK 0001944883)"
+        },
+        {
+          "accession": "0001914458-22-000001",
+          "file_date": "2022-03-04",
+          "form": "D",
+          "cik": "1914458",
+          "filer_name": "WAVE Capital 6P CD Fund, LP  (CIK 0001914458)"
+        },
+        {
+          "accession": "0001909497-22-000002",
+          "file_date": "2022-02-07",
+          "form": "D",
+          "cik": "1909497",
+          "filer_name": "BO Fund I, a series of Wave Capital, LP  (CIK 0001909497)"
+        },
+        {
+          "accession": "0001868792-21-000001",
+          "file_date": "2021-10-22",
+          "form": "D",
+          "cik": "1868792",
+          "filer_name": "WAVE Capital Fund II, LP  (CIK 0001868792)"
         }
       ]
     },
@@ -30786,31 +30577,31 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 43,
+      "form_d_total_filings": 27,
       "form_d_latest_filing_date": "2025-11-03",
       "form_d_distinct_funds": [
         "WEFUNDER, INC.  (CIK 0001641389)",
-        "Wefunds Wefunder XIII, a series of Wefunds LLC  (CIK 0002043529)",
-        "Wefunds Wefunder IX, a series of Wefunds LLC  (CIK 0002017877)",
-        "Wefunds Wefunder XII, a series of Wefunds LLC  (CIK 0002017876)",
-        "Wefunds Wefunder XI, a series of Wefunds LLC  (CIK 0001954447)",
         "Wefunds Orange Fund V, a series of Wefunder Portfolio LLC  (CIK 0001949497)",
-        "WeFunds Wefunder IV, a series of Wefunds LLC  (CIK 0001953022)",
-        "Wefunds Wefunder X, a series of Wefunds LLC  (CIK 0001950867)",
         "Wefunds XX Fund III, a series of Wefunder Portfolio, LLC  (CIK 0001950713)",
-        "Wefunds Immigrant Fund I, a series of Wefunder Portfolio LLC  (CIK 0001949669)"
+        "Wefunds Immigrant Fund I, a series of Wefunder Portfolio LLC  (CIK 0001949669)",
+        "Wefunds Match Fund I, a series of Wefunder Portfolio, LLC  (CIK 0001949500)",
+        "Wefunds Match Fund II, a series of Wefunder Portfolio, LLC  (CIK 0001949501)",
+        "Wefunds Moonshot Fund II, a series of Wefunder Portfolio LLC  (CIK 0001949496)",
+        "Wefunds Female Founder I, a series of Wefunder Portfolio LLC  (CIK 0001949498)",
+        "WeFunds Moonshot Fund I, a series of Wefunder Portfolio, LLC  (CIK 0001715427)",
+        "WeFunds Orange Fund IV, a series of Wefunder Portfolio, LLC  (CIK 0001715407)"
       ],
       "form_d_fund_ciks": [
         "1641389",
-        "2043529",
-        "2017877",
-        "2017876",
-        "1954447",
         "1949497",
-        "1953022",
-        "1950867",
         "1950713",
-        "1949669"
+        "1949669",
+        "1949500",
+        "1949501",
+        "1949496",
+        "1949498",
+        "1715427",
+        "1715407"
       ],
       "form_d_recent_filings": [
         {
@@ -30819,20 +30610,6 @@
           "form": "D/A",
           "cik": "1641389",
           "filer_name": "WEFUNDER, INC.  (CIK 0001641389)"
-        },
-        {
-          "accession": "0002043529-25-000002",
-          "file_date": "2025-11-03",
-          "form": "D/A",
-          "cik": "2043529",
-          "filer_name": "Wefunds Wefunder XIII, a series of Wefunds LLC  (CIK 0002043529)"
-        },
-        {
-          "accession": "0002043529-24-000001",
-          "file_date": "2024-11-06",
-          "form": "D",
-          "cik": "2043529",
-          "filer_name": "Wefunds Wefunder XIII, a series of Wefunds LLC  (CIK 0002043529)"
         },
         {
           "accession": "0001641389-24-000010",
@@ -30845,6 +30622,20 @@
           "accession": "0001641389-24-000009",
           "file_date": "2024-10-21",
           "form": "D/A",
+          "cik": "1641389",
+          "filer_name": "WEFUNDER, INC.  (CIK 0001641389)"
+        },
+        {
+          "accession": "0001641389-24-000007",
+          "file_date": "2024-03-26",
+          "form": "D",
+          "cik": "1641389",
+          "filer_name": "WEFUNDER, INC.  (CIK 0001641389)"
+        },
+        {
+          "accession": "0001641389-24-000005",
+          "file_date": "2024-03-25",
+          "form": "D",
           "cik": "1641389",
           "filer_name": "WEFUNDER, INC.  (CIK 0001641389)"
         }
@@ -31498,36 +31289,23 @@
       ],
       "lat": 37.3861,
       "lng": -122.0839,
-      "form_d_total_filings": 10,
-      "form_d_latest_filing_date": "2026-05-15",
+      "form_d_total_filings": 6,
+      "form_d_latest_filing_date": "2026-04-27",
       "form_d_distinct_funds": [
-        "GCW Access - Y Combinator, L.P.  (CIK 0002131674)",
         "Y Combinator ES26, LLC  (CIK 0002131827)",
         "Y Combinator ES24, LLC  (CIK 0002018779)",
-        "Stonks Y Combinator Winter 2023 Access Fund, a series of Stonks Funds, LP  (CIK 0001970280)",
-        "Stonks Y Combinator Summer 2022 Access Fund, a Series of Stonks Funds, LP  (CIK 0001947577)",
         "Y Combinator ES20, LLC  (CIK 0001811911)",
         "Y Combinator Continuity Affiliates Fund I, L.P.  (CIK 0001670489)",
         "Y COMBINATOR CONTINUITY FUND I, L.P.  (CIK 0001645142)"
       ],
       "form_d_fund_ciks": [
-        "2131674",
         "2131827",
         "2018779",
-        "1970280",
-        "1947577",
         "1811911",
         "1670489",
         "1645142"
       ],
       "form_d_recent_filings": [
-        {
-          "accession": "0001012975-26-000436",
-          "file_date": "2026-05-15",
-          "form": "D",
-          "cik": "2131674",
-          "filer_name": "GCW Access - Y Combinator, L.P.  (CIK 0002131674)"
-        },
         {
           "accession": "0001315863-26-000366",
           "file_date": "2026-04-27",
@@ -31543,18 +31321,25 @@
           "filer_name": "Y Combinator ES24, LLC  (CIK 0002018779)"
         },
         {
-          "accession": "0001970280-23-000003",
-          "file_date": "2023-03-21",
-          "form": "D/A",
-          "cik": "1970280",
-          "filer_name": "Stonks Y Combinator Winter 2023 Access Fund, a series of Stonks Funds, LP  (CIK 0001970280)"
+          "accession": "0001315863-20-000444",
+          "file_date": "2020-05-14",
+          "form": "D",
+          "cik": "1811911",
+          "filer_name": "Y Combinator ES20, LLC  (CIK 0001811911)"
         },
         {
-          "accession": "0001970280-23-000002",
-          "file_date": "2023-03-21",
+          "accession": "0001670489-16-000002",
+          "file_date": "2016-04-04",
+          "form": "D/A",
+          "cik": "1670489",
+          "filer_name": "Y Combinator Continuity Affiliates Fund I, L.P.  (CIK 0001670489)"
+        },
+        {
+          "accession": "0001670489-16-000001",
+          "file_date": "2016-03-25",
           "form": "D",
-          "cik": "1970280",
-          "filer_name": "Stonks Y Combinator Winter 2023 Access Fund, a series of Stonks Funds, LP  (CIK 0001970280)"
+          "cik": "1670489",
+          "filer_name": "Y Combinator Continuity Affiliates Fund I, L.P.  (CIK 0001670489)"
         }
       ],
       "inferred": true,
@@ -31798,31 +31583,31 @@
       ],
       "lat": 37.4419,
       "lng": -122.143,
-      "form_d_total_filings": 25,
+      "form_d_total_filings": 22,
       "form_d_latest_filing_date": "2025-12-09",
       "form_d_distinct_funds": [
         "Zeev Ventures XI, L.P.  (CIK 0002094709)",
         "ZEEV VENTURES STRATEGIC SPV, L.P.  (CIK 0002053666)",
         "Zeev Ventures X Allocate Access Fund, L.P.  (CIK 0002037325)",
         "ZEEV VENTURES X, L.P.  (CIK 0002020466)",
-        "Bookman - Zeev Ventures IX LLC  (CIK 0001966435)",
         "Zeev Ventures 2022 Allocate Access Fund, L.P.  (CIK 0001948513)",
         "ZEEV VENTURES IX, L.P.  (CIK 0001924680)",
-        "Bookman - Zeev Ventures VIII LLC  (CIK 0001917942)",
         "ZEEV VENTURES VIII, L.P.  (CIK 0001878390)",
-        "ZEEV VENTURES VII, L.P.  (CIK 0001832367)"
+        "ZEEV VENTURES VII, L.P.  (CIK 0001832367)",
+        "ZEEV VENTURES VI, L.P.  (CIK 0001796803)",
+        "ZEEV VENTURES V, L.P.  (CIK 0001776719)"
       ],
       "form_d_fund_ciks": [
         "2094709",
         "2053666",
         "2037325",
         "2020466",
-        "1966435",
         "1948513",
         "1924680",
-        "1917942",
         "1878390",
-        "1832367"
+        "1832367",
+        "1796803",
+        "1776719"
       ],
       "form_d_recent_filings": [
         {
@@ -31854,11 +31639,11 @@
           "filer_name": "ZEEV VENTURES X, L.P.  (CIK 0002020466)"
         },
         {
-          "accession": "0001966435-23-000002",
-          "file_date": "2023-04-21",
-          "form": "D/A",
-          "cik": "1966435",
-          "filer_name": "Bookman - Zeev Ventures IX LLC  (CIK 0001966435)"
+          "accession": "0001948513-22-000002",
+          "file_date": "2022-09-28",
+          "form": "D",
+          "cik": "1948513",
+          "filer_name": "Zeev Ventures 2022 Allocate Access Fund, L.P.  (CIK 0001948513)"
         }
       ],
       "inferred": true,

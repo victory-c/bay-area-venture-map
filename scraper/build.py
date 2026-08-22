@@ -57,6 +57,13 @@ VALID_ENRICHERS = {
     "nvca", "form_d", "llm", "website",
 }
 
+#: The complete Form D block. Derived wholly from the EFTS query, so
+#: ``enrich_form_d`` writes and clears it as a unit.
+FORM_D_FIELDS = (
+    "form_d_total_filings", "form_d_latest_filing_date", "form_d_distinct_funds",
+    "form_d_fund_ciks", "form_d_recent_filings",
+)
+
 # Fields that only an *optional* enricher — or an out-of-band pass such as
 # ``scraper.glm_enrich`` — ever writes. A build that doesn't run that pass
 # has no way to reproduce them.
@@ -68,13 +75,17 @@ VALID_ENRICHERS = {
 # 6692ed9 ("data: monthly SEC refresh (2026-06-05)") dropped 98,532 lines and
 # cut the manifest from six enrichers to one, which is why wikipedia_*,
 # nvca_member, llm_* and website_enriched still sit at zero coverage today.
+#
+# Carry-forward fills gaps from the *immediately* preceding payload, so it
+# restores a block the current run couldn't produce. Run form_d against a
+# stale file and it could re-add a block that run had deliberately cleared —
+# always refresh from the current firms.json.
 PRESERVED_FIELDS = (
     # scraper.glm_enrich — sectors/stages tagging + one-line thesis
     "inferred", "inference_confidence", "inference_basis", "inference_model",
     "inferred_thesis", "thesis_confidence",
     # --enrich form_d
-    "form_d_total_filings", "form_d_latest_filing_date", "form_d_distinct_funds",
-    "form_d_fund_ciks", "form_d_recent_filings",
+    *FORM_D_FIELDS,
     # --enrich wikipedia
     "wikipedia_url", "wikipedia_key_people", "wikipedia_industry",
     # --enrich nvca
@@ -340,17 +351,32 @@ def enrich_form_d(firms: list[dict]) -> None:
         ``form_d_fund_ciks``             — up to 10 fund-entity CIKs
         ``form_d_recent_filings``        — top 5 most recent filings
 
-    Purely additive: never overwrites seed values. Coverage is heavily
-    skewed toward brand-recognisable firms; obscure shell entities
-    return zero and are skipped (and cached as null so re-runs don't
-    re-query them).
+    Coverage is heavily skewed toward brand-recognisable firms; obscure
+    shell entities return zero and are skipped (and cached as null so
+    re-runs don't re-query them).
+
+    Unlike the other enrichers this one is *authoritative* rather than
+    purely additive: a firm's Form D block is wholly derived from the EFTS
+    query, so when a re-run matches nothing the previous block must be
+    removed. Additive-only semantics would have pinned the 15 filings
+    wrongly attributed to Founders Fund in place forever, because the
+    matcher that produced them is exactly what a re-run corrects.
     """
     client = FormDClient(cache_path=FORM_D_CACHE)
     try:
         hits = 0
+        cleared = 0
         for firm in firms:
             info = client.lookup(firm["name"])
             if info is None or info.total_filings == 0:
+                if any(k in firm for k in FORM_D_FIELDS):
+                    for key in FORM_D_FIELDS:
+                        firm.pop(key, None)
+                    cleared += 1
+                    log.info(
+                        "Form D: cleared stale block for %s (no longer matches)",
+                        firm["id"],
+                    )
                 continue
             hits += 1
             firm["form_d_total_filings"] = info.total_filings
@@ -367,7 +393,8 @@ def enrich_form_d(firms: list[dict]) -> None:
                 }
                 for f in info.recent_filings
             ]
-        log.info("Form D: matched %d / %d firms", hits, len(firms))
+        log.info("Form D: matched %d / %d firms (cleared %d stale)",
+                 hits, len(firms), cleared)
     finally:
         client.close()
 
