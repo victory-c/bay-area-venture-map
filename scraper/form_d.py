@@ -22,10 +22,13 @@ Data flow
 ---------
 For each firm:
 
-  1. EFTS quoted-phrase search: ``q="{firm_name}"&forms=D``.
-  2. Drop hits whose ``display_names[0]`` doesn't contain the firm's
-     brand token (first 1-2 words) — catches cross-contamination from
-     unrelated filers that happen to share a word.
+  1. EFTS quoted-phrase search: ``q="{firm_name}"&forms=D``, paginated
+     until ``hits.total.value`` is exhausted (EFTS caps a response at
+     100 hits, so single-page reads silently truncate prolific filers).
+  2. Drop hits whose ``display_names[0]`` isn't *anchored* on the firm's
+     brand token — see :func:`_brand_matches`. Real vehicles lead with
+     the sponsor's brand; a mid-name mention is a feeder, an SPV, or an
+     unrelated filer.
   3. Aggregate: count, distinct fund entities, latest file_date, top-5
      most-recent filings.
 
@@ -60,19 +63,29 @@ from typing import Optional
 
 import httpx
 
+from scraper.useragent import USER_AGENT as _UA
+
 log = logging.getLogger(__name__)
 
-USER_AGENT = "Sand Hill VC Map sandhillmap@example.com"
+USER_AGENT = _UA
 EFTS_URL = "https://efts.sec.gov/LATEST/search-index"
 MIN_INTERVAL_SECONDS = 0.17  # ~6 req/s, under SEC's 10 req/s ceiling
 
-CACHE_VERSION = 1
+# v2: paginated fetch + anchored brand matching. Both change what a lookup
+# returns for the same firm, so v1 entries must not be reused.
+CACHE_VERSION = 2
 DEFAULT_CACHE = pathlib.Path("data/.form-d-cache.json")
 
 # Cap recent-filings retained per firm — enough for a UI list, small
 # enough to keep the cache compact.
 MAX_RECENT = 5
 MAX_DISTINCT_FUNDS = 10
+
+# EFTS serves at most 100 hits per response. MAX_PAGES bounds a runaway
+# query; the most prolific Bay Area filer sits near 100 total, so 10 pages
+# (1,000 filings) is comfortable headroom.
+PAGE_SIZE = 100
+MAX_PAGES = 10
 
 
 @dataclass
@@ -107,10 +120,9 @@ _SUFFIX_RE = re.compile(
 def _brand_token(firm_name: str) -> str:
     """First 1-2 words of the firm name, with corporate suffixes stripped.
 
-    Used as a substring check against EFTS display_names so we drop
-    obvious cross-contamination (a quoted EFTS search for "X Capital"
-    can still return unrelated filers whose name happens to include
-    one of the tokens).
+    Fed to :func:`_brand_matches` to drop cross-contamination (a quoted
+    EFTS search for "X Capital" still returns unrelated filers whose name
+    happens to include one of the tokens).
     """
     cleaned = _SUFFIX_RE.sub("", firm_name).strip(" ,.")
     cleaned = re.sub(r"\s*\([^)]*\)\s*", " ", cleaned)  # drop "(a16z)"
@@ -123,7 +135,37 @@ def _brand_token(firm_name: str) -> str:
     return " ".join(words[:2]).lower()
 
 
-def _parse_hits(firm_name: str, hits: list[dict], total: int) -> FormDInfo:
+#: Series-LLC/LP vehicles legitimately bury the brand mid-name, e.g.
+#: "AU Fund I, a series of Trinity Ventures Funds, LP". Anything else that
+#: mentions the brand mid-name is a feeder, an SPV, or an unrelated filer.
+_SERIES_RE = re.compile(r"\bseries of\s+")
+
+
+def _brand_matches(brand: str, filer_name: str) -> bool:
+    """True when ``filer_name`` is plausibly a vehicle *of* this firm.
+
+    A plain substring test is far too loose: it credited "Ai Ventures"
+    (brand token ``ai``) with *Magnetar AI Ventures Fund LP*, and gave
+    "Founders Fund LLC" fifteen filings of which not one was its own —
+    they belonged to BWC, Arizona, Aequitas and other unrelated shops
+    whose fund happened to be called "<Something> Founders Fund".
+
+    Real fund vehicles lead with the sponsor's brand ("Sequoia Capital
+    Fund, L.P."), so we anchor the match to the start of the filer name.
+    The one legitimate exception is the series-LLC construction, where
+    the sponsor's name follows "a series of".
+    """
+    name = re.sub(r"^the\s+", "", filer_name.lower().strip())
+    pattern = re.escape(brand) + r"\b"
+    if re.match(pattern, name):
+        return True
+    return any(
+        re.match(pattern, name[m.end():])
+        for m in _SERIES_RE.finditer(name)
+    )
+
+
+def _parse_hits(firm_name: str, hits: list[dict]) -> FormDInfo:
     brand = _brand_token(firm_name)
     kept: list[FilingMeta] = []
     for hit in hits:
@@ -132,7 +174,7 @@ def _parse_hits(firm_name: str, hits: list[dict], total: int) -> FormDInfo:
         if not names:
             continue
         primary = names[0]
-        if brand not in primary.lower():
+        if not _brand_matches(brand, primary):
             continue
         ciks = src.get("ciks") or [""]
         kept.append(
@@ -221,28 +263,65 @@ class FormDClient:
                 return None
             return _info_from_dict(cached)
 
-        params = {"q": f'"{firm_name}"', "forms": "D"}
-        data = self._fetch_with_retry(params, firm_name)
-        if data is None:
+        hits = self._fetch_all_hits(firm_name)
+        if hits is None:
             # Transient failure after retries — don't cache, so a future
             # re-run picks it up. Caller treats as "no data this round".
             return None
-        hits_block = data.get("hits", {})
-        hits = hits_block.get("hits", [])
-        total = hits_block.get("total", {}).get("value", 0)
 
         if not hits:
             self._cache[key] = None
             self._save_cache()
             return None
 
-        info = _parse_hits(firm_name, hits, total)
+        info = _parse_hits(firm_name, hits)
         if info.total_filings == 0:
             self._cache[key] = None
         else:
             self._cache[key] = _info_to_dict(info)
         self._save_cache()
         return info if info.total_filings > 0 else None
+
+    def _fetch_all_hits(self, firm_name: str) -> Optional[list[dict]]:
+        """Every EFTS hit for this firm, following pagination.
+
+        EFTS returns at most ``PAGE_SIZE`` hits per response and reports the
+        real count in ``hits.total.value``. The previous version read only
+        the first page and reported ``len(hits)`` as the filing total, which
+        silently saturated: Tribe Capital sat at exactly 100, Sequoia and
+        Vauban at 99, Accel at 95 — each shortfall being the hits the brand
+        filter rejected off that single page.
+
+        Returns None on transient failure (so nothing is cached), or the
+        accumulated hit list — which may be empty.
+        """
+        collected: list[dict] = []
+        offset = 0
+        for page in range(MAX_PAGES):
+            params = {
+                "q": f'"{firm_name}"',
+                "forms": "D",
+                "from": str(offset),
+                "size": str(PAGE_SIZE),
+            }
+            data = self._fetch_with_retry(params, firm_name)
+            if data is None:
+                # Partial results would understate the count in a way we
+                # can't distinguish from a genuine total, so give up.
+                return None
+            hits_block = data.get("hits", {})
+            hits = hits_block.get("hits", [])
+            total = hits_block.get("total", {}).get("value", 0)
+            collected.extend(hits)
+            offset += len(hits)
+            if not hits or offset >= total:
+                break
+            if page == MAX_PAGES - 1:
+                log.warning(
+                    "Form D: %r has %d hits, capped at %d — count understated",
+                    firm_name, total, offset,
+                )
+        return collected
 
     def _fetch_with_retry(self, params: dict, firm_name: str) -> Optional[dict]:
         """GET with retries on 5xx/timeouts. Returns None after final failure.

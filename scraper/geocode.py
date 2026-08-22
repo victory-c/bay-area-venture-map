@@ -16,9 +16,11 @@ from typing import Optional
 
 import httpx
 
+from scraper.useragent import USER_AGENT as _UA
+
 log = logging.getLogger(__name__)
 
-USER_AGENT = "Sand Hill VC Map sandhillmap@example.com"
+USER_AGENT = _UA
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 MIN_INTERVAL_SECONDS = 1.1  # respect 1 req/s policy with margin
 

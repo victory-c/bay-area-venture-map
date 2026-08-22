@@ -46,12 +46,14 @@ from datetime import datetime, timezone
 from typing import Optional
 
 import httpx
+
+from scraper.useragent import USER_AGENT as _UA
 from selectolax.parser import HTMLParser
 
 log = logging.getLogger(__name__)
 
 # Same identification used by sec_bulk — descriptive UA with contact email.
-USER_AGENT = "Sand Hill VC Map (sandhillmap@example.com) - Bay Area VC research tool"
+USER_AGENT = _UA
 DIRECTORY_URL = "https://nvca.org/nvca-members/"
 MIN_INTERVAL_SECONDS = 0.2  # 5 req/s ceiling, polite
 

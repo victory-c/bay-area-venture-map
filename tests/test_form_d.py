@@ -11,6 +11,7 @@ from __future__ import annotations
 from scraper.build import enrich_form_d
 from scraper.form_d import (
     FilingMeta,
+    _brand_matches,
     FormDInfo,
     _brand_token,
     _parse_hits,
@@ -53,8 +54,10 @@ def test_parse_hits_filters_cross_contamination() -> None:
         _hit("Sequoia Capital Fund, L.P.", "0001906948", "2025-02-05"),
         _hit("Capital Group Companies Inc.", "0000123456", "2024-10-10"),
         _hit("SEQUOIA CAPITAL CHINA GROWTH 2010 FUND, L.P.", "0001493111", "2010-06-07"),
+        # Mid-name mention: a feeder, not a Sequoia vehicle. Must be dropped.
+        _hit("Wisconsin Sequoia Capital, LLC", "0000777777", "2023-01-01"),
     ]
-    info = _parse_hits("Sequoia Capital", hits, total=3)
+    info = _parse_hits("Sequoia Capital", hits)
     # Capital Group dropped; both Sequoia entries kept.
     assert info.total_filings == 2
     assert info.latest_filing_date == "2025-02-05"
@@ -71,7 +74,7 @@ def test_parse_hits_sorts_recent_filings_desc_and_caps() -> None:
         _hit(f"Sequoia Fund {i}, L.P.", f"000000000{i}", f"2020-01-{i:02d}", adsh=f"x-{i}")
         for i in range(1, 8)
     ]
-    info = _parse_hits("Sequoia", hits, total=7)
+    info = _parse_hits("Sequoia", hits)
     assert info.total_filings == 7
     assert len(info.recent_filings) == 5
     assert info.recent_filings[0].file_date == "2020-01-07"
@@ -86,7 +89,7 @@ def test_parse_hits_dedupes_distinct_funds_and_ciks() -> None:
         _hit("Khosla Ventures V, L.P.", "0001493112", "2024-05-01", form="D"),
         _hit("Khosla Ventures VI, L.P.", "0001493113", "2025-01-01", form="D"),
     ]
-    info = _parse_hits("Khosla Ventures", hits, total=3)
+    info = _parse_hits("Khosla Ventures", hits)
     assert info.total_filings == 3
     assert info.distinct_funds == [
         "Khosla Ventures VI, L.P.  (CIK 0001493113)",
@@ -97,7 +100,7 @@ def test_parse_hits_dedupes_distinct_funds_and_ciks() -> None:
 
 def test_parse_hits_returns_empty_info_when_all_filtered() -> None:
     hits = [_hit("Unrelated Firm Inc.", "0000999999", "2024-01-01")]
-    info = _parse_hits("Sequoia Capital", hits, total=1)
+    info = _parse_hits("Sequoia Capital", hits)
     assert info.total_filings == 0
     assert info.latest_filing_date is None
     assert info.distinct_funds == []
@@ -147,3 +150,109 @@ def test_enrich_form_d_merges_only_on_hit(monkeypatch) -> None:
     # The no-hit firm gets no Form D fields.
     assert "form_d_total_filings" not in firms[1]
     assert stub.calls == ["Sequoia Capital", "Random Shell Co"]
+
+
+# ---------------------------------------------------------------------------
+# Anchored brand matching (regression: unrelated filers credited to a firm)
+# ---------------------------------------------------------------------------
+
+
+def test_brand_matches_requires_the_brand_to_lead_the_filer_name() -> None:
+    assert _brand_matches("sequoia", "Sequoia Capital Fund, L.P.")
+    assert _brand_matches("sequoia", "SEQUOIA CAPITAL CHINA GROWTH 2010 FUND, L.P.")
+    # Leading article is not a brand.
+    assert _brand_matches("khosla", "The Khosla Ventures V, L.P.")
+    # Mid-name mentions are feeders / SPVs / unrelated shops.
+    assert not _brand_matches("sequoia", "Wisconsin Sequoia Capital, LLC")
+    assert not _brand_matches("menlo", "iCapital-Menlo Ventures Select I RCM Access Fund, L.P.")
+    assert not _brand_matches("accel", "Genesis Accel Opportunity Fund Series 2 LP")
+
+
+def test_brand_matches_allows_series_llc_vehicles() -> None:
+    # "<Something> Fund I, a series of <Brand> Funds, LP" really is the
+    # sponsor's vehicle, so the series construction is the one exception
+    # to the leading-brand rule.
+    assert _brand_matches("trinity", "AU Fund I, a series of Trinity Ventures Funds, LP")
+    assert _brand_matches("trinity", "BR-1012 Fund II, a series of Trinity Ventures Funds, LP")
+    # ...but only when the brand follows "series of", not merely appears.
+    assert not _brand_matches(
+        "kleiner perkins",
+        "OW Kleiner Perkins 22 & Select IV a series of Allocations 2026 Master, LLC",
+    )
+
+
+def test_brand_matches_rejects_short_token_false_positives() -> None:
+    # Regression: brand token "ai" substring-matched every fund with "AI"
+    # anywhere in its name, crediting Ai Ventures with 24 foreign filings.
+    assert not _brand_matches("ai", "Magnetar AI Ventures Fund LP")
+    assert not _brand_matches("ai", "Moringa x AI Ventures V a Series of Moringa Capital Ventures LLC")
+    # "pa" must not match "PALO ALTO..."; word boundary, not prefix-of-word.
+    assert not _brand_matches("pa", "PALO ALTO GROWTH CAPITAL LLC")
+
+
+def test_parse_hits_rejects_wholly_foreign_filings() -> None:
+    # Every one of Founders Fund's 15 attributed filings belonged to an
+    # unrelated shop whose vehicle was named "<X> Founders Fund". The
+    # correct answer is zero, not fifteen.
+    hits = [
+        _hit("BWC Founders Fund, LLC", "0002058434", "2025-03-01"),
+        _hit("ARIZONA FOUNDERS FUND, LLC", "0001684894", "2024-02-01"),
+        _hit("Aequitas ETC Founders Fund, LLC", "0001534219", "2023-01-01"),
+    ]
+    assert _parse_hits("Founders Fund LLC", hits).total_filings == 0
+
+
+# ---------------------------------------------------------------------------
+# Pagination (regression: filing counts saturated at one page of results)
+# ---------------------------------------------------------------------------
+
+
+def _paged_transport(total: int, page_size: int):
+    """MockTransport serving `total` Sequoia hits in `page_size` pages."""
+    import httpx
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        start = int(request.url.params.get("from", 0))
+        size = int(request.url.params.get("size", page_size))
+        window = min(size, page_size)
+        hits = [
+            _hit(f"Sequoia Capital Fund {i}, L.P.", f"{i:010d}", "2024-01-01", adsh=f"a-{i}")
+            for i in range(start, min(start + window, total))
+        ]
+        return httpx.Response(
+            200, json={"hits": {"total": {"value": total}, "hits": hits}}
+        )
+
+    return httpx.MockTransport(handler)
+
+
+def test_lookup_paginates_past_the_first_page(tmp_path) -> None:
+    import httpx
+    from scraper.form_d import FormDClient
+
+    client = httpx.Client(transport=_paged_transport(total=237, page_size=100))
+    fd = FormDClient(client=client, cache_path=tmp_path / "cache.json")
+    fd._throttle = lambda: None  # no real sleeping in tests
+    info = fd.lookup("Sequoia Capital")
+    # Previously this returned 100 — the page size, not the total.
+    assert info.total_filings == 237
+    assert len(info.recent_filings) == 5
+
+
+def test_lookup_stops_when_total_is_reached(tmp_path) -> None:
+    import httpx
+    from scraper.form_d import FormDClient
+
+    transport = _paged_transport(total=7, page_size=100)
+    calls: list[str] = []
+
+    def counting(request):
+        calls.append(str(request.url))
+        return transport.handler(request)
+
+    client = httpx.Client(transport=httpx.MockTransport(counting))
+    fd = FormDClient(client=client, cache_path=tmp_path / "cache.json")
+    fd._throttle = lambda: None
+    info = fd.lookup("Sequoia Capital")
+    assert info.total_filings == 7
+    assert len(calls) == 1  # single page covered the total; no wasted request

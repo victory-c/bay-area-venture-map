@@ -25,8 +25,14 @@ import yaml
 from scraper.edgar import IapdClient
 from scraper.form_d import FormDClient
 from scraper.geocode import Geocoder
-from scraper.llm_enrich import GeminiEnricher, QuotaExceeded, merge_into_firm
+from scraper.llm_enrich import (
+    SECTORS,
+    GeminiEnricher,
+    QuotaExceeded,
+    merge_into_firm,
+)
 from scraper.nvca import NvcaClient
+from scraper.sec_bulk import DEFAULT_CACHE as SEC_BULK_CACHE_NAME
 from scraper.sec_bulk import fetch_bay_area_vc_firms
 from scraper.website_enrich import WebsiteEnricher
 from scraper.wikipedia import WikipediaClient
@@ -38,15 +44,47 @@ SEED_PATH = REPO_ROOT / "data" / "firms.seed.yaml"
 OUT_PATH = REPO_ROOT / "data" / "firms.json"
 SITE_OUT_PATH = REPO_ROOT / "site" / "firms.json"
 GEOCODE_CACHE = REPO_ROOT / "data" / ".geocode-cache.json"
-SEC_BULK_CACHE = REPO_ROOT / "data" / ".sec-bulk-cache.csv"
 NVCA_CACHE = REPO_ROOT / "data" / ".nvca-cache.json"
 FORM_D_CACHE = REPO_ROOT / "data" / ".form-d-cache.json"
 WEBSITE_CACHE = REPO_ROOT / "data" / ".website-enrich-cache.json"
+# Take the filename from sec_bulk rather than restating it. The "-v2" suffix
+# there is a schema-version marker: restating the v1 name here meant a column
+# change would have been read back from a stale-schema cache.
+SEC_BULK_CACHE = REPO_ROOT / SEC_BULK_CACHE_NAME
 
 VALID_ENRICHERS = {
     "geocode", "edgar", "sec_bulk", "wikipedia",
     "nvca", "form_d", "llm", "website",
 }
+
+# Fields that only an *optional* enricher — or an out-of-band pass such as
+# ``scraper.glm_enrich`` — ever writes. A build that doesn't run that pass
+# has no way to reproduce them.
+#
+# This list is why ``carry_forward_enrichment`` exists. ``build()`` starts
+# from the seed and rebuilds ``firms.json`` wholesale, so the monthly
+# ``--enrich sec_bulk`` refresh used to emit a payload missing every one of
+# these and overwrite the good file with it. That is not hypothetical: commit
+# 6692ed9 ("data: monthly SEC refresh (2026-06-05)") dropped 98,532 lines and
+# cut the manifest from six enrichers to one, which is why wikipedia_*,
+# nvca_member, llm_* and website_enriched still sit at zero coverage today.
+PRESERVED_FIELDS = (
+    # scraper.glm_enrich — sectors/stages tagging + one-line thesis
+    "inferred", "inference_confidence", "inference_basis", "inference_model",
+    "inferred_thesis", "thesis_confidence",
+    # --enrich form_d
+    "form_d_total_filings", "form_d_latest_filing_date", "form_d_distinct_funds",
+    "form_d_fund_ciks", "form_d_recent_filings",
+    # --enrich wikipedia
+    "wikipedia_url", "wikipedia_key_people", "wikipedia_industry",
+    # --enrich nvca
+    "nvca_member",
+    # --enrich llm / website
+    "llm_enriched", "llm_confidence", "llm_sources", "website_enriched",
+    # Written by several passes; only carried when the new build has none.
+    "sectors", "stages", "partners", "recent_portfolio_sample", "notes",
+    "founded",
+)
 
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
@@ -273,9 +311,19 @@ def enrich_nvca(firms: list[dict]) -> None:
         # backfill into `sectors` today. The hook stays here so future
         # NVCA schema additions (or a separate sector-inference pass) can
         # populate it without re-touching this function.
+        # Validate against the shared vocabulary before writing. `sectors`
+        # is rendered as markup by the front end, and every other writer
+        # already filters against SECTORS — this was the one unchecked path
+        # into that field.
         if not firm.get("sectors") and member.sector_focus:
-            firm["sectors"] = [member.sector_focus]
-            backfilled_sectors += 1
+            if member.sector_focus in SECTORS:
+                firm["sectors"] = [member.sector_focus]
+                backfilled_sectors += 1
+            else:
+                log.warning(
+                    "NVCA: dropping unrecognised sector_focus %r for %s",
+                    member.sector_focus, firm["id"],
+                )
     log.info(
         "NVCA: %d / %d firms flagged as members (backfilled %d websites, %d sectors)",
         hits, len(firms), backfilled_website, backfilled_sectors,
@@ -455,7 +503,71 @@ def enrich_sec_bulk(seed_firms: list[dict], use_nominatim: bool = False) -> list
     return merged
 
 
-def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
+def load_previous(path: Path | None = None) -> dict:
+    """Read the previously-built payload, or ``{}`` if there isn't a usable one.
+
+    ``path`` resolves at call time rather than as a default-argument binding,
+    so tests (and any caller) can repoint ``OUT_PATH``.
+    """
+    path = path if path is not None else OUT_PATH
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError):
+        log.warning("Previous %s unreadable; building without carry-forward", path)
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def carry_forward_enrichment(firms: list[dict], previous: dict) -> int:
+    """Re-attach enrichment the current build had no way to reproduce.
+
+    Every enricher in this pipeline is strictly additive, and each is opt-in
+    behind ``--enrich``. That combination means a partial build silently
+    *drops* whatever the passes it didn't run had previously contributed —
+    so the monthly ``--enrich sec_bulk`` cron rewrote firms.json without any
+    of the GLM tags, theses, Form D data or Wikipedia backfill.
+
+    Carrying those fields forward keeps a partial refresh partial: the SEC
+    columns get the new scrape's values, and everything else survives.
+    Fields the current build *did* populate always win, so a real re-run of
+    an enricher still overwrites — this only fills genuine gaps.
+
+    Returns the number of firms that received at least one field.
+    """
+    prior = previous.get("firms") or []
+    if not prior:
+        return 0
+
+    by_id = {f["id"]: f for f in prior if f.get("id")}
+    by_crd = {str(f["sec_crd"]): f for f in prior if f.get("sec_crd")}
+
+    touched = 0
+    for firm in firms:
+        old = by_id.get(firm.get("id")) or by_crd.get(str(firm.get("sec_crd") or ""))
+        if not old:
+            continue
+        restored = False
+        for field in PRESERVED_FIELDS:
+            # `not firm.get(...)` on purpose: an empty list or empty string is
+            # as much a gap as a missing key, and no preserved field carries a
+            # meaningful falsy value.
+            if not firm.get(field) and old.get(field):
+                firm[field] = old[field]
+                restored = True
+        if restored:
+            touched += 1
+    if touched:
+        log.info("Carried forward enrichment for %d / %d firms", touched, len(firms))
+    return touched
+
+
+def build(
+    enrichers: Iterable[str],
+    only_firm: str | None,
+    preserve: bool = True,
+) -> dict:
     firms = load_seed()
     if only_firm:
         firms = [f for f in firms if f["id"] == only_firm]
@@ -500,8 +612,19 @@ def build(enrichers: Iterable[str], only_firm: str | None) -> dict:
     if "website" in enricher_set:
         enrich_websites(firms)
 
+    # Re-attach anything the enrichers we *didn't* run had contributed to the
+    # previous build. Must come last, so a pass that did run always wins.
+    manifest = set(enricher_set)
+    if preserve and not only_firm:
+        previous = load_previous()
+        if carry_forward_enrichment(firms, previous):
+            # The payload now contains those enrichers' output, so the manifest
+            # has to say so — otherwise it under-reports provenance and the next
+            # build can't tell what is actually in the file.
+            manifest |= set(previous.get("generated_with_enrichers") or [])
+
     output = {
-        "generated_with_enrichers": sorted(enricher_set),
+        "generated_with_enrichers": sorted(manifest),
         "firm_count": len(firms),
         "firms": firms,
     }
@@ -524,6 +647,12 @@ def main() -> None:
         help=f"Comma-separated enrichers to run. Available: {sorted(VALID_ENRICHERS)}",
     )
     parser.add_argument("--firm", default=None, help="Build only this firm id")
+    parser.add_argument(
+        "--no-preserve",
+        action="store_true",
+        help="Discard enrichment from the previous firms.json instead of "
+             "carrying it forward. Rebuilds exactly what this run produces.",
+    )
     args = parser.parse_args()
 
     enrichers = [e.strip() for e in args.enrich.split(",") if e.strip()]
@@ -531,7 +660,7 @@ def main() -> None:
     if unknown:
         raise SystemExit(f"Unknown enrichers: {sorted(unknown)}")
 
-    payload = build(enrichers, args.firm)
+    payload = build(enrichers, args.firm, preserve=not args.no_preserve)
     write_outputs(payload)
     log.info(
         "Wrote %s firms → %s (and copy at %s)",

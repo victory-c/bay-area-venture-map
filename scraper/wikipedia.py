@@ -42,11 +42,13 @@ from typing import Optional
 
 import httpx
 
+from scraper.useragent import USER_AGENT as _UA
+
 log = logging.getLogger(__name__)
 
 # Wikipedia asks for a descriptive User-Agent with contact info.
 # https://meta.wikimedia.org/wiki/User-Agent_policy
-USER_AGENT = "Sand Hill VC Map (sandhillmap@example.com) - Bay Area VC research tool"
+USER_AGENT = _UA
 API_URL = "https://en.wikipedia.org/w/api.php"
 SUMMARY_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/"
 MIN_INTERVAL_SECONDS = 0.2  # 5 req/s

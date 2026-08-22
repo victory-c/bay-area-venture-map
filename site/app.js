@@ -1,6 +1,8 @@
 // Sand Hill Road VCs — front-end app.
 // Loads firms.json, renders Leaflet map, drives table & filter reactivity.
 
+const AUM_CEILING = 100_000_000_000;
+
 const STAGE_LABELS = {
   pre_seed: "Pre-seed",
   seed: "Seed",
@@ -42,11 +44,11 @@ const SECTOR_LABELS = {
 };
 
 // Related sectors, used to suggest "adjacent tags" when a stage+sector filter
-// combination returns zero firms. Only the marquee (rich-tier) firms carry
-// sector/stage tags today, so narrow combinations collapse to an empty set;
-// these adjacencies give the founder a one-click way out. Suggestions are
-// always re-counted against the live data, so an adjacency that would itself
-// return nothing is never shown.
+// combination returns zero firms. Sector/stage coverage is uneven — the 25
+// hand-curated firms plus the AI-tagged lite firms — so narrow combinations
+// still collapse to an empty set; these adjacencies give the founder a
+// one-click way out. Suggestions are always re-counted against the live data,
+// so an adjacency that would itself return nothing is never shown.
 const SECTOR_ADJACENCY = {
   enterprise_saas: ["ai_infra", "dev_tools", "fintech", "data", "cloud", "security"],
   consumer: ["consumer_social", "marketplace", "mobile", "gaming", "fintech"],
@@ -71,10 +73,45 @@ const SECTOR_ADJACENCY = {
   mobile: ["consumer", "consumer_social", "gaming"],
 };
 
+// SEC's "Website Address" field is whatever the filer typed, and for ~25% of
+// firms that's a social profile rather than a site. The scraper already knows
+// this (website_enrich._SOCIAL_HOST_BLACKLIST skips them); label them honestly
+// instead of calling a LinkedIn page the firm's website.
+const SOCIAL_HOSTS = [
+  [/(^|\.)linkedin\.com$/, "LinkedIn"],
+  [/(^|\.)twitter\.com$/, "X (Twitter)"],
+  [/(^|\.)x\.com$/, "X (Twitter)"],
+  [/(^|\.)facebook\.com$/, "Facebook"],
+  [/(^|\.)instagram\.com$/, "Instagram"],
+  [/(^|\.)crunchbase\.com$/, "Crunchbase"],
+];
+
+function linkKind(url) {
+  let host;
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch {
+    return "Website";
+  }
+  for (const [re, label] of SOCIAL_HOSTS) if (re.test(host)) return label;
+  return "Website";
+}
+
 // Escape untrusted text before interpolating into HTML strings (Leaflet
 // divIcon `html` and bindTooltip render their content as HTML, not text).
 // Firm names originate from the SEC Form ADV bulk scrape and are
 // filer-controlled, so they must never be treated as trusted markup.
+// Quote a CSV cell, neutralising spreadsheet formula injection. Firm names
+// come from the SEC bulk scrape and are filer-controlled, so a name beginning
+// = + - @ (or a leading tab/CR, which Excel strips before parsing) would be
+// evaluated as a formula on paste. Prefixing with an apostrophe is the
+// conventional defence and is invisible in the rendered cell.
+function csvCell(value) {
+  const text = String(value ?? "");
+  const guarded = /^[=+\-@\t\r]/.test(text) ? `'${text}` : text;
+  return guarded.replace(/"/g, '""');
+}
+
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (ch) => ({
     "&": "&amp;",
@@ -92,18 +129,34 @@ document.addEventListener("alpine:init", () => {
     stageFilter: new Set(),
     sectorFilter: new Set(),
     aumMin: 0,
-    aumMax: 100_000_000_000,
+    aumMax: AUM_CEILING,
     verifiedOnly: false,
     sortKey: "aum_usd",
     sortDir: -1,
     selectedFirm: null,
+    loadError: null,
     map: null,
     markers: {},
 
     async init() {
       this.initSplitters();
-      const resp = await fetch("firms.json");
-      const data = await resp.json();
+      let data;
+      try {
+        const resp = await fetch("firms.json");
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        data = await resp.json();
+      } catch (err) {
+        // Without this the whole init() threw and left a chrome-only page with
+        // no explanation — including on file://, which the README used to
+        // suggest and where fetch() can never succeed.
+        this.loadError =
+          err instanceof TypeError
+            ? "Could not load firms.json. If you opened this file directly, " +
+              "serve the folder over HTTP instead (see the README)."
+            : `Could not load firms.json (${err.message}).`;
+        console.error("firms.json load failed:", err);
+        return;
+      }
       // Stamp a lowercase search string on each firm once, so the visibleFirms
       // filter is a single .includes() call instead of rebuilding + lowercasing
       // an array of strings for every firm on every keystroke.
@@ -111,6 +164,9 @@ document.addEventListener("alpine:init", () => {
         f._hay = [
           f.name,
           f.notes,
+          // The AI thesis is the one line describing what a tagged lite firm
+          // actually invests in, which makes it a prime search target.
+          f.inferred_thesis,
           ...(f.sectors || []).map((s) => SECTOR_LABELS[s] || s),
           ...(f.partners || []).map((p) => p.name),
           ...(f.recent_portfolio_sample || []).map((d) => d.company),
@@ -247,7 +303,7 @@ document.addEventListener("alpine:init", () => {
       // narrowing as "the user wants only firms with AUM in this range",
       // which means firms with unknown AUM (lite SEC records) get hidden.
       // At the default extent we keep them visible.
-      const aumNarrowed = aumMin > 0 || aumMax < 100_000_000_000;
+      const aumNarrowed = aumMin > 0 || aumMax < AUM_CEILING;
       if (f.aum_usd == null) {
         if (aumNarrowed) return false;
       } else if (f.aum_usd < aumMin || f.aum_usd > aumMax) {
@@ -292,12 +348,40 @@ document.addEventListener("alpine:init", () => {
       this.sectorFilter = next;
     },
 
+    // The two range inputs share a track and are otherwise independent, so a
+    // drag could put min above max — filtering every firm out while the empty
+    // state blamed stage/sector coverage. Clamp on input instead.
+    setAumMin(v) {
+      this.aumMin = Math.min(Number(v), this.aumMax);
+    },
+
+    setAumMax(v) {
+      this.aumMax = Math.max(Number(v), this.aumMin);
+    },
+
+    get aumNarrowed() {
+      return this.aumMin > 0 || this.aumMax < AUM_CEILING;
+    },
+
+    resetAum() {
+      this.aumMin = 0;
+      this.aumMax = AUM_CEILING;
+    },
+
+    // True when the AUM range alone is what's hiding everything.
+    get canClearAumHelp() {
+      return (
+        this.aumNarrowed &&
+        this.firms.some((f) => this.matches(f, { aumMin: 0, aumMax: AUM_CEILING }))
+      );
+    },
+
     resetFilters() {
       this.search = "";
       this.stageFilter = new Set();
       this.sectorFilter = new Set();
       this.aumMin = 0;
-      this.aumMax = 100_000_000_000;
+      this.aumMax = AUM_CEILING;
       this.verifiedOnly = false;
     },
 
@@ -307,7 +391,7 @@ document.addEventListener("alpine:init", () => {
         this.stageFilter.size > 0 ||
         this.sectorFilter.size > 0 ||
         this.aumMin > 0 ||
-        this.aumMax < 100_000_000_000
+        this.aumMax < AUM_CEILING
       );
     },
 
@@ -389,6 +473,33 @@ document.addEventListener("alpine:init", () => {
 
     prettySector(s) {
       return SECTOR_LABELS[s] || s;
+    },
+
+    // The model only ever returns 0.8 / 0.9 / 0.95 / 1.0, so a bare "1" read
+    // as a calibrated certainty it doesn't have. Show a band instead.
+    confidenceBand(v) {
+      if (v == null) return "";
+      if (v >= 0.95) return `very high (${v.toFixed(2)})`;
+      if (v >= 0.85) return `high (${v.toFixed(2)})`;
+      return `moderate (${v.toFixed(2)})`;
+    },
+
+    linkKind(url) {
+      return linkKind(url);
+    },
+
+    // Strip the scheme and trailing slash for display, and lower-case the
+    // host. SEC stores these UPPERCASE, so 226 of 612 firms rendered as
+    // "HTTP://WWW.EXAMPLE.COM". sec_bulk._normalize_website now normalises on
+    // ingest, but that only reaches records from the next scrape — this
+    // handles the data already committed. The path keeps its case, which is
+    // significant for the ~150 firms whose "website" is a social profile.
+    prettyUrl(url) {
+      const bare = String(url || "").replace(/^https?:\/\//i, "").replace(/\/$/, "");
+      const cut = bare.indexOf("/");
+      return cut === -1
+        ? bare.toLowerCase()
+        : bare.slice(0, cut).toLowerCase() + bare.slice(cut);
     },
 
     // Fund-raising activity derived from the firm's most recent Form D — the
@@ -514,13 +625,23 @@ document.addEventListener("alpine:init", () => {
         ]),
       ];
       const csv = rows
-        .map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(","))
+        .map((r) => r.map((c) => `"${csvCell(c)}"`).join(","))
         .join("\n");
-      navigator.clipboard.writeText(csv).then(() => {
-        // Soft visual feedback via title
-        document.title = "✓ Copied · " + document.title;
-        setTimeout(() => (document.title = document.title.replace(/^✓ Copied · /, "")), 1500);
-      });
+      navigator.clipboard.writeText(csv).then(
+        () => {
+          // Soft visual feedback via title
+          document.title = "✓ Copied · " + document.title;
+          setTimeout(() => (document.title = document.title.replace(/^✓ Copied · /, "")), 1500);
+        },
+        (err) => {
+          // Clipboard writes reject on an insecure origin or an unfocused
+          // document; silently swallowing that left the user with no feedback
+          // and an unhandled rejection in the console.
+          console.error("clipboard write failed:", err);
+          document.title = "✗ Copy failed · " + document.title;
+          setTimeout(() => (document.title = document.title.replace(/^✗ Copy failed · /, "")), 2500);
+        },
+      );
     },
   }));
 });
