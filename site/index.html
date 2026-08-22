@@ -13,20 +13,16 @@
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Alpine.js (for filtering reactivity) -->
-  <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"
+          integrity="sha384-l8f0VcPi/M1iHPv8egOnY/15TDwqgbOR1anMIJWvU6nLRgZVLTLSaNqi/TOoT5Fh"
+          crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Vercel Web Analytics -->
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
+  <!-- Vercel Web Analytics + Speed Insights (queues in analytics.js so the
+       CSP can forbid inline script) -->
+  <script src="analytics.js"></script>
   <script defer src="/_vercel/insights/script.js"></script>
-
-  <!-- Vercel Speed Insights -->
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body x-data="vcApp" :class="{ 'panel-open': selectedFirm }">
@@ -73,9 +69,11 @@
         <span class="aum-range" x-text="`$${formatShort(aumMin)} – $${formatShort(aumMax)}`"></span>
       </label>
       <input type="range" min="0" max="100000000000" step="500000000"
-             x-model.number="aumMin" />
+             aria-label="Minimum AUM"
+             :value="aumMin" @input="setAumMin($event.target.value)" />
       <input type="range" min="0" max="100000000000" step="500000000"
-             x-model.number="aumMax" />
+             aria-label="Maximum AUM"
+             :value="aumMax" @input="setAumMax($event.target.value)" />
     </div>
 
     <div class="filter-group toggle">
@@ -98,8 +96,16 @@
       <table>
         <thead>
           <tr>
-            <th @click="sortBy('name')">Firm</th>
-            <th @click="sortBy('aum_usd')" class="num">AUM</th>
+            <th tabindex="0" role="columnheader"
+                :aria-sort="sortKey === 'name' ? (sortDir === 1 ? 'ascending' : 'descending') : 'none'"
+                @click="sortBy('name')"
+                @keydown.enter.prevent="sortBy('name')"
+                @keydown.space.prevent="sortBy('name')">Firm</th>
+            <th class="num" tabindex="0" role="columnheader"
+                :aria-sort="sortKey === 'aum_usd' ? (sortDir === 1 ? 'ascending' : 'descending') : 'none'"
+                @click="sortBy('aum_usd')"
+                @keydown.enter.prevent="sortBy('aum_usd')"
+                @keydown.space.prevent="sortBy('aum_usd')">AUM</th>
             <th>Stages</th>
             <th>Sectors</th>
             <th class="num">Typical check</th>
@@ -121,8 +127,24 @@
               <td class="num"
                   :data-aum-bucket="aumBucket(firm.aum_usd)"
                   x-text="firm.aum_usd ? '$' + formatShort(firm.aum_usd) : '—'"></td>
-              <td><span class="tags" x-html="(firm.stages || []).map(s => `<span class='tag'>${prettyStage(s)}</span>`).join('')"></span></td>
-              <td><span class="tags" :class="{ inferred: firm.inferred }" x-html="(firm.sectors || []).slice(0,4).map(s => `<span class='tag'>${prettySector(s)}</span>`).join('')"></span></td>
+              <!-- x-for + x-text, not x-html: these values reach the DOM as
+                   text. The previous hand-built markup executed anything a
+                   writer put in `sectors`, and enrich_nvca wrote there
+                   unvalidated. -->
+              <td>
+                <span class="tags">
+                  <template x-for="s in (firm.stages || [])" :key="s">
+                    <span class="tag" x-text="prettyStage(s)"></span>
+                  </template>
+                </span>
+              </td>
+              <td>
+                <span class="tags" :class="{ inferred: firm.inferred }">
+                  <template x-for="s in (firm.sectors || []).slice(0, 4)" :key="s">
+                    <span class="tag" x-text="prettySector(s)"></span>
+                  </template>
+                </span>
+              </td>
               <td class="num" x-text="firm.check_size?.typical ? '$' + formatShort(firm.check_size.typical) : '—'"></td>
               <td>
                 <span x-text="firm.recent_portfolio_sample?.[0]?.company || '—'"></span>
@@ -132,17 +154,33 @@
         </tbody>
       </table>
 
-      <!-- Empty state: a stage/sector filter combination matched no firm.
-           Offer one-click ways out instead of a blank table. -->
-      <div class="empty-state" x-show="firms.length && !visibleFirms.length" x-cloak>
+      <!-- Data failed to load: say so instead of rendering an empty shell. -->
+      <div class="empty-state" x-show="loadError" x-cloak>
+        <div class="empty-emoji">⚠</div>
+        <p class="empty-title">Couldn't load the firm data</p>
+        <p class="empty-sub" x-text="loadError"></p>
+      </div>
+
+      <!-- Empty state: the active filters matched no firm. Offer one-click
+           ways out instead of a blank table. -->
+      <div class="empty-state" x-show="!loadError && firms.length && !visibleFirms.length" x-cloak>
         <div class="empty-emoji">🔍</div>
         <p class="empty-title">No firms match these filters</p>
-        <p class="empty-sub">
+        <!-- The AUM range is the one filter that can hide everything without
+             being about coverage at all, so name it rather than blaming
+             stage/sector thinness for a range the user simply narrowed. -->
+        <p class="empty-sub" x-show="canClearAumHelp">
+          The AUM range is currently
+          <b x-text="`$${formatShort(aumMin)} – $${formatShort(aumMax)}`"></b>,
+          which excludes every firm here. Firms that don't report AUM are also
+          hidden whenever the range is narrowed.
+        </p>
+        <p class="empty-sub" x-show="!canClearAumHelp">
           Coverage is thinner for niche stage &amp; sector pairings (and the
           “✓ Verified only” filter narrows to hand-checked firms). Try one of these:
         </p>
 
-        <template x-if="sectorSuggestions.length">
+        <template x-if="sectorSuggestions.length && !canClearAumHelp">
           <div class="empty-block">
             <span class="empty-label">Try adjacent sectors</span>
             <div class="empty-chips">
@@ -157,6 +195,7 @@
         </template>
 
         <div class="empty-actions">
+          <button class="chip" x-show="canClearAumHelp" @click="resetAum()">Reset AUM range</button>
           <button class="chip" x-show="canClearStageHelp" @click="clearStage()">Clear stage filter</button>
           <button class="chip" x-show="canClearSectorHelp" @click="clearSector()">Clear sector filter</button>
           <button class="reset" x-show="hasActiveFilters" @click="resetFilters()">Reset all filters</button>
@@ -180,7 +219,8 @@
         </p>
         <template x-if="selectedFirm.website">
           <p>
-            <a :href="selectedFirm.website" target="_blank" rel="noopener" x-text="selectedFirm.website.replace(/^https?:\/\//, '')"></a>
+            <a :href="selectedFirm.website" target="_blank" rel="noopener"
+               x-text="prettyUrl(selectedFirm.website)"></a>
             · founded <span x-text="selectedFirm.founded || '—'"></span>
           </p>
         </template>
@@ -248,10 +288,10 @@
             </template>
             <template x-if="selectedFirm.website">
               <div>
-                <dt>Website</dt>
+                <dt x-text="linkKind(selectedFirm.website)"></dt>
                 <dd>
                   <a :href="selectedFirm.website" target="_blank" rel="noopener"
-                     x-text="selectedFirm.website.replace(/^https?:\/\//, '').replace(/\/$/, '')"></a>
+                     x-text="prettyUrl(selectedFirm.website)"></a>
                 </dd>
               </div>
             </template>
@@ -364,7 +404,7 @@
           <p class="inferred-note">
             Sector &amp; stage tags inferred by AI
             (<span x-text="selectedFirm.inference_model || 'model'"></span>,
-            confidence <span x-text="selectedFirm.inference_confidence"></span>) — not hand-verified.
+            confidence <span x-text="confidenceBand(selectedFirm.inference_confidence)"></span>) — not hand-verified.
             Use the <b>“✓ Verified only”</b> filter to exclude these.
             <template x-if="selectedFirm.inference_basis">
               <span class="basis" x-text="`Basis: ${selectedFirm.inference_basis}`"></span>
@@ -495,6 +535,6 @@
     <br>This is informational, not investment advice.
   </footer>
 
-  <script src="app.js?v=10"></script>
+  <script src="app.js"></script>
 </body>
 </html>

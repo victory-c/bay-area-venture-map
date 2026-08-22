@@ -160,7 +160,13 @@ class GlmSectorEnricher:
                     time.sleep(BACKOFF[min(attempt, len(BACKOFF) - 1)]); continue
                 if r.status_code != 200:
                     return {"error": f"HTTP {r.status_code}"}
-                return _parse(r.json()["choices"][0]["message"]["content"]) or {}
+                parsed = _parse(r.json()["choices"][0]["message"]["content"])
+                if parsed is None:
+                    # An unparseable body is a failure, not a firm with no
+                    # sectors. Without the error key it would cache as a
+                    # good empty result and never be retried.
+                    return {"error": "unparseable_response"}
+                return parsed
             except Exception as e:  # noqa: BLE001 — retry any transport error
                 last = type(e).__name__
                 time.sleep(BACKOFF[min(attempt, len(BACKOFF) - 1)])

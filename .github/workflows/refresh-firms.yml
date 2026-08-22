@@ -42,14 +42,11 @@ jobs:
       - name: Sanity-check output
         run: |
           set -euo pipefail
-          count=$(uv run python -c "import json,sys; print(json.load(open('data/firms.json'))['firm_count'])")
-          echo "scraped firm_count: $count"
-          # Refuse to commit if the scrape collapsed — protects the live site
-          # from a bad SEC schema change or transient outage clobbering data.
-          if [ "$count" -lt 100 ]; then
-            echo "ERROR: only $count firms — refusing to commit"
-            exit 1
-          fi
+          # Compare against the committed payload, not just a row count: the
+          # 2026-06-05 refresh kept ~678 rows while silently dropping every
+          # enrichment column, and a count-only gate waved it through.
+          git show HEAD:data/firms.json > /tmp/firms-previous.json
+          uv run python -m scraper.check_refresh data/firms.json /tmp/firms-previous.json
 
       - name: Commit refreshed data
         run: |

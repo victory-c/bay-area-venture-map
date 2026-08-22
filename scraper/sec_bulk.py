@@ -81,9 +81,11 @@ from typing import Iterable, Optional
 
 import httpx
 
+from scraper.useragent import USER_AGENT as _UA
+
 log = logging.getLogger(__name__)
 
-USER_AGENT = "Sand Hill VC Map sandhillmap@example.com"
+USER_AGENT = _UA
 INDEX_URL = "https://www.sec.gov/foia/docs/invafoia.htm"
 MIN_INTERVAL_SECONDS = 0.15  # ~6 req/s; same as IapdClient
 CACHE_TTL = timedelta(days=7)
@@ -484,6 +486,11 @@ def _normalize_website(raw: Optional[str]) -> Optional[str]:
     # scheme so the frontend can render it as an <a href> without rewriting.
     if not re.match(r"^https?://", s, re.IGNORECASE):
         s = "https://" + s.lstrip("/")
+    # SEC stores these UPPERCASE. Scheme and host are case-insensitive, so
+    # normalise them; the path is not, so leave it alone.
+    m = re.match(r"^(https?://[^/]+)(.*)$", s, re.IGNORECASE)
+    if m:
+        s = m.group(1).lower() + m.group(2)
     return s
 
 

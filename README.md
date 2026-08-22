@@ -11,8 +11,9 @@ This repo has two pieces:
   optionally enriches it from public sources (SEC IAPD for AUM, OSM Nominatim
   for geocoding), and writes `data/firms.json`.
 - `site/` — a static page (vanilla HTML + Alpine.js + Leaflet, no build step)
-  that consumes `firms.json`. Open `site/index.html` directly or serve the
-  folder with any static server.
+  that consumes `firms.json`. Serve the folder with any static server; the
+  page fetches `firms.json` at runtime, so opening `site/index.html` straight
+  off the filesystem is blocked by the browser and the page will tell you so.
 
 ## Usage
 

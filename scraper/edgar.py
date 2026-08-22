@@ -17,9 +17,11 @@ from typing import Optional
 
 import httpx
 
+from scraper.useragent import USER_AGENT as _UA
+
 log = logging.getLogger(__name__)
 
-USER_AGENT = "Sand Hill VC Map sandhillmap@example.com"
+USER_AGENT = _UA
 SEARCH_URL = "https://api.adviserinfo.sec.gov/search/firm"
 MIN_INTERVAL_SECONDS = 0.15  # ~6 req/s; well under SEC's 10 req/s cap
 

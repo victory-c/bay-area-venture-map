@@ -58,6 +58,8 @@ from typing import Optional
 from urllib.parse import urljoin, urlparse
 
 import httpx
+
+from scraper.useragent import USER_AGENT as _UA
 from selectolax.parser import HTMLParser
 
 from scraper.llm_enrich import (
@@ -78,10 +80,9 @@ log = logging.getLogger(__name__)
 CACHE_VERSION = 1
 DEFAULT_CACHE = pathlib.Path("data/.website-enrich-cache.json")
 
-USER_AGENT = (
-    "Mozilla/5.0 (compatible; Sand Hill VC Map sandhillmap@example.com; "
-    "+research tool for Bay Area VC directory)"
-)
+# Browser-shaped prefix on purpose: some VC marketing sites 403 a bare
+# bot UA. The contact is still the real one from scraper.useragent.
+USER_AGENT = f"Mozilla/5.0 (compatible; {_UA})"
 
 # Common subpaths on VC firm sites where partner / sector content lives.
 # Ordered roughly by hit frequency in spot-checks.

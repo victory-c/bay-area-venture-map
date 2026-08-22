@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import csv
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from scraper import build as build_mod
 from scraper.build import _dedup_key_from_name, load_seed, merge_firms
 from scraper.sec_bulk import _CACHE_FIELDS, fetch_bay_area_vc_firms
 
@@ -205,3 +207,102 @@ def test_dedup_key_normalises_common_suffixes() -> None:
     assert _dedup_key_from_name("Sequoia Capital") == _dedup_key_from_name("Sequoia")
     assert _dedup_key_from_name("Founders Fund LP") == _dedup_key_from_name("Founders Fund")
     assert _dedup_key_from_name("Andreessen Horowitz LLC") == _dedup_key_from_name("Andreessen Horowitz")
+
+
+# ---------------------------------------------------------------------------
+# Carry-forward (regression: the monthly refresh wiped every enrichment field)
+# ---------------------------------------------------------------------------
+
+
+def _previous_payload() -> dict:
+    return {
+        "generated_with_enrichers": ["form_d", "glm_sectors", "sec_bulk", "wikipedia"],
+        "firms": [
+            {
+                "id": "sec-12345",
+                "sec_crd": "12345",
+                "name": "Acme Ventures",
+                "sectors": ["fintech"],
+                "stages": ["seed"],
+                "inferred": True,
+                "inference_confidence": 0.9,
+                "inferred_thesis": "Backs seed fintech founders.",
+                "form_d_total_filings": 12,
+                "wikipedia_url": "https://en.wikipedia.org/wiki/Acme",
+                "aum_usd": 1_000,
+            }
+        ],
+    }
+
+
+def test_carry_forward_restores_fields_a_partial_build_cannot_reproduce() -> None:
+    # What `--enrich sec_bulk` alone produces: fresh SEC columns, nothing else.
+    fresh = [{"id": "sec-12345", "sec_crd": "12345", "name": "Acme Ventures",
+              "aum_usd": 2_000, "tier": "lite"}]
+    touched = build_mod.carry_forward_enrichment(fresh, _previous_payload())
+
+    assert touched == 1
+    f = fresh[0]
+    assert f["sectors"] == ["fintech"]
+    assert f["inferred"] is True
+    assert f["inferred_thesis"] == "Backs seed fintech founders."
+    assert f["form_d_total_filings"] == 12
+    assert f["wikipedia_url"] == "https://en.wikipedia.org/wiki/Acme"
+    # The freshly-scraped SEC value must NOT be clobbered by the old one.
+    assert f["aum_usd"] == 2_000
+
+
+def test_carry_forward_never_overwrites_what_this_build_produced() -> None:
+    fresh = [{"id": "sec-12345", "sec_crd": "12345", "name": "Acme Ventures",
+              "sectors": ["climate"], "form_d_total_filings": 99}]
+    build_mod.carry_forward_enrichment(fresh, _previous_payload())
+    assert fresh[0]["sectors"] == ["climate"]
+    assert fresh[0]["form_d_total_filings"] == 99
+
+
+def test_carry_forward_matches_on_crd_when_the_id_changed() -> None:
+    fresh = [{"id": "sec-12345-renamed", "sec_crd": "12345", "name": "Acme Ventures"}]
+    assert build_mod.carry_forward_enrichment(fresh, _previous_payload()) == 1
+    assert fresh[0]["sectors"] == ["fintech"]
+
+
+def test_carry_forward_ignores_firms_with_no_previous_record() -> None:
+    fresh = [{"id": "sec-99999", "sec_crd": "99999", "name": "Brand New LP"}]
+    assert build_mod.carry_forward_enrichment(fresh, _previous_payload()) == 0
+    assert "sectors" not in fresh[0]
+
+
+def test_carry_forward_is_a_noop_without_a_previous_build() -> None:
+    fresh = [{"id": "sec-12345", "sec_crd": "12345", "name": "Acme Ventures"}]
+    assert build_mod.carry_forward_enrichment(fresh, {}) == 0
+
+
+def test_build_manifest_reports_carried_forward_enrichers(monkeypatch, tmp_path) -> None:
+    # The manifest must not claim the payload is sec_bulk-only when it still
+    # carries form_d / glm_sectors data.
+    prev = tmp_path / "firms.json"
+    prev.write_text(json.dumps(_previous_payload()))
+    monkeypatch.setattr(build_mod, "OUT_PATH", prev)
+    monkeypatch.setattr(
+        build_mod, "load_seed",
+        lambda: [{"id": "sec-12345", "sec_crd": "12345", "name": "Acme Ventures"}],
+    )
+
+    out = build_mod.build([], only_firm=None)
+    # Data from these passes is present in the payload, so the manifest says so.
+    assert "glm_sectors" in out["generated_with_enrichers"]
+    assert "form_d" in out["generated_with_enrichers"]
+    assert out["firms"][0]["inferred_thesis"] == "Backs seed fintech founders."
+
+
+def test_no_preserve_leaves_the_payload_exactly_as_built(monkeypatch, tmp_path) -> None:
+    prev = tmp_path / "firms.json"
+    prev.write_text(json.dumps(_previous_payload()))
+    monkeypatch.setattr(build_mod, "OUT_PATH", prev)
+    monkeypatch.setattr(
+        build_mod, "load_seed",
+        lambda: [{"id": "sec-12345", "sec_crd": "12345", "name": "Acme Ventures"}],
+    )
+    out = build_mod.build([], only_firm=None, preserve=False)
+    assert "sectors" not in out["firms"][0]
+    assert out["generated_with_enrichers"] == []
