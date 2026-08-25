@@ -330,7 +330,7 @@ def _parse_aum_string(raw: str) -> Optional[int]:
     elif n < 1000:
         # $-marked small number with no suffix — assume billions in VC context.
         n *= 1_000_000_000
-    return int(round(n))
+    return round(n)
 
 
 def info_from_infobox(title: str, infobox: dict[str, str]) -> WikiInfo:

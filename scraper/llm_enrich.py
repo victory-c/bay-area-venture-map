@@ -309,7 +309,7 @@ def _get_access_token() -> str:
     try:
         result = subprocess.run(
             ["gcloud", "auth", "application-default", "print-access-token"],
-            capture_output=True, text=True, timeout=10,
+            capture_output=True, text=True, timeout=10, check=False,
         )
         if result.returncode != 0:
             raise RuntimeError(
@@ -323,7 +323,7 @@ def _get_access_token() -> str:
         raise RuntimeError(
             "gcloud CLI not found. Install: brew install google-cloud-sdk\n"
             "Then: gcloud auth application-default login"
-        )
+        ) from None
 
 
 # ---------------------------------------------------------------------------
