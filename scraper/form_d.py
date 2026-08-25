@@ -173,6 +173,12 @@ def _brand_matches(brand: str, filer_name: str) -> bool:
 def _parse_hits(firm_name: str, hits: list[dict]) -> FormDInfo:
     brand = _brand_token(firm_name)
     kept: list[FilingMeta] = []
+    # EFTS pages can return the same filing twice (one accession indexed under
+    # several entries), which double-counted ``total_filings`` and put two
+    # identical rows in ``recent_filings`` — a duplicate ``:key`` that made the
+    # site's x-for over the filing list throw. An accession identifies a filing,
+    # so the second sighting is never new information.
+    seen_accessions: set[str] = set()
     for hit in hits:
         src = hit.get("_source", {})
         names = src.get("display_names") or []
@@ -181,10 +187,14 @@ def _parse_hits(firm_name: str, hits: list[dict]) -> FormDInfo:
         primary = names[0]
         if not _brand_matches(brand, primary):
             continue
+        accession = src.get("adsh", "")
+        if accession and accession in seen_accessions:
+            continue
+        seen_accessions.add(accession)
         ciks = src.get("ciks") or [""]
         kept.append(
             FilingMeta(
-                accession=src.get("adsh", ""),
+                accession=accession,
                 file_date=src.get("file_date", ""),
                 form=src.get("form", ""),
                 cik=str(ciks[0]).lstrip("0") or "0",

@@ -127,6 +127,34 @@ function csvCell(value) {
   return guarded.replace(/"/g, '""');
 }
 
+// Drop repeated values from one of a firm's list fields, preserving order.
+//
+// Several of those fields feed an `x-for` keyed on the value itself, and Alpine
+// cannot diff a keyed loop whose keys repeat: its element lookup misses and it
+// throws "Cannot read properties of undefined (reading 'after')", once per
+// offending row, while rendering the table. The tags are model-inferred (see
+// scraper/glm_website_tag.py), so a future enrichment pass emitting
+// `["healthcare", "healthcare"]` would silently break the page again. The
+// pipeline dedupes at the source; this is the second line of defence, and it
+// also stops one tag rendering as repeated chips.
+//
+// Rewrites `obj[key]` only when it is really an array AND something was
+// dropped. Assigning unconditionally would add the key to firms that never had
+// it — which changes the shape of every record, and perturbs the order Alpine
+// flushes the detail panel's effects in.
+function dedupeInPlace(obj, key, keyFn) {
+  const list = obj[key];
+  if (!Array.isArray(list)) return;
+  const seen = new Set();
+  const out = list.filter((item) => {
+    const k = keyFn ? keyFn(item) : item;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  if (out.length !== list.length) obj[key] = out;
+}
+
 // Escape untrusted text before interpolating into HTML strings (Leaflet
 // divIcon `html` and bindTooltip render their content as HTML, not text).
 // Firm names originate from the SEC Form ADV bulk scrape and are
@@ -180,6 +208,11 @@ document.addEventListener("alpine:init", () => {
       // filter is a single .includes() call instead of rebuilding + lowercasing
       // an array of strings for every firm on every keystroke.
       data.firms.forEach((f) => {
+        // Normalise the value-keyed lists before anything renders them.
+        dedupeInPlace(f, "sectors");
+        dedupeInPlace(f, "stages");
+        dedupeInPlace(f, "firm_type_tags");
+        dedupeInPlace(f, "form_d_recent_filings", (x) => x.accession);
         f._hay = [
           f.name,
           f.notes,

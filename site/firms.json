@@ -6434,22 +6434,17 @@
         "growth"
       ],
       "sectors": [
-        "healthcare",
         "healthcare"
       ],
       "lat": 37.4419,
       "lng": -122.143,
       "inferred": true,
       "inference_confidence": 1.0,
-      "inference_basis": "healthcare: \"drive innovation in medical technology\" | healthcare: \"innovative medical devices, diagnostics, and digital health solutions\"",
+      "inference_basis": "healthcare: \"drive innovation in medical technology\"",
       "inference_evidence": [
         {
           "sector": "healthcare",
           "quote": "drive innovation in medical technology"
-        },
-        {
-          "sector": "healthcare",
-          "quote": "innovative medical devices, diagnostics, and digital health solutions"
         }
       ],
       "inference_model": "glm-4.6",
@@ -8243,7 +8238,7 @@
       ],
       "lat": 37.7749,
       "lng": -122.4194,
-      "form_d_total_filings": 13,
+      "form_d_total_filings": 12,
       "form_d_latest_filing_date": "2019-12-02",
       "form_d_distinct_funds": [
         "Bond Index Fund, a series of The PanAgora Group Trust  (CIK 0001475786)",
@@ -8264,13 +8259,6 @@
         {
           "accession": "0001794159-19-000003",
           "file_date": "2019-12-02",
-          "form": "D/A",
-          "cik": "1475786",
-          "filer_name": "Bond Index Fund, a series of The PanAgora Group Trust  (CIK 0001475786)"
-        },
-        {
-          "accession": "0001625257-17-000092",
-          "file_date": "2017-07-25",
           "form": "D/A",
           "cik": "1475786",
           "filer_name": "Bond Index Fund, a series of The PanAgora Group Trust  (CIK 0001475786)"
@@ -12033,22 +12021,17 @@
         "series_d"
       ],
       "sectors": [
-        "bio",
         "bio"
       ],
       "lat": 37.7749,
       "lng": -122.4194,
       "inferred": true,
       "inference_confidence": 1.0,
-      "inference_basis": "bio: \"Precision neuroscience\" | bio: \"life sciences platforms\"",
+      "inference_basis": "bio: \"Precision neuroscience\"",
       "inference_evidence": [
         {
           "sector": "bio",
           "quote": "Precision neuroscience"
-        },
-        {
-          "sector": "bio",
-          "quote": "life sciences platforms"
         }
       ],
       "inference_model": "glm-4.6",
@@ -22302,7 +22285,6 @@
       "latest_filing_date": "03/31/2026",
       "stages": [],
       "sectors": [
-        "enterprise_saas",
         "enterprise_saas"
       ],
       "lat": 37.7749,
@@ -22360,15 +22342,11 @@
       ],
       "inferred": true,
       "inference_confidence": 1.0,
-      "inference_basis": "enterprise_saas: \"Business Services\" | enterprise_saas: \"Technology-enabled Services\"",
+      "inference_basis": "enterprise_saas: \"Business Services\"",
       "inference_evidence": [
         {
           "sector": "enterprise_saas",
           "quote": "Business Services"
-        },
-        {
-          "sector": "enterprise_saas",
-          "quote": "Technology-enabled Services"
         }
       ],
       "inference_model": "glm-4.6",
@@ -25821,27 +25799,17 @@
         "growth"
       ],
       "sectors": [
-        "healthcare",
-        "healthcare",
         "healthcare"
       ],
       "lat": 37.7749,
       "lng": -122.4194,
       "inferred": true,
       "inference_confidence": 1.0,
-      "inference_basis": "healthcare: \"We invest exclusively in these areas Healthcare services\" | healthcare: \"Healthcare technology\" | healthcare: \"Medical devices\"",
+      "inference_basis": "healthcare: \"We invest exclusively in these areas Healthcare services\"",
       "inference_evidence": [
         {
           "sector": "healthcare",
           "quote": "We invest exclusively in these areas Healthcare services"
-        },
-        {
-          "sector": "healthcare",
-          "quote": "Healthcare technology"
-        },
-        {
-          "sector": "healthcare",
-          "quote": "Medical devices"
         }
       ],
       "inference_model": "glm-4.6",
@@ -33187,22 +33155,17 @@
         "growth"
       ],
       "sectors": [
-        "consumer",
         "consumer"
       ],
       "lat": 37.7749,
       "lng": -122.4194,
       "inferred": true,
       "inference_confidence": 1.0,
-      "inference_basis": "consumer: \"We are passionate about the consumer space\" | consumer: \"We invest in emerging consumer brands\"",
+      "inference_basis": "consumer: \"We are passionate about the consumer space\"",
       "inference_evidence": [
         {
           "sector": "consumer",
           "quote": "We are passionate about the consumer space"
-        },
-        {
-          "sector": "consumer",
-          "quote": "We invest in emerging consumer brands"
         }
       ],
       "inference_model": "glm-4.6",

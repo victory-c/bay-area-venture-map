@@ -160,6 +160,43 @@ def _claims_breadth(evidence: str) -> bool:
     return any(p in ev for p in _BREADTH)
 
 
+def _dedupe_verified(
+    verified: list[dict],
+) -> tuple[list[dict], int, int]:
+    """Reduce evidence-backed sectors to one entry per sector and per quote.
+
+    Two independent collapses, both keeping the first (highest-ranked) entry:
+
+    * **One quote cannot justify several sectors.** When the model pastes the
+      same sentence under two or three of them, only the first keeps it — the
+      rest have no distinct evidence.
+    * **One sector cannot be listed twice.** The model happily returns
+      ``healthcare`` three times with three different quotes, which is really
+      one tag with three supporting quotes. Left in, it reached ``firm.sectors``
+      as ``["healthcare", "healthcare", "healthcare"]`` — repeated chips on the
+      page, and a duplicate ``:key`` that made Alpine's ``x-for`` throw while
+      rendering the table.
+
+    Returns ``(deduped, shared_quote_dropped, repeat_sector_dropped)``.
+    """
+    seen_quotes: set[str] = set()
+    seen_sectors: set[str] = set()
+    deduped: list[dict] = []
+    shared_quote = 0
+    repeat_sector = 0
+    for v in verified:
+        if _norm(v["quote"]) in seen_quotes:
+            shared_quote += 1
+            continue
+        if v["sector"] in seen_sectors:
+            repeat_sector += 1
+            continue
+        seen_quotes.add(_norm(v["quote"]))
+        seen_sectors.add(v["sector"])
+        deduped.append(v)
+    return deduped, shared_quote, repeat_sector
+
+
 def _evidence_supported(evidence: str, text: str) -> bool:
     """True when the model's quote really occurs in the page text.
 
@@ -326,19 +363,10 @@ class WebsiteTagger:
                     quote = item.get("quote", "")
                     if sector in SECTORS and _evidence_supported(quote, text):
                         verified.append({"sector": sector, "quote": quote})
-                # One quote cannot justify several sectors. When the model
-                # pastes the same sentence under two or three of them, only
-                # the first keeps it — the rest have no distinct evidence.
-                seen_quotes: set[str] = set()
-                deduped = []
-                for v in verified:
-                    key = _norm(v["quote"])
-                    if key in seen_quotes:
-                        continue
-                    seen_quotes.add(key)
-                    deduped.append(v)
+                deduped, shared_quote, repeat_sector = _dedupe_verified(verified)
                 res["verified_sectors"] = deduped
-                res["shared_quote_dropped"] = len(verified) - len(deduped)
+                res["shared_quote_dropped"] = shared_quote
+                res["repeat_sector_dropped"] = repeat_sector
                 res["claimed_sector_count"] = len(res.get("sectors") or [])
                 res["stage_evidence_ok"] = _evidence_supported(
                     res.get("stage_evidence", ""), text)
@@ -377,7 +405,8 @@ def merge(firms: list[dict], tagger: WebsiteTagger) -> dict[str, int]:
     """Apply cached results. Returns a breakdown of what happened."""
     stats = {"attempted": 0, "merged": 0, "no_sectors": 0, "low_confidence": 0,
              "errors": 0, "stages_only_dropped": 0, "generalist_dropped": 0,
-             "unsupported_sectors_dropped": 0, "shared_quote_dropped": 0}
+             "unsupported_sectors_dropped": 0, "shared_quote_dropped": 0,
+             "repeat_sector_dropped": 0}
     for f in candidates(firms):
         res = tagger._cache.get(f["id"])
         if res is None:
@@ -392,6 +421,7 @@ def merge(firms: list[dict], tagger: WebsiteTagger) -> dict[str, int]:
         if dropped > 0:
             stats["unsupported_sectors_dropped"] += dropped
         stats["shared_quote_dropped"] += res.get("shared_quote_dropped") or 0
+        stats["repeat_sector_dropped"] += res.get("repeat_sector_dropped") or 0
         # "generalist" is where the pilot's weak tags concentrated — it got
         # attached to vague quotes ("lived context across sectors") that say
         # nothing about what the firm actually backs. It is also the least
@@ -416,7 +446,8 @@ def merge(firms: list[dict], tagger: WebsiteTagger) -> dict[str, int]:
             continue
         f["sectors"] = secs[:MAX_SECTORS]
         # Stages ride along only with their own supporting quote.
-        stgs = [s for s in (res.get("stages") or []) if s in STAGES]
+        stgs = list(dict.fromkeys(
+            s for s in (res.get("stages") or []) if s in STAGES))
         if stgs and res.get("stage_evidence_ok"):
             f["stages"] = stgs
         elif stgs:
