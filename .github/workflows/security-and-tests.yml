@@ -1,0 +1,99 @@
+name: Security and Tests
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  secret-scan:
+    name: Secret scanning (git-secrets + truffleHog)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure jq
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq || true
+
+      - name: Install git-secrets
+        run: |
+          if command -v git-secrets >/dev/null 2>&1; then
+            echo "git-secrets present"
+          else
+            rm -rf /tmp/git-secrets || true
+            git clone https://github.com/awslabs/git-secrets /tmp/git-secrets
+            cd /tmp/git-secrets && sudo make install
+          fi
+
+      - name: Run git-secrets scan
+        run: |
+          set -o pipefail
+          git secrets --scan -r . | tee git-secrets.report || true
+          if [ -s git-secrets.report ]; then
+            echo "git-secrets found potential secrets:";
+            cat git-secrets.report;
+            exit 1;
+          fi
+
+      - name: Run truffleHog (Docker preferred)
+        run: |
+          set -euo pipefail
+          if command -v docker >/dev/null 2>&1; then
+            docker run --rm -v "${{ github.workspace }}":/src trufflesecurity/trufflehog:latest filesystem --no-color --exclude-path .git --json /src | tee trufflehog.json || true
+          else
+            python -m pip install --user truffleHog || true
+            python -m truffleHog filesystem --json . | tee trufflehog.json || true
+          fi
+          # If trufflehog produced JSON, check for results length > 0
+          if [ -f trufflehog.json ]; then
+            count=$(jq '.results | length' trufflehog.json || echo 0)
+            if [ "$count" != "0" ]; then
+              echo "truffleHog found $count results";
+              cat trufflehog.json;
+              exit 1;
+            fi
+          fi
+
+      - name: Upload secret-scan reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: secret-scan-reports
+          path: |
+            git-secrets.report
+            trufflehog.json
+
+  tests:
+    name: Run tests (if present)
+    runs-on: ubuntu-latest
+    needs: secret-scan
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies if present
+        run: |
+          set -euo pipefail
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f pyproject.toml ]; then pip install . || true; fi
+
+      - name: Check for pytest
+        id: check_pytest
+        run: |
+          python - <<'PY' > /tmp/pytest_found
+          import importlib.util
+          print('true' if importlib.util.find_spec('pytest') is not None else 'false')
+          PY
+          echo "found=$(cat /tmp/pytest_found)" >> $GITHUB_OUTPUT
+
+      - name: Run pytest
+        if: steps.check_pytest.outputs.found == 'true'
+        run: |
+          pytest -q
