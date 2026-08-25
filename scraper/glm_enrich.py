@@ -180,8 +180,13 @@ class GlmSectorEnricher:
             sectors=list(SECTORS), stages=list(STAGES), threshold=THRESHOLD))
         if "error" in p:
             return p
-        secs = [s for s in (p.get("sectors") or []) if s in SECTORS][:MAX_SECTORS]
-        stgs = [s for s in (p.get("stages") or []) if s in STAGES]
+        # dict.fromkeys dedupes while keeping the model's ordering: a repeated
+        # tag is one tag, and it would otherwise reach firm.sectors twice and
+        # give the site's x-for a duplicate :key.
+        secs = list(dict.fromkeys(
+            s for s in (p.get("sectors") or []) if s in SECTORS))[:MAX_SECTORS]
+        stgs = list(dict.fromkeys(
+            s for s in (p.get("stages") or []) if s in STAGES))
         return {"sectors": secs, "stages": stgs, "confidence": p.get("confidence"),
                 "basis": p.get("basis")}
 

@@ -35,14 +35,19 @@ def test_brand_token_empty_after_strip_falls_back_to_lowercase() -> None:
     assert _brand_token("LLC") == "llc"
 
 
-def _hit(filer: str, cik: str, date: str, form: str = "D", adsh: str = "x-0-0") -> dict:
+def _hit(
+    filer: str, cik: str, date: str, form: str = "D", adsh: str | None = None
+) -> dict:
+    # An accession identifies a filing, so distinct filings get distinct ones by
+    # default; pass `adsh` explicitly to model EFTS returning the same filing
+    # twice.
     return {
         "_source": {
             "display_names": [f"{filer}  (CIK {cik})"],
             "ciks": [cik],
             "file_date": date,
             "form": form,
-            "adsh": adsh,
+            "adsh": adsh if adsh is not None else f"{cik}-{date}-{form}",
         }
     }
 
@@ -79,6 +84,21 @@ def test_parse_hits_sorts_recent_filings_desc_and_caps() -> None:
     assert len(info.recent_filings) == 5
     assert info.recent_filings[0].file_date == "2020-01-07"
     assert info.recent_filings[-1].file_date == "2020-01-03"
+
+
+def test_parse_hits_drops_a_filing_returned_twice() -> None:
+    # EFTS can return one accession under more than one entry. Counting it
+    # twice inflated total_filings and put two identical rows in
+    # recent_filings, which gave the site's x-for a duplicate :key.
+    hits = [
+        _hit("Bond Index Fund", "0001475786", "2019-12-02", form="D/A"),
+        _hit("Bond Index Fund", "0001475786", "2017-07-25", form="D/A", adsh="dup-1"),
+        _hit("Bond Index Fund", "0001475786", "2017-07-25", form="D/A", adsh="dup-1"),
+    ]
+    info = _parse_hits("Bond", hits)
+    assert info.total_filings == 2
+    accessions = [f.accession for f in info.recent_filings]
+    assert len(accessions) == len(set(accessions)) == 2
 
 
 def test_parse_hits_dedupes_distinct_funds_and_ciks() -> None:

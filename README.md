@@ -29,6 +29,32 @@ cd site && python -m http.server 8000
 # → open http://localhost:8000
 ```
 
+### Two expected 404s in the local console
+
+Serving `site/` locally logs exactly two console errors:
+
+```
+GET /_vercel/insights/script.js        404
+GET /_vercel/speed-insights/script.js  404
+```
+
+These are **not** a bug and need no fix. `index.html` requests them because
+Vercel Web Analytics and Speed Insights are enabled on the project, and Vercel
+injects both routes at the edge — they are not files in this repo, so no plain
+static server can serve them. In production both return real JavaScript
+(`content-type: application/javascript`, HTTP 200); verify with:
+
+```bash
+curl -sI https://bay-area-venture-map.vercel.app/_vercel/insights/script.js
+```
+
+`analytics.js` exists so the `window.va` / `window.si` bootstrap queues live in
+a file rather than an inline `<script>`, which lets the CSP in `vercel.json`
+forbid inline script outright. Those queues buffer harmlessly when the real
+scripts never arrive, so analytics simply no-ops locally.
+
+Anything in the local console *beyond* those two lines is a real problem.
+
 ### Identifying yourself to SEC and OpenStreetMap
 
 Both services require a User-Agent carrying a contact address, and SEC

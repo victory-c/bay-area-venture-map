@@ -435,7 +435,7 @@
           <div>
             <h3>Partners</h3>
             <ul class="partners">
-              <template x-for="p in (selectedFirm.partners || [])" :key="p.name">
+              <template x-for="(p, i) in (selectedFirm.partners || [])" :key="i">
                 <li>
                   <strong x-text="p.name"></strong>
                   <span class="title" x-text="p.title"></span>
@@ -454,7 +454,7 @@
           <div>
             <h3>Public portfolio sample</h3>
             <ul class="deals">
-              <template x-for="d in (selectedFirm.recent_portfolio_sample || [])" :key="d.company">
+              <template x-for="(d, i) in (selectedFirm.recent_portfolio_sample || [])" :key="i">
                 <li>
                   <strong x-text="d.company"></strong>
                   <span x-text="`${prettyStage(d.stage)} · ${d.year}`"></span>
