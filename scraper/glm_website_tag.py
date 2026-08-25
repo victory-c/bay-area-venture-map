@@ -415,7 +415,17 @@ def merge(firms: list[dict], tagger: WebsiteTagger) -> dict[str, int]:
         if "error" in res:
             stats["errors"] += 1
             continue
-        verified = res.get("verified_sectors") or []
+        # Dedupe by sector here, not only in classify(). merge() is what writes
+        # firms.json and it trusts the cache, so entries written before the
+        # classify-time dedup existed still carry repeats. That shipped once as
+        # sectors: ["healthcare", "healthcare"], which the UI then rendered as
+        # duplicate x-for keys (fixed downstream in #18).
+        verified, _seen = [], set()
+        for v in res.get("verified_sectors") or []:
+            if v["sector"] in _seen:
+                continue
+            _seen.add(v["sector"])
+            verified.append(v)
         secs = [v["sector"] for v in verified]
         dropped = (res.get("claimed_sector_count") or 0) - len(secs)
         if dropped > 0:
