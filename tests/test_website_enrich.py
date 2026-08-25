@@ -8,7 +8,6 @@ smoke tests.
 
 from __future__ import annotations
 
-import pytest
 
 from scraper.build import enrich_websites
 from scraper.llm_enrich import EnrichmentResult

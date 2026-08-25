@@ -53,7 +53,6 @@ import json
 import logging
 import pathlib
 import time
-from dataclasses import asdict
 from typing import Optional
 from urllib.parse import urljoin, urlparse
 
@@ -361,7 +360,7 @@ def _html_to_text(html: str) -> str:
     whitespace collapsed, paragraphs separated by blank lines."""
     try:
         tree = HTMLParser(html)
-    except Exception:
+    except Exception:  # noqa: BLE001 - arbitrary scraped HTML must degrade, not crash
         return ""
     for tag in _NOISE_TAGS:
         for node in tree.css(tag):

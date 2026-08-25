@@ -295,8 +295,6 @@ CITY_TO_LATLNG: dict[str, tuple[float, float]] = {
     "SAN GERONIMO": (38.0124, -122.6722),
     "FOREST KNOLLS": (38.0124, -122.6921),
     "LAGUNITAS": (38.0152, -122.7028),
-    "TIBURON": (37.8735, -122.4569),
-    "SAN ANSELMO": (37.9746, -122.5616),
     "ALMONTE": (37.8848, -122.5419),
     "MARIN CITY": (37.8688, -122.5066),
     "STRAWBERRY": (37.8908, -122.5072),
@@ -458,7 +456,7 @@ def _parse_aum(raw: Optional[str]) -> Optional[int]:
     if not cleaned or cleaned in {".", ".00"}:
         return None
     try:
-        n = int(round(float(cleaned)))
+        n = round(float(cleaned))
     except ValueError:
         return None
     return n if n > 0 else None
@@ -573,9 +571,7 @@ def _load_cache(cache_path: pathlib.Path) -> list[dict]:
     rows: list[dict] = []
     with cache_path.open("r", encoding="utf-8") as f:
         f.readline()  # discard "# fetched: ..." header
-        reader = csv.DictReader(f)
-        for r in reader:
-            rows.append(r)
+        rows.extend(csv.DictReader(f))
     return rows
 
 
@@ -699,7 +695,7 @@ def fetch_bay_area_vc_firms(
         # tiny CDP near San Jose AND as the LA-county city); the ZIP gate
         # rejects the latter without losing real Bay Area firms.
         postal = (r.get("postal") or "").strip()[:3]
-        if postal and not (postal.startswith("94") or postal.startswith("95")):
+        if postal and not postal.startswith(("94", "95")):
             continue
         name = (r.get("name") or "").strip()
         if not name:
@@ -819,9 +815,7 @@ def _normalize_name(name: str) -> str:
     }
     out: list[str] = []
     for word in name.split():
-        if word.upper() in keep_upper:
-            out.append(word.upper())
-        elif word.upper().endswith(",") and word.upper().rstrip(",") in keep_upper:
+        if word.upper() in keep_upper or (word.upper().endswith(",") and word.upper().rstrip(",") in keep_upper):
             out.append(word.upper())
         else:
             # Title-case but preserve internal apostrophes/hyphens.
