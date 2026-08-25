@@ -194,6 +194,20 @@
           </div>
         </template>
 
+        <template x-if="stageSuggestions.length && !canClearAumHelp">
+          <div class="empty-block">
+            <span class="empty-label">Try adjacent stages</span>
+            <div class="empty-chips">
+              <template x-for="s in stageSuggestions" :key="s.stage">
+                <button class="chip" @click="applyStageSuggestion(s.stage)">
+                  <span x-text="prettyStage(s.stage)"></span>
+                  <small x-text="s.count"></small>
+                </button>
+              </template>
+            </div>
+          </div>
+        </template>
+
         <div class="empty-actions">
           <button class="chip" x-show="canClearAumHelp" @click="resetAum()">Reset AUM range</button>
           <button class="chip" x-show="canClearStageHelp" @click="clearStage()">Clear stage filter</button>
