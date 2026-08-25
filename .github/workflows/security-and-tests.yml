@@ -55,11 +55,17 @@ jobs:
       - name: Run git-secrets scan
         run: |
           set -uo pipefail
+          # Scan tracked files rather than `-r .`: recursing the working tree
+          # walks into .git/, where --register-aws has just written its own
+          # pattern list into .git/config, and git-secrets then matches those
+          # patterns against themselves. Tracked files are also exactly what a
+          # PR can actually introduce.
+          #
           # git-secrets writes findings to stderr and signals them via a
           # non-zero exit code, so capture both streams and gate on status
           # rather than on whether the report file is non-empty.
           set +e
-          git secrets --scan -r . > git-secrets.report 2>&1
+          git ls-files -z | xargs -0 -r git secrets --scan > git-secrets.report 2>&1
           status=$?
           set -e
           if [ "$status" -ne 0 ]; then
