@@ -14983,7 +14983,9 @@
       "inference_basis": "Well-known online VC platform investing across sectors at early stages.",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Online venture capital platform deploying capital into seed and Series A startups across all sectors.",
-      "thesis_confidence": 0.9
+      "thesis_confidence": 0.9,
+      "firm_role": "platform",
+      "platform_note": "Investment platform. Each filing is a separate per-deal vehicle raised from the platform's members, not a fund FundersClub deployed."
     },
     {
       "id": "sec-289902",
@@ -32906,7 +32908,9 @@
           "cik": "2046769",
           "filer_name": "Impact Mill - Balto Energy SPV I, a Series of Vauban Platform LP  (CIK 0002046769)"
         }
-      ]
+      ],
+      "firm_role": "platform",
+      "platform_note": "SPV administration platform. These filings are third-party syndicates raised as series of Vauban Platform LP, not Vauban investing."
     },
     {
       "id": "sec-290045",
@@ -34113,7 +34117,9 @@
       "inference_basis": "Publicly known equity crowdfunding platform investing across sectors at seed stage.",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Crowdfunding platform backing seed-stage startups through community-driven investment vehicles.",
-      "thesis_confidence": 0.9
+      "thesis_confidence": 0.9,
+      "firm_role": "platform",
+      "platform_note": "Regulation Crowdfunding portal. These filings are raises by companies and syndicates hosted on Wefunder, not Wefunder investing."
     },
     {
       "id": "sec-300828",

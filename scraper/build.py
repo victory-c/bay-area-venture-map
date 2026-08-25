@@ -32,6 +32,7 @@ from scraper.llm_enrich import (
     merge_into_firm,
 )
 from scraper.nvca import NvcaClient
+from scraper.platforms import annotate_platforms, platform_candidates
 from scraper.sec_bulk import DEFAULT_CACHE as SEC_BULK_CACHE_NAME
 from scraper.sec_bulk import fetch_bay_area_vc_firms
 from scraper.website_enrich import WebsiteEnricher
@@ -90,6 +91,8 @@ PRESERVED_FIELDS = (
     "wikipedia_url", "wikipedia_key_people", "wikipedia_industry",
     # --enrich nvca
     "nvca_member",
+    # scraper.platforms
+    "firm_role", "platform_note",
     # --enrich llm / website
     "llm_enriched", "llm_confidence", "llm_sources", "website_enriched",
     # Written by several passes; only carried when the new build has none.
@@ -626,6 +629,11 @@ def build(
     # NVCA — so it goes ahead of the LLM by the same logic.
     if "form_d" in enricher_set:
         enrich_form_d(firms)
+        # Mark firms whose filings are third parties' raises, so the UI
+        # doesn't read their volume as "deploying". Reports unlisted
+        # high-volume filers rather than guessing at them.
+        annotate_platforms(firms)
+        platform_candidates(firms)
     # LLM runs LAST so it only fills gaps the earlier (free, reliable) sources
     # couldn't. Rich firms (seed YAML) are skipped — they already have
     # hand-curated data we trust more than any model output.
