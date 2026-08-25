@@ -1,99 +1,151 @@
 name: Security and Tests
 
+# Secret scanning gate (git-secrets + truffleHog) followed by the test suite.
+# The tests job only runs once the scan is clean, so a PR carrying a
+# credential can never report green.
+
 on:
-  push:
-    branches: ["**"]
   pull_request:
-    branches: ["**"]
+  push:
+    branches: [main]
+
+# Least privilege: neither job writes to the repo.
+permissions:
+  contents: read
+
+# A new push supersedes the in-flight run for the same ref.
+concurrency:
+  group: security-and-tests-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   secret-scan:
     name: Secret scanning (git-secrets + truffleHog)
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Ensure jq
-        run: |
-          sudo apt-get update && sudo apt-get install -y jq || true
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Install git-secrets
         run: |
+          set -euo pipefail
           if command -v git-secrets >/dev/null 2>&1; then
-            echo "git-secrets present"
-          else
-            rm -rf /tmp/git-secrets || true
-            git clone https://github.com/awslabs/git-secrets /tmp/git-secrets
-            cd /tmp/git-secrets && sudo make install
+            echo "git-secrets already present"
+            exit 0
           fi
+          git clone --depth 1 https://github.com/awslabs/git-secrets /tmp/git-secrets
+          sudo make -C /tmp/git-secrets install
+
+      - name: Register git-secrets patterns
+        # `git secrets --scan` with no registered providers has an empty
+        # ruleset and matches nothing, so registration is what gives this
+        # step its teeth.
+        run: |
+          set -euo pipefail
+          git secrets --register-aws
+          git secrets --add '(ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{36}'
+          git secrets --add 'github_pat_[A-Za-z0-9_]{22,}'
+          git secrets --add 'sk-[A-Za-z0-9]{20,}'
+          git secrets --add 'xox[baprs]-[A-Za-z0-9-]{10,}'
+          git secrets --add '\-\-\-\-\-BEGIN [A-Z ]*PRIVATE KEY\-\-\-\-\-'
+          echo "Registered patterns:"
+          git config --get-all secrets.patterns
 
       - name: Run git-secrets scan
         run: |
-          set -o pipefail
-          git secrets --scan -r . | tee git-secrets.report || true
-          if [ -s git-secrets.report ]; then
-            echo "git-secrets found potential secrets:";
-            cat git-secrets.report;
-            exit 1;
+          set -uo pipefail
+          # git-secrets writes findings to stderr and signals them via a
+          # non-zero exit code, so capture both streams and gate on status
+          # rather than on whether the report file is non-empty.
+          set +e
+          git secrets --scan -r . > git-secrets.report 2>&1
+          status=$?
+          set -e
+          if [ "$status" -ne 0 ]; then
+            echo "::error::git-secrets found potential secrets"
+            cat git-secrets.report
+            exit 1
           fi
+          echo "git-secrets: clean"
 
-      - name: Run truffleHog (Docker preferred)
+      - name: Run truffleHog
         run: |
           set -euo pipefail
-          if command -v docker >/dev/null 2>&1; then
-            docker run --rm -v "${{ github.workspace }}":/src trufflesecurity/trufflehog:latest filesystem --no-color --exclude-path .git --json /src | tee trufflehog.json || true
-          else
-            python -m pip install --user truffleHog || true
-            python -m truffleHog filesystem --json . | tee trufflehog.json || true
+          # --exclude-paths takes a FILE of newline-separated regexes matched
+          # against scanned paths (not a path to skip).
+          printf '%s\n' '^/src/\.git/' > "${RUNNER_TEMP}/th-exclude.txt"
+          # --fail makes truffleHog exit 183 when it finds results. Gating on
+          # that is reliable; parsing the JSON is not, because --json emits
+          # JSON Lines (no top-level .results key) and an empty file yields an
+          # empty jq result that compares unequal to "0".
+          set +e
+          docker run --rm \
+            -v "${{ github.workspace }}":/src:ro \
+            -v "${RUNNER_TEMP}/th-exclude.txt":/exclude.txt:ro \
+            trufflesecurity/trufflehog@sha256:deb2af10659a488a14d262a323addcde099d99827a1cf1dc4e93c17915c39f08 \
+            filesystem /src \
+            --json --no-color --no-update --fail \
+            --exclude-paths=/exclude.txt \
+            > trufflehog.json
+          status=$?
+          set -e
+          if [ "$status" -eq 183 ]; then
+            echo "::error::truffleHog found $(wc -l < trufflehog.json | tr -d ' ') potential secret(s)"
+            cat trufflehog.json
+            exit 1
           fi
-          # If trufflehog produced JSON, check for results length > 0
-          if [ -f trufflehog.json ]; then
-            count=$(jq '.results | length' trufflehog.json || echo 0)
-            if [ "$count" != "0" ]; then
-              echo "truffleHog found $count results";
-              cat trufflehog.json;
-              exit 1;
-            fi
+          if [ "$status" -ne 0 ]; then
+            # A scan that errored out is not a passing scan.
+            echo "::error::truffleHog failed to run (exit $status)"
+            exit "$status"
           fi
+          echo "truffleHog: clean"
 
       - name: Upload secret-scan reports
-        uses: actions/upload-artifact@v4
+        # always() so the reports are still retrievable on the runs that
+        # matter most — the ones that failed.
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: secret-scan-reports
           path: |
             git-secrets.report
             trufflehog.json
+          if-no-files-found: ignore
 
   tests:
     name: Run tests (if present)
     runs-on: ubuntu-latest
     needs: secret-scan
+    timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Set up uv
+        uses: astral-sh/setup-uv@caf0cab7a618c569241d31dcd442f54681755d39 # v3
         with:
-          python-version: '3.11'
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
 
-      - name: Install dependencies if present
-        run: |
-          set -euo pipefail
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          if [ -f pyproject.toml ]; then pip install . || true; fi
+      - name: Sync dependencies
+        # This project pins deps in uv.lock and declares pytest under
+        # [dependency-groups] dev. `pip install .` installs neither, which is
+        # why the plain-pip version of this job silently skipped every test.
+        run: uv sync --frozen
 
       - name: Check for pytest
         id: check_pytest
         run: |
-          python - <<'PY' > /tmp/pytest_found
-          import importlib.util
-          print('true' if importlib.util.find_spec('pytest') is not None else 'false')
-          PY
-          echo "found=$(cat /tmp/pytest_found)" >> $GITHUB_OUTPUT
+          set -euo pipefail
+          if uv run python -c "import importlib.util, sys; sys.exit(0 if importlib.util.find_spec('pytest') else 1)"; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::pytest is not installed — skipping tests"
+          fi
 
       - name: Run pytest
         if: steps.check_pytest.outputs.found == 'true'
-        run: |
-          pytest -q
+        run: uv run pytest -q
