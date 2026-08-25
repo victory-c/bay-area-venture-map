@@ -73,6 +73,25 @@ const SECTOR_ADJACENCY = {
   mobile: ["consumer", "consumer_social", "gaming"],
 };
 
+// Adjacent stages, same idea as SECTOR_ADJACENCY but ordinal: a stage's
+// neighbours are the rounds on either side of it, nearest first. Stage tag
+// coverage is very uneven — 214 firms are tagged series_a but only 15 late —
+// so a legitimate raise like Late-stage + Therapeutics matches zero firms even
+// though 8 therapeutics firms are tagged growth or series_c/d. Without this a
+// founder at the thin end of the ladder just sees an empty map.
+const STAGE_ADJACENCY = {
+  pre_seed: ["seed", "series_a"],
+  seed: ["pre_seed", "series_a"],
+  series_a: ["seed", "series_b"],
+  series_b: ["series_a", "series_c", "growth"],
+  series_c: ["series_b", "series_d", "growth"],
+  series_d: ["series_c", "series_e", "growth", "late"],
+  series_e: ["series_d", "late", "growth"],
+  growth: ["series_c", "series_d", "late", "series_b"],
+  late: ["growth", "series_d", "series_e", "series_c"],
+  buyout: ["growth", "late"],
+};
+
 // SEC's "Website Address" field is whatever the filer typed, and for ~25% of
 // firms that's a social profile rather than a site. The scraper already knows
 // this (website_enrich._SOCIAL_HOST_BLACKLIST skips them); label them honestly
@@ -418,6 +437,34 @@ document.addEventListener("alpine:init", () => {
       return out.sort((a, b) => b.count - a.count).slice(0, 6);
     },
 
+    // Adjacent stages that WOULD return firms if swapped in for the current
+    // stage filter, keeping every other active filter. Same contract as
+    // sectorSuggestions: each candidate is re-counted against live data, so a
+    // suggestion that would itself be a dead end is never offered.
+    get stageSuggestions() {
+      if (!this.stageFilter.size) return [];
+      const active = this.stageFilter;
+      const candidates = new Set();
+      active.forEach((s) =>
+        (STAGE_ADJACENCY[s] || []).forEach((a) => {
+          if (!active.has(a)) candidates.add(a);
+        }),
+      );
+      const out = [];
+      candidates.forEach((stage) => {
+        const count = this.firms.filter((f) =>
+          this.matches(f, { stageF: new Set([stage]) }),
+        ).length;
+        if (count > 0) out.push({ stage, count });
+      });
+      // Order by the ladder, not by count: the nearest round is the most
+      // relevant swap even when a further one happens to hold more firms.
+      const order = Object.keys(STAGE_LABELS);
+      return out
+        .sort((a, b) => order.indexOf(a.stage) - order.indexOf(b.stage))
+        .slice(0, 6);
+    },
+
     // True when dropping just the stage (resp. sector) filter would surface at
     // least one firm — so the empty-state only offers the quick-fix that helps.
     get canClearStageHelp() {
@@ -436,6 +483,10 @@ document.addEventListener("alpine:init", () => {
 
     applySectorSuggestion(sector) {
       this.sectorFilter = new Set([sector]);
+    },
+
+    applyStageSuggestion(stage) {
+      this.stageFilter = new Set([stage]);
     },
 
     clearStage() {

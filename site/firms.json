@@ -3,6 +3,7 @@
     "form_d",
     "glm_sectors",
     "glm_thesis",
+    "glm_website_tags",
     "sec_bulk"
   ],
   "firm_count": 675,
@@ -3047,7 +3048,11 @@
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "bio",
+        "climate",
+        "deep_tech"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 2,
@@ -3073,7 +3078,26 @@
           "cik": "2054650",
           "filer_name": "3i Partners Fund II, LLC  (CIK 0002054650)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "bio: \"Tech Bio Companies leveraging advanced computational tools, biological systems, AI/ML & engineering principles\" | climate: \"Climate Tech IP driven technology companies working to address effects of climate change by reducing GHGs, imp\" | deep_tech: \"3iPartners is a unique venture capital fund for India\u2019s aspiring deep tech founders\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "Tech Bio Companies leveraging advanced computational tools, biological systems, AI/ML & engineering principles to innovate & solve complex biological & medical challenges."
+        },
+        {
+          "sector": "climate",
+          "quote": "Climate Tech IP driven technology companies working to address effects of climate change by reducing GHGs, improving energy efficiency, & promoting sustainability across sectors."
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "3iPartners is a unique venture capital fund for India\u2019s aspiring deep tech founders"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-339401",
@@ -3097,7 +3121,9 @@
       "employee_count": null,
       "latest_filing_date": "02/26/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 2,
@@ -3123,7 +3149,18 @@
           "cik": "2086463",
           "filer_name": "49 Palms Ventures Fund 1, LP  (CIK 0002086463)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Investing in Early Stage AI Founders\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Investing in Early Stage AI Founders"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-160395",
@@ -3241,10 +3278,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"focus on AI, cybersecurity, and fintech\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "focus on AI, cybersecurity, and fintech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-316533",
@@ -3598,7 +3651,9 @@
       "employee_count": null,
       "latest_filing_date": "03/29/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "industrial"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 3,
@@ -3635,7 +3690,18 @@
           "cik": "1642003",
           "filer_name": "Acorn Pacific Ventures Fund I, LP  (CIK 0001642003)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "industrial: \"unlock capabilities of traditional industries and processeses in both digital and physical supply chains\"",
+      "inference_evidence": [
+        {
+          "sector": "industrial",
+          "quote": "unlock capabilities of traditional industries and processeses in both digital and physical supply chains"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-307729",
@@ -3659,7 +3725,9 @@
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 2,
@@ -3687,7 +3755,18 @@
           "cik": "1974285",
           "filer_name": "Acrew Diversify Capital Fund II, L.P.  (CIK 0001974285)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "generalist: \"lived context across sectors\"",
+      "inference_evidence": [
+        {
+          "sector": "generalist",
+          "quote": "lived context across sectors"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-320986",
@@ -3711,9 +3790,22 @@
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "generalist: \"lived context across sectors\"",
+      "inference_evidence": [
+        {
+          "sector": "generalist",
+          "quote": "lived context across sectors"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-307073",
@@ -3805,7 +3897,9 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.4852,
       "lng": -122.2364,
       "form_d_total_filings": 24,
@@ -3860,7 +3954,18 @@
           "cik": "1601391",
           "filer_name": "Acuta Capital Fund, LP  (CIK 0001601391)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "healthcare: \"We Invest in Companies That Strive to Improve Health and Well Being of Individuals Through Research and Innova\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "We Invest in Companies That Strive to Improve Health and Well Being of Individuals Through Research and Innovation"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-309667",
@@ -3884,7 +3989,11 @@
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra",
+        "bio",
+        "industrial"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 1,
@@ -3903,7 +4012,26 @@
           "cik": "2021048",
           "filer_name": "ACVC Partners Fund II, LP  (CIK 0002021048)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"ARTIFICIAL INTELLIGENCE\" | bio: \"TECH ENABLED LIFE SCIENCES\" | industrial: \"NEW INDUSTRIALS\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "ARTIFICIAL INTELLIGENCE"
+        },
+        {
+          "sector": "bio",
+          "quote": "TECH ENABLED LIFE SCIENCES"
+        },
+        {
+          "sector": "industrial",
+          "quote": "NEW INDUSTRIALS"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-305442",
@@ -4214,10 +4342,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.3861,
-      "lng": -122.0839
+      "lng": -122.0839,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Our portfolio spans sectors as diverse as healthcare\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Our portfolio spans sectors as diverse as healthcare"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-335674",
@@ -4240,8 +4384,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.3861,
       "lng": -122.0839,
       "form_d_total_filings": 1,
@@ -4260,7 +4409,18 @@
           "cik": "2039672",
           "filer_name": "AI Ventures III, a series of Moringa Ventures, LP  (CIK 0002039672)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Our portfolio spans sectors as diverse as healthcare\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Our portfolio spans sectors as diverse as healthcare"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-290536",
@@ -4283,10 +4443,31 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "dev_tools"
+      ],
       "lat": 37.3861,
-      "lng": -122.0839
+      "lng": -122.0839,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"we also co-found infrastructure and developer tool companies\" | dev_tools: \"developer tools for building applications\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "we also co-found infrastructure and developer tool companies"
+        },
+        {
+          "sector": "dev_tools",
+          "quote": "developer tools for building applications"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-298224",
@@ -4309,8 +4490,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b"
+      ],
+      "sectors": [
+        "climate",
+        "industrial",
+        "data"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 2,
@@ -4338,7 +4525,26 @@
           "cik": "1750040",
           "filer_name": "AiiM Partners, LP  (CIK 0001750040)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "climate: \"energy & power\" | industrial: \"supply chain & logistics\" | data: \"digital transformation\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "energy & power"
+        },
+        {
+          "sector": "industrial",
+          "quote": "supply chain & logistics"
+        },
+        {
+          "sector": "data",
+          "quote": "digital transformation"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-312935",
@@ -4361,10 +4567,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/03/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "bio",
+        "security"
+      ],
       "lat": 37.323,
-      "lng": -122.0322
+      "lng": -122.0322,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Artificial Intellegence\" | bio: \"BIOmedical\" | security: \"security software\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Artificial Intellegence"
+        },
+        {
+          "sector": "bio",
+          "quote": "BIOmedical"
+        },
+        {
+          "sector": "security",
+          "quote": "security software"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-322702",
@@ -4875,8 +5106,12 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 20,
@@ -4941,7 +5176,18 @@
           "cik": "2002739",
           "filer_name": "Amberstone Affiliates LLC - Series BN 2023  (CIK 0002002739)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "consumer: \"investing in the most disruptive and innovative consumer product companies\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "investing in the most disruptive and innovative consumer product companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-316862",
@@ -4964,10 +5210,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "late"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio"
+      ],
       "lat": 37.3861,
-      "lng": -122.0839
+      "lng": -122.0839,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"empower the future of healthcare\" | bio: \"biochemistry-based technologies\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "empower the future of healthcare"
+        },
+        {
+          "sector": "bio",
+          "quote": "biochemistry-based technologies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-328134",
@@ -4990,10 +5256,28 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "deep_tech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "deep_tech: \"\u4ece2016\u5e74\u5f00\u59cb\uff0c\u57fa\u77f3\u8d44\u672c\u5c31\u679c\u65ad\u5c06\u6295\u8d44\u91cd\u70b9\u805a\u7126\u5230\u786c\u79d1\u6280\u3001\u65b0\u5174\u4ea7\u4e1a\u548c\u751f\u547d\u79d1\u5b66\u4e0e\u5065\u5eb7\u4e09\u4e2a\u9886\u57df\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "\u4ece2016\u5e74\u5f00\u59cb\uff0c\u57fa\u77f3\u8d44\u672c\u5c31\u679c\u65ad\u5c06\u6295\u8d44\u91cd\u70b9\u805a\u7126\u5230\u786c\u79d1\u6280\u3001\u65b0\u5174\u4ea7\u4e1a\u548c\u751f\u547d\u79d1\u5b66\u4e0e\u5065\u5eb7\u4e09\u4e2a\u9886\u57df"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-209511",
@@ -5412,10 +5696,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "bio: \"global biotech venture capital firm\" | therapeutics: \"developing novel therapies for patients\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "global biotech venture capital firm"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "developing novel therapies for patients"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-334249",
@@ -5738,8 +6042,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "security",
+        "ai_infra",
+        "enterprise_saas"
+      ],
       "lat": 37.3541,
       "lng": -121.9552,
       "form_d_total_filings": 2,
@@ -5767,7 +6078,26 @@
           "cik": "2000548",
           "filer_name": "Asia2G Capital Fund I, L.P.  (CIK 0002000548)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "security: \"Conquering the most difficult cybersecurity and Web3 security challenges\" | ai_infra: \"AI chip for Gen AI\" | enterprise_saas: \"Product Market Fit on enterprise SaaS and the growth\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Conquering the most difficult cybersecurity and Web3 security challenges"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "AI chip for Gen AI"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Product Market Fit on enterprise SaaS and the growth"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-175357",
@@ -5790,10 +6120,31 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "security",
+        "consumer"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "security: \"Nir Polak is changing the landscape of cyberdefence\" | consumer: \"Lorna Borenstein and team Grokker built the wellness program employees love.\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Nir Polak is changing the landscape of cyberdefence"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Lorna Borenstein and team Grokker built the wellness program employees love."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-160606",
@@ -6079,10 +6430,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/16/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "healthcare",
+        "healthcare"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"drive innovation in medical technology\" | healthcare: \"innovative medical devices, diagnostics, and digital health solutions\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "drive innovation in medical technology"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "innovative medical devices, diagnostics, and digital health solutions"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-337707",
@@ -6131,10 +6502,31 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "security",
+        "fintech"
+      ],
       "lat": 37.3541,
-      "lng": -121.9552
+      "lng": -121.9552,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "security: \"Cyber security for the age of AI.\" | fintech: \"The future of global payments.\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Cyber security for the age of AI."
+        },
+        {
+          "sector": "fintech",
+          "quote": "The future of global payments."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-304938",
@@ -6157,8 +6549,14 @@
       ],
       "employee_count": 4,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.8044,
       "lng": -122.2712,
       "form_d_total_filings": 4,
@@ -6204,7 +6602,18 @@
           "cik": "1971696",
           "filer_name": "Authentic Strategic Partners 10, LLC  (CIK 0001971696)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"primarily in AI software companies\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "primarily in AI software companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-282525",
@@ -6227,10 +6636,33 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "deep_tech",
+        "fintech"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "deep_tech: \"We're excited about deep-tech, autonomous, AI, and semiconductors\" | fintech: \"business model innovations in marketplaces, fintech and SaaS\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "We're excited about deep-tech, autonomous, AI, and semiconductors"
+        },
+        {
+          "sector": "fintech",
+          "quote": "business model innovations in marketplaces, fintech and SaaS"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-336695",
@@ -6280,10 +6712,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "defense",
+        "deep_tech"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "defense: \"By synchronizing the DoD strategic priorities\" | deep_tech: \"investing in a new generation of essential systems\"",
+      "inference_evidence": [
+        {
+          "sector": "defense",
+          "quote": "By synchronizing the DoD strategic priorities"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "investing in a new generation of essential systems"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-285846",
@@ -6307,7 +6759,9 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 5,
@@ -6360,7 +6814,18 @@
           "cik": "1754983",
           "filer_name": "AVF I LP  (CIK 0001754983)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "generalist: \"We are sector-agnostic\"",
+      "inference_evidence": [
+        {
+          "sector": "generalist",
+          "quote": "We are sector-agnostic"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-298755",
@@ -6410,9 +6875,22 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "ai_infra: \"leaders in AI, fintech, aerospace and defence\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "leaders in AI, fintech, aerospace and defence"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-331811",
@@ -6436,9 +6914,22 @@
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "climate"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "climate: \"ClimateTech, Energy Transition, and Artificial Intelligence\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "ClimateTech, Energy Transition, and Artificial Intelligence"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-314488",
@@ -6462,9 +6953,22 @@
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "generalist"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "generalist: \"Sector Agnostic, Founders First\"",
+      "inference_evidence": [
+        {
+          "sector": "generalist",
+          "quote": "Sector Agnostic, Founders First"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-318814",
@@ -6664,10 +7168,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "pre_seed"
+      ],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "generalist"
+      ],
       "lat": 37.8716,
-      "lng": -122.2727
+      "lng": -122.2727,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "consumer: \"Modern Consumer\" | enterprise_saas: \"Enterprise\" | generalist: \"We're generalists\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "Modern Consumer"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Enterprise"
+        },
+        {
+          "sector": "generalist",
+          "quote": "We're generalists"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-288914",
@@ -6940,9 +7470,22 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "consumer: \"AI-Native Consumer Wellness & SPORTS\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "AI-Native Consumer Wellness & SPORTS"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-314347",
@@ -6965,10 +7508,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "fintech: \"BTV leads rounds in pre-seed and seed-stage fintech companies\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "BTV leads rounds in pre-seed and seed-stage fintech companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-341101",
@@ -6992,7 +7551,11 @@
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "fintech",
+        "enterprise_saas",
+        "healthcare"
+      ],
       "lat": 37.5485,
       "lng": -121.9886,
       "form_d_total_filings": 19,
@@ -7057,7 +7620,26 @@
           "cik": "2147299",
           "filer_name": "Beillion Capital LLC Project Prometheus  (CIK 0002147299)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "fintech: \"venture investments and corporate venture in Fintech (Lending, Credit, B2B, Blockchain)\" | enterprise_saas: \"Silicon Valley teams in the areas of semiconductor, cleantech, enterprise SaaS\" | healthcare: \"digital health/healthcare IT\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "venture investments and corporate venture in Fintech (Lending, Credit, B2B, Blockchain)"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Silicon Valley teams in the areas of semiconductor, cleantech, enterprise SaaS"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "digital health/healthcare IT"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-160352",
@@ -7182,10 +7764,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "climate",
+        "healthcare",
+        "enterprise_saas"
+      ],
       "lat": 37.8044,
-      "lng": -122.2712
+      "lng": -122.2712,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "climate: \"Build Sustainable Industry\" | healthcare: \"Improve Human Health\" | enterprise_saas: \"AI for SMBs\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "Build Sustainable Industry"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Improve Human Health"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "AI for SMBs"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-298473",
@@ -7208,10 +7816,36 @@
       ],
       "employee_count": 15,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "late"
+      ],
+      "sectors": [
+        "ai_infra",
+        "enterprise_saas",
+        "industrial"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"growing impactful, global enterprise AI startups\" | enterprise_saas: \"build global B2B technology companies\" | industrial: \"leapfrog shifts in enterprise automation\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "growing impactful, global enterprise AI startups"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "build global B2B technology companies"
+        },
+        {
+          "sector": "industrial",
+          "quote": "leapfrog shifts in enterprise automation"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-322319",
@@ -7772,10 +8406,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/09/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b"
+      ],
+      "sectors": [
+        "defense",
+        "ai_infra",
+        "deep_tech"
+      ],
       "lat": 37.9735,
-      "lng": -122.5311
+      "lng": -122.5311,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "defense: \"Next-gen autonomous systems for national security\" | ai_infra: \"Cloud platform to train and deploy generative AI models\" | deep_tech: \"Mass-manufactured nuclear plants powering data centers and entire cities\"",
+      "inference_evidence": [
+        {
+          "sector": "defense",
+          "quote": "Next-gen autonomous systems for national security"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "Cloud platform to train and deploy generative AI models"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "Mass-manufactured nuclear plants powering data centers and entire cities"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-286227",
@@ -7798,10 +8457,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/19/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "bio: \"Biotech, tech-bio, deep tech, hard tech, chem tech\u2026 whatever you call it, we\u2019ve been steeped in science-driven\" | therapeutics: \"Epana Bio Advancing autoimmune care with precision therapies\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "Biotech, tech-bio, deep tech, hard tech, chem tech\u2026 whatever you call it, we\u2019ve been steeped in science-driven technology for over a decade."
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "Epana Bio Advancing autoimmune care with precision therapies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-292884",
@@ -7888,8 +8567,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "bio",
+        "crypto"
+      ],
       "lat": 37.8716,
       "lng": -122.2727,
       "form_d_total_filings": 2,
@@ -7917,7 +8602,26 @@
           "cik": "1913266",
           "filer_name": "BSF II, LP  (CIK 0001913266)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "ai_infra: \"Noiseless conference calls with AI-powered noise-cancelling\" | bio: \"Working to revolutionize gene therapy and combat genetic disorders\" | crypto: \"Building the fastest way to build, test and run blockchain apps\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Noiseless conference calls with AI-powered noise-cancelling"
+        },
+        {
+          "sector": "bio",
+          "quote": "Working to revolutionize gene therapy and combat genetic disorders"
+        },
+        {
+          "sector": "crypto",
+          "quote": "Building the fastest way to build, test and run blockchain apps"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-308885",
@@ -7940,10 +8644,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "consumer",
+        "deep_tech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "consumer: \"internet, software, and frontier technology\" | deep_tech: \"frontier technology\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "internet, software, and frontier technology"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "frontier technology"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-288444",
@@ -8070,9 +8794,32 @@
       "employee_count": null,
       "latest_filing_date": "02/09/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra",
+        "marketplace",
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"Blitzscaling AI Fund, which applies the principles of Blitzscaling to invest in early-stage AI startups.\" | marketplace: \"A marketplace to connect with your top prospects\" | consumer: \"Consumer AI agents to complete complex tasks.\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Blitzscaling AI Fund, which applies the principles of Blitzscaling to invest in early-stage AI startups."
+        },
+        {
+          "sector": "marketplace",
+          "quote": "A marketplace to connect with your top prospects"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Consumer AI agents to complete complex tasks."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-337464",
@@ -8147,10 +8894,38 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "defense",
+        "deep_tech",
+        "industrial"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "defense: \"Peace through deterrence\" | deep_tech: \"Modular nuclear Reactors\" | industrial: \"The world's most efficient lumber mills\"",
+      "inference_evidence": [
+        {
+          "sector": "defense",
+          "quote": "Peace through deterrence"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "Modular nuclear Reactors"
+        },
+        {
+          "sector": "industrial",
+          "quote": "The world's most efficient lumber mills"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-168532",
@@ -8295,10 +9070,32 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"We have a preference for B2B companies, especially those who sell to large enterprises\" | data: \"Treasure Data\u2019s Customer Data Cloud unites operations, service, sales and marketing teams around the same unif\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "We have a preference for B2B companies, especially those who sell to large enterprises"
+        },
+        {
+          "sector": "data",
+          "quote": "Treasure Data\u2019s Customer Data Cloud unites operations, service, sales and marketing teams around the same unified customer profiles"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-165915",
@@ -8449,7 +9246,9 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.8044,
       "lng": -122.2712,
       "form_d_total_filings": 3,
@@ -8484,7 +9283,18 @@
           "cik": "1915475",
           "filer_name": "Castle Creek Launchpad Fund I, LP  (CIK 0001915475)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "fintech: \"The Castle Creek Launchpad Fund backs fintech built for community banks\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "The Castle Creek Launchpad Fund backs fintech built for community banks"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-334355",
@@ -8779,10 +9589,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "ai_infra: \"AI agent for customer experience.\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI agent for customer experience."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-328891",
@@ -8805,8 +9631,12 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 2,
@@ -8832,7 +9662,18 @@
           "cik": "1986245",
           "filer_name": "Cherryrock Capital Fund I, LP  (CIK 0001986245)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "ai_infra: \"Coactive AI raises $30 million to make sense of visual data\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Coactive AI raises $30 million to make sense of visual data"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-301595",
@@ -8974,10 +9815,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "pre_seed"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.8735,
-      "lng": -122.4569
+      "lng": -122.4569,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"The future of healthcare is preventative, personalized, and regenerative.\" | bio: \"innovations in health tech and biology\" | therapeutics: \"creating life saving medicines and innovative diagnostics\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "The future of healthcare is preventative, personalized, and regenerative."
+        },
+        {
+          "sector": "bio",
+          "quote": "innovations in health tech and biology"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "creating life saving medicines and innovative diagnostics"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162803",
@@ -9039,10 +9906,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"Focus on Frontier Tech, Industry 4.0, AI, IoT, 5G, Big Data, and More\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Focus on Frontier Tech, Industry 4.0, AI, IoT, 5G, Big Data, and More"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-290751",
@@ -9065,10 +9947,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "series_c",
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "security"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "security: \"software companies that can drive disruptions in IoT, Big Data, and Security\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "software companies that can drive disruptions in IoT, Big Data, and Security"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-322367",
@@ -9279,9 +10181,32 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "climate",
+        "industrial",
+        "bio"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "climate: \"technology for carbon reduction\" | industrial: \"Copper & aluminum manufacturing\" | bio: \"Comp. genomics for microbiomes\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "technology for carbon reduction"
+        },
+        {
+          "sector": "industrial",
+          "quote": "Copper & aluminum manufacturing"
+        },
+        {
+          "sector": "bio",
+          "quote": "Comp. genomics for microbiomes"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-324626",
@@ -9341,10 +10266,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"AI-Native, \"Software 3.0\" companies\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI-Native, \"Software 3.0\" companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-334542",
@@ -9367,10 +10308,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "enterprise_saas",
+        "fintech"
+      ],
       "lat": 37.4852,
-      "lng": -122.2364
+      "lng": -122.2364,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"AI-powered architecture firm\" | enterprise_saas: \"Enterprise finance, operations, and back-office automation\" | fintech: \"Cloud-based accounting and HR platform\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI-powered architecture firm"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Enterprise finance, operations, and back-office automation"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Cloud-based accounting and HR platform"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-164808",
@@ -9825,10 +10791,25 @@
       ],
       "employee_count": 3,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"companies operating in enterprise\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "companies operating in enterprise"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162705",
@@ -10122,10 +11103,32 @@
       ],
       "employee_count": 23,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_c",
+        "growth"
+      ],
+      "sectors": [
+        "bio",
+        "healthcare"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "bio: \"early-stage life science companies\" | healthcare: \"growth stage healthcare companies\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "early-stage life science companies"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "growth stage healthcare companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-167441",
@@ -10658,8 +11661,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare",
+        "ai_infra",
+        "bio"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 1,
@@ -10678,7 +11688,26 @@
           "cik": "2035429",
           "filer_name": "DigitalDx GLX Analytix Fund I LP  (CIK 0002035429)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "healthcare: \"investing in early-stage health technology companies\" | ai_infra: \"integrating the power of AI into healthcare diagnostics\" | bio: \"Biotia harnesses AI and next-generation sequencing\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "investing in early-stage health technology companies"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "integrating the power of AI into healthcare diagnostics"
+        },
+        {
+          "sector": "bio",
+          "quote": "Biotia harnesses AI and next-generation sequencing"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-300549",
@@ -10702,9 +11731,32 @@
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare",
+        "data",
+        "therapeutics"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"driving change across healthcare and life sciences\" | data: \"solutions that can generate meaningful data\" | therapeutics: \"Digital therapeutics\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "driving change across healthcare and life sciences"
+        },
+        {
+          "sector": "data",
+          "quote": "solutions that can generate meaningful data"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "Digital therapeutics"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-242788",
@@ -10976,10 +12028,31 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_d"
+      ],
+      "sectors": [
+        "bio",
+        "bio"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "bio: \"Precision neuroscience\" | bio: \"life sciences platforms\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "Precision neuroscience"
+        },
+        {
+          "sector": "bio",
+          "quote": "life sciences platforms"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-313994",
@@ -11042,10 +12115,40 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b",
+        "series_c",
+        "series_d",
+        "series_e",
+        "growth"
+      ],
+      "sectors": [
+        "security",
+        "deep_tech",
+        "industrial"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "security: \"Attivo Networks Awarded U.S Department of Defense Contracts for Active Cyber Defense and Cyber Deception Techn\" | deep_tech: \"CFS to Build World\u2019s First Commercial Fusion Power Plant in Virginia\" | industrial: \"Phononic introduces active cooling tech for e-grocery fulfillment market\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Attivo Networks Awarded U.S Department of Defense Contracts for Active Cyber Defense and Cyber Deception Technology"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "CFS to Build World\u2019s First Commercial Fusion Power Plant in Virginia"
+        },
+        {
+          "sector": "industrial",
+          "quote": "Phononic introduces active cooling tech for e-grocery fulfillment market"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-300750",
@@ -11187,10 +12290,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "crypto",
+        "healthcare"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"AI, Robotics & Automation\" | crypto: \"Crypto & Blockchain\" | healthcare: \"Healthcare & Biotech\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI, Robotics & Automation"
+        },
+        {
+          "sector": "crypto",
+          "quote": "Crypto & Blockchain"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Healthcare & Biotech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-320610",
@@ -11374,8 +12502,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/17/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "climate",
+        "healthcare"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 1,
@@ -11394,7 +12527,22 @@
           "cik": "1943069",
           "filer_name": "E12 Venture Capital Fund I, L.P.  (CIK 0001943069)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "climate: \"Climate Tech\" | healthcare: \"Health Tech\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "Climate Tech"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Health Tech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-319474",
@@ -11472,9 +12620,32 @@
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra",
+        "security",
+        "data"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "ai_infra: \"We focus on investing in Data and AI Infra opportunities\" | security: \"Seraphic develops an enterprise-grade browser security solution\" | data: \"Databricks is the Data + AI company\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "We focus on investing in Data and AI Infra opportunities"
+        },
+        {
+          "sector": "security",
+          "quote": "Seraphic develops an enterprise-grade browser security solution"
+        },
+        {
+          "sector": "data",
+          "quote": "Databricks is the Data + AI company"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-255789",
@@ -11836,8 +13007,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/03/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "growth"
+      ],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.3861,
       "lng": -122.0839,
       "form_d_total_filings": 5,
@@ -11888,7 +13065,18 @@
           "cik": "1647923",
           "filer_name": "Elefund, L.P.  (CIK 0001647923)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "fintech: \"We invest in various industries and stages from Fintech to AI and Enterprise\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "We invest in various industries and stages from Fintech to AI and Enterprise"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-161547",
@@ -12149,10 +13337,31 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "deep_tech: \"Deep Tech | AI Focused\" | fintech: \"expertise and extensive network in Fintech, infrastructure, and logistics\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "Deep Tech | AI Focused"
+        },
+        {
+          "sector": "fintech",
+          "quote": "expertise and extensive network in Fintech, infrastructure, and logistics"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-338669",
@@ -12468,10 +13677,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "07/18/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "deep_tech"
+      ],
       "lat": 37.2872,
-      "lng": -121.95
+      "lng": -121.95,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"Backing the Builders of Intelligence.\" | deep_tech: \"defining frontier technology companies\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Backing the Builders of Intelligence."
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "defining frontier technology companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-318242",
@@ -12635,8 +13864,21 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "series_c",
+        "series_d",
+        "series_e",
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "ai_infra",
+        "fintech",
+        "security"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 3,
@@ -12673,7 +13915,26 @@
           "cik": "1603305",
           "filer_name": "Firebolt Ventures Fund 1A, LLC  (CIK 0001603305)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"AI inference chips and systems for high-performance AI workloads\" | fintech: \"Stablecoin payments and digital financial infrastructure\" | security: \"Cloud security posture and infrastructure-as-code scanning platform\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI inference chips and systems for high-performance AI workloads"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Stablecoin payments and digital financial infrastructure"
+        },
+        {
+          "sector": "security",
+          "quote": "Cloud security posture and infrastructure-as-code scanning platform"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-333277",
@@ -12748,8 +14009,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "ai_infra",
+        "bio"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 4,
@@ -12792,7 +14061,26 @@
           "cik": "1897505",
           "filer_name": "First Spark Venture Fund, L.P.  (CIK 0001897505)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "deep_tech: \"First Spark Ventures is a Deep Tech venture capital fund\" | ai_infra: \"focus on Advanced Compute\" | bio: \"Digital Biology and Biotech\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "First Spark Ventures is a Deep Tech venture capital fund"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "focus on Advanced Compute"
+        },
+        {
+          "sector": "bio",
+          "quote": "Digital Biology and Biotech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-160694",
@@ -12817,9 +14105,27 @@
       "employee_count": 24,
       "latest_filing_date": "03/16/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare",
+        "industrial"
+      ],
       "lat": 37.5779,
-      "lng": -122.3478
+      "lng": -122.3478,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Healthcare\" | industrial: \"Industrials\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Healthcare"
+        },
+        {
+          "sector": "industrial",
+          "quote": "Industrials"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-299843",
@@ -13515,8 +14821,12 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 4,
@@ -13562,7 +14872,18 @@
           "cik": "1524666",
           "filer_name": "Fundamental Capital SKR Investors, LLC  (CIK 0001524666)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "consumer: \"focus on businesses that touch the consumer\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "focus on businesses that touch the consumer"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-166518",
@@ -13827,7 +15148,11 @@
       "employee_count": null,
       "latest_filing_date": "03/07/2025",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "data",
+        "ai_infra",
+        "marketplace"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 5,
@@ -13876,7 +15201,26 @@
           "cik": "1641861",
           "filer_name": "Fyrfly Venture Partners Fund II, L.P.  (CIK 0001641861)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "data: \"startups that build their competitive advantage through proprietary data and intelligence\" | ai_infra: \"The Data Networked Platform opportunity is entering an accelerated growth cycle in the coming 10 years driven \" | marketplace: \"DNPs can come in the form of pure platform plays, marketplaces and user networks.\"",
+      "inference_evidence": [
+        {
+          "sector": "data",
+          "quote": "startups that build their competitive advantage through proprietary data and intelligence"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "The Data Networked Platform opportunity is entering an accelerated growth cycle in the coming 10 years driven by Mobile, APIs* and AI*."
+        },
+        {
+          "sector": "marketplace",
+          "quote": "DNPs can come in the form of pure platform plays, marketplaces and user networks."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-334985",
@@ -13899,8 +15243,12 @@
       ],
       "employee_count": null,
       "latest_filing_date": "08/18/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 4,
@@ -13946,7 +15294,18 @@
           "cik": "2081533",
           "filer_name": "G Vision Capital S Fund III, LLC  (CIK 0002081533)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"AI Infrastructure\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI Infrastructure"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-288490",
@@ -14049,10 +15408,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "deep_tech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "deep_tech: \"Welcome to General Inception, the Deep Tech Venture studio.\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "Welcome to General Inception, the Deep Tech Venture studio."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-339177",
@@ -14139,10 +15513,37 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_e",
+        "growth"
+      ],
+      "sectors": [
+        "ai_infra",
+        "security",
+        "deep_tech"
+      ],
       "lat": 37.5585,
-      "lng": -122.2711
+      "lng": -122.2711,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"AI/ML, ENTERPRISE INFRASTRUCTURE\" | security: \"CYBERSECURITY\" | deep_tech: \"investing in early-stage deep tech\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI/ML, ENTERPRISE INFRASTRUCTURE"
+        },
+        {
+          "sector": "security",
+          "quote": "CYBERSECURITY"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "investing in early-stage deep tech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-340205",
@@ -14222,9 +15623,22 @@
       "employee_count": null,
       "latest_filing_date": "01/28/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.9341,
-      "lng": -122.5353
+      "lng": -122.5353,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "healthcare: \"Medical Device, Life Science Tool, Diagnostic and Digital Health sectors\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Medical Device, Life Science Tool, Diagnostic and Digital Health sectors"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-334617",
@@ -14414,9 +15828,32 @@
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "consumer",
+        "enterprise_saas",
+        "gaming"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "consumer: \"Blank Street is a specialty coffee brand\" | enterprise_saas: \"Air is a creative ops platform for marketing teams\" | gaming: \"Funcraft is a free-to-play gaming company\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "Blank Street is a specialty coffee brand"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Air is a creative ops platform for marketing teams"
+        },
+        {
+          "sector": "gaming",
+          "quote": "Funcraft is a free-to-play gaming company"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-172576",
@@ -14541,10 +15978,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth",
+        "late"
+      ],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "fintech: \"financial technology companies\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "financial technology companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162963",
@@ -14567,10 +16020,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "security",
+        "ai_infra",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "security: \"cyber security\" | ai_infra: \"artificial intelligence, machine learning\" | fintech: \"financial technology\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "cyber security"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "artificial intelligence, machine learning"
+        },
+        {
+          "sector": "fintech",
+          "quote": "financial technology"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-281412",
@@ -14619,10 +16098,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/16/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Actively investing in every layer of AI\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Actively investing in every layer of AI"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-133184",
@@ -14819,10 +16313,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/28/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "security"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "enterprise_saas: \"Vertical SaaS and tech-enabled services companies\" | security: \"AI-powered cybersecurity awareness training platform\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Vertical SaaS and tech-enabled services companies"
+        },
+        {
+          "sector": "security",
+          "quote": "AI-powered cybersecurity awareness training platform"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-316982",
@@ -14921,8 +16435,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "fintech"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 1,
@@ -14941,7 +16460,22 @@
           "cik": "2146853",
           "filer_name": "Han River Friendli.ai SPV LLC  (CIK 0002146853)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "ai_infra: \"deep technology and consumer behavior\" | fintech: \"building the rails that make home equity the backbone of consumer finance\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "deep technology and consumer behavior"
+        },
+        {
+          "sector": "fintech",
+          "quote": "building the rails that make home equity the backbone of consumer finance"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-335031",
@@ -15164,9 +16698,22 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "infra: \"Infrastructure\"",
+      "inference_evidence": [
+        {
+          "sector": "infra",
+          "quote": "Infrastructure"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-289730",
@@ -15216,9 +16763,32 @@
       "employee_count": null,
       "latest_filing_date": "03/02/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare",
+        "ai_infra",
+        "bio"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Healthier Capital partners with technology-powered healthcare innovators\" | ai_infra: \"Building an advanced, reliable, and safe generative AI infrastructure platform for healthcare\" | bio: \"Developing the next\u2013generation discovery and diagnostics platform for complex and deadly diseases\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Healthier Capital partners with technology-powered healthcare innovators"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "Building an advanced, reliable, and safe generative AI infrastructure platform for healthcare"
+        },
+        {
+          "sector": "bio",
+          "quote": "Developing the next\u2013generation discovery and diagnostics platform for complex and deadly diseases"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-191513",
@@ -15369,7 +16939,9 @@
       "employee_count": 2,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 5,
@@ -15420,7 +16992,18 @@
           "cik": "1559461",
           "filer_name": "HighBAR Partners II, L.P.  (CIK 0001559461)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "enterprise_saas: \"emerging enterprise and infrastructure software companies\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "emerging enterprise and infrastructure software companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-284959",
@@ -15970,10 +17553,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "security"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Enterprise\" | data: \"Data Management\" | security: \"Cybersecurity\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Enterprise"
+        },
+        {
+          "sector": "data",
+          "quote": "Data Management"
+        },
+        {
+          "sector": "security",
+          "quote": "Cybersecurity"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-164412",
@@ -15996,10 +17605,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_b"
+      ],
+      "sectors": [
+        "security",
+        "data",
+        "healthcare"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "security: \"Cybersecurity\" | data: \"Data Management\" | healthcare: \"Digital Health\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Cybersecurity"
+        },
+        {
+          "sector": "data",
+          "quote": "Data Management"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Digital Health"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-286062",
@@ -16022,8 +17657,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "security"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 2,
@@ -16051,7 +17693,26 @@
           "cik": "1660470",
           "filer_name": "Icon Ventures VI, L.P.  (CIK 0001660470)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Enterprise\" | data: \"Data Management\" | security: \"Cybersecurity\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Enterprise"
+        },
+        {
+          "sector": "data",
+          "quote": "Data Management"
+        },
+        {
+          "sector": "security",
+          "quote": "Cybersecurity"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-313640",
@@ -16074,8 +17735,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "security"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 1,
@@ -16094,7 +17762,26 @@
           "cik": "1835872",
           "filer_name": "Icon Ventures VII, L.P.  (CIK 0001835872)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Enterprise\" | data: \"Data Management\" | security: \"Cybersecurity\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Enterprise"
+        },
+        {
+          "sector": "data",
+          "quote": "Data Management"
+        },
+        {
+          "sector": "security",
+          "quote": "Cybersecurity"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162824",
@@ -16117,10 +17804,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/10/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.5779,
-      "lng": -122.3478
+      "lng": -122.3478,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"We are thought leaders in not just finding AI rocketships\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "We are thought leaders in not just finding AI rocketships"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-161594",
@@ -16261,10 +17964,28 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "growth"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"focused on digital health, fintech, and vertical applications of AI\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "focused on digital health, fintech, and vertical applications of AI"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-170329",
@@ -16489,10 +18210,30 @@
       ],
       "employee_count": 10,
       "latest_filing_date": "03/31/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "ai_infra",
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"Auditoria\u2019s purpose-built LLM and domain-specific workflows delivered automation\" | healthcare: \"xCures' AI platform finds a patient's disparate health records\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Auditoria\u2019s purpose-built LLM and domain-specific workflows delivered automation"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "xCures' AI platform finds a patient's disparate health records"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-315207",
@@ -16516,10 +18257,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "fintech",
+        "consumer",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "fintech: \"Financial wellness platform\" | consumer: \"Simpler social media tools\" | enterprise_saas: \"Workforce intelligence\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "Financial wellness platform"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Simpler social media tools"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Workforce intelligence"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-165005",
@@ -17232,8 +18998,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "healthcare",
+        "ai_infra"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 4,
@@ -17279,7 +19051,26 @@
           "cik": "1728656",
           "filer_name": "Katalyst.Ventures I, L.P.  (CIK 0001728656)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Autonomous Logistics, Digital Health, and Enterprise SaaS\" | healthcare: \"Digital Health\" | ai_infra: \"Investing in Applied AI\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Autonomous Logistics, Digital Health, and Enterprise SaaS"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Digital Health"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "Investing in Applied AI"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-328933",
@@ -17345,10 +19136,32 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "consumer",
+        "ai_infra"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "consumer: \"Consumer Tech\" | ai_infra: \"AI-enabled\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "Consumer Tech"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "AI-enabled"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-317924",
@@ -17653,10 +19466,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "late"
+      ],
+      "sectors": [
+        "climate",
+        "deep_tech",
+        "industrial"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "climate: \"Our first fund focuses on decarbonization\" | deep_tech: \"We have a soft spot for hard tech.\" | industrial: \"anchored by a $300 million commitment from European industrial interests\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "Our first fund focuses on decarbonization"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "We have a soft spot for hard tech."
+        },
+        {
+          "sector": "industrial",
+          "quote": "anchored by a $300 million commitment from European industrial interests"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-168121",
@@ -17769,7 +19607,11 @@
       "employee_count": null,
       "latest_filing_date": "04/16/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra",
+        "healthcare",
+        "bio"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 3,
@@ -17806,7 +19648,26 @@
           "cik": "1989246",
           "filer_name": "LIONHEART BREATHWRK SPV I, LLC  (CIK 0001989246)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"Our main areas of investment focus are artificial intelligence\" | healthcare: \"frontier mental health technologies\" | bio: \"psychedelic medicine and neuromodulation\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Our main areas of investment focus are artificial intelligence"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "frontier mental health technologies"
+        },
+        {
+          "sector": "bio",
+          "quote": "psychedelic medicine and neuromodulation"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-305376",
@@ -17960,8 +19821,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 1,
@@ -17980,7 +19846,22 @@
           "cik": "1708655",
           "filer_name": "Longevity Fund 2 LP  (CIK 0001708655)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "bio: \"we\u2019ve funded some of the first companies in the space to IPO and get plausible drug candidates into patients\" | therapeutics: \"get plausible drug candidates into patients\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "we\u2019ve funded some of the first companies in the space to IPO and get plausible drug candidates into patients"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "get plausible drug candidates into patients"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-161916",
@@ -18136,9 +20017,32 @@
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "industrial"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "healthcare: \"A premier healthcare investment platform\" | bio: \"next-generation R&D services\" | industrial: \"critical healthcare supply chain assets\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "A premier healthcare investment platform"
+        },
+        {
+          "sector": "bio",
+          "quote": "next-generation R&D services"
+        },
+        {
+          "sector": "industrial",
+          "quote": "critical healthcare supply chain assets"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-301792",
@@ -18317,10 +20221,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "ai_infra",
+        "security"
+      ],
       "lat": 37.3852,
-      "lng": -122.1141
+      "lng": -122.1141,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Seed Stage Venture Capital for Enterprise Software\" | ai_infra: \"agent infrastructure and intelligent applications\" | security: \"Network & Security\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Seed Stage Venture Capital for Enterprise Software"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "agent infrastructure and intelligent applications"
+        },
+        {
+          "sector": "security",
+          "quote": "Network & Security"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-319666",
@@ -18612,9 +20541,22 @@
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "bio"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "bio: \"MBC BioLabs, provides state-of-the-art facilities\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "MBC BioLabs, provides state-of-the-art facilities"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-115060",
@@ -18845,8 +20787,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/09/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "growth"
+      ],
+      "sectors": [
+        "consumer",
+        "marketplace",
+        "healthcare"
+      ],
       "lat": 37.4852,
       "lng": -122.2364,
       "form_d_total_filings": 1,
@@ -18865,7 +20814,26 @@
           "cik": "2041177",
           "filer_name": "Mercurius Media Capital LP  (CIK 0002041177)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "consumer: \"partner with ambitious founders who are building the next generation of standout brands\" | marketplace: \"Marketplace that connects people who need to get tasks done with skilled individuals\" | healthcare: \"helping primary care doctors quickly and non-invasively assess skin cancer risk\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "partner with ambitious founders who are building the next generation of standout brands"
+        },
+        {
+          "sector": "marketplace",
+          "quote": "Marketplace that connects people who need to get tasks done with skilled individuals"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "helping primary care doctors quickly and non-invasively assess skin cancer risk"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-161233",
@@ -19069,8 +21037,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "marketplace",
+        "consumer"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 2,
@@ -19096,7 +21071,26 @@
           "cik": "1780033",
           "filer_name": "MHS Capital Partners III, L.P.  (CIK 0001780033)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "enterprise_saas: \"Fonality is a provider of cloud-based business phone and unified communications solutions\" | marketplace: \"Thumbtack is a marketplace for connecting consumers with local service professionals\" | consumer: \"Nutrisystem is a provider of weight management products and services, sold directly to the consumer\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Fonality is a provider of cloud-based business phone and unified communications solutions"
+        },
+        {
+          "sector": "marketplace",
+          "quote": "Thumbtack is a marketplace for connecting consumers with local service professionals"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Nutrisystem is a provider of weight management products and services, sold directly to the consumer"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-163096",
@@ -19119,10 +21113,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "marketplace",
+        "consumer"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "enterprise_saas: \"Fonality is a provider of cloud-based business phone and unified communications solutions\" | marketplace: \"Thumbtack is a marketplace for connecting consumers with local service professionals\" | consumer: \"Nutrisystem is a provider of weight management products and services, sold directly to the consumer\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Fonality is a provider of cloud-based business phone and unified communications solutions"
+        },
+        {
+          "sector": "marketplace",
+          "quote": "Thumbtack is a marketplace for connecting consumers with local service professionals"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Nutrisystem is a provider of weight management products and services, sold directly to the consumer"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-291128",
@@ -19184,10 +21204,32 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "security",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "security: \"Cyber Security\" | enterprise_saas: \"Enterprise Software\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Cyber Security"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Enterprise Software"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-315549",
@@ -19210,10 +21252,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/24/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "security",
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "security: \"Infrastructure & Security\" | healthcare: \"Healthcare\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Infrastructure & Security"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Healthcare"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-327084",
@@ -19277,9 +21339,32 @@
       "employee_count": null,
       "latest_filing_date": "04/08/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "deep_tech",
+        "ai_infra",
+        "bio"
+      ],
       "lat": 37.563,
-      "lng": -122.3255
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "deep_tech: \"global deep tech venture capital firm\" | ai_infra: \"AI-powered, omni-channel customer experience\" | bio: \"Bioconvergence innovations at the intersection of high tech and biotech\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "global deep tech venture capital firm"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "AI-powered, omni-channel customer experience"
+        },
+        {
+          "sector": "bio",
+          "quote": "Bioconvergence innovations at the intersection of high tech and biotech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-163182",
@@ -19397,10 +21482,33 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b",
+        "series_c"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "bio: \"We find and fund innovative life sciences companies\" | therapeutics: \"support breakthrough therapeutics, diagnostics\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "We find and fund innovative life sciences companies"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "support breakthrough therapeutics, diagnostics"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-164391",
@@ -19423,8 +21531,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "healthcare"
+      ],
       "lat": 37.2872,
       "lng": -121.95,
       "form_d_total_filings": 31,
@@ -19475,7 +21589,26 @@
           "cik": "1761789",
           "filer_name": "Montage Capital II Parallel Fund, L.P.  (CIK 0001761789)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "enterprise_saas: \"Leading provider of virtual environments\" | consumer: \"Fitness classes and training programs in one app\" | healthcare: \"Using science to develop weight loss programs that work\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Leading provider of virtual environments"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Fitness classes and training programs in one app"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Using science to develop weight loss programs that work"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-169560",
@@ -19695,10 +21828,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/08/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b"
+      ],
+      "sectors": [
+        "fintech",
+        "security"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "fintech: \"Investing in Enterprise Financial Technology\" | security: \"software-based security for payments, identity, and digital assets\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "Investing in Enterprise Financial Technology"
+        },
+        {
+          "sector": "security",
+          "quote": "software-based security for payments, identity, and digital assets"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-288270",
@@ -19721,10 +21874,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "healthcare: \"medical technology entrepreneurs\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "medical technology entrepreneurs"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-333816",
@@ -19747,8 +21915,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "growth"
+      ],
+      "sectors": [
+        "defense",
+        "ai_infra"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 22,
@@ -19813,7 +21987,22 @@
           "cik": "2128040",
           "filer_name": "MVPSARD26, a series of MVP II Co-Invest LLC  (CIK 0002128040)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "defense: \"Aerospace & Defense\" | ai_infra: \"Enterprise AI\"",
+      "inference_evidence": [
+        {
+          "sector": "defense",
+          "quote": "Aerospace & Defense"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "Enterprise AI"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-325591",
@@ -19863,9 +22052,22 @@
       "employee_count": null,
       "latest_filing_date": "04/01/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "deep_tech"
+      ],
       "lat": 37.4297,
-      "lng": -122.2538
+      "lng": -122.2538,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "deep_tech: \"invests in disruptive technologies across the life, physical, and data sciences\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "invests in disruptive technologies across the life, physical, and data sciences"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162019",
@@ -19889,9 +22091,32 @@
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare",
+        "data",
+        "security"
+      ],
       "lat": 37.8044,
-      "lng": -122.2712
+      "lng": -122.2712,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "healthcare: \"Advancing Innovation in Healthcare\" | data: \"Health Information Technology (Enterprise Solutions)\" | security: \"Ordr Secures $40 Million in Series C Funding to Answer Increased Demand for Connected Device Security\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Advancing Innovation in Healthcare"
+        },
+        {
+          "sector": "data",
+          "quote": "Health Information Technology (Enterprise Solutions)"
+        },
+        {
+          "sector": "security",
+          "quote": "Ordr Secures $40 Million in Series C Funding to Answer Increased Demand for Connected Device Security"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-317758",
@@ -20074,7 +22299,10 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "enterprise_saas",
+        "enterprise_saas"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 6,
@@ -20127,7 +22355,22 @@
           "cik": "2059269",
           "filer_name": "NEXT HORIZON CAPITAL FUND I, LP  (CIK 0002059269)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Business Services\" | enterprise_saas: \"Technology-enabled Services\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Business Services"
+        },
+        {
+          "sector": "enterprise_saas",
+          "quote": "Technology-enabled Services"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-156640",
@@ -20151,7 +22394,9 @@
       "employee_count": 26,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.3838,
       "lng": -122.2353,
       "form_d_total_filings": 1,
@@ -20170,7 +22415,18 @@
           "cik": "2042221",
           "filer_name": "Next Legacy XII, LLC  (CIK 0002042221)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"primarily in the enterprise, consumer and fintech sectors\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "primarily in the enterprise, consumer and fintech sectors"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-314346",
@@ -20335,10 +22591,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "healthcare",
+        "consumer",
+        "gaming"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"targeting the $8.5 trillion wellness & wellbeing market\" | consumer: \"The world\u2019s first smart toothbrush\" | gaming: \"FDA approved video game platform for mental health treatments\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "targeting the $8.5 trillion wellness & wellbeing market"
+        },
+        {
+          "sector": "consumer",
+          "quote": "The world\u2019s first smart toothbrush"
+        },
+        {
+          "sector": "gaming",
+          "quote": "FDA approved video game platform for mental health treatments"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-173287",
@@ -20361,10 +22642,31 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/15/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "growth"
+      ],
+      "sectors": [
+        "deep_tech",
+        "gaming"
+      ],
       "lat": 37.3861,
-      "lng": -122.0839
+      "lng": -122.0839,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "deep_tech: \"space technology companies\" | gaming: \"Social & Mobile Gaming\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "space technology companies"
+        },
+        {
+          "sector": "gaming",
+          "quote": "Social & Mobile Gaming"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-163168",
@@ -20387,8 +22689,17 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_b",
+        "series_c",
+        "series_e"
+      ],
+      "sectors": [
+        "security",
+        "ai_infra",
+        "consumer"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 9,
@@ -20439,7 +22750,26 @@
           "cik": "2052065",
           "filer_name": "Notable Capital Holdings, L.L.C.  (CIK 0002052065)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "security: \"From Exit to Restart: How Torq\u2019s Repeat Founders are Reimagining the Future of Security Operations\" | ai_infra: \"The Vertical Moment Has Arrived in Generative Media\" | consumer: \"How Quince Built a Better Retail Model to Democratize Quality\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "From Exit to Restart: How Torq\u2019s Repeat Founders are Reimagining the Future of Security Operations"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "The Vertical Moment Has Arrived in Generative Media"
+        },
+        {
+          "sector": "consumer",
+          "quote": "How Quince Built a Better Retail Model to Democratize Quality"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-333205",
@@ -20555,10 +22885,31 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/07/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare",
+        "deep_tech"
+      ],
       "lat": 37.3861,
-      "lng": -122.0839
+      "lng": -122.0839,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"emerging Medtech companies\" | deep_tech: \"Brain Computer Interface\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "emerging Medtech companies"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "Brain Computer Interface"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-173187",
@@ -21029,10 +23380,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a"
+      ],
+      "sectors": [
+        "security",
+        "data",
+        "infra"
+      ],
       "lat": 37.5779,
-      "lng": -122.3478
+      "lng": -122.3478,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "security: \"Advance cyber threat detection and response based on deception technology\" | data: \"SiSense is leading the way to a new era of business intelligence\" | infra: \"Enterprise Infrastructure\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Advance cyber threat detection and response based on deception technology"
+        },
+        {
+          "sector": "data",
+          "quote": "SiSense is leading the way to a new era of business intelligence"
+        },
+        {
+          "sector": "infra",
+          "quote": "Enterprise Infrastructure"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-282488",
@@ -21387,8 +23763,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio",
+        "climate"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 5,
@@ -21441,7 +23824,26 @@
           "cik": "1869617",
           "filer_name": "Overwater Ventures I, L.P.  (CIK 0001869617)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Human Health + Wellness\" | bio: \"breakthrough technology including AI, data science, neuroscience, biotech\" | climate: \"Healthy Environment + Infrastructure\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Human Health + Wellness"
+        },
+        {
+          "sector": "bio",
+          "quote": "breakthrough technology including AI, data science, neuroscience, biotech"
+        },
+        {
+          "sector": "climate",
+          "quote": "Healthy Environment + Infrastructure"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-312941",
@@ -21592,10 +23994,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/04/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.3688,
-      "lng": -122.0363
+      "lng": -122.0363,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Artificial Intelligence, Infrastructure & Deep Technology\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Artificial Intelligence, Infrastructure & Deep Technology"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-163248",
@@ -21618,10 +24035,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/03/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "consumer: \"scalable consumer-facing companies\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "scalable consumer-facing companies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-336547",
@@ -21670,10 +24102,32 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/30/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.4297,
-      "lng": -122.2538
+      "lng": -122.2538,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "bio: \"early-stage biotech and pharma companies\" | therapeutics: \"promising therapeutic innovations\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "early-stage biotech and pharma companies"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "promising therapeutic innovations"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-284853",
@@ -21962,10 +24416,38 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "pre_seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "ai_infra",
+        "security",
+        "fintech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Investing in seed founders using AI to reimagine how the real world works.\" | security: \"Smarter physical security\" | fintech: \"Unified revenue operations\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Investing in seed founders using AI to reimagine how the real world works."
+        },
+        {
+          "sector": "security",
+          "quote": "Smarter physical security"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Unified revenue operations"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-341549",
@@ -21989,7 +24471,11 @@
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "crypto",
+        "fintech",
+        "infra"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 2,
@@ -22015,7 +24501,26 @@
           "cik": "1732961",
           "filer_name": "Permian Capital Fund, LP  (CIK 0001732961)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "crypto: \"The financial system is moving on-chain.\" | fintech: \"Traditional finance is migrating toward that.\" | infra: \"We own the infrastructure it migrates onto.\"",
+      "inference_evidence": [
+        {
+          "sector": "crypto",
+          "quote": "The financial system is moving on-chain."
+        },
+        {
+          "sector": "fintech",
+          "quote": "Traditional finance is migrating toward that."
+        },
+        {
+          "sector": "infra",
+          "quote": "We own the infrastructure it migrates onto."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-329336",
@@ -22064,8 +24569,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "deep_tech",
+        "industrial"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 11,
@@ -22116,7 +24627,22 @@
           "cik": "1647900",
           "filer_name": "Phoenix Venture Partners II LP  (CIK 0001647900)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "deep_tech: \"We focus on advanced materials, novel devices, innovative manufacturing processes, and state-of-the-art tools\" | industrial: \"focusing on the biggest pain points in computing, electronics, transportation, energy, industrial, and life sc\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "We focus on advanced materials, novel devices, innovative manufacturing processes, and state-of-the-art tools"
+        },
+        {
+          "sector": "industrial",
+          "quote": "focusing on the biggest pain points in computing, electronics, transportation, energy, industrial, and life sciences"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-169316",
@@ -22527,8 +25053,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "data",
+        "healthcare"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 2,
@@ -22554,7 +25087,26 @@
           "cik": "1598332",
           "filer_name": "PointGuard Ventures I, L.P.  (CIK 0001598332)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"End-to-end corporate travel management solution\" | data: \"Award-winning predictive analytics software\" | healthcare: \"Mass-deployable, high-performance medical diagnostics technology platform\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "End-to-end corporate travel management solution"
+        },
+        {
+          "sector": "data",
+          "quote": "Award-winning predictive analytics software"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Mass-deployable, high-performance medical diagnostics technology platform"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-301889",
@@ -22818,9 +25370,27 @@
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "bio: \"life science tools\" | therapeutics: \"therapeutics\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "life science tools"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "therapeutics"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-291329",
@@ -22869,10 +25439,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/01/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "consumer"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"building next-generation foundation models, dev tools, middleware\" | consumer: \"consumer technology, games\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "building next-generation foundation models, dev tools, middleware"
+        },
+        {
+          "sector": "consumer",
+          "quote": "consumer technology, games"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-316520",
@@ -23028,10 +25618,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "growth"
+      ],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "fintech: \"We invest in two horizontals (Enterprise IT and B2B AI) and four verticals (InsurTech, FinTech, Healthcare, Pr\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "We invest in two horizontals (Enterprise IT and B2B AI) and four verticals (InsurTech, FinTech, Healthcare, PropTech)."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-294039",
@@ -23106,8 +25712,15 @@
       ],
       "employee_count": null,
       "latest_filing_date": "06/30/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "deep_tech",
+        "bio",
+        "industrial"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 5,
@@ -23160,7 +25773,26 @@
           "cik": "1597373",
           "filer_name": "Quest Venture Partners Fund II, L.P.  (CIK 0001597373)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "deep_tech: \"Backing the builders of deep technology.\" | bio: \"Synthetic Biology\" | industrial: \"Robotics & Automation\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "Backing the builders of deep technology."
+        },
+        {
+          "sector": "bio",
+          "quote": "Synthetic Biology"
+        },
+        {
+          "sector": "industrial",
+          "quote": "Robotics & Automation"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-286038",
@@ -23183,10 +25815,35 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "healthcare",
+        "healthcare",
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"We invest exclusively in these areas Healthcare services\" | healthcare: \"Healthcare technology\" | healthcare: \"Medical devices\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "We invest exclusively in these areas Healthcare services"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Healthcare technology"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Medical devices"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-287484",
@@ -23384,10 +26041,32 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/21/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare",
+        "dev_tools"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Making Healthcare More Humane\" | dev_tools: \"Preserving What\u2019s Human: Our Journey With GPTZero\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Making Healthcare More Humane"
+        },
+        {
+          "sector": "dev_tools",
+          "quote": "Preserving What\u2019s Human: Our Journey With GPTZero"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-338676",
@@ -23567,10 +26246,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/17/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "deep_tech",
+        "bio"
+      ],
       "lat": 37.5779,
-      "lng": -122.3478
+      "lng": -122.3478,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "deep_tech: \"I invest $1\u20132M in seed stage hard tech startups\" | bio: \"moving into bio and hard tech\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "I invest $1\u20132M in seed stage hard tech startups"
+        },
+        {
+          "sector": "bio",
+          "quote": "moving into bio and hard tech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-327416",
@@ -23706,10 +26405,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "dev_tools",
+        "healthcare",
+        "marketplace"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "dev_tools: \"Providing developer tools and cloud infrastructure\" | healthcare: \"Empowering people to understand and improve their heart health\" | marketplace: \"Liquidity for residential real estate.\"",
+      "inference_evidence": [
+        {
+          "sector": "dev_tools",
+          "quote": "Providing developer tools and cloud infrastructure"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Empowering people to understand and improve their heart health"
+        },
+        {
+          "sector": "marketplace",
+          "quote": "Liquidity for residential real estate."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-298223",
@@ -23733,9 +26458,22 @@
       "employee_count": null,
       "latest_filing_date": "03/18/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "fintech"
+      ],
       "lat": 37.3382,
-      "lng": -121.8863
+      "lng": -121.8863,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "fintech: \"Where founders build the future of financial services.\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "Where founders build the future of financial services."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-171114",
@@ -23758,10 +26496,25 @@
       ],
       "employee_count": 18,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.8591,
-      "lng": -122.4853
+      "lng": -122.4853,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Liquidity and Capital for Healthcare Investors, Companies, and Funds\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Liquidity and Capital for Healthcare Investors, Companies, and Funds"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-165308",
@@ -24267,10 +27020,32 @@
       ],
       "employee_count": null,
       "latest_filing_date": "04/03/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "dev_tools"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Our main focus as a firm is investing in software and technology B2B businesses.\" | dev_tools: \"Our portfolio tends to be either product-driven applications, developer tools, and infrastructure stack such a\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Our main focus as a firm is investing in software and technology B2B businesses."
+        },
+        {
+          "sector": "dev_tools",
+          "quote": "Our portfolio tends to be either product-driven applications, developer tools, and infrastructure stack such as data & security."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-336425",
@@ -24673,8 +27448,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.3838,
       "lng": -122.2353,
       "form_d_total_filings": 3,
@@ -24707,7 +27487,18 @@
           "cik": "1813520",
           "filer_name": "Scribble Ventures I, L.P.  (CIK 0001813520)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"We\u2019re focused on AI native companies.\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "We\u2019re focused on AI native companies."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-196511",
@@ -24770,7 +27561,11 @@
       "employee_count": null,
       "latest_filing_date": "02/02/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare",
+        "consumer",
+        "security"
+      ],
       "lat": 37.453,
       "lng": -122.1817,
       "form_d_total_filings": 5,
@@ -24825,7 +27620,26 @@
           "cik": "1504856",
           "filer_name": "Search Fund Partners 5, LP  (CIK 0001504856)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "healthcare: \"Healthcare\" | consumer: \"Consumer Services\" | security: \"Cyber security services\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Healthcare"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Consumer Services"
+        },
+        {
+          "sector": "security",
+          "quote": "Cyber security services"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-288739",
@@ -25115,10 +27929,32 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Founders building the AI-native generation of consumer and enterprise software\" | healthcare: \"across categories like healthcare, infrastructure, marketing, vertical AI\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Founders building the AI-native generation of consumer and enterprise software"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "across categories like healthcare, infrastructure, marketing, vertical AI"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-315201",
@@ -25192,7 +28028,9 @@
       "employee_count": null,
       "latest_filing_date": "02/17/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 2,
@@ -25220,7 +28058,18 @@
           "cik": "1759986",
           "filer_name": "Shangbay Capital II, LLC  (CIK 0001759986)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "healthcare: \"medical device, biotechnology, and healthcare technology\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "medical device, biotechnology, and healthcare technology"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-317447",
@@ -25424,8 +28273,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.2872,
       "lng": -121.95,
       "form_d_total_filings": 3,
@@ -25460,7 +28314,18 @@
           "cik": "1521171",
           "filer_name": "Sigma Prime Partners IX, L.P.  (CIK 0001521171)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"We primarily invest in: Software-as-a-Service\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "We primarily invest in: Software-as-a-Service"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-194512",
@@ -25688,10 +28553,26 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_b",
+        "series_d"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Smith Point Capital invests in mission-critical software where data, AI, and precision applications converge.\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Smith Point Capital invests in mission-critical software where data, AI, and precision applications converge."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-304525",
@@ -25898,10 +28779,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.5072,
-      "lng": -122.2603
+      "lng": -122.2603,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"medical device, diagnostic and healthtech sectors\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "medical device, diagnostic and healthtech sectors"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-307534",
@@ -26474,8 +29370,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a"
+      ],
+      "sectors": [
+        "ai_infra",
+        "security",
+        "healthcare"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 1,
@@ -26494,7 +29396,26 @@
           "cik": "2075101",
           "filer_name": "Standard Capital Ventures Fund I LP  (CIK 0002075101)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"The AI-native Series A firm.\" | security: \"Casco performs autonomous security testing for your web apps, APIs, infrastructure, and AI systems.\" | healthcare: \"AI Clinical Agents for end-to-end care delivery\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "The AI-native Series A firm."
+        },
+        {
+          "sector": "security",
+          "quote": "Casco performs autonomous security testing for your web apps, APIs, infrastructure, and AI systems."
+        },
+        {
+          "sector": "healthcare",
+          "quote": "AI Clinical Agents for end-to-end care delivery"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-288661",
@@ -26560,10 +29481,28 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"B2B software and technology startups\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "B2B software and technology startups"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-311024",
@@ -26613,7 +29552,9 @@
       "employee_count": null,
       "latest_filing_date": "03/11/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "deep_tech"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 1,
@@ -26632,7 +29573,18 @@
           "cik": "2110896",
           "filer_name": "Stellar Ventures Cassiopeia Fund LP  (CIK 0002110896)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "deep_tech: \"leveraging space technology\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "leveraging space technology"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-156747",
@@ -26821,8 +29773,12 @@
       ],
       "employee_count": 7,
       "latest_filing_date": "03/02/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "late"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 25,
@@ -26878,7 +29834,18 @@
           "cik": "1585933",
           "filer_name": "Strategy Capital Investors, L.P.  (CIK 0001585933)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "ai_infra: \"including AI\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "including AI"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-171201",
@@ -26927,10 +29894,25 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/10/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"partnering with select ambitious founding teams in AI\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "partnering with select ambitious founding teams in AI"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-337999",
@@ -26980,9 +29962,27 @@
       "employee_count": null,
       "latest_filing_date": "03/29/2024",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "consumer",
+        "crypto"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "consumer: \"redefining consumer and gaming experiences\" | crypto: \"The leading Web3 studio for scaling consumer crypto.\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "redefining consumer and gaming experiences"
+        },
+        {
+          "sector": "crypto",
+          "quote": "The leading Web3 studio for scaling consumer crypto."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-304847",
@@ -27161,9 +30161,22 @@
       "employee_count": null,
       "latest_filing_date": "03/09/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.3688,
-      "lng": -122.0363
+      "lng": -122.0363,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "healthcare: \"HealthCare\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "HealthCare"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-281898",
@@ -27344,9 +30357,32 @@
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra",
+        "industrial",
+        "security"
+      ],
       "lat": 37.3541,
-      "lng": -121.9552
+      "lng": -121.9552,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "ai_infra: \"Anticipating the Future of AI Agents\" | industrial: \"Sowing the Seeds of the Next Great Industrial Ecosystem\" | security: \"Leader in Cyber-Physical Systems (CPS) Security\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Anticipating the Future of AI Agents"
+        },
+        {
+          "sector": "industrial",
+          "quote": "Sowing the Seeds of the Next Great Industrial Ecosystem"
+        },
+        {
+          "sector": "security",
+          "quote": "Leader in Cyber-Physical Systems (CPS) Security"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-164231",
@@ -27460,8 +30496,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/19/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "bio",
+        "therapeutics"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 2,
@@ -27489,7 +30531,22 @@
           "cik": "1989197",
           "filer_name": "TCG Labs Fund I, LP  (CIK 0001989197)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "bio: \"A New Model for An Integrated Venture- Biotech R&D Ecosystem\" | therapeutics: \"Exclusively Funds, Discovers & Develops Single-Asset Therapies\"",
+      "inference_evidence": [
+        {
+          "sector": "bio",
+          "quote": "A New Model for An Integrated Venture- Biotech R&D Ecosystem"
+        },
+        {
+          "sector": "therapeutics",
+          "quote": "Exclusively Funds, Discovers & Develops Single-Asset Therapies"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162338",
@@ -27576,8 +30633,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/17/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "healthcare",
+        "bio"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 4,
@@ -27621,7 +30683,22 @@
           "cik": "1555119",
           "filer_name": "Telegraph Hill Partners III, L.P.  (CIK 0001555119)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Helping Life Science and Healthcare Companies\" | bio: \"Growth Capital for Life Sciences\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Helping Life Science and Healthcare Companies"
+        },
+        {
+          "sector": "bio",
+          "quote": "Growth Capital for Life Sciences"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-286637",
@@ -27774,9 +30851,27 @@
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra",
+        "healthcare"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"AI Infra/Tools\" | healthcare: \"Healthcare\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI Infra/Tools"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Healthcare"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-285321",
@@ -27935,9 +31030,32 @@
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "ai_infra",
+        "fintech",
+        "healthcare"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"AI/ML for the comms-contested battlefield\" | fintech: \"A credit card for home equity spending\" | healthcare: \"Health benefits from the future\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI/ML for the comms-contested battlefield"
+        },
+        {
+          "sector": "fintech",
+          "quote": "A credit card for home equity spending"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Health benefits from the future"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-282494",
@@ -28102,9 +31220,32 @@
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "enterprise_saas",
+        "consumer",
+        "fintech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "enterprise_saas: \"Enterprise & SaaS\" | consumer: \"Consumer & Marketplace\" | fintech: \"FinTech & InsurTech\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Enterprise & SaaS"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Consumer & Marketplace"
+        },
+        {
+          "sector": "fintech",
+          "quote": "FinTech & InsurTech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-309442",
@@ -28128,9 +31269,32 @@
       "employee_count": null,
       "latest_filing_date": "01/15/2025",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "fintech",
+        "data",
+        "ai_infra"
+      ],
       "lat": 37.453,
-      "lng": -122.1817
+      "lng": -122.1817,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "fintech: \"Thompson Hutton LLC helps build innovative companies in FinTech and InsurTech.\" | data: \"Cape Analytics leverages geospatial imagery, computer vision, and machine learning to instantly and automatica\" | ai_infra: \"Archer is an AI-powered suite for the modern real estate investor, lender, and broker.\"",
+      "inference_evidence": [
+        {
+          "sector": "fintech",
+          "quote": "Thompson Hutton LLC helps build innovative companies in FinTech and InsurTech."
+        },
+        {
+          "sector": "data",
+          "quote": "Cape Analytics leverages geospatial imagery, computer vision, and machine learning to instantly and automatically extract proprietary property data"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "Archer is an AI-powered suite for the modern real estate investor, lender, and broker."
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-326413",
@@ -28153,10 +31317,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "healthcare",
+        "fintech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Box is an online file sharing and cloud content management service\" | healthcare: \"Doximity is the leading digital platform for medical professionals\" | fintech: \"Remitly is a mobile payments service\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Box is an online file sharing and cloud content management service"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Doximity is the leading digital platform for medical professionals"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Remitly is a mobile payments service"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-326501",
@@ -28323,7 +31513,11 @@
       "employee_count": null,
       "latest_filing_date": "03/26/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "enterprise_saas",
+        "fintech",
+        "security"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 3,
@@ -28358,7 +31552,26 @@
           "cik": "1882372",
           "filer_name": "TRANSFORM CAPITAL III, L.P.  (CIK 0001882372)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Our investments are centered around two vital sectors: Enterprise Software and Future of Work\" | fintech: \"Full-stack payment processing platform for businesses\nFinTech\" | security: \"Phishing and Scam Protection for the Internet\nCyberSecurity\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Our investments are centered around two vital sectors: Enterprise Software and Future of Work"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Full-stack payment processing platform for businesses\nFinTech"
+        },
+        {
+          "sector": "security",
+          "quote": "Phishing and Scam Protection for the Internet\nCyberSecurity"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-301360",
@@ -28381,10 +31594,37 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "ai_infra",
+        "security",
+        "fintech"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"Artificial Intelligence\" | security: \"Cyber Security\" | fintech: \"Fintech / Blockchain\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "Artificial Intelligence"
+        },
+        {
+          "sector": "security",
+          "quote": "Cyber Security"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Fintech / Blockchain"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-156262",
@@ -28447,8 +31687,14 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "enterprise_saas",
+        "fintech",
+        "marketplace"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 1,
@@ -28467,7 +31713,26 @@
           "cik": "1646454",
           "filer_name": "Transmedia Capital II, L.P.  (CIK 0001646454)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "enterprise_saas: \"Business Intelligence and SaaS / Enterprise\" | fintech: \"FinTech / Blockchain / NFT\" | marketplace: \"Commerce / Marketplaces\"",
+      "inference_evidence": [
+        {
+          "sector": "enterprise_saas",
+          "quote": "Business Intelligence and SaaS / Enterprise"
+        },
+        {
+          "sector": "fintech",
+          "quote": "FinTech / Blockchain / NFT"
+        },
+        {
+          "sector": "marketplace",
+          "quote": "Commerce / Marketplaces"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162722",
@@ -28887,8 +32152,13 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra",
+        "bio"
+      ],
       "lat": 37.3852,
       "lng": -122.1141,
       "form_d_total_filings": 3,
@@ -28925,7 +32195,22 @@
           "cik": "1898411",
           "filer_name": "TSVC Fund V LP  (CIK 0001898411)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"We backed d-Matrix to power the age of AI inference\" | bio: \"We backed Ginkgo Bioworks\u2019 synthetic bio engine\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "We backed d-Matrix to power the age of AI inference"
+        },
+        {
+          "sector": "bio",
+          "quote": "We backed Ginkgo Bioworks\u2019 synthetic bio engine"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-162711",
@@ -29425,10 +32710,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/13/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed"
+      ],
+      "sectors": [
+        "climate",
+        "healthcare",
+        "fintech"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "climate: \"energy, transportation, and fintech\" | healthcare: \"Health, public safety, and edtech\" | fintech: \"Regulatory & compliance tech, fintech\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "energy, transportation, and fintech"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "Health, public safety, and edtech"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Regulatory & compliance tech, fintech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-298296",
@@ -29777,9 +33088,32 @@
       "employee_count": null,
       "latest_filing_date": "03/20/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "healthcare",
+        "fintech",
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "healthcare: \"AI-driven digital health assistant that helps patients self-diagnose\" | fintech: \"Leading FinTech platform making financial services more accessible\" | consumer: \"Affordable, ultra efficient, small-footprint electric vehicles\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "AI-driven digital health assistant that helps patients self-diagnose"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Leading FinTech platform making financial services more accessible"
+        },
+        {
+          "sector": "consumer",
+          "quote": "Affordable, ultra efficient, small-footprint electric vehicles"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-336798",
@@ -29845,10 +33179,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "growth"
+      ],
+      "sectors": [
+        "consumer",
+        "consumer"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "consumer: \"We are passionate about the consumer space\" | consumer: \"We invest in emerging consumer brands\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "We are passionate about the consumer space"
+        },
+        {
+          "sector": "consumer",
+          "quote": "We invest in emerging consumer brands"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-174737",
@@ -29968,8 +33322,16 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a"
+      ],
+      "sectors": [
+        "healthcare",
+        "fintech",
+        "deep_tech"
+      ],
       "lat": 37.4419,
       "lng": -122.143,
       "form_d_total_filings": 11,
@@ -30026,7 +33388,26 @@
           "cik": "1858803",
           "filer_name": "Vertical Venture Partners Growth Fund II, L.P.  (CIK 0001858803)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"Healthcare\" | fintech: \"Financial Services\" | deep_tech: \"Vertical Deep Tech\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "Healthcare"
+        },
+        {
+          "sector": "fintech",
+          "quote": "Financial Services"
+        },
+        {
+          "sector": "deep_tech",
+          "quote": "Vertical Deep Tech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-311983",
@@ -30075,10 +33456,36 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed",
+        "growth"
+      ],
+      "sectors": [
+        "ai_infra",
+        "healthcare",
+        "industrial"
+      ],
       "lat": 37.7749,
-      "lng": -122.4194
+      "lng": -122.4194,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"artificial intelligence to machine/deep learning\" | healthcare: \"agricultural and digital health technologies\" | industrial: \"robotic automation\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "artificial intelligence to machine/deep learning"
+        },
+        {
+          "sector": "healthcare",
+          "quote": "agricultural and digital health technologies"
+        },
+        {
+          "sector": "industrial",
+          "quote": "robotic automation"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-159868",
@@ -30237,8 +33644,17 @@
       ],
       "employee_count": null,
       "latest_filing_date": "02/25/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "pre_seed",
+        "seed",
+        "series_a",
+        "series_b"
+      ],
+      "sectors": [
+        "climate",
+        "industrial",
+        "ai_infra"
+      ],
       "lat": 37.7749,
       "lng": -122.4194,
       "form_d_total_filings": 4,
@@ -30282,7 +33698,26 @@
           "cik": "1877241",
           "filer_name": "Voyager Partners Fund I, LP  (CIK 0001877241)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "climate: \"Investing in frontier energy, industrial, and climate technology companies\" | industrial: \"We invest in software companies that layer intelligence onto the physical world, optimizing energy systems, lo\" | ai_infra: \"We invest in software companies that layer intelligence onto the physical world\"",
+      "inference_evidence": [
+        {
+          "sector": "climate",
+          "quote": "Investing in frontier energy, industrial, and climate technology companies"
+        },
+        {
+          "sector": "industrial",
+          "quote": "We invest in software companies that layer intelligence onto the physical world, optimizing energy systems, logistics, and manufacturing."
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "We invest in software companies that layer intelligence onto the physical world"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-283804",
@@ -30305,10 +33740,30 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/31/2025",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "deep_tech",
+        "industrial"
+      ],
       "lat": 37.4852,
-      "lng": -122.2364
+      "lng": -122.2364,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "deep_tech: \"The Venture Reality Fund is a deep tech investor\" | industrial: \"Industrial\"",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "The Venture Reality Fund is a deep tech investor"
+        },
+        {
+          "sector": "industrial",
+          "quote": "Industrial"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-315491",
@@ -30491,9 +33946,22 @@
       "employee_count": null,
       "latest_filing_date": "03/21/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "consumer"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "consumer: \"media, entertainment, and sports\"",
+      "inference_evidence": [
+        {
+          "sector": "consumer",
+          "quote": "media, entertainment, and sports"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-316664",
@@ -30737,10 +34205,25 @@
       ],
       "employee_count": 5,
       "latest_filing_date": "01/23/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "seed"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
       "lat": 37.4419,
-      "lng": -122.143
+      "lng": -122.143,
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "healthcare: \"HealthTech\"",
+      "inference_evidence": [
+        {
+          "sector": "healthcare",
+          "quote": "HealthTech"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-161527",
@@ -30765,8 +34248,14 @@
       ],
       "employee_count": 90,
       "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
+      "stages": [
+        "series_a",
+        "growth",
+        "seed"
+      ],
+      "sectors": [
+        "ai_infra"
+      ],
       "lat": 37.563,
       "lng": -122.3255,
       "form_d_total_filings": 2,
@@ -30792,7 +34281,18 @@
           "cik": "2028324",
           "filer_name": "WESTBRIDGE CROSSOVER TRANCHE VI, LLC  (CIK 0002028324)"
         }
-      ]
+      ],
+      "inferred": true,
+      "inference_confidence": 1.0,
+      "inference_basis": "ai_infra: \"AI-Native Infra\"",
+      "inference_evidence": [
+        {
+          "sector": "ai_infra",
+          "quote": "AI-Native Infra"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-285571",
@@ -30855,9 +34355,32 @@
       "employee_count": null,
       "latest_filing_date": "03/27/2026",
       "stages": [],
-      "sectors": [],
+      "sectors": [
+        "security",
+        "cloud",
+        "ai_infra"
+      ],
       "lat": 37.4852,
-      "lng": -122.2364
+      "lng": -122.2364,
+      "inferred": true,
+      "inference_confidence": 0.9,
+      "inference_basis": "security: \"Governance, Risk & Compliance Platform\" | cloud: \"Cloud Security Posture Management\" | ai_infra: \"AI-Powered Customer Support Intelligence\"",
+      "inference_evidence": [
+        {
+          "sector": "security",
+          "quote": "Governance, Risk & Compliance Platform"
+        },
+        {
+          "sector": "cloud",
+          "quote": "Cloud Security Posture Management"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "AI-Powered Customer Support Intelligence"
+        }
+      ],
+      "inference_model": "glm-4.6",
+      "inference_source": "website"
     },
     {
       "id": "sec-161665",
