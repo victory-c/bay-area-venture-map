@@ -4,6 +4,7 @@
     "glm_sectors",
     "glm_thesis",
     "glm_website_tags",
+    "glm_website_thesis",
     "sec_bulk"
   ],
   "firm_count": 675,
@@ -3097,7 +3098,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "3iPartners invests in India's deep tech founders leveraging AI and engineering to solve biological and climate challenges.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-339401",
@@ -3160,7 +3164,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "49 Palms Ventures invests in early stage AI founders.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-160395",
@@ -3297,7 +3304,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "8-bit Capital Management invests in pre-seed and seed AI, cybersecurity, and fintech startups.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-316533",
@@ -3701,7 +3711,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in unlocking capabilities of traditional industries and processes in digital and physical supply chains.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-307729",
@@ -3965,7 +3978,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Acuta Capital Partners invests in healthcare companies improving health through research and innovation.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-309667",
@@ -4031,7 +4047,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in artificial intelligence, tech enabled life sciences, and new industrials.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-305442",
@@ -4361,7 +4380,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in pre-seed and seed healthcare startups.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-335674",
@@ -4420,7 +4442,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Ai Ventures invests in pre-seed and seed healthcare startups.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-290536",
@@ -4467,7 +4492,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Ai Ventures co-founds and invests in pre-seed and seed infrastructure and developer tool companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-298224",
@@ -4544,7 +4572,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Aiim Partners invests in Series B companies driving digital transformation in energy, power, and supply chain.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-312935",
@@ -4595,7 +4626,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Aimtop Advisors invests in seed-stage artificial intelligence, biomedical, and security software companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-322702",
@@ -5187,7 +5221,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Amberstone invests in disruptive and innovative consumer product companies at the growth stage.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-316862",
@@ -5233,7 +5270,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Ambix Venture Management empowers the future of healthcare by investing late-stage in biochemistry-based technologies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-328134",
@@ -5277,7 +5317,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Focuses on deep tech, emerging industries, and life sciences from pre-seed to late stage.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-209511",
@@ -5719,7 +5762,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Global biotech venture capital firm developing novel therapies for patients at Series B.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-334249",
@@ -6097,7 +6143,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in pre-seed and seed cybersecurity, AI infrastructure, and enterprise SaaS companies focused on product-market fit and growth.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-175357",
@@ -6144,7 +6193,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Aspect Management invests in seed and Series A security and consumer startups, backing founders changing cyberdefence and building employee wellness programs.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-160606",
@@ -6448,7 +6500,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Aulis Capital invests in growth-stage healthcare companies driving innovation in medical technology.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-337707",
@@ -6521,7 +6576,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in Series B and C companies securing the age of AI and building the future of global payments.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-304938",
@@ -6608,7 +6666,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests primarily in AI software companies from pre-seed to Series A.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-282525",
@@ -6657,7 +6718,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in deep-tech, autonomous, AI, semiconductors, and business model innovations in marketplaces, fintech, and SaaS from seed to series C.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-336695",
@@ -6730,7 +6794,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Av Capital invests in growth-stage deep tech and defense, synchronizing with DoD priorities to fund essential systems.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-285846",
@@ -6885,7 +6952,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Axevil Capital invests in leaders across AI, fintech, aerospace, and defence.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-331811",
@@ -6924,7 +6994,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Axial Partners invests in ClimateTech, energy transition, and artificial intelligence.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-314488",
@@ -7192,7 +7265,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Base Venture Management invests in seed and pre-seed modern consumer and enterprise companies as generalists.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-288914",
@@ -7480,7 +7556,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in AI-native consumer wellness and sports companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-314347",
@@ -7522,7 +7601,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "BTV leads rounds in pre-seed and seed-stage fintech companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-341101",
@@ -7634,7 +7716,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in fintech, enterprise SaaS, and healthcare, leveraging Silicon Valley teams for technical sectors like semiconductors and cleantech.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-160352",
@@ -7788,7 +7873,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Better Ventures Central invests in pre-seed and seed companies building sustainable industry, improving human health, and applying AI for SMBs.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-298473",
@@ -7840,7 +7928,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Backs global B2B technology companies driving leapfrog shifts in enterprise automation and AI infrastructure from seed to late stage.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-322319",
@@ -8422,7 +8513,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Brave Capital invests in Series B deep tech, AI infrastructure, and defense for national security and energy.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-286227",
@@ -8468,7 +8562,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Breakout Management invests in seed-stage science-driven technology, including biotech and precision therapies.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-292884",
@@ -8609,7 +8706,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Bsf II Gp, LLC funds seed-stage startups in AI infrastructure, biotechnology, and blockchain.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-308885",
@@ -8655,7 +8755,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Buckley Ventures invests in seed-stage consumer and deep tech companies focused on internet, software, and frontier technology.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-288444",
@@ -8807,7 +8910,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in early-stage AI startups applying Blitzscaling principles across infrastructure, marketplaces, and consumer agents.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-337464",
@@ -8913,7 +9019,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in deep tech, defense, and industrial sectors like modular nuclear reactors and efficient lumber mills from pre-seed to series B.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-168532",
@@ -9083,7 +9192,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Carbide Ventures invests in pre-seed through Series A B2B companies selling to large enterprises.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-165915",
@@ -9282,7 +9394,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Castle Creek Launchpad backs fintech built for community banks.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-334355",
@@ -9596,7 +9711,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in pre-seed and seed AI infrastructure companies building AI agents for customer experience.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-328891",
@@ -9661,7 +9779,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Cherryrock Capital invests in Series A AI infrastructure companies like Coactive AI.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-301595",
@@ -9832,7 +9953,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed and pre-seed health tech and biology companies focused on preventative, personalized, and regenerative care.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162803",
@@ -9912,7 +10036,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Seed-stage firm investing in frontier tech, AI, IoT, 5G, and big data.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-290751",
@@ -9958,7 +10085,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in software companies driving disruptions in IoT, big data, and security from seed to late stage.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-322367",
@@ -10194,7 +10324,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in technology for carbon reduction, copper and aluminum manufacturing, and computational genomics for microbiomes.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-324626",
@@ -10273,7 +10406,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in pre-seed and seed AI-native, Software 3.0 companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-334542",
@@ -10324,7 +10460,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Coreline Management invests in seed-stage AI infrastructure, enterprise SaaS, and fintech focused on automation and cloud platforms.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-164808",
@@ -10797,7 +10936,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed-stage companies operating in enterprise SaaS.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162705",
@@ -11116,7 +11258,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in early-stage life science and growth stage healthcare companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-167441",
@@ -11695,7 +11840,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in early-stage health technology companies integrating AI into diagnostics and bio.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-300549",
@@ -11744,7 +11892,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in digital therapeutics and data-driven solutions driving change across healthcare and life sciences.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-242788",
@@ -12035,7 +12186,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in precision neuroscience across bio sectors from Series A to Series D.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-313994",
@@ -12131,7 +12285,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in growth-stage deep tech, security, and industrial companies with active defense, fusion power, and cooling technologies.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-300750",
@@ -12301,7 +12458,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Seed investor focused on AI, robotics, automation, crypto, blockchain, healthcare, and biotech.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-320610",
@@ -12525,7 +12685,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "E12 Venture Capital invests in seed-stage climate tech and health tech companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-319474",
@@ -12628,7 +12791,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Eastlink Capital Management invests in data and AI infrastructure opportunities.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-255789",
@@ -13059,7 +13225,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Elefund invests in fintech, AI, and enterprise across seed, series A, and growth stages.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-161547",
@@ -13344,7 +13513,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Seed and Series A firm investing in deep tech, AI, fintech, infrastructure, and logistics.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-338669",
@@ -13683,7 +13855,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Fellows Fund Management backs builders of intelligence defining frontier technology companies at the seed stage.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-318242",
@@ -13917,7 +14092,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in AI infrastructure, fintech, and security from seed to late stage.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-333277",
@@ -14063,7 +14241,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "First Spark Ventures is a deep tech fund focusing on advanced compute, digital biology, and biotech from pre-seed to series A.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-160694",
@@ -14108,7 +14289,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Fisher Lynch Capital invests in healthcare and industrials.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-299843",
@@ -14866,7 +15050,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Fundamental Capital invests in growth-stage businesses that touch the consumer.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-166518",
@@ -15205,7 +15392,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Fyrfly invests in startups building competitive advantage through proprietary data, intelligence, and data networked platforms.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-334985",
@@ -15290,7 +15480,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "G Vision Capital invests in seed-stage AI infrastructure companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-288490",
@@ -15411,7 +15604,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "General Inception is a deep tech venture studio focused on seed-stage investments.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-339177",
@@ -15528,7 +15724,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Geodesic invests in early-stage deep tech, AI/ML, enterprise infrastructure, and cybersecurity from Series B to growth.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-340205",
@@ -15623,7 +15822,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Gilmartin Capital invests in medical device, life science tool, diagnostic, and digital health sectors.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-334617",
@@ -15838,7 +16040,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in consumer, enterprise SaaS, and gaming companies like Blank Street, Air, and Funcraft.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-172576",
@@ -15982,7 +16187,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Grail Partners invests in growth and late-stage financial technology companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162963",
@@ -16034,7 +16242,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed and Series A startups in cyber security, artificial intelligence, machine learning, and financial technology.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-281412",
@@ -16101,7 +16312,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Grdnt LLC actively invests in every layer of AI infrastructure at the seed stage.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-133184",
@@ -16321,7 +16535,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in growth-stage vertical SaaS, tech-enabled services, and AI-powered cybersecurity awareness training platforms.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-316982",
@@ -16460,7 +16677,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Seed investor in AI infrastructure and fintech, focusing on deep technology and consumer behavior to build home equity rails.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-335031",
@@ -16698,7 +16918,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "This firm invests in infrastructure.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-289730",
@@ -16773,7 +16996,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Healthier Capital partners with technology-powered healthcare innovators building generative AI infrastructure and next-generation discovery platforms.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-191513",
@@ -16988,7 +17214,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in emerging enterprise and infrastructure software companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-284959",
@@ -17567,7 +17796,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Icon Management Associates IV, LLC invests in seed and Series B enterprise, data management, and cybersecurity companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-164412",
@@ -17619,7 +17851,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Icon Management Associates V invests in seed and Series B cybersecurity, data management, and digital health companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-286062",
@@ -17697,7 +17932,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Icon Management Associates VI, LLC invests in seed and Series B enterprise, data management, and cybersecurity companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-313640",
@@ -17766,7 +18004,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Icon Management Associates VII invests in seed to Series B enterprise, data management, and cybersecurity companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162824",
@@ -17808,7 +18049,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Thought leaders finding AI infrastructure rocketships at pre-seed and seed stages.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-161594",
@@ -17970,7 +18214,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Informed Ventures invests in digital health, fintech, and vertical AI from seed to growth.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-170329",
@@ -18218,7 +18465,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Innovius Capital invests in growth-stage AI infrastructure and healthcare companies leveraging domain-specific workflows and automation.",
+      "thesis_confidence": 0.8,
+      "thesis_source": "website"
     },
     {
       "id": "sec-315207",
@@ -18270,7 +18520,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Inspiration Venture Partners backs seed-stage fintech, consumer, and enterprise SaaS startups focused on financial wellness, social media tools, and workforce intelligence.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-165005",
@@ -19055,7 +19308,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Katalyst Ventures invests seed capital in applied AI, autonomous logistics, digital health, and enterprise SaaS.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-328933",
@@ -19146,7 +19402,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Kuos Investment II LLC invests in consumer tech and AI-enabled companies from seed to series B.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-317924",
@@ -19479,7 +19738,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Backed by European industrial interests, Leitmotif focuses on late-stage decarbonization and hard tech.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-168121",
@@ -19652,7 +19914,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in artificial intelligence, frontier mental health technologies, and psychedelic medicine.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-305376",
@@ -19846,7 +20111,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "This seed-stage bio firm funds companies getting plausible drug candidates into patients, including those that have IPO'd.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-161916",
@@ -20027,7 +20295,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "A premier healthcare investment platform targeting next-generation R&D services and critical supply chain assets.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-301792",
@@ -20234,7 +20505,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mango Capital provides seed stage venture capital for enterprise software, agent infrastructure, intelligent applications, and network security.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-319666",
@@ -20541,7 +20815,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mbc Fii Management invests in bio ventures, leveraging state-of-the-art facilities from MBC BioLabs.",
+      "thesis_confidence": 0.7,
+      "thesis_source": "website"
     },
     {
       "id": "sec-115060",
@@ -20818,7 +21095,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mercurius Media Capital partners with ambitious founders building standout consumer, marketplace, and healthcare brands from Series A to growth.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-161233",
@@ -21075,7 +21355,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mhs Capital invests in seed and Series A enterprise SaaS, marketplace, and consumer companies.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-163096",
@@ -21127,7 +21410,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mhs Capital invests in seed and Series A enterprise SaaS, marketplace, and consumer companies.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-291128",
@@ -21214,7 +21500,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in pre-seed through Series B cyber security and enterprise software companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-315549",
@@ -21260,7 +21549,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mischief Capital Management invests in seed-stage infrastructure, security, and healthcare companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-327084",
@@ -21349,7 +21641,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "A global deep tech venture capital firm investing in AI infrastructure and bioconvergence innovations.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-163182",
@@ -21493,7 +21788,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Monograph Capital funds innovative life sciences companies focused on breakthrough therapeutics and diagnostics from seed to series C.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-164391",
@@ -21593,7 +21891,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Montage Capital invests in growth-stage enterprise SaaS, consumer, and healthcare companies leveraging virtual environments, fitness apps, and science-based weight loss programs.",
+      "thesis_confidence": 0.8,
+      "thesis_source": "website"
     },
     {
       "id": "sec-169560",
@@ -21836,7 +22137,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mosaik Partners invests in Series B enterprise financial technology and software-based security for payments, identity, and digital assets.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-288270",
@@ -21877,7 +22181,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Seed investor for medical technology entrepreneurs.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-333816",
@@ -21987,7 +22294,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Mvp Ventures invests in seed and growth companies building aerospace, defense, and enterprise AI infrastructure.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-325591",
@@ -22052,7 +22362,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Nanodimension invests in disruptive technologies across the life, physical, and data sciences.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162019",
@@ -22101,7 +22414,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "National Venture Development invests in healthcare innovation, health information technology, and connected device security.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-317758",
@@ -22350,7 +22666,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Next Horizon Capital invests in enterprise SaaS and business services.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-156640",
@@ -22406,7 +22725,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Next Legacy Management invests primarily in enterprise, consumer, and fintech sectors.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-314346",
@@ -22599,7 +22921,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Seed investor in healthcare, consumer, and gaming targeting the $8.5 trillion wellness & wellbeing market.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-173287",
@@ -22646,7 +22971,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed and growth stages for space technology companies and social and mobile gaming.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-163168",
@@ -22749,7 +23077,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in security, AI infrastructure, and consumer companies from seed to Series E.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-333205",
@@ -22889,7 +23220,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed and Series A emerging medtech companies and brain computer interface.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-173187",
@@ -23388,7 +23722,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Opus Capital Group invests in Series A security, data, and enterprise infrastructure companies.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-282488",
@@ -23823,7 +24160,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Overwater Ventures invests in pre-seed and seed companies applying breakthrough technology like AI and biotech to human health and the environment.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-312941",
@@ -23992,7 +24332,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Growth-stage investor focused on artificial intelligence, infrastructure, and deep technology.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-163248",
@@ -24033,7 +24376,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in growth-stage, scalable consumer-facing companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-336547",
@@ -24107,7 +24453,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Pandect Bioventures invests in early-stage biotech and pharma companies developing promising therapeutic innovations.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-284853",
@@ -24427,7 +24776,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed founders using AI to reimagine real-world operations, security, and revenue.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-341549",
@@ -24500,7 +24852,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Permian Capital invests in the on-chain infrastructure that traditional finance is migrating onto.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-329336",
@@ -24622,7 +24977,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Phoenix Venture Partners funds seed and Series A deep tech startups solving computing, energy, and industrial pain points through advanced materials and manufacturing.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-169316",
@@ -25086,7 +25444,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in Series A and B enterprise SaaS, data, and healthcare companies building predictive analytics, travel management, and diagnostics platforms.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-301889",
@@ -25370,7 +25731,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Primer Management invests in life science tools and therapeutics.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-291329",
@@ -25442,7 +25806,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Seed investor in next-generation foundation models, dev tools, middleware, consumer technology, and games.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-316520",
@@ -25617,7 +25984,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Pruven invests in seed and growth-stage B2B AI, Enterprise IT, InsurTech, FinTech, Healthcare, and PropTech.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-294039",
@@ -25772,7 +26142,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Quest Venture Partners backs builders of deep technology, synthetic biology, and robotics at the pre-seed and seed stages.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-286038",
@@ -25813,7 +26186,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Questa Capital invests exclusively in growth-stage healthcare services companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-287484",
@@ -26036,7 +26412,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in pre-seed through Series A healthcare and dev_tools focused on preserving what is human.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-338676",
@@ -26239,7 +26618,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests $1\u20132M in seed stage hard tech and bio startups.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-327416",
@@ -26404,7 +26786,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Resolute.vc invests in pre-seed and seed companies building developer tools, healthcare solutions, and marketplaces.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-298223",
@@ -26443,7 +26828,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Restive backs founders building the future of financial services.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-171114",
@@ -26484,7 +26872,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Revelation Capital Management provides liquidity and capital for growth-stage healthcare companies and funds.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-165308",
@@ -27015,7 +27406,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "S28 Capital invests in B2B software, focusing on product-driven applications, developer tools, and infrastructure like data and security from seed to Series B.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-336425",
@@ -27468,7 +27862,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Scribble Ventures invests in pre-seed and seed AI infrastructure companies focused on AI native businesses.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-196511",
@@ -27609,7 +28006,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in healthcare, consumer services, and cyber security services.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-288739",
@@ -27924,7 +28324,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in founders building AI-native software across healthcare, infrastructure, marketing, and vertical AI from pre-seed to Series A.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-315201",
@@ -28039,7 +28442,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Shangbay Capital invests in medical device, biotechnology, and healthcare technology companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-317447",
@@ -28295,7 +28701,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Sigma Prime Ventures invests in seed and Series A enterprise SaaS companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-194512",
@@ -28542,7 +28951,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Smith Point Capital invests in mission-critical software where data, AI, and precision applications converge.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-304525",
@@ -28767,7 +29179,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Sonder Capital invests in seed-stage medical device, diagnostic, and healthtech companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-307534",
@@ -29385,7 +29800,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "The AI-native Series A firm investing in security, healthcare, and AI infrastructure.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-288661",
@@ -29472,7 +29890,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in B2B software and technology startups from pre-seed through Series B.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-311024",
@@ -29554,7 +29975,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Stellar Ventures invests in deep tech by leveraging space technology.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-156747",
@@ -29815,7 +30239,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Strategy Capital invests in late-stage AI infrastructure.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-171201",
@@ -29882,7 +30309,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Striker Management partners with select ambitious founding teams in artificial intelligence infrastructure at the pre-seed stage.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-337999",
@@ -29952,7 +30382,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "The leading Web3 studio for scaling consumer crypto and redefining consumer and gaming experiences.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-304847",
@@ -30146,7 +30579,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Sv Tech Ventures invests in healthcare.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-281898",
@@ -30352,7 +30788,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in AI agents, industrial ecosystems, and cyber-physical systems security.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-164231",
@@ -30516,7 +30955,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Tcg Labs exclusively funds, discovers, and develops single-asset therapies in an integrated biotech R&D ecosystem.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162338",
@@ -30668,7 +31110,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Telegraph Hill Partners provides growth capital for life science and healthcare companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-286637",
@@ -30841,7 +31286,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "TGF Management Company invests in AI infrastructure, tools, and healthcare.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-285321",
@@ -31025,7 +31473,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in AI for defense, fintech for home equity, and future health benefits.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-282494",
@@ -31215,7 +31666,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Think+ Ventures invests in enterprise, SaaS, consumer, marketplace, fintech, and insurtech companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-309442",
@@ -31264,7 +31718,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Thompson Hutton builds innovative companies in FinTech and InsurTech leveraging AI and data.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-326413",
@@ -31316,7 +31773,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in Series A and B enterprise SaaS, healthcare, and fintech companies like Box, Doximity, and Remitly.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-326501",
@@ -31541,7 +32001,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Transform Capital invests in enterprise software, future of work, fintech, and cybersecurity.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-301360",
@@ -31594,7 +32057,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed to Series B startups focused on artificial intelligence, cyber security, and fintech or blockchain.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-156262",
@@ -31702,7 +32168,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Transmedia Capital invests in seed-stage enterprise SaaS, fintech, and marketplace companies.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162722",
@@ -32180,7 +32649,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Tsvc backs seed-stage AI inference and synthetic biology infrastructure.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-162711",
@@ -32709,7 +33181,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in pre-seed and seed startups across climate, healthcare, fintech, and regulatory tech.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-298296",
@@ -33085,7 +33560,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in AI-driven healthcare, accessible fintech, and efficient electric vehicles.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-336798",
@@ -33169,7 +33647,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Verity Venture Partners invests in growth-stage consumer companies, driven by a passion for the consumer space.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-174737",
@@ -33374,7 +33855,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Vertical Venture Partners invests in pre-seed through Series A startups across healthcare, financial services, and vertical deep tech.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-311983",
@@ -33452,7 +33936,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Invests in seed and growth stage companies applying artificial intelligence, machine learning, and robotic automation to healthcare and industrial sectors.",
+      "thesis_confidence": 0.9,
+      "thesis_source": "website"
     },
     {
       "id": "sec-159868",
@@ -33684,7 +34171,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Voyager Partners invests in frontier energy, industrial, and climate technology companies that layer software intelligence onto the physical world.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-283804",
@@ -33730,7 +34220,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "The Venture Reality Fund is a deep tech investor focused on industrial sectors at the seed stage.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-315491",
@@ -33928,7 +34421,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Waverley Capital invests in media, entertainment, and sports.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-316664",
@@ -34192,7 +34688,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Westback Equity Management invests in seed-stage HealthTech startups.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-161527",
@@ -34261,7 +34760,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Westbridge Capital invests in AI-native infrastructure from seed to growth.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-285571",
@@ -34349,7 +34851,10 @@
         }
       ],
       "inference_model": "glm-4.6",
-      "inference_source": "website"
+      "inference_source": "website",
+      "inferred_thesis": "Westwave Capital invests in governance, risk, compliance, cloud security, and AI-powered customer support intelligence.",
+      "thesis_confidence": 1.0,
+      "thesis_source": "website"
     },
     {
       "id": "sec-161665",

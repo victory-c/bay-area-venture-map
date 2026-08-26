@@ -87,12 +87,15 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_OUT = REPO_ROOT / "data" / "firms.json"
 SITE_OUT = REPO_ROOT / "site" / "firms.json"
 CACHE = REPO_ROOT / "data" / ".glm-website-tag-cache-v2.json"
+THESIS_CACHE = REPO_ROOT / "data" / ".glm-website-thesis-cache.json"
 
 BASE = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
 MODEL = "glm-4.6"
 THRESHOLD = 0.7      # min self-confidence to merge
 MAX_SECTORS = 3
 CONCURRENCY = 2      # Zhipu rate cap trips above this
+THESIS_THRESHOLD = 0.6   # min self-confidence to merge a one-line thesis
+                         # (same gate glm_enrich uses for the parametric pass)
 BACKOFF = [8, 25, 60, 90]
 
 # Investment-thesis content lives on more paths than partner bios do, so
@@ -124,6 +127,27 @@ Rules:
 
 Return ONLY JSON (no fences):
 {{"sectors":[{{"sector":"<one allowed sector>","quote":"<verbatim quote naming THAT sector>"}}],"stages":[...],"stage_evidence":"<verbatim quote about stage, or empty>","confidence":0.0-1.0}}"""
+
+
+THESIS_PROMPT = """Write a ONE-sentence investment thesis for this venture firm, for a founder deciding whether to pitch it.
+
+Firm: {name}
+Established focus — sectors: {sectors}, stages: {stages}
+
+VERBATIM quotes taken from the firm's own website:
+{quotes}
+
+Rules:
+- ONE sentence, <= 25 words, written for a founder skimming a list of firms.
+- Ground it in the quotes above. They are the only thing known about this firm.
+- Lead with what distinguishes it — a technical focus, a stage specialty, a market — if the quotes support one.
+- Do NOT invent portfolio companies, fund sizes, named people, geographies or claims the quotes do not support.
+- Write terms in normal prose casing and correct obvious misspellings when quoting a term ("ARTIFICIAL INTELLEGENCE" -> "artificial intelligence"); a founder reads this in a list, so it must not look like scraped text.
+- If the quotes are too thin to say anything specific, write a plain factual sentence from the sectors and stages, and set confidence below 0.6.
+- confidence 0-1: how sure you are this sentence is accurate for THIS firm given ONLY these quotes.
+
+Return ONLY JSON (no fences):
+{{"thesis":"...","confidence":0.0-1.0}}"""
 
 
 def _parse(content: str) -> dict | None:
@@ -218,6 +242,7 @@ class WebsiteTagger:
         self._key = key
         self._cache_path = cache_path
         self._cache = self._load(cache_path)
+        self._thesis_cache = self._load(THESIS_CACHE)
         self._lock = threading.Lock()
         self._host_last: dict[str, float] = {}
         self._host_text: dict[str, tuple[list[str], str]] = {}
@@ -236,9 +261,11 @@ class WebsiteTagger:
 
     def save(self) -> None:
         with self._lock:
-            tmp = self._cache_path.with_suffix(".tmp")
-            tmp.write_text(json.dumps(self._cache))
-            tmp.replace(self._cache_path)
+            for cache, path in ((self._cache, self._cache_path),
+                                (self._thesis_cache, THESIS_CACHE)):
+                tmp = path.with_suffix(".tmp")
+                tmp.write_text(json.dumps(cache))
+                tmp.replace(path)
 
     # ----- fetching ------------------------------------------------------
 
@@ -374,6 +401,35 @@ class WebsiteTagger:
             self._cache[fid] = res
         return res
 
+    def thesis(self, firm: dict) -> dict:
+        """One-line thesis for an already-tagged firm, grounded on the quotes
+        this module already verified against that firm's own pages.
+
+        Deliberately NOT the parametric prompt glm_enrich uses: for these firms
+        the model had no usable knowledge in the first place — that is why they
+        fell through to the website pass — so asking it to recall a thesis would
+        invite exactly the invention the sector gate was built to stop.
+        """
+        fid = firm["id"]
+        with self._lock:
+            hit = self._thesis_cache.get(fid)
+        if hit is not None and "error" not in hit:
+            return hit
+
+        quotes = [f'- "{v["quote"]}"' for v in (firm.get("inference_evidence") or [])]
+        if not quotes:
+            res = {"error": "no_evidence_quotes"}
+        else:
+            res = self._chat(THESIS_PROMPT.format(
+                name=firm["name"],
+                sectors=", ".join(firm.get("sectors") or []) or "unknown",
+                stages=", ".join(firm.get("stages") or []) or "unknown",
+                quotes="\n".join(quotes),
+            ))
+        with self._lock:
+            self._thesis_cache[fid] = res
+        return res
+
     def close(self) -> None:
         self._page_client.close()
 
@@ -399,6 +455,58 @@ def candidates(firms: list[dict]) -> list[dict]:
         and f.get("website")
         and _usable_site(f["website"].strip().lower())
     ]
+
+
+def thesis_targets(firms: list[dict]) -> list[dict]:
+    """Firms this module tagged that still have no one-line thesis.
+
+    The tagging pass made 172 firms findable but gave a founder nothing to
+    judge them by. In persona testing that showed up directly: once a search
+    returned 18 firms instead of 5, "thesis in my sector" went from 28/45
+    trials to 35/45 — coverage turned into a ranking problem.
+    """
+    return [
+        f for f in firms
+        if f.get("inference_source") == "website"
+        and f.get("sectors")
+        # A generalist-only firm yields "invests across sectors", which tells a
+        # founder nothing they cannot already see from the tag. The pilot
+        # produced exactly that for Acrew ("invests across sectors with lived
+        # context"). Four firms; skipping them beats shipping filler.
+        and f.get("sectors") != ["generalist"]
+        and not f.get("inferred_thesis")
+    ]
+
+
+def merge_thesis(firms: list[dict], tagger: WebsiteTagger) -> dict[str, int]:
+    """Apply cached theses. Returns a breakdown of what happened."""
+    stats = {"attempted": 0, "merged": 0, "low_confidence": 0,
+             "empty": 0, "too_long": 0, "errors": 0}
+    for f in thesis_targets(firms):
+        res = tagger._thesis_cache.get(f["id"])
+        if res is None:
+            continue
+        stats["attempted"] += 1
+        if "error" in res:
+            stats["errors"] += 1
+            continue
+        text = (res.get("thesis") or "").strip()
+        if not text:
+            stats["empty"] += 1
+            continue
+        # The prompt asks for one sentence under 25 words; a long answer means
+        # it ignored the format and is probably padding with invention.
+        if len(text.split()) > 40:
+            stats["too_long"] += 1
+            continue
+        if (res.get("confidence") or 0) < THESIS_THRESHOLD:
+            stats["low_confidence"] += 1
+            continue
+        f["inferred_thesis"] = text
+        f["thesis_confidence"] = res.get("confidence")
+        f["thesis_source"] = "website"
+        stats["merged"] += 1
+    return stats
 
 
 def merge(firms: list[dict], tagger: WebsiteTagger) -> dict[str, int]:
@@ -479,12 +587,16 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--limit", type=int, help="classify only the first N candidates (pilot)")
-    ap.add_argument("--dry-run", action="store_true", help="classify but do not write firms.json")
+    ap.add_argument("--limit", type=int, help="process only the first N candidates (pilot)")
+    ap.add_argument("--dry-run", action="store_true", help="process but do not write firms.json")
+    ap.add_argument("--thesis", action="store_true",
+                    help="write one-line theses for firms this module already tagged")
     args = ap.parse_args()
 
     payload = json.loads(DATA_OUT.read_text())
     firms = payload["firms"]
+    if args.thesis:
+        return _run_thesis(payload, firms, args)
     pool = candidates(firms)
     if args.limit:
         pool = pool[: args.limit]
@@ -522,6 +634,45 @@ def main() -> None:
     DATA_OUT.write_text(json.dumps(payload, indent=2))
     SITE_OUT.write_text(DATA_OUT.read_text())
     log.info("wrote firms.json — %d/%d firms now carry sector tags", tagged, len(firms))
+
+
+def _run_thesis(payload: dict, firms: list[dict], args) -> None:
+    pool = thesis_targets(firms)
+    if args.limit:
+        pool = pool[: args.limit]
+    log.info("thesis targets: %d website-tagged firms with no thesis yet", len(pool))
+
+    tagger = WebsiteTagger()
+    try:
+        done = 0
+        with ThreadPoolExecutor(max_workers=CONCURRENCY) as ex:
+            futs = {ex.submit(tagger.thesis, f): f for f in pool}
+            for fut in as_completed(futs):
+                try:
+                    fut.result()
+                except Exception as e:  # noqa: BLE001 — one firm must not kill the run
+                    log.warning("  %s failed: %s", futs[fut]["name"], e)
+                done += 1
+                if done % 25 == 0:
+                    tagger.save()
+                    log.info("  %d/%d done", done, len(pool))
+        tagger.save()
+    finally:
+        tagger.close()
+
+    stats = merge_thesis(firms, tagger)
+    log.info("\nresults: %s", json.dumps(stats, indent=2))
+    if args.dry_run:
+        log.info("dry run — firms.json not written")
+        return
+
+    enr = set(payload.get("generated_with_enrichers", []))
+    enr.add("glm_website_thesis")
+    payload["generated_with_enrichers"] = sorted(enr)
+    DATA_OUT.write_text(json.dumps(payload, indent=2))
+    SITE_OUT.write_text(DATA_OUT.read_text())
+    have = sum(1 for f in firms if f.get("inferred_thesis"))
+    log.info("wrote firms.json — %d firms now carry a one-line thesis", have)
 
 
 if __name__ == "__main__":
