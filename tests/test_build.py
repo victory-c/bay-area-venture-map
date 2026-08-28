@@ -227,6 +227,9 @@ def _previous_payload() -> dict:
                 "inferred": True,
                 "inference_confidence": 0.9,
                 "inferred_thesis": "Backs seed fintech founders.",
+                "inference_source": "https://acme.vc/about",
+                "inference_evidence": "Homepage: 'we back seed fintech'.",
+                "thesis_source": "https://acme.vc/about",
                 "form_d_total_filings": 12,
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Acme",
                 "aum_usd": 1_000,
@@ -306,3 +309,18 @@ def test_no_preserve_leaves_the_payload_exactly_as_built(monkeypatch, tmp_path) 
     out = build_mod.build([], only_firm=None, preserve=False)
     assert "sectors" not in out["firms"][0]
     assert out["generated_with_enrichers"] == []
+
+
+def test_carry_forward_restores_website_tag_provenance() -> None:
+    """A bare `--enrich sec_bulk` rebuild must not drop the provenance fields.
+
+    These are written only by scraper.glm_website_tag and live only in
+    firms.json, so nothing else can regenerate them. They were missing from
+    PRESERVED_FIELDS, and a 2026-08-28 refresh wiped provenance for 172
+    website-tagged firms and 168 theses while check_refresh still passed.
+    """
+    fresh = [{"id": "sec-12345", "sec_crd": "12345", "name": "Acme Ventures"}]
+    build_mod.carry_forward_enrichment(fresh, _previous_payload())
+    assert fresh[0]["inference_source"] == "https://acme.vc/about"
+    assert fresh[0]["inference_evidence"] == "Homepage: 'we back seed fintech'."
+    assert fresh[0]["thesis_source"] == "https://acme.vc/about"

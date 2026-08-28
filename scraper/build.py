@@ -85,6 +85,11 @@ PRESERVED_FIELDS = (
     # scraper.glm_enrich — sectors/stages tagging + one-line thesis
     "inferred", "inference_confidence", "inference_basis", "inference_model",
     "inferred_thesis", "thesis_confidence",
+    # scraper.glm_website_tag — provenance for the website-sourced tags and
+    # theses. Written only by that pass and stored only in firms.json, so a
+    # partial rebuild cannot regenerate them; without carry-forward a bare
+    # `--enrich sec_bulk` silently drops all three.
+    "inference_source", "inference_evidence", "thesis_source",
     # --enrich form_d
     *FORM_D_FIELDS,
     # --enrich wikipedia
