@@ -84,7 +84,10 @@ jobs:
           # nothing human is ever overwritten.
           git push --force -u origin "$branch"
 
-          if gh pr view "$branch" --json number >/dev/null 2>&1; then
+          # --state open matters: `gh pr view <branch>` matches a PR in ANY
+          # state, so a previously closed PR on this branch name made the job
+          # skip creating a new one and strand the branch with no PR.
+          if [ -n "$(gh pr list --head "$branch" --state open --json number --jq '.[].number')" ]; then
             echo "PR already open for $branch — pushed an update to it"
             exit 0
           fi
