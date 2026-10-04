@@ -14,6 +14,36 @@ from scraper.llm_enrich import EnrichmentResult
 from scraper.website_enrich import _html_to_text, _is_scrapable_url
 
 
+def test_website_gemini_call_uses_runtime_access_token(monkeypatch) -> None:
+    captured = {}
+
+    class _Response:
+        status_code = 200
+
+        def json(self):
+            return {"candidates": [], "usageMetadata": {}}
+
+    class _GeminiClient:
+        def post(self, url, *, json, headers):
+            captured["headers"] = headers
+            return _Response()
+
+    from scraper.website_enrich import WebsiteEnricher
+
+    enricher = WebsiteEnricher.__new__(WebsiteEnricher)
+    enricher._access_token = "sentinel-oauth-token"
+    enricher._token_fetched_at = 0.0
+    enricher._region = "test-region"
+    enricher._project = "test-project"
+    enricher._model = "test-model"
+    enricher._gemini_client = _GeminiClient()  # type: ignore[assignment]
+    enricher._refresh_token_if_needed = lambda: None
+
+    enricher._call_gemini("test prompt")
+
+    assert captured["headers"]["Authorization"] == "Bearer sentinel-oauth-token"
+
+
 def test_is_scrapable_url_blocks_socials() -> None:
     assert _is_scrapable_url("https://www.felicis.com") is True
     assert _is_scrapable_url("https://www.facebook.com/people/Alameda/100") is False

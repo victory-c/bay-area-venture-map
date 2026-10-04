@@ -5,6 +5,7 @@ verified manually via the spot-test runs in development.
 
 from __future__ import annotations
 
+import pathlib
 from scraper.llm_enrich import (
     EnrichmentResult,
     SECTORS,
@@ -16,6 +17,20 @@ from scraper.llm_enrich import (
     _parse_response,
     merge_into_firm,
 )
+
+
+def test_vertex_headers_use_runtime_access_token(monkeypatch, tmp_path: pathlib.Path) -> None:
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    monkeypatch.setattr("scraper.llm_enrich._get_access_token", lambda: "sentinel-oauth-token")
+
+    from scraper.llm_enrich import GeminiEnricher
+
+    enricher = GeminiEnricher(cache_path=tmp_path / "cache.json")
+    assert enricher._get_headers() == {
+        "Authorization": "Bearer sentinel-oauth-token",
+        "Content-Type": "application/json",
+    }
+    enricher._client.close()
 
 
 def test_extract_json_from_markdown_fenced_response() -> None:
