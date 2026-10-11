@@ -102,3 +102,16 @@ def test_apply_writes_source_and_skips_unchanged() -> None:
     assert firms[0] == {"id": "a", "lat": 9.0, "lng": 8.0, "geo_source": "nominatim", "geo_match": "Non_Exact"}
     assert firms[1]["geo_source"] == "census"
     assert "geo_source" not in firms[2]
+
+
+def test_sec_bulk_fixes_known_street_typos() -> None:
+    from scraper.sec_bulk import _format_address
+
+    row = {
+        "Main Office Street Address 1": "1300 EL CAMINO ROAD",
+        "Main Office Street Address 2": "SUITE 170",
+        "Main Office City": "MENLO PARK",
+        "Main Office State": "CA",
+        "Main Office Postal Code": "94025-1234",
+    }
+    assert _format_address(row) == "1300 EL CAMINO REAL SUITE 170, Menlo Park, CA 94025"

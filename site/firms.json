@@ -18086,7 +18086,7 @@
     {
       "id": "sec-315413",
       "name": "Highlandx",
-      "address": "1300 EL CAMINO ROAD SUITE 170, Menlo Park, CA 94025",
+      "address": "1300 EL CAMINO REAL SUITE 170, Menlo Park, CA 94025",
       "sec_crd": "315413",
       "aum_usd": 222210631,
       "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/30/2026)",
@@ -18106,8 +18106,8 @@
       "latest_filing_date": "03/30/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.455057,
+      "lng": -122.185496,
       "form_d_total_filings": 2,
       "form_d_latest_filing_date": "2021-05-25",
       "form_d_distinct_funds": [
@@ -18133,7 +18133,9 @@
           "cik": "1845316",
           "filer_name": "HighlandX Fund I, L.P.  (CIK 0001845316)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-343553",
