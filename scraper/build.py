@@ -105,6 +105,11 @@ PRESERVED_FIELDS = (
     "founded",
 )
 
+#: ``geo_source`` values that mean a firm's point is its own address, not a
+#: city centroid. ``carry_forward_enrichment`` keeps such a point when a
+#: refresh (which runs without a geocoder) would replace it with the centroid.
+STREET_LEVEL_GEO_SOURCES = ("census", "nominatim")
+
 # Hand-verified coordinates for the seed firms. Used as a fallback when the
 # geocoder is offline / blocked. Approximate to the building, sourced by
 # cross-referencing addresses against public maps. Refresh via:
@@ -212,6 +217,7 @@ def enrich_geocode(firms: list[dict]) -> None:
             if coords:
                 firm["lat"] = coords.lat
                 firm["lng"] = coords.lng
+                firm["geo_source"] = "nominatim"
             else:
                 log.warning("Failed to geocode %s — %s", firm["id"], firm["address"])
     finally:
@@ -591,6 +597,22 @@ def carry_forward_enrichment(firms: list[dict], previous: dict) -> int:
             if not firm.get(field) and old.get(field):
                 firm[field] = old[field]
                 restored = True
+        # Coordinates: a build without a geocoder puts every SEC firm on its
+        # city centroid. A street-level point from the previous payload
+        # (scraper.census_geocode, or a Nominatim run) is strictly better, so
+        # it wins unless this build geocoded the firm itself.
+        if (
+            firm.get("geo_source") not in STREET_LEVEL_GEO_SOURCES
+            and old.get("geo_source") in STREET_LEVEL_GEO_SOURCES
+            and old.get("lat") is not None
+            and old.get("lng") is not None
+        ):
+            firm["lat"] = old["lat"]
+            firm["lng"] = old["lng"]
+            firm["geo_source"] = old["geo_source"]
+            if old.get("geo_match"):
+                firm["geo_match"] = old["geo_match"]
+            restored = True
         if restored:
             touched += 1
     if touched:

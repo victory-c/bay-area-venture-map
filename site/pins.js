@@ -41,6 +41,10 @@
   const LABEL_MAX_W = 150; // px of label text before it is cut with an ellipsis
   const GRID = 48; // collision grid cell, px
   const HUB_MIN = 10; // sites with at least this many firms are labelled "City · N"
+  const CLUSTER_PX = 30; // sites whose dots would overlap at this distance merge
+  const CLUSTER_MAX_ZOOM = 16.5; // beyond this every site stands alone
+  const FAN_MAX = 12; // same-address stacks up to this size fan out on click
+  const FAN_PITCH = 24; // vertical spacing of fanned chips
   // Scratch space reused by label placement so a dense frame allocates nothing
   // per candidate: eight candidate spots and two rectangles.
   const SPOTS = Array.from({ length: 8 }, () => [0, 0]);
@@ -88,6 +92,11 @@
   function cssVar(name, fallback) {
     const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
     return v || fallback;
+  }
+
+  function sameFocus(a, b) {
+    if (!a || !b) return a === b;
+    return a.kind === b.kind && a.value === b.value;
   }
 
   function intersects(a, b) {
@@ -155,7 +164,8 @@
       labelMinZoom: { rich: 8, lite: 11 },
       maxLabels: 140,
       onSelect: null, // (firm | null) => void — firm clicked, or background clicked
-      onSelectSite: null, // (site) => void — multi-firm site clicked
+      // (site) => void — a same-address stack too big to fan out was clicked
+      onSelectSite: null,
       aumBucket: () => "0",
       formatShort: (n) => String(n),
       prettyStage: (s) => s,
@@ -169,7 +179,11 @@
       this._focusKey = null;
       this._selectedId = null;
       this._selectedKey = null;
-      this._hover = null;
+      this._hover = null; // the hit object under the cursor, refreshed every draw
+      this._hoverKey = null; // its stable key (cluster nodes are rebuilt per frame)
+      this._focus = null; // { kind: "city" | "site", value } — everything else is dimmed
+      this._focusActive = false;
+      this._fan = null; // { key, firms } — an expanded same-address stack
       this._hits = [];
       // Site keys whose chip was placed in the previous frame. Re-placing
       // them first keeps labels from flickering while the map moves.
@@ -242,29 +256,28 @@
 
     // ── Public API ──────────────────────────────────────────────────────
 
-    // Replace the firm set. `focusKey` (a site key) dims every other site:
-    // used while a location filter is active so the rest of the Bay stays
-    // visible for context and clickable to switch.
-    setFirms(firms, focusKey = null) {
+    // Replace the firm set. `focus` ({ kind: "city" | "site", value }) dims every
+    // other site: used while a location filter is active so the rest of the Bay
+    // stays visible for context.
+    setFirms(firms, focus = null) {
       const ids = new Set();
       for (const f of firms) ids.add(f.id);
       let same = !!this._ids && this._ids.size === ids.size;
       if (same) for (const id of ids) if (!this._ids.has(id)) { same = false; break; }
-      const focusChanged = focusKey !== this._focusKey;
-      this._focusKey = focusKey;
+      const focusChanged = !sameFocus(focus, this._focus);
+      this._focus = focus;
       if (same && !focusChanged) return;
       if (!same) {
         this._ids = ids;
         this._buildSites(firms);
         this._selectedKey = this._keyOfFirmId(this._selectedId);
-        // Sites are new objects now; point the hover at the rebuilt one (or
-        // drop it) so the ring, forced chip and tooltip stay in sync.
-        const hov = this._hover;
-        if (hov) {
-          const again = this._siteByKey.get(hov.key) || null;
-          if (again !== hov) this._setHover(again);
-        }
+        if (this._fan && !this._siteByKey.has(this._fan.key)) this._fan = null;
       }
+      this._focusActive =
+        !!focus &&
+        (focus.kind === "site"
+          ? this._siteByKey.has(focus.value)
+          : this._sites.some((site) => site.city === focus.value));
       // The tooltip's second line depends on the focus state.
       if (this._hover) this._showTip(this._hover);
       this._sticky.clear();
@@ -497,20 +510,18 @@
 
     // ── Drawing ─────────────────────────────────────────────────────────
 
-    // Text and width of a site's chip. A long name is cut with an ellipsis,
-    // but the " +N" / " · N" count suffix always survives the cut.
-    _measure(s) {
-      const key = (s.rich ? "r|" : "l|") + s.label;
+    // Text and width of a chip for `text`, cut with an ellipsis to fit
+    // LABEL_MAX_W minus `reserve` px.
+    _fit(text, rich, reserve) {
+      const key = (rich ? "r|" : "l|") + reserve + "|" + text;
       let m = this._measureCache.get(key);
       if (m) return m;
       const ctx = this._ctx;
-      ctx.font = s.rich ? this._fontRich : this._fontLite;
-      const parts = /^([\s\S]*?)(\s(?:·\s|\+)\d+)$/.exec(s.label);
-      let name = parts ? parts[1] : s.label;
-      const suffix = parts ? parts[2] : "";
-      const budget = LABEL_MAX_W - (suffix ? ctx.measureText(suffix).width : 0);
-      if (ctx.measureText(name).width > budget) {
-        const cps = Array.from(name); // code points, so a surrogate pair is never split
+      ctx.font = rich ? this._fontRich : this._fontLite;
+      const budget = LABEL_MAX_W - reserve;
+      let out = text;
+      if (ctx.measureText(text).width > budget) {
+        const cps = Array.from(text); // code points, so a surrogate pair is never split
         let lo = 1;
         let hi = cps.length;
         while (lo < hi) {
@@ -518,12 +529,23 @@
           if (ctx.measureText(cps.slice(0, mid).join("").trimEnd() + "…").width <= budget) lo = mid;
           else hi = mid - 1;
         }
-        name = cps.slice(0, lo).join("").trimEnd() + "…";
+        out = cps.slice(0, lo).join("").trimEnd() + "…";
       }
-      const text = name + suffix;
-      m = { text, w: Math.ceil(ctx.measureText(text).width) };
+      m = { text: out, w: Math.ceil(ctx.measureText(out).width) };
       this._measureCache.set(key, m);
       return m;
+    },
+
+    // Chip text and width for a node. A long name is cut with an ellipsis,
+    // but the " +N" / " · N" count suffix always survives the cut.
+    _measure(s) {
+      const parts = /^([\s\S]*?)(\s(?:·\s|\+)\d+)$/.exec(s.label);
+      if (!parts) return this._fit(s.label, s.rich, 0);
+      const ctx = this._ctx;
+      ctx.font = s.rich ? this._fontRich : this._fontLite;
+      const sufW = Math.ceil(ctx.measureText(parts[2]).width);
+      const name = this._fit(parts[1], s.rich, sufW);
+      return { text: name.text + parts[2], w: name.w + sufW };
     },
 
     // Try right of the dot, then left, above, below and the four diagonals;
@@ -573,6 +595,74 @@
       return force && !Number.isNaN(firstX) ? { x: firstX, y: firstY, w, h, text: m.text } : null;
     },
 
+    // Sites whose dots would overlap at this zoom merge into one node.
+    // Grid-cell grouping: O(n), stable enough frame to frame for sticky
+    // labels because a node's key is its highest-priority member's key.
+    _cluster(vis, zoom) {
+      if (zoom >= CLUSTER_MAX_ZOOM) return vis;
+      const cells = new Map();
+      for (let i = 0; i < vis.length; i++) {
+        const s = vis[i];
+        const key = ((Math.floor(s.y / CLUSTER_PX) + 4096) << 13) | (Math.floor(s.x / CLUSTER_PX) + 4096);
+        const list = cells.get(key);
+        if (list) list.push(s);
+        else cells.set(key, [s]);
+      }
+      const nodes = [];
+      cells.forEach((list) => nodes.push(list.length === 1 ? list[0] : this._makeCluster(list)));
+      nodes.sort((a, b) => a.pri - b.pri);
+      return nodes;
+    },
+
+    _makeCluster(sites) {
+      // `sites` arrive in ascending priority: the last one leads.
+      const lead = sites[sites.length - 1];
+      let n = 0;
+      let aum = 0;
+      let rich = false;
+      let dim = true;
+      let isSel = false;
+      let sx = 0;
+      let sy = 0;
+      let sameCity = true;
+      const firms = [];
+      for (let i = 0; i < sites.length; i++) {
+        const s = sites[i];
+        n += s.n;
+        aum = Math.max(aum, s.aum);
+        rich = rich || s.rich;
+        dim = dim && s.dim;
+        isSel = isSel || s.isSel;
+        sx += s.x * s.n;
+        sy += s.y * s.n;
+        if (s.city !== lead.city) sameCity = false;
+        for (let j = 0; j < s.firms.length; j++) firms.push(s.firms[j]);
+      }
+      const city = sameCity ? lead.city : "";
+      const tier = rich ? 3 : 2;
+      return {
+        key: "c:" + lead.key,
+        isCluster: true,
+        sites,
+        firms,
+        top: lead.top,
+        n,
+        aum,
+        rich,
+        dim,
+        isSel,
+        isHov: false,
+        city,
+        bucket: String(this.options.aumBucket(aum || null)),
+        r: Math.min(16, Math.round(6 + 1.4 * Math.log2(n))),
+        x: sx / n,
+        y: sy / n,
+        label: city && n >= HUB_MIN ? `${city} · ${n}` : n >= HUB_MIN ? `${n} firms` : `${lead.top.name} +${n - 1}`,
+        pri: tier * 1e14 + Math.min(n, 999) * 1e11 + Math.min(aum || 0, 1e11 - 1),
+        chip: null,
+      };
+    },
+
     _draw(final) {
       const map = this._map;
       const ctx = this._ctx;
@@ -585,6 +675,7 @@
       this._hits.length = 0;
       if (!this._sites.length) {
         this._sticky.clear();
+        this._hover = null;
         return;
       }
 
@@ -593,41 +684,50 @@
       const origin = map.getPixelOrigin();
       const ox = origin.x + this._bounds.min.x;
       const oy = origin.y + this._bounds.min.y;
-      // A focus site that the other filters have emptied must not dim the map.
-      const focus = this._focusKey && this._siteByKey.has(this._focusKey) ? this._focusKey : null;
-      const hov = this._hover;
+      const focus = this._focusActive ? this._focus : null;
       const selKey = this._selectedKey;
+      const hoverKey = this._hoverKey;
       const minZ = this.options.labelMinZoom;
       const margin = LABEL_MAX_W + 2 * CHIP_PAD_X + 24;
 
-      // 1. Project and cull. Dots block labels, but not all equally: a hub's
-      // count must stay readable, a rich firm's dot may lose only its rim,
-      // and a lite single's 4 px dot may sit under a chip — otherwise a dense
-      // cluster like Sand Hill Road gets no names at all at the bay view.
+      // 1. Project and cull sites.
       const vis = [];
-      const cands = [];
-      const grid = new Map();
       for (let i = 0; i < this._sites.length; i++) {
         const s = this._sites[i];
         const x = s.wx * scale - ox;
         const y = s.wy * scale - oy;
         s.chip = null;
+        s.onScreen = false;
         if (x < -margin || y < -margin || x > W + margin || y > H + margin) continue;
         s.x = x;
         s.y = y;
-        s.dim = !!focus && s.key !== focus;
+        s.onScreen = true;
+        s.dim = !!focus && (focus.kind === "city" ? s.city !== focus.value : s.key !== focus.value);
         s.isSel = s.key === selKey;
-        s.isHov = s === hov;
         vis.push(s);
-        if (s.dim) continue;
-        const guard = s.n > 1 ? s.r + 2 : s.rich ? Math.max(2, s.r - 2) : 0;
-        if (guard) gridInsert(grid, { x: x - guard, y: y - guard, w: 2 * guard, h: 2 * guard, guard: true });
-        const bigHub = s.n >= HUB_MIN;
-        const eligible = s.isSel || s.isHov || zoom >= (s.rich || bigHub ? minZ.rich : minZ.lite);
-        if (eligible) cands.push(s);
       }
 
-      // 2. Place labels: selected, hovered, then (while moving) last frame's
+      // 2. Merge overlapping sites into cluster nodes. Dots block labels, but
+      // not all equally: a hub's count must stay readable, a rich firm's dot
+      // may lose only its rim, and a lite single's 4 px dot may sit under a
+      // chip — otherwise a dense cluster gets no names at all.
+      const nodes = this._cluster(vis, zoom);
+      let hover = null;
+      const grid = new Map();
+      const cands = [];
+      for (let i = 0; i < nodes.length; i++) {
+        const s = nodes[i];
+        s.chip = null;
+        s.isHov = s.key === hoverKey;
+        if (s.isHov) hover = s;
+        if (s.dim) continue;
+        const guard = s.n > 1 ? s.r + 2 : s.rich ? Math.max(2, s.r - 2) : 0;
+        if (guard) gridInsert(grid, { x: s.x - guard, y: s.y - guard, w: 2 * guard, h: 2 * guard, guard: true });
+        const bigHub = s.n >= HUB_MIN;
+        if (s.isSel || s.isHov || zoom >= (s.rich || bigHub ? minZ.rich : minZ.lite)) cands.push(s);
+      }
+
+      // 3. Place labels: selected, hovered, then (while moving) last frame's
       // chips so nothing flickers, then by priority. A final draw at rest
       // ignores stickiness so the resting placement is priority-pure.
       const sticky = this._sticky;
@@ -635,8 +735,6 @@
       cands.sort((a, b) => rank(b) - rank(a) || b.pri - a.pri);
       const placed = [];
       const next = new Set();
-      // Attempt budget: in a dense view most candidates fail, and probing
-      // every eligible site each frame is wasted work past a point.
       const maxTries = this.options.maxLabels * 4;
       for (let i = 0; i < cands.length; i++) {
         const s = cands[i];
@@ -651,12 +749,11 @@
       }
       this._sticky = next;
 
-      // 3. Paint: plain dots batched per style (one path per style, in
-      // ascending priority of each batch's first member), dimmed and
-      // highlighted dots individually, then chips, highlights last.
+      // 4. Paint: plain dots batched per style, dimmed and highlighted dots
+      // individually, then chips, highlights last, then the fan.
       const batches = new Map();
-      for (let i = 0; i < vis.length; i++) {
-        const s = vis[i];
+      for (let i = 0; i < nodes.length; i++) {
+        const s = nodes[i];
         this._hits.push(s);
         if (s.dim || s.isSel || s.isHov) continue;
         const key = (s.rich ? "r" : "l") + s.bucket + (s.n > 1 ? "h" : "s");
@@ -668,8 +765,8 @@
         list.push(s);
       }
       batches.forEach((list) => this._drawDotBatch(list));
-      for (let i = 0; i < vis.length; i++) {
-        const s = vis[i];
+      for (let i = 0; i < nodes.length; i++) {
+        const s = nodes[i];
         if (s.dim || s.isSel || s.isHov) this._drawDot(s);
       }
       for (let i = placed.length - 1; i >= 0; i--) {
@@ -680,8 +777,72 @@
         const s = placed[i];
         if (s.isSel || s.isHov) this._drawChip(s);
       }
-      if (hov && hov.chip === null && vis.indexOf(hov) !== -1) this._positionTip(hov);
-      else if (hov && hov.chip) this._positionTip(hov);
+      if (this._fan) hover = this._drawFan(hoverKey) || hover;
+
+      this._hover = hover;
+      if (hover) this._positionTip(hover);
+      else if (hoverKey) this._clearHover();
+    },
+
+    // An expanded same-address stack: one chip per firm in a column beside
+    // the dot (right first, then left), each with its own hit rectangle.
+    _drawFan(hoverKey) {
+      const fan = this._fan;
+      const site = this._siteByKey.get(fan.key);
+      if (!site || !site.onScreen) return null;
+      const ctx = this._ctx;
+      const t = this._theme;
+      const firms = fan.firms;
+      const rightCount = Math.min(firms.length, 6);
+      const leftCount = firms.length - rightCount;
+      let hovered = null;
+      for (let i = 0; i < firms.length; i++) {
+        const f = firms[i];
+        const right = i < 6;
+        const idx = right ? i : i - 6;
+        const count = right ? rightCount : leftCount;
+        const rich = f.tier !== "lite";
+        const m = this._fit(f.name, rich, 0);
+        const w = m.w + 2 * CHIP_PAD_X;
+        const cy = site.y - (count * FAN_PITCH) / 2 + idx * FAN_PITCH + FAN_PITCH / 2;
+        const x = right ? site.x + site.r + 14 : site.x - site.r - 14 - w;
+        const rect = { x: Math.round(x), y: Math.round(cy - CHIP_H / 2), w, h: CHIP_H, text: m.text };
+        const hit = {
+          kind: "fan",
+          key: "f:" + f.id,
+          firm: f,
+          top: f,
+          n: 1,
+          rich,
+          bucket: String(this.options.aumBucket(f.aum_usd)),
+          chip: rect,
+          x: rect.x + w / 2,
+          y: rect.y + CHIP_H / 2,
+          r: CHIP_H / 2,
+          isSel: f.id === this._selectedId,
+          isHov: false,
+          dim: false,
+        };
+        hit.isHov = hit.key === hoverKey;
+        if (hit.isHov) hovered = hit;
+        ctx.globalAlpha = 0.7;
+        ctx.strokeStyle = t.accent;
+        ctx.lineWidth = 1;
+        ctx.setLineDash([]);
+        ctx.beginPath();
+        ctx.moveTo(site.x, site.y);
+        ctx.lineTo(right ? rect.x : rect.x + w, cy);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+        this._drawChip(hit);
+        this._hits.push(hit);
+      }
+      ctx.beginPath();
+      ctx.arc(site.x, site.y, site.r + 3, 0, Math.PI * 2);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = t.accent;
+      ctx.stroke();
+      return hovered;
     },
 
     // One fill + one stroke for every plain dot of a style: dot cost stays
@@ -791,6 +952,7 @@
         const s = this._hits[i];
         const c = s.chip;
         if (c && px >= c.x && px <= c.x + c.w && py >= c.y && py <= c.y + c.h) return s;
+        if (s.kind === "fan") continue;
         const dx = px - s.x;
         const dy = py - s.y;
         const r = s.r + slop;
@@ -835,17 +997,22 @@
       this._setHover(this._hitTest(this._map.containerPointToLayerPoint(this._lastMouse)));
     },
 
-    _setHover(site) {
-      if (site === this._hover) return;
-      this._hover = site;
+    _setHover(hit) {
+      const key = hit ? hit.key : null;
+      if (key === this._hoverKey) {
+        this._hover = hit;
+        return;
+      }
+      this._hoverKey = key;
+      this._hover = hit;
       const map = this._map;
       if (!map) return;
       const container = map.getContainer();
-      if (site) {
+      if (hit) {
         L.DomUtil.addClass(container, "firm-pin-hover");
         // A double-click on a pin should not zoom the map.
         if (map.doubleClickZoom) map.doubleClickZoom.disable();
-        this._showTip(site);
+        this._showTip(hit);
       } else {
         L.DomUtil.removeClass(container, "firm-pin-hover");
         if (map.doubleClickZoom) map.doubleClickZoom.enable();
@@ -854,24 +1021,45 @@
       this._requestDraw(false);
     },
 
+    // The hovered thing no longer exists (filtered away, cluster dissolved).
+    _clearHover() {
+      this._hoverKey = null;
+      this._hover = null;
+      const map = this._map;
+      if (!map) return;
+      L.DomUtil.removeClass(map.getContainer(), "firm-pin-hover");
+      if (map.doubleClickZoom) map.doubleClickZoom.enable();
+      this._tip.hidden = true;
+    },
+
     _showTip(s) {
       const o = this.options;
       const f = s.top;
-      if (s.n === 1) {
-        this._tipName.textContent = f.name;
+      let name;
+      let meta;
+      if (s.kind === "fan" || s.n === 1) {
+        name = f.name;
         const parts = [];
         if (f.aum_usd) parts.push("$" + o.formatShort(f.aum_usd));
         if (f.stages && f.stages.length) parts.push(f.stages.map((st) => o.prettyStage(st)).join(", "));
-        this._tipMeta.textContent = parts.join(" · ");
+        meta = parts.join(" · ");
+      } else if (s.isCluster) {
+        name = s.city ? `${s.n} firms · ${s.city}` : `${s.n} firms`;
+        meta = `${s.sites.length} addresses · click to zoom in`;
       } else {
-        this._tipName.textContent =
-          s.n >= HUB_MIN && s.city ? `${s.n} firms · ${s.city}` : `${s.n} firms at this address`;
-        this._tipMeta.textContent =
-          s.key === this._focusKey
-            ? "Listed in the table · click to clear"
-            : `${f.name} and ${s.n - 1} ${s.n === 2 ? "other" : "others"} · click to list them`;
+        // Every firm here shares one address.
+        name = `${s.n} firms at this address`;
+        const others = `${f.name} and ${s.n - 1} ${s.n === 2 ? "other" : "others"}`;
+        if (s.n <= FAN_MAX) {
+          meta = this._fan && this._fan.key === s.key ? `${others} · click to collapse` : `${others} · click to expand`;
+        } else {
+          const listed = this._focus && this._focus.kind === "site" && this._focus.value === s.key;
+          meta = listed ? "Listed in the table · click to clear" : `${others} · click to list them`;
+        }
       }
-      this._tipMeta.hidden = !this._tipMeta.textContent;
+      this._tipName.textContent = name;
+      this._tipMeta.textContent = meta;
+      this._tipMeta.hidden = !meta;
       this._tip.hidden = false;
       this._positionTip(s);
     },
@@ -889,19 +1077,66 @@
     },
 
     _onClick(e) {
-      // The second click of a double-click must not toggle the selection back.
+      // The second click of a double-click must not toggle anything back.
       if (e.originalEvent && e.originalEvent.detail > 1) return;
-      const s = this._hitTest(e.layerPoint);
+      const hit = this._hitTest(e.layerPoint);
       const o = this.options;
-      if (!s) {
+      if (!hit) {
+        this._collapseFan();
         if (o.onSelect) o.onSelect(null);
         return;
       }
-      if (s.n === 1) {
-        if (o.onSelect) o.onSelect(s.top);
-      } else if (o.onSelectSite) {
-        o.onSelectSite(s);
+      if (hit.kind === "fan") {
+        if (o.onSelect) o.onSelect(hit.firm);
+        return;
       }
+      if (hit.isCluster) {
+        // Several addresses drawn as one dot: zoom until they come apart.
+        this._collapseFan();
+        this._zoomTo(hit);
+        return;
+      }
+      if (hit.n === 1) {
+        this._collapseFan();
+        if (o.onSelect) o.onSelect(hit.top);
+        return;
+      }
+      // One address, several firms: fan them out, or list them when there
+      // are too many chips to fit.
+      if (hit.n <= FAN_MAX) {
+        this._fanOut(hit);
+        return;
+      }
+      this._collapseFan();
+      if (o.onSelectSite) o.onSelectSite(hit);
+    },
+
+    _zoomTo(node) {
+      const map = this._map;
+      const bounds = L.latLngBounds(node.sites.map((site) => [site.lat, site.lng]));
+      const opts = { padding: [60, 60], maxZoom: 17 };
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        map.fitBounds(bounds, Object.assign({ animate: false }, opts));
+      } else {
+        map.flyToBounds(bounds, Object.assign({ duration: 0.6 }, opts));
+      }
+    },
+
+    _fanOut(site) {
+      if (this._fan && this._fan.key === site.key) {
+        this._collapseFan();
+        return;
+      }
+      this._fan = { key: site.key, firms: site.firms.slice(0, FAN_MAX) };
+      if (this._hover) this._showTip(this._hover);
+      this._requestDraw(true);
+    },
+
+    _collapseFan() {
+      if (!this._fan) return;
+      this._fan = null;
+      if (this._hover) this._showTip(this._hover);
+      this._requestDraw(true);
     },
   });
 
