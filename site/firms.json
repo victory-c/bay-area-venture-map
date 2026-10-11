@@ -7,7 +7,7 @@
     "glm_website_thesis",
     "sec_bulk"
   ],
-  "firm_count": 675,
+  "firm_count": 695,
   "firms": [
     {
       "id": "sequoia",
@@ -3028,6 +3028,32 @@
       ]
     },
     {
+      "id": "sec-324187",
+      "name": "3 Management Co, LLC",
+      "address": "548 MARKET STREET STE 74996, San Francisco, CA 94104",
+      "sec_crd": "324187",
+      "aum_usd": 88563220,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/29/2026)",
+      "aum_as_of": "05/29/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": null,
+      "phone": "415-615-5000",
+      "fund_count": 3,
+      "vc_fund_count": null,
+      "pe_fund_count": 3,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "pe"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "05/29/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-335656",
       "name": "3i Partners Management, LLC",
       "address": "175 S. SAN ANTONIO ROAD SUITE 102, Los Altos, CA 94022",
@@ -3108,9 +3134,9 @@
       "name": "49 Palms Ventures",
       "address": "405 LYTTON AVENUE, SUITE 1A, Palo Alto, CA 94301",
       "sec_crd": "339401",
-      "aum_usd": 50200000,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 02/26/2026)",
-      "aum_as_of": "02/26/2026",
+      "aum_usd": 88000000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/22/2026)",
+      "aum_as_of": "05/22/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "http://www.49palmsvc.com",
@@ -3123,7 +3149,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "02/26/2026",
+      "latest_filing_date": "05/22/2026",
       "stages": [],
       "sectors": [
         "ai_infra"
@@ -3415,6 +3441,32 @@
       "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
+    },
+    {
+      "id": "sec-342789",
+      "name": "Accelerate Investment Group Holdings LLC",
+      "address": "675 HIGH STREET, Palo Alto, CA 94301",
+      "sec_crd": "342789",
+      "aum_usd": 100562691,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/14/2026)",
+      "aum_as_of": "07/14/2026",
+      "county": "Santa Clara",
+      "tier": "lite",
+      "website": "https://www.linkedin.com/company/accelerate-investment-group/",
+      "phone": "628-317-3290",
+      "fund_count": 4,
+      "vc_fund_count": 4,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/14/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.4419,
+      "lng": -122.143
     },
     {
       "id": "sec-162093",
@@ -3889,101 +3941,6 @@
       ]
     },
     {
-      "id": "sec-158869",
-      "name": "Acuta Capital Partners, LLC",
-      "address": "255 SHORELINE DRIVE SUITE 515, Redwood City, CA 94065",
-      "sec_crd": "158869",
-      "aum_usd": 154299385,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
-      "county": "San Mateo",
-      "tier": "lite",
-      "website": "https://www.acutacapital.com",
-      "phone": "650-486-0508",
-      "fund_count": 2,
-      "vc_fund_count": null,
-      "pe_fund_count": null,
-      "hedge_fund_count": 2,
-      "firm_type_tags": [
-        "hedge"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [
-        "healthcare"
-      ],
-      "lat": 37.4852,
-      "lng": -122.2364,
-      "inferred": true,
-      "inference_confidence": 0.8,
-      "inference_basis": "healthcare: \"We Invest in Companies That Strive to Improve Health and Well Being of Individuals Through Research and Innova\"",
-      "inference_model": "glm-4.6",
-      "inferred_thesis": "Acuta Capital Partners invests in healthcare companies improving health through research and innovation.",
-      "thesis_confidence": 1.0,
-      "inference_source": "website",
-      "inference_evidence": [
-        {
-          "sector": "healthcare",
-          "quote": "We Invest in Companies That Strive to Improve Health and Well Being of Individuals Through Research and Innovation"
-        }
-      ],
-      "thesis_source": "website",
-      "form_d_total_filings": 24,
-      "form_d_latest_filing_date": "2020-03-16",
-      "form_d_distinct_funds": [
-        "Acuta Capital Fund, LP  (CIK 0001601391)",
-        "Acuta Opportunity Offshore Fund, Ltd.  (CIK 0001569999)",
-        "Acuta Capital Offshore Fund, Ltd.  (CIK 0001604651)",
-        "Acuta Opportunity Fund, LP  (CIK 0001528091)",
-        "Acuta Ventures, LP  (CIK 0001601194)"
-      ],
-      "form_d_fund_ciks": [
-        "1601391",
-        "1569999",
-        "1604651",
-        "1528091",
-        "1601194"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0001601391-20-000001",
-          "file_date": "2020-03-16",
-          "form": "D/A",
-          "cik": "1601391",
-          "filer_name": "Acuta Capital Fund, LP  (CIK 0001601391)"
-        },
-        {
-          "accession": "0001569999-20-000001",
-          "file_date": "2020-03-16",
-          "form": "D/A",
-          "cik": "1569999",
-          "filer_name": "Acuta Opportunity Offshore Fund, Ltd.  (CIK 0001569999)"
-        },
-        {
-          "accession": "0001604651-20-000001",
-          "file_date": "2020-03-16",
-          "form": "D/A",
-          "cik": "1604651",
-          "filer_name": "Acuta Capital Offshore Fund, Ltd.  (CIK 0001604651)"
-        },
-        {
-          "accession": "0001528091-20-000001",
-          "file_date": "2020-03-16",
-          "form": "D/A",
-          "cik": "1528091",
-          "filer_name": "Acuta Opportunity Fund, LP  (CIK 0001528091)"
-        },
-        {
-          "accession": "0001601391-19-000002",
-          "file_date": "2019-03-18",
-          "form": "D/A",
-          "cik": "1601391",
-          "filer_name": "Acuta Capital Fund, LP  (CIK 0001601391)"
-        }
-      ]
-    },
-    {
       "id": "sec-309667",
       "name": "Acvc Management, LLC",
       "address": "459 HAMILTON AVE. SUITE 304, Palo Alto, CA 94301",
@@ -4266,8 +4223,8 @@
       "address": "2100 GENG ROAD 2ND FLOOR, Palo Alto, CA 94303",
       "sec_crd": "300100",
       "aum_usd": 540337305,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 02/26/2026)",
-      "aum_as_of": "02/26/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/15/2026)",
+      "aum_as_of": "07/15/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://www.ahoycap.com/",
@@ -4281,7 +4238,7 @@
         "pe"
       ],
       "employee_count": 4,
-      "latest_filing_date": "02/26/2026",
+      "latest_filing_date": "07/15/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
@@ -4583,8 +4540,8 @@
       "address": "10080 N. WOLFE RD SUITE SW3-200, Cupertino, CA 95014",
       "sec_crd": "312935",
       "aum_usd": 34865313,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/03/2025)",
-      "aum_as_of": "03/03/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/13/2026)",
+      "aum_as_of": "05/13/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://www.aimtopvc.com/",
@@ -4597,7 +4554,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/03/2025",
+      "latest_filing_date": "05/13/2026",
       "stages": [
         "seed"
       ],
@@ -4816,8 +4773,8 @@
       "address": "502 WAVERLEY STREET SUITE 2, Palo Alto, CA 94301",
       "sec_crd": "316814",
       "aum_usd": 2998752187,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/24/2026)",
+      "aum_as_of": "08/24/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://twitter.com/joinallocate",
@@ -4830,7 +4787,7 @@
         "vc"
       ],
       "employee_count": 16,
-      "latest_filing_date": "03/30/2026",
+      "latest_filing_date": "08/24/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
@@ -5082,8 +5039,8 @@
       "address": "250 CALIFORNIA DRIVE FLOOR 4, Burlingame, CA 94010",
       "sec_crd": "162777",
       "aum_usd": 5448790139,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/07/2026)",
+      "aum_as_of": "07/07/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://www.linkedin.com/COMPANY/ALTOS-VENTURES",
@@ -5096,7 +5053,7 @@
         "vc"
       ],
       "employee_count": 41,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "07/07/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.5779,
@@ -5432,6 +5389,58 @@
       ]
     },
     {
+      "id": "sec-341099",
+      "name": "Amp Foundry Gp, L.L.C.",
+      "address": "410 TOWNSEND STREET, San Francisco, CA 94108",
+      "sec_crd": "341099",
+      "aum_usd": 300000000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/30/2026)",
+      "aum_as_of": "06/30/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://ampfoundry.com",
+      "phone": "510-224-4558",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "06/30/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
+      "id": "sec-342103",
+      "name": "Amp Foundry Management LLC",
+      "address": "410 TOWNSEND STREET, San Francisco, CA 94108",
+      "sec_crd": "342103",
+      "aum_usd": 531389674,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/30/2026)",
+      "aum_as_of": "06/30/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://www.ampfoundry.com",
+      "phone": "510-224-4558",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "06/30/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-167059",
       "name": "Amplify Partners",
       "address": "800 MENLO AVENUE SUITE 220, Menlo Park, CA 94025",
@@ -5614,8 +5623,8 @@
       "address": "292 IVY STREET SUITE B, San Francisco, CA 94102",
       "sec_crd": "327114",
       "aum_usd": 46087559,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 04/01/2026)",
-      "aum_as_of": "04/01/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/22/2026)",
+      "aum_as_of": "07/22/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://x.com/AnagramAssetM",
@@ -5629,7 +5638,7 @@
         "other"
       ],
       "employee_count": null,
-      "latest_filing_date": "04/01/2026",
+      "latest_filing_date": "07/22/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -5667,8 +5676,8 @@
       "address": "750 BATTERY STREET 7TH FLOOR, San Francisco, CA 94111",
       "sec_crd": "314080",
       "aum_usd": 476538169,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 02/13/2026)",
-      "aum_as_of": "02/13/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/30/2026)",
+      "aum_as_of": "07/30/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/andra-capital",
@@ -5681,7 +5690,7 @@
         "vc"
       ],
       "employee_count": 5,
-      "latest_filing_date": "02/13/2026",
+      "latest_filing_date": "07/30/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -6582,17 +6591,43 @@
       "thesis_source": "website"
     },
     {
+      "id": "sec-343097",
+      "name": "Aurum Vp Gp LLC",
+      "address": "7041 KOLL CENTER PKWY, Pleasanton, CA 94566",
+      "sec_crd": "343097",
+      "aum_usd": 25000000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/15/2026)",
+      "aum_as_of": "06/15/2026",
+      "county": "Alameda",
+      "tier": "lite",
+      "website": null,
+      "phone": "7814989516",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "06/15/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.6624,
+      "lng": -121.8747
+    },
+    {
       "id": "sec-304938",
       "name": "Authentic Ventures Investment Manager, LLC",
       "address": "93 LINDEN STREET SUITE 6, Oakland, CA 94607",
       "sec_crd": "304938",
       "aum_usd": 201179040,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/27/2026)",
-      "aum_as_of": "03/27/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 06/12/2026)",
+      "aum_as_of": "06/12/2026",
       "county": "Alameda",
       "tier": "lite",
       "website": "https://authentic-ventures.com/",
-      "phone": "510-877-0805",
+      "phone": "510-542-9596",
       "fund_count": 14,
       "vc_fund_count": 14,
       "pe_fund_count": null,
@@ -6600,8 +6635,8 @@
       "firm_type_tags": [
         "vc"
       ],
-      "employee_count": 4,
-      "latest_filing_date": "03/27/2026",
+      "employee_count": 3,
+      "latest_filing_date": "06/12/2026",
       "stages": [
         "pre_seed",
         "seed",
@@ -7041,11 +7076,11 @@
     {
       "id": "sec-318814",
       "name": "B37 Ventures",
-      "address": "201 SPEAR STREET SUITE 1100, San Francisco, CA 94105",
+      "address": "315 MONTGOMERY STREET SUITE 900, San Francisco, CA 94104",
       "sec_crd": "318814",
-      "aum_usd": 137998831,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_usd": 136608397,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/14/2026)",
+      "aum_as_of": "05/14/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/b37-ventures/",
@@ -7058,7 +7093,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "05/14/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -7448,49 +7483,6 @@
       "inference_model": "glm-4.6",
       "inferred_thesis": "Early-stage firm investing in AI infrastructure, enterprise SaaS, and developer tools.",
       "thesis_confidence": 1.0
-    },
-    {
-      "id": "sec-160525",
-      "name": "Bay City Capital LLC",
-      "address": "1000 4TH STREET, SUITE 500, San Rafael, CA 94901",
-      "sec_crd": "160525",
-      "aum_usd": 5299638,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 02/09/2026)",
-      "aum_as_of": "02/09/2026",
-      "county": "Marin",
-      "tier": "lite",
-      "website": "https://twitter.com/BAYCITYCAPITAL",
-      "phone": "415-321-9236",
-      "fund_count": 2,
-      "vc_fund_count": 2,
-      "pe_fund_count": null,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "vc"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "02/09/2026",
-      "stages": [],
-      "sectors": [],
-      "lat": 37.9735,
-      "lng": -122.5311,
-      "form_d_total_filings": 1,
-      "form_d_latest_filing_date": "2018-02-13",
-      "form_d_distinct_funds": [
-        "Bay City Bridge LLC  (CIK 0001729683)"
-      ],
-      "form_d_fund_ciks": [
-        "1729683"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0001729683-18-000001",
-          "file_date": "2018-02-13",
-          "form": "D",
-          "cik": "1729683",
-          "filer_name": "Bay City Bridge LLC  (CIK 0001729683)"
-        }
-      ]
     },
     {
       "id": "sec-318128",
@@ -8057,8 +8049,8 @@
       "address": "600 MONTGOMERY ST FL 35, San Francisco, CA 94111",
       "sec_crd": "283610",
       "aum_usd": 2857244723,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 06/18/2026)",
+      "aum_as_of": "06/18/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://blockchaincapital.com",
@@ -8071,7 +8063,7 @@
         "vc"
       ],
       "employee_count": 28,
-      "latest_filing_date": "03/30/2026",
+      "latest_filing_date": "06/18/2026",
       "stages": [
         "seed",
         "series_a"
@@ -8137,8 +8129,8 @@
       "address": "36 PARKGROVE DRIVE, South San Francisco, CA 94080",
       "sec_crd": "321168",
       "aum_usd": 54879237,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/09/2026)",
-      "aum_as_of": "03/09/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/09/2026)",
+      "aum_as_of": "06/09/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://bluelion.com",
@@ -8151,7 +8143,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/09/2026",
+      "latest_filing_date": "06/09/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.6547,
@@ -8232,67 +8224,6 @@
           "form": "D",
           "cik": "1771619",
           "filer_name": "Bluebird Ventures I, L.P.  (CIK 0001771619)"
-        }
-      ]
-    },
-    {
-      "id": "sec-338340",
-      "name": "Blueline Capital",
-      "address": "1045 SANSOME STREET SUITE 450, San Francisco, CA 94111",
-      "sec_crd": "338340",
-      "aum_usd": 241780419,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
-      "county": "San Francisco",
-      "tier": "lite",
-      "website": "https://www.bluelinelp.com/",
-      "phone": "332-266-8183",
-      "fund_count": 2,
-      "vc_fund_count": null,
-      "pe_fund_count": 2,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "pe"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194,
-      "form_d_total_filings": 3,
-      "form_d_latest_filing_date": "2026-02-20",
-      "form_d_distinct_funds": [
-        "Blueline Capital F&F Fund I, LP  (CIK 0002105377)",
-        "Blueline Capital Parallel Fund I, LP  (CIK 0002099408)",
-        "Blueline Capital Fund I, LP  (CIK 0002082016)"
-      ],
-      "form_d_fund_ciks": [
-        "2105377",
-        "2099408",
-        "2082016"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0002105377-26-000001",
-          "file_date": "2026-02-20",
-          "form": "D",
-          "cik": "2105377",
-          "filer_name": "Blueline Capital F&F Fund I, LP  (CIK 0002105377)"
-        },
-        {
-          "accession": "0002099408-26-000001",
-          "file_date": "2026-02-20",
-          "form": "D",
-          "cik": "2099408",
-          "filer_name": "Blueline Capital Parallel Fund I, LP  (CIK 0002099408)"
-        },
-        {
-          "accession": "0002082016-25-000001",
-          "file_date": "2025-08-18",
-          "form": "D",
-          "cik": "2082016",
-          "filer_name": "Blueline Capital Fund I, LP  (CIK 0002082016)"
         }
       ]
     },
@@ -8568,6 +8499,32 @@
       "thesis_source": "website"
     },
     {
+      "id": "sec-343269",
+      "name": "Breyer Zou Ventures Management, LLC",
+      "address": "3000 EL CAMINO REAL, BUILDING 4 SUITE 200 - #157, Palo Alto, CA 94306",
+      "sec_crd": "343269",
+      "aum_usd": 128000000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/21/2026)",
+      "aum_as_of": "07/21/2026",
+      "county": "Santa Clara",
+      "tier": "lite",
+      "website": "http://www.bzv.com",
+      "phone": "6505403687",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/21/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.4419,
+      "lng": -122.143
+    },
+    {
       "id": "sec-292884",
       "name": "Brick & Mortar Ventures Management, LLC",
       "address": "430 PACIFIC AVENUE, San Francisco, CA 94133",
@@ -8710,6 +8667,32 @@
           "filer_name": "BSF II, LP  (CIK 0001913266)"
         }
       ]
+    },
+    {
+      "id": "sec-342011",
+      "name": "Bsf III Gp, LLC",
+      "address": "2150 SHATTUCK AVENUE #1300, Berkeley, CA 94704",
+      "sec_crd": "342011",
+      "aum_usd": 35955556,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/17/2026)",
+      "aum_as_of": "09/17/2026",
+      "county": "Alameda",
+      "tier": "lite",
+      "website": "https://skydeck.vc/",
+      "phone": "510-859-8643",
+      "fund_count": 2,
+      "vc_fund_count": 2,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "09/17/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.8716,
+      "lng": -122.2727
     },
     {
       "id": "sec-308885",
@@ -9025,85 +9008,13 @@
       "thesis_source": "website"
     },
     {
-      "id": "sec-168532",
-      "name": "Canvas Ventures",
-      "address": "3200 ALPINE ROAD, Portola Valley, CA 94028",
-      "sec_crd": "168532",
-      "aum_usd": 623477873,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
-      "county": "San Mateo",
-      "tier": "lite",
-      "website": "https://x.com/CANVASVC",
-      "phone": "650-388-7600",
-      "fund_count": 3,
-      "vc_fund_count": 3,
-      "pe_fund_count": null,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "vc"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/30/2026",
-      "stages": [
-        "series_a",
-        "series_b"
-      ],
-      "sectors": [
-        "enterprise_saas",
-        "consumer",
-        "fintech"
-      ],
-      "lat": 37.3838,
-      "lng": -122.2353,
-      "inferred": true,
-      "inference_confidence": 0.9,
-      "inference_basis": "Public portfolio includes Sift, Everlane, and Databricks.",
-      "inference_model": "glm-4.6",
-      "inferred_thesis": "Backs Series A and B enterprise SaaS, consumer, and fintech startups.",
-      "thesis_confidence": 1.0,
-      "form_d_total_filings": 3,
-      "form_d_latest_filing_date": "2019-12-20",
-      "form_d_distinct_funds": [
-        "Canvas Ventures 3, L.P.  (CIK 0001796266)",
-        "Canvas Ventures 2, L.P.  (CIK 0001660763)"
-      ],
-      "form_d_fund_ciks": [
-        "1796266",
-        "1660763"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0001796266-19-000001",
-          "file_date": "2019-12-20",
-          "form": "D",
-          "cik": "1796266",
-          "filer_name": "Canvas Ventures 3, L.P.  (CIK 0001796266)"
-        },
-        {
-          "accession": "0001660763-16-000002",
-          "file_date": "2016-03-30",
-          "form": "D/A",
-          "cik": "1660763",
-          "filer_name": "Canvas Ventures 2, L.P.  (CIK 0001660763)"
-        },
-        {
-          "accession": "0001660763-15-000001",
-          "file_date": "2015-12-18",
-          "form": "D",
-          "cik": "1660763",
-          "filer_name": "Canvas Ventures 2, L.P.  (CIK 0001660763)"
-        }
-      ]
-    },
-    {
       "id": "sec-338657",
       "name": "Capra Ventures Management, LLC",
       "address": "L8, 595 MARKET STREET, San Francisco, CA 94105",
       "sec_crd": "338657",
-      "aum_usd": 6140016,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 11/26/2025)",
-      "aum_as_of": "11/26/2025",
+      "aum_usd": 24617545,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/01/2026)",
+      "aum_as_of": "05/01/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": null,
@@ -9116,7 +9027,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "11/26/2025",
+      "latest_filing_date": "05/01/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -9400,6 +9311,32 @@
       ]
     },
     {
+      "id": "sec-344046",
+      "name": "Catalight Capital US, LLC",
+      "address": "940 STEWART DRIVE, Sunnyvale, CA 94085",
+      "sec_crd": "344046",
+      "aum_usd": 488200000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/09/2026)",
+      "aum_as_of": "09/09/2026",
+      "county": "Santa Clara",
+      "tier": "lite",
+      "website": null,
+      "phone": "714-886-8750",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "09/09/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.3688,
+      "lng": -122.0363
+    },
+    {
       "id": "sec-334355",
       "name": "Category Ventures Management Company, LLC",
       "address": "101 NATOMA ST., 3RD FLOOR, San Francisco, CA 94105",
@@ -9531,6 +9468,58 @@
       "sectors": [],
       "lat": 37.7749,
       "lng": -122.4194
+    },
+    {
+      "id": "sec-310575",
+      "name": "Celesta",
+      "address": "1850 GATEWAY DRIVE SUITE 450, San Mateo, CA 94404",
+      "sec_crd": "310575",
+      "aum_usd": 850047015,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/25/2026)",
+      "aum_as_of": "06/25/2026",
+      "county": "San Mateo",
+      "tier": "lite",
+      "website": "https://www.celesta.vc/",
+      "phone": "415-765-7100",
+      "fund_count": 9,
+      "vc_fund_count": 9,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "06/25/2026",
+      "stages": [],
+      "sectors": [
+        "deep_tech",
+        "ai_infra",
+        "bio"
+      ],
+      "lat": 37.563,
+      "lng": -122.3255,
+      "inferred": true,
+      "inference_confidence": 0.8,
+      "inference_basis": "deep_tech: \"global deep tech venture capital firm\" | ai_infra: \"AI-powered, omni-channel customer experience\" | bio: \"Bioconvergence innovations at the intersection of high tech and biotech\"",
+      "inference_model": "glm-4.6",
+      "inferred_thesis": "A global deep tech venture capital firm investing in AI infrastructure and bioconvergence innovations.",
+      "thesis_confidence": 0.9,
+      "inference_source": "website",
+      "inference_evidence": [
+        {
+          "sector": "deep_tech",
+          "quote": "global deep tech venture capital firm"
+        },
+        {
+          "sector": "ai_infra",
+          "quote": "AI-powered, omni-channel customer experience"
+        },
+        {
+          "sector": "bio",
+          "quote": "Bioconvergence innovations at the intersection of high tech and biotech"
+        }
+      ],
+      "thesis_source": "website"
     },
     {
       "id": "sec-165555",
@@ -9809,99 +9798,6 @@
       "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
-    },
-    {
-      "id": "sec-173380",
-      "name": "Circleup",
-      "address": "548 MARKET STREET PMB60874, San Francisco, CA 94104",
-      "sec_crd": "173380",
-      "aum_usd": 23881921,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
-      "county": "San Francisco",
-      "tier": "lite",
-      "website": null,
-      "phone": "415-598-8611",
-      "fund_count": 1,
-      "vc_fund_count": 1,
-      "pe_fund_count": null,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "vc"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/30/2026",
-      "stages": [
-        "series_a",
-        "series_b",
-        "growth"
-      ],
-      "sectors": [
-        "consumer"
-      ],
-      "lat": 37.7749,
-      "lng": -122.4194,
-      "inferred": true,
-      "inference_confidence": 0.9,
-      "inference_basis": "Publicly known for data-driven consumer brand investing; Growth funds indicate later stages.",
-      "inference_model": "glm-4.6",
-      "inferred_thesis": "Data-driven firm investing capital and credit in Series A to growth-stage consumer brands.",
-      "thesis_confidence": 0.9,
-      "form_d_total_filings": 11,
-      "form_d_latest_filing_date": "2025-05-29",
-      "form_d_distinct_funds": [
-        "CIRCLEUP LLC  (CIK 0002070482)",
-        "CircleUp Credit Fund I, LP  (CIK 0001765746)",
-        "CircleUp Growth Partners II, L.P.  (CIK 0001886114)",
-        "CircleUp Growth Partners, L.P.  (CIK 0001700282)",
-        "CircleUp Marketplace Index Fund I, L.P.  (CIK 0001664768)",
-        "CircleUp Growth Capital Fund I, L.P.  (CIK 0001614463)"
-      ],
-      "form_d_fund_ciks": [
-        "2070482",
-        "1765746",
-        "1886114",
-        "1700282",
-        "1664768",
-        "1614463"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0002070482-25-000001",
-          "file_date": "2025-05-29",
-          "form": "D",
-          "cik": "2070482",
-          "filer_name": "CIRCLEUP LLC  (CIK 0002070482)"
-        },
-        {
-          "accession": "0001765746-22-000001",
-          "file_date": "2022-03-02",
-          "form": "D/A",
-          "cik": "1765746",
-          "filer_name": "CircleUp Credit Fund I, LP  (CIK 0001765746)"
-        },
-        {
-          "accession": "0001886114-21-000001",
-          "file_date": "2021-10-29",
-          "form": "D",
-          "cik": "1886114",
-          "filer_name": "CircleUp Growth Partners II, L.P.  (CIK 0001886114)"
-        },
-        {
-          "accession": "0001765746-21-000001",
-          "file_date": "2021-03-03",
-          "form": "D/A",
-          "cik": "1765746",
-          "filer_name": "CircleUp Credit Fund I, LP  (CIK 0001765746)"
-        },
-        {
-          "accession": "0000902664-20-001449",
-          "file_date": "2020-03-06",
-          "form": "D/A",
-          "cik": "1765746",
-          "filer_name": "CircleUp Credit Fund I, LP  (CIK 0001765746)"
-        }
-      ]
     },
     {
       "id": "sec-314911",
@@ -10942,6 +10838,32 @@
       "thesis_source": "website"
     },
     {
+      "id": "sec-342941",
+      "name": "Da Vinci Management, LLC",
+      "address": "3000 EL CAMINO REAL BLD. 4, STE 200, Palo Alto, CA 94306",
+      "sec_crd": "342941",
+      "aum_usd": 40404040,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/28/2026)",
+      "aum_as_of": "08/28/2026",
+      "county": "Santa Clara",
+      "tier": "lite",
+      "website": null,
+      "phone": "6507436568",
+      "fund_count": 1,
+      "vc_fund_count": null,
+      "pe_fund_count": 1,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "pe"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "08/28/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.4419,
+      "lng": -122.143
+    },
+    {
       "id": "sec-162705",
       "name": "Dag Ventures",
       "address": "251 LYTTON AVE. SUITE 200, Palo Alto, CA 94301",
@@ -11774,6 +11696,32 @@
       ]
     },
     {
+      "id": "sec-343843",
+      "name": "Diffusion Holdings LLC",
+      "address": "2261 MARKET STREET SUITE 16883, San Francisco, CA 94114",
+      "sec_crd": "343843",
+      "aum_usd": 769196647,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/21/2026)",
+      "aum_as_of": "08/21/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": null,
+      "phone": "650-822-1600",
+      "fund_count": 2,
+      "vc_fund_count": 2,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "08/21/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-306743",
       "name": "Digitaldx Ventures Management, LLC",
       "address": "1155 CRANE STREET, SUITE 7, Menlo Park, CA 94025",
@@ -11903,22 +11851,22 @@
       "address": "4546 EL CAMINO REAL B10 #1013, Los Altos, CA 94022",
       "sec_crd": "242788",
       "aum_usd": 671426250,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 04/29/2026)",
-      "aum_as_of": "04/29/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 09/17/2026)",
+      "aum_as_of": "09/17/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://www.diversificapital.com",
       "phone": "650-632-5667",
-      "fund_count": 18,
+      "fund_count": 22,
       "vc_fund_count": 2,
-      "pe_fund_count": 16,
+      "pe_fund_count": 20,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc",
         "pe"
       ],
       "employee_count": 13,
-      "latest_filing_date": "04/29/2026",
+      "latest_filing_date": "09/17/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.3852,
@@ -12145,6 +12093,32 @@
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed to Series B startups in security, enterprise SaaS, and developer tools.",
       "thesis_confidence": 0.9
+    },
+    {
+      "id": "sec-342032",
+      "name": "Dnx Ventures",
+      "address": "55 EAST 3RD AVENUE, San Mateo, CA 94401",
+      "sec_crd": "342032",
+      "aum_usd": 25000000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/01/2026)",
+      "aum_as_of": "07/01/2026",
+      "county": "San Mateo",
+      "tier": "lite",
+      "website": "https://medium.com/@dnxventures",
+      "phone": "858-449-4173",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/01/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.563,
+      "lng": -122.3255
     },
     {
       "id": "sec-313971",
@@ -12542,6 +12516,58 @@
       "thesis_confidence": 0.9
     },
     {
+      "id": "sec-130996",
+      "name": "Dunlap Equity Management, Llc.",
+      "address": "155 SANSOME ST SUITE 810, San Francisco, CA 94104",
+      "sec_crd": "130996",
+      "aum_usd": 57720117,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/24/2026)",
+      "aum_as_of": "06/24/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "http://www.dunlapequity.com",
+      "phone": "415-568-9600",
+      "fund_count": 1,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": 1,
+      "firm_type_tags": [
+        "hedge"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "06/24/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
+      "id": "sec-344403",
+      "name": "Duration Ventures Management LP",
+      "address": "555 BRYANT STREET, Palo Alto, CA 94301",
+      "sec_crd": "344403",
+      "aum_usd": 429285000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/18/2026)",
+      "aum_as_of": "09/18/2026",
+      "county": "Santa Clara",
+      "tier": "lite",
+      "website": "https://durationventures.com/",
+      "phone": "415-230-1362",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "09/18/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.4419,
+      "lng": -122.143
+    },
+    {
       "id": "sec-309084",
       "name": "E.ventures Management VI, LLC",
       "address": "101 MONTGOMERY STREET STE 200, San Francisco, CA 94129",
@@ -12630,8 +12656,8 @@
       "address": "110 FIRST STREET, Los Altos, CA 94022",
       "sec_crd": "325056",
       "aum_usd": 96668378,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/17/2026)",
-      "aum_as_of": "03/17/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/29/2026)",
+      "aum_as_of": "05/29/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://www.e12.ventures/",
@@ -12644,7 +12670,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/17/2026",
+      "latest_filing_date": "05/29/2026",
       "stages": [
         "seed"
       ],
@@ -12998,8 +13024,8 @@
       "address": "100 DRAKES LANDING ROAD BLDG 100B, STE. 164, Greenbrae, CA 94904",
       "sec_crd": "338309",
       "aum_usd": 69282227,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/26/2026)",
+      "aum_as_of": "06/26/2026",
       "county": "Marin",
       "tier": "lite",
       "website": null,
@@ -13012,7 +13038,7 @@
         "pe"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "06/26/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.9518,
@@ -13269,6 +13295,33 @@
       "thesis_confidence": 1.0
     },
     {
+      "id": "sec-341342",
+      "name": "Endurance Mc, LLC",
+      "address": "1007 GENERAL KENNEDY AVENUE #3, San Francisco, CA 94129",
+      "sec_crd": "341342",
+      "aum_usd": 131772273,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/11/2026)",
+      "aum_as_of": "05/11/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://www.endurancecos.com/",
+      "phone": "(307) 448-2126",
+      "fund_count": 2,
+      "vc_fund_count": 1,
+      "pe_fund_count": 1,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc",
+        "pe"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "05/11/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-307613",
       "name": "Endurance28 VC LLC",
       "address": "39 MESA STREET SUITE 207, San Francisco, CA 94129",
@@ -13360,6 +13413,58 @@
       "sectors": [],
       "lat": 37.4419,
       "lng": -122.143
+    },
+    {
+      "id": "sec-339167",
+      "name": "Envoy Equity Partners LP",
+      "address": "381 BUSH ST. SUITE 500, San Francisco, CA 94104",
+      "sec_crd": "339167",
+      "aum_usd": 100112658,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/08/2026)",
+      "aum_as_of": "09/08/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": null,
+      "phone": "917-623-4089",
+      "fund_count": 2,
+      "vc_fund_count": null,
+      "pe_fund_count": 2,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "pe"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "09/08/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
+      "id": "sec-297191",
+      "name": "Equiam",
+      "address": "345 CALIFORNIA STREET SUITE 600, San Francisco, CA 94104",
+      "sec_crd": "297191",
+      "aum_usd": 103068106,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/08/2026)",
+      "aum_as_of": "06/08/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://equiam.com",
+      "phone": "415.843.1389",
+      "fund_count": 9,
+      "vc_fund_count": null,
+      "pe_fund_count": 9,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "pe"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "06/08/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
     },
     {
       "id": "sec-309297",
@@ -13791,8 +13896,8 @@
       "address": "345 CALIFORNIA STREET SUITE 600, San Francisco, CA 94104",
       "sec_crd": "325807",
       "aum_usd": 2905319288,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/13/2026)",
+      "aum_as_of": "08/13/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": null,
@@ -13805,7 +13910,7 @@
         "vc"
       ],
       "employee_count": 7,
-      "latest_filing_date": "03/30/2026",
+      "latest_filing_date": "08/13/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -13816,9 +13921,9 @@
       "name": "Fellows Fund Management LLC",
       "address": "500 EAST HAMILTON AVE. #1043, Campbell, CA 95008",
       "sec_crd": "337221",
-      "aum_usd": 56659988,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/18/2025)",
-      "aum_as_of": "07/18/2025",
+      "aum_usd": 105544257,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/09/2026)",
+      "aum_as_of": "07/09/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "http://fellowsfundvc.com",
@@ -13831,7 +13936,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "07/18/2025",
+      "latest_filing_date": "07/09/2026",
       "stages": [
         "seed"
       ],
@@ -13905,11 +14010,11 @@
       "address": "ONE SANSOME STREET, SUITE 3950, San Francisco, CA 94104",
       "sec_crd": "298492",
       "aum_usd": 1351113806,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/03/2026)",
-      "aum_as_of": "03/03/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/20/2026)",
+      "aum_as_of": "08/20/2026",
       "county": "San Francisco",
       "tier": "lite",
-      "website": "https://fin.capital/",
+      "website": "https://twitter.com/FinVentureCap",
       "phone": "415-300-0702",
       "fund_count": 21,
       "vc_fund_count": 9,
@@ -13920,7 +14025,7 @@
         "pe"
       ],
       "employee_count": 23,
-      "latest_filing_date": "03/03/2026",
+      "latest_filing_date": "08/20/2026",
       "stages": [
         "series_a",
         "series_b",
@@ -14685,8 +14790,8 @@
       "address": "3000 SAND HILL RD SUITE 2-150, Menlo Park, CA 94025",
       "sec_crd": "331507",
       "aum_usd": 250000000,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 02/27/2025)",
-      "aum_as_of": "02/27/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/01/2026)",
+      "aum_as_of": "05/01/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://www.foundersxventures.com/",
@@ -14699,7 +14804,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "02/27/2025",
+      "latest_filing_date": "05/01/2026",
       "stages": [
         "seed",
         "series_a"
@@ -14906,12 +15011,12 @@
       "name": "Friends & Family Capital Management, LLC",
       "address": "325 SHARON PARK DRIVE SUITE 705, Menlo Park, CA 94025",
       "sec_crd": "310407",
-      "aum_usd": 777200000,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_usd": 793800000,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 06/17/2026)",
+      "aum_as_of": "06/17/2026",
       "county": "San Mateo",
       "tier": "lite",
-      "website": "https://twitter.com/friendsfamcap",
+      "website": "https://www.fafc.com/",
       "phone": "650-815-7042",
       "fund_count": 17,
       "vc_fund_count": 2,
@@ -14921,8 +15026,8 @@
         "vc",
         "other"
       ],
-      "employee_count": 9,
-      "latest_filing_date": "03/31/2026",
+      "employee_count": 11,
+      "latest_filing_date": "06/17/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.453,
@@ -15303,22 +15408,22 @@
       "name": "Fyrfly Venture Partners, LLC",
       "address": "PIER 17 SUITE 800, San Francisco, CA 94111",
       "sec_crd": "165977",
-      "aum_usd": 132947000,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/07/2025)",
-      "aum_as_of": "03/07/2025",
+      "aum_usd": 134750000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/11/2026)",
+      "aum_as_of": "05/11/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.fyrfly.vc",
       "phone": "415-608-5863",
-      "fund_count": 7,
-      "vc_fund_count": 7,
+      "fund_count": 8,
+      "vc_fund_count": 8,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/07/2025",
+      "latest_filing_date": "05/11/2026",
       "stages": [],
       "sectors": [
         "data",
@@ -15531,8 +15636,8 @@
       "address": "111 SUTTER STREET, 10TH FLOOR, San Francisco, CA 94104",
       "sec_crd": "316994",
       "aum_usd": 6977934255,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 04/01/2026)",
-      "aum_as_of": "04/01/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/14/2026)",
+      "aum_as_of": "07/14/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://gcsllc.com",
@@ -15549,7 +15654,7 @@
         "other"
       ],
       "employee_count": 73,
-      "latest_filing_date": "04/01/2026",
+      "latest_filing_date": "07/14/2026",
       "stages": [
         "growth"
       ],
@@ -15945,9 +16050,9 @@
       "name": "Goahead Mage Company, L.L.C.",
       "address": "535 MIDDLEFIELD ROAD STE 280, Menlo Park, CA 94025",
       "sec_crd": "162072",
-      "aum_usd": 199475561,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/11/2025)",
-      "aum_as_of": "03/11/2025",
+      "aum_usd": 186396020,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/22/2026)",
+      "aum_as_of": "05/22/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://www.goaheadvc.com",
@@ -15960,7 +16065,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/11/2025",
+      "latest_filing_date": "05/22/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.453,
@@ -16374,9 +16479,9 @@
       "name": "Gree Capital Partners, LLC",
       "address": "95 THIRD STREET 2ND FLOOR, San Francisco, CA 94103",
       "sec_crd": "301593",
-      "aum_usd": 98198089,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 10/22/2025)",
-      "aum_as_of": "10/22/2025",
+      "aum_usd": 82328113,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/28/2026)",
+      "aum_as_of": "09/28/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.youtube.com/channel/UCIZk909_Rw4_FAp6bNFZXFQ",
@@ -16389,7 +16494,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "10/22/2025",
+      "latest_filing_date": "09/28/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -16400,9 +16505,9 @@
       "name": "Gree LP Fund US",
       "address": "71 STEVENSON ST, SUITE 400, San Francisco, CA 94105",
       "sec_crd": "339964",
-      "aum_usd": 20764808,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 01/05/2026)",
-      "aum_as_of": "01/05/2026",
+      "aum_usd": 35789913,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/28/2026)",
+      "aum_as_of": "09/28/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/gree-lp-fund/",
@@ -16415,7 +16520,7 @@
         "other"
       ],
       "employee_count": null,
-      "latest_filing_date": "01/05/2026",
+      "latest_filing_date": "09/28/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -16465,6 +16570,33 @@
       "lng": -122.1817
     },
     {
+      "id": "sec-165941",
+      "name": "Greenoaks",
+      "address": "1 LETTERMAN DRIVE BUILDING A - SUITE 500, San Francisco, CA 94129",
+      "sec_crd": "165941",
+      "aum_usd": 18272992245,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/13/2026)",
+      "aum_as_of": "08/13/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "http://www.greenoaks.com",
+      "phone": "415.942.5322",
+      "fund_count": 57,
+      "vc_fund_count": 54,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc",
+        "other"
+      ],
+      "employee_count": 67,
+      "latest_filing_date": "08/13/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-299383",
       "name": "Groundforce Capital Management, LLC",
       "address": "38 MILLER AVE SUITE 20, Mill Valley, CA 94941",
@@ -16490,6 +16622,32 @@
       "sectors": [],
       "lat": 37.906,
       "lng": -122.545
+    },
+    {
+      "id": "sec-325606",
+      "name": "Groundwork Management Partners, LLC",
+      "address": "548 MARKET STREET PMB 82560, San Francisco, CA 94104",
+      "sec_crd": "325606",
+      "aum_usd": 8360000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/09/2026)",
+      "aum_as_of": "09/09/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": null,
+      "phone": "303-204-8856",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "09/09/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
     },
     {
       "id": "sec-286655",
@@ -16583,11 +16741,11 @@
       "address": "251 LYTTON AVENUE SUITE 200, Palo Alto, CA 94301",
       "sec_crd": "315702",
       "aum_usd": 822849691,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/30/2026)",
+      "aum_as_of": "07/30/2026",
       "county": "Santa Clara",
       "tier": "lite",
-      "website": "https://twitter.com/hack_vc",
+      "website": "https://hack.vc/",
       "phone": "408-345-5807",
       "fund_count": 16,
       "vc_fund_count": 6,
@@ -16598,7 +16756,7 @@
         "other"
       ],
       "employee_count": 15,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "07/30/2026",
       "stages": [
         "seed",
         "series_a"
@@ -16731,21 +16889,21 @@
       "address": "300 GRANT AVENUE 4TH FLOOR, San Francisco, CA 94108",
       "sec_crd": "288464",
       "aum_usd": 3995640574,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 04/30/2026)",
-      "aum_as_of": "04/30/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/03/2026)",
+      "aum_as_of": "08/03/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/hanwha-asset-management-usa-ltd",
       "phone": "(415) 534-1190",
-      "fund_count": 1,
-      "vc_fund_count": 1,
+      "fund_count": 2,
+      "vc_fund_count": 2,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": 22,
-      "latest_filing_date": "04/30/2026",
+      "latest_filing_date": "08/03/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -17129,6 +17287,32 @@
       "lng": -122.1817
     },
     {
+      "id": "sec-170227",
+      "name": "Hhpf Capital LLC",
+      "address": "1999 HARRISON ST. SUITE 1800, Oakland, CA 94612",
+      "sec_crd": "170227",
+      "aum_usd": 120475119,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/23/2026)",
+      "aum_as_of": "07/23/2026",
+      "county": "Alameda",
+      "tier": "lite",
+      "website": "https://hiddenhillspartners.com/",
+      "phone": "415-604-4134",
+      "fund_count": 2,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": 2,
+      "firm_type_tags": [
+        "hedge"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/23/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.8044,
+      "lng": -122.2712
+    },
+    {
       "id": "sec-166244",
       "name": "Highbar Partners",
       "address": "405 EL CAMINO REAL SUITE 361, Menlo Park, CA 94025",
@@ -17350,6 +17534,32 @@
       ]
     },
     {
+      "id": "sec-343553",
+      "name": "Hill Capital",
+      "address": "501 2ND STREET, SUITE 575, San Francisco, CA 94107",
+      "sec_crd": "343553",
+      "aum_usd": 744000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/10/2026)",
+      "aum_as_of": "07/10/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://hill.com",
+      "phone": "+1 (415) 688-4250",
+      "fund_count": 2,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "other"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/10/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-168123",
       "name": "Homebrew Ventures",
       "address": "409 PRIMROSE ROAD, Burlingame, CA 94010",
@@ -17437,8 +17647,8 @@
       "address": "140 NEW MONTGOMERY STREET, 16TH FLOOR, San Francisco, CA 94105",
       "sec_crd": "110877",
       "aum_usd": 23608854383,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 06/17/2026)",
+      "aum_as_of": "06/17/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.horsleybridge.com",
@@ -17452,7 +17662,7 @@
         "pe"
       ],
       "employee_count": 45,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "06/17/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -17527,8 +17737,8 @@
       "address": "340 PINE STREET SUITE 100, San Francisco, CA 94104",
       "sec_crd": "296844",
       "aum_usd": 4376992745,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/13/2026)",
+      "aum_as_of": "08/13/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://human.capital/",
@@ -17541,7 +17751,7 @@
         "vc"
       ],
       "employee_count": 39,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "08/13/2026",
       "stages": [
         "seed",
         "series_a"
@@ -18173,6 +18383,32 @@
       "lng": -122.4194
     },
     {
+      "id": "sec-309419",
+      "name": "Inclusive Capital Partners, L.P.",
+      "address": "1170-A GORGAS AVENUE, San Francisco, CA 94129",
+      "sec_crd": "309419",
+      "aum_usd": 81228506,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/17/2026)",
+      "aum_as_of": "09/17/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://in-cap.com/",
+      "phone": "708-302-0775",
+      "fund_count": 2,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": 2,
+      "firm_type_tags": [
+        "hedge"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "09/17/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-308889",
       "name": "Informed Ventures Advisors, LLC",
       "address": "1300 EL CAMINO REAL SUITE 100, Menlo Park, CA 94025",
@@ -18425,23 +18661,23 @@
       "name": "Innovius Capital Management, LLC",
       "address": "FOUR EMBARCADERO CENTER SUITE 3720, San Francisco, CA 94111",
       "sec_crd": "311568",
-      "aum_usd": 365495434,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2025)",
-      "aum_as_of": "03/31/2025",
+      "aum_usd": 366100000,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/28/2026)",
+      "aum_as_of": "07/28/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://innoviuscapital.com/",
       "phone": "6504884983",
-      "fund_count": 6,
+      "fund_count": 7,
       "vc_fund_count": 4,
-      "pe_fund_count": 2,
+      "pe_fund_count": 3,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc",
         "pe"
       ],
       "employee_count": 10,
-      "latest_filing_date": "03/31/2025",
+      "latest_filing_date": "07/28/2026",
       "stages": [
         "growth"
       ],
@@ -18863,32 +19099,6 @@
       ],
       "employee_count": null,
       "latest_filing_date": "03/06/2026",
-      "stages": [],
-      "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
-    },
-    {
-      "id": "sec-326856",
-      "name": "Islander Capital Partners, L.P.",
-      "address": "601 CALIFORNIA STREET, STE 210, San Francisco, CA 94108",
-      "sec_crd": "326856",
-      "aum_usd": 334171000,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
-      "county": "San Francisco",
-      "tier": "lite",
-      "website": "https://www.linkedin.com/company/islander-capital/",
-      "phone": "415-636-5470",
-      "fund_count": 1,
-      "vc_fund_count": null,
-      "pe_fund_count": null,
-      "hedge_fund_count": 1,
-      "firm_type_tags": [
-        "hedge"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/31/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -19408,33 +19618,6 @@
       "thesis_source": "website"
     },
     {
-      "id": "sec-317924",
-      "name": "L2 Point Management LLC",
-      "address": "ONE LETTERMAN DRIVE SUITE C3500, San Francisco, CA 94129",
-      "sec_crd": "317924",
-      "aum_usd": 622482147,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
-      "county": "San Francisco",
-      "tier": "lite",
-      "website": "https://www.l2-point.com",
-      "phone": "(919) 452-0172",
-      "fund_count": 6,
-      "vc_fund_count": 1,
-      "pe_fund_count": 5,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "vc",
-        "pe"
-      ],
-      "employee_count": 10,
-      "latest_filing_date": "03/30/2026",
-      "stages": [],
-      "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
-    },
-    {
       "id": "sec-285120",
       "name": "Landed Management Company, LLC",
       "address": "548 MARKET STREET SUITE 79600, San Francisco, CA 94104",
@@ -19554,9 +19737,9 @@
       "name": "Lavelle Capital",
       "address": "345 CALIFORNIA ST EIGHTH FLOOR, San Francisco, CA 94104",
       "sec_crd": "316754",
-      "aum_usd": 410087852,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_usd": 508200682,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 09/30/2026)",
+      "aum_as_of": "09/30/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/lavellecapital/",
@@ -19570,7 +19753,7 @@
         "other"
       ],
       "employee_count": 3,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "09/30/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -19645,8 +19828,8 @@
       "address": "3130 ALPINE ROAD SUITE #288 - 237, Portola Valley, CA 94028",
       "sec_crd": "302030",
       "aum_usd": 86814781,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 04/30/2025)",
-      "aum_as_of": "04/30/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/02/2026)",
+      "aum_as_of": "07/02/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://twitter.com/leadoutcapital",
@@ -19659,7 +19842,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "04/30/2025",
+      "latest_filing_date": "07/02/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.3838,
@@ -20122,8 +20305,8 @@
       "address": "2740 SAND HILL ROAD 2ND FLOOR, Menlo Park, CA 94025",
       "sec_crd": "161916",
       "aum_usd": 2440493000,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 04/30/2026)",
-      "aum_as_of": "04/30/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/21/2026)",
+      "aum_as_of": "08/21/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://www.longitudecapital.com/",
@@ -20136,7 +20319,7 @@
         "vc"
       ],
       "employee_count": 27,
-      "latest_filing_date": "04/30/2026",
+      "latest_filing_date": "08/21/2026",
       "stages": [
         "series_b",
         "series_c",
@@ -20511,6 +20694,32 @@
       "thesis_source": "website"
     },
     {
+      "id": "sec-340862",
+      "name": "Mangusta Capital",
+      "address": "437 ARKANSAS STREET, San Francisco, CA 94107",
+      "sec_crd": "340862",
+      "aum_usd": 82760800,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/09/2026)",
+      "aum_as_of": "07/09/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://www.linkedin.com/company/mangustacap/",
+      "phone": "408-480-4627",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/09/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-319666",
       "name": "Manresa Management Company LLC",
       "address": "548 MARKET STREET PMB 96279, San Francisco, CA 94111",
@@ -20826,8 +21035,8 @@
       "address": "33 NEW MONTGOMERY STREET SUITE 2000, San Francisco, CA 94105",
       "sec_crd": "115060",
       "aum_usd": 7609155605,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 09/16/2026)",
+      "aum_as_of": "09/16/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.mcmorgan.com",
@@ -20841,7 +21050,7 @@
         "other"
       ],
       "employee_count": 26,
-      "latest_filing_date": "03/30/2026",
+      "latest_filing_date": "09/16/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -21106,8 +21315,8 @@
       "address": "245 LYTTON AVENUE, SUITE 125, Palo Alto, CA 94301",
       "sec_crd": "161233",
       "aum_usd": 4622329113,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/01/2026)",
+      "aum_as_of": "09/01/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/meritech-capital-partners",
@@ -21120,7 +21329,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "09/01/2026",
       "stages": [
         "series_c",
         "series_d",
@@ -21557,11 +21766,11 @@
     {
       "id": "sec-327084",
       "name": "Mitsui & Co. Global Investment, INC.",
-      "address": "535 MIDDLEFIELD ROAD SUITE 100, Menlo Park, CA 94025",
+      "address": "64 WILLOW PLACE SUITE 200, Menlo Park, CA 94025",
       "sec_crd": "327084",
-      "aum_usd": 152000000,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/26/2025)",
-      "aum_as_of": "06/26/2025",
+      "aum_usd": 142000000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/22/2026)",
+      "aum_as_of": "06/22/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://mitsui-global.com/",
@@ -21574,7 +21783,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "06/26/2025",
+      "latest_filing_date": "06/22/2026",
       "stages": [
         "series_b",
         "series_c",
@@ -21595,56 +21804,30 @@
       "thesis_confidence": 0.9
     },
     {
-      "id": "sec-310575",
-      "name": "Mns Global Capital Managers, LLC",
-      "address": "1850 GATEWAY DRIVE SUITE 450, San Mateo, CA 94404",
-      "sec_crd": "310575",
-      "aum_usd": 850047015,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 04/08/2026)",
-      "aum_as_of": "04/08/2026",
-      "county": "San Mateo",
+      "id": "sec-343542",
+      "name": "Modern Capital Ventures Management, LLC",
+      "address": "715 BEACH STREET, San Francisco, CA 94109",
+      "sec_crd": "343542",
+      "aum_usd": 146289567,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/02/2026)",
+      "aum_as_of": "07/02/2026",
+      "county": "San Francisco",
       "tier": "lite",
-      "website": "https://www.celesta.vc/",
-      "phone": "415-765-7100",
-      "fund_count": 9,
-      "vc_fund_count": 9,
+      "website": "https://www.moderncapital.com/",
+      "phone": "(415) 234-3444",
+      "fund_count": 1,
+      "vc_fund_count": 1,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "04/08/2026",
+      "latest_filing_date": "07/02/2026",
       "stages": [],
-      "sectors": [
-        "deep_tech",
-        "ai_infra",
-        "bio"
-      ],
-      "lat": 37.563,
-      "lng": -122.3255,
-      "inferred": true,
-      "inference_confidence": 0.8,
-      "inference_basis": "deep_tech: \"global deep tech venture capital firm\" | ai_infra: \"AI-powered, omni-channel customer experience\" | bio: \"Bioconvergence innovations at the intersection of high tech and biotech\"",
-      "inference_model": "glm-4.6",
-      "inferred_thesis": "A global deep tech venture capital firm investing in AI infrastructure and bioconvergence innovations.",
-      "thesis_confidence": 0.9,
-      "inference_source": "website",
-      "inference_evidence": [
-        {
-          "sector": "deep_tech",
-          "quote": "global deep tech venture capital firm"
-        },
-        {
-          "sector": "ai_infra",
-          "quote": "AI-powered, omni-channel customer experience"
-        },
-        {
-          "sector": "bio",
-          "quote": "Bioconvergence innovations at the intersection of high tech and biotech"
-        }
-      ],
-      "thesis_source": "website"
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
     },
     {
       "id": "sec-163182",
@@ -21652,8 +21835,8 @@
       "address": "1300 S. EL CAMINO REAL STE 500, San Mateo, CA 94402",
       "sec_crd": "163182",
       "aum_usd": 322188010,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/17/2026)",
-      "aum_as_of": "03/17/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/08/2026)",
+      "aum_as_of": "06/08/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://www.mdv.com/",
@@ -21666,7 +21849,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/17/2026",
+      "latest_filing_date": "06/08/2026",
       "stages": [
         "seed",
         "series_a",
@@ -22011,46 +22194,6 @@
       "thesis_confidence": 0.9
     },
     {
-      "id": "sec-161509",
-      "name": "Morgenthaler Management Corporation",
-      "address": "3200 ALPINE ROAD, Portola Valley, CA 94028",
-      "sec_crd": "161509",
-      "aum_usd": 48455274,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
-      "county": "San Mateo",
-      "tier": "lite",
-      "website": "http://www.morgenthaler.com",
-      "phone": "650-388-7600",
-      "fund_count": 2,
-      "vc_fund_count": 1,
-      "pe_fund_count": 1,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "vc",
-        "pe"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/30/2026",
-      "stages": [
-        "series_a",
-        "series_b",
-        "growth"
-      ],
-      "sectors": [
-        "healthcare",
-        "enterprise_saas"
-      ],
-      "lat": 37.3838,
-      "lng": -122.2353,
-      "inferred": true,
-      "inference_confidence": 0.9,
-      "inference_basis": "Historical investments in IT and healthcare across growth stages",
-      "inference_model": "glm-4.6",
-      "inferred_thesis": "Backs Series A through growth-stage healthcare and enterprise SaaS companies.",
-      "thesis_confidence": 0.9
-    },
-    {
       "id": "sec-339276",
       "name": "Morview Capital Fund C LLC",
       "address": "421 MISSOURI ST, San Francisco, CA 94107",
@@ -22141,6 +22284,32 @@
         }
       ],
       "thesis_source": "website"
+    },
+    {
+      "id": "sec-339889",
+      "name": "Motive Force Management, LLC",
+      "address": "218 UNION STREET, APT. 3, San Francisco, CA 94133",
+      "sec_crd": "339889",
+      "aum_usd": 11353523,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/09/2026)",
+      "aum_as_of": "07/09/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://oana@motiveforce.ai",
+      "phone": "408-906-9777",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/09/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
     },
     {
       "id": "sec-288270",
@@ -22424,9 +22593,9 @@
       "name": "Nava Ventures, LLC",
       "address": "710 SANSOME STREET 2ND FLOOR, San Francisco, CA 94111",
       "sec_crd": "317758",
-      "aum_usd": 1126370679,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_usd": 939233252,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/05/2026)",
+      "aum_as_of": "05/05/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/80407756/admin/",
@@ -22439,33 +22608,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
-    },
-    {
-      "id": "sec-341426",
-      "name": "Ndh Opportunity LLC",
-      "address": "2261 MARKET STREET, San Francisco, CA 94114",
-      "sec_crd": "341426",
-      "aum_usd": 128110029,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 04/14/2026)",
-      "aum_as_of": "04/14/2026",
-      "county": "San Francisco",
-      "tier": "lite",
-      "website": "https://linkedin.com/company/story-capital",
-      "phone": "(650) 200-0970",
-      "fund_count": 5,
-      "vc_fund_count": 5,
-      "pe_fund_count": null,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "vc"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "04/14/2026",
+      "latest_filing_date": "05/05/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -22503,8 +22646,8 @@
       "address": "595 PACIFIC AVENUE 4TH FLOOR, San Francisco, CA 94133",
       "sec_crd": "294621",
       "aum_usd": 2823531918,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/08/2026)",
+      "aum_as_of": "06/08/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.neo.com/INDEX.ASPX",
@@ -22517,7 +22660,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "06/08/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -22577,99 +22720,6 @@
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed and Series A deep tech and enterprise SaaS startups.",
       "thesis_confidence": 1.0
-    },
-    {
-      "id": "sec-321649",
-      "name": "Next Horizon Capital",
-      "address": "ONE EMBARCADERO CENTER, SUITE 2540, San Francisco, CA 94111",
-      "sec_crd": "321649",
-      "aum_usd": 242364768,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
-      "county": "San Francisco",
-      "tier": "lite",
-      "website": "https://nexthorizoncap.com",
-      "phone": "415-271-6410",
-      "fund_count": 3,
-      "vc_fund_count": null,
-      "pe_fund_count": 3,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "pe"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [
-        "enterprise_saas"
-      ],
-      "lat": 37.7749,
-      "lng": -122.4194,
-      "inferred": true,
-      "inference_confidence": 1.0,
-      "inference_basis": "enterprise_saas: \"Business Services\"",
-      "inference_model": "glm-4.6",
-      "inferred_thesis": "Next Horizon Capital invests in enterprise SaaS and business services.",
-      "thesis_confidence": 0.9,
-      "inference_source": "website",
-      "inference_evidence": [
-        {
-          "sector": "enterprise_saas",
-          "quote": "Business Services"
-        }
-      ],
-      "thesis_source": "website",
-      "form_d_total_filings": 6,
-      "form_d_latest_filing_date": "2026-06-25",
-      "form_d_distinct_funds": [
-        "NEXT HORIZON CAPITAL FUND I-A, LP  (CIK 0002059271)",
-        "NEXT HORIZON CAPITAL FUND I, LP  (CIK 0002059269)",
-        "Next Horizon Capital PHG Co-Invest, LP  (CIK 0002097417)",
-        "NEXT HORIZON CAPITAL TIRECO SPV, LP  (CIK 0002016492)"
-      ],
-      "form_d_fund_ciks": [
-        "2059271",
-        "2059269",
-        "2097417",
-        "2016492"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0002059271-26-000002",
-          "file_date": "2026-06-25",
-          "form": "D/A",
-          "cik": "2059271",
-          "filer_name": "NEXT HORIZON CAPITAL FUND I-A, LP  (CIK 0002059271)"
-        },
-        {
-          "accession": "0002059269-26-000002",
-          "file_date": "2026-06-25",
-          "form": "D/A",
-          "cik": "2059269",
-          "filer_name": "NEXT HORIZON CAPITAL FUND I, LP  (CIK 0002059269)"
-        },
-        {
-          "accession": "0002097417-25-000001",
-          "file_date": "2025-11-21",
-          "form": "D",
-          "cik": "2097417",
-          "filer_name": "Next Horizon Capital PHG Co-Invest, LP  (CIK 0002097417)"
-        },
-        {
-          "accession": "0002059271-25-000001",
-          "file_date": "2025-06-26",
-          "form": "D",
-          "cik": "2059271",
-          "filer_name": "NEXT HORIZON CAPITAL FUND I-A, LP  (CIK 0002059271)"
-        },
-        {
-          "accession": "0002059269-25-000001",
-          "file_date": "2025-06-26",
-          "form": "D",
-          "cik": "2059269",
-          "filer_name": "NEXT HORIZON CAPITAL FUND I, LP  (CIK 0002059269)"
-        }
-      ]
     },
     {
       "id": "sec-156640",
@@ -22877,9 +22927,9 @@
       "name": "Niremia Collective Management, LLC",
       "address": "2651 ROSS RD, Palo Alto, CA 94303",
       "sec_crd": "317440",
-      "aum_usd": 16831203,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
+      "aum_usd": 16831204,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/17/2026)",
+      "aum_as_of": "08/17/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://niremia.vc",
@@ -22892,7 +22942,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/30/2026",
+      "latest_filing_date": "08/17/2026",
       "stages": [
         "seed"
       ],
@@ -23320,12 +23370,12 @@
     {
       "id": "sec-168062",
       "name": "Oceaniq Capital, LLC",
-      "address": "275 SHORELINE DRIVE UNIT 120, Redwood City, CA 94065",
+      "address": "1881 PAGE MILL RD., SUITE #236, Palo Alto, CA 94304",
       "sec_crd": "168062",
       "aum_usd": 334170960,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 04/24/2026)",
-      "aum_as_of": "04/24/2026",
-      "county": "San Mateo",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 06/24/2026)",
+      "aum_as_of": "06/24/2026",
+      "county": "Santa Clara",
       "tier": "lite",
       "website": "http://www.oceaniqcapital.com",
       "phone": "(415) 432-7580",
@@ -23337,11 +23387,11 @@
         "vc"
       ],
       "employee_count": 7,
-      "latest_filing_date": "04/24/2026",
+      "latest_filing_date": "06/24/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.4852,
-      "lng": -122.2364
+      "lat": 37.4419,
+      "lng": -122.143
     },
     {
       "id": "sec-310724",
@@ -23368,95 +23418,6 @@
       "sectors": [],
       "lat": 37.906,
       "lng": -122.545
-    },
-    {
-      "id": "sec-335855",
-      "name": "Olive Partners Management",
-      "address": "1950 UNIVERSITY AVENUE SUITE 200, Palo Alto, CA 94303",
-      "sec_crd": "335855",
-      "aum_usd": 228678933,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
-      "county": "Santa Clara",
-      "tier": "lite",
-      "website": "https://olivepartners.co/",
-      "phone": "408-710-7371",
-      "fund_count": 11,
-      "vc_fund_count": null,
-      "pe_fund_count": 11,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "pe"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/31/2026",
-      "stages": [],
-      "sectors": [],
-      "lat": 37.4419,
-      "lng": -122.143,
-      "form_d_total_filings": 19,
-      "form_d_latest_filing_date": "2026-06-02",
-      "form_d_distinct_funds": [
-        "Olive Partners Select V, LP  (CIK 0002128051)",
-        "Olive Partners Flagship Fund III, LP  (CIK 0002128047)",
-        "Olive Partners Select II, LP  (CIK 0002128048)",
-        "Olive Partners FoF III-A, LP  (CIK 0002130764)",
-        "Olive Partners Select I, LP  (CIK 0002070666)",
-        "Olive Partners FoF I, LP  (CIK 0002032583)",
-        "Olive Partners Flagship Fund I, LP  (CIK 0002054599)",
-        "Olive Partners FoF II, LP  (CIK 0002061061)",
-        "Olive Partners Access Fund II, LP  (CIK 0002124846)",
-        "Olive Partners FOF III, LP  (CIK 0002124848)"
-      ],
-      "form_d_fund_ciks": [
-        "2128051",
-        "2128047",
-        "2128048",
-        "2130764",
-        "2070666",
-        "2032583",
-        "2054599",
-        "2061061",
-        "2124846",
-        "2124848"
-      ],
-      "form_d_recent_filings": [
-        {
-          "accession": "0000905148-26-002774",
-          "file_date": "2026-06-02",
-          "form": "D",
-          "cik": "2128051",
-          "filer_name": "Olive Partners Select V, LP  (CIK 0002128051)"
-        },
-        {
-          "accession": "0000905148-26-002773",
-          "file_date": "2026-06-02",
-          "form": "D",
-          "cik": "2128047",
-          "filer_name": "Olive Partners Flagship Fund III, LP  (CIK 0002128047)"
-        },
-        {
-          "accession": "0000905148-26-002772",
-          "file_date": "2026-06-02",
-          "form": "D",
-          "cik": "2128048",
-          "filer_name": "Olive Partners Select II, LP  (CIK 0002128048)"
-        },
-        {
-          "accession": "0000905148-26-002771",
-          "file_date": "2026-06-02",
-          "form": "D",
-          "cik": "2130764",
-          "filer_name": "Olive Partners FoF III-A, LP  (CIK 0002130764)"
-        },
-        {
-          "accession": "0000905148-26-002763",
-          "file_date": "2026-06-01",
-          "form": "D/A",
-          "cik": "2070666",
-          "filer_name": "Olive Partners Select I, LP  (CIK 0002070666)"
-        }
-      ]
     },
     {
       "id": "sec-289384",
@@ -24725,63 +24686,6 @@
       "thesis_confidence": 0.9
     },
     {
-      "id": "sec-317719",
-      "name": "Penny Jar Capital, LLC",
-      "address": "3790 EL CAMINO REAL #817, Palo Alto, CA 94306",
-      "sec_crd": "317719",
-      "aum_usd": 146605409,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/20/2026)",
-      "aum_as_of": "03/20/2026",
-      "county": "Santa Clara",
-      "tier": "lite",
-      "website": "https://www.pennyjar.com/",
-      "phone": "503-214-0613",
-      "fund_count": 3,
-      "vc_fund_count": 3,
-      "pe_fund_count": null,
-      "hedge_fund_count": null,
-      "firm_type_tags": [
-        "vc"
-      ],
-      "employee_count": null,
-      "latest_filing_date": "03/20/2026",
-      "stages": [
-        "seed",
-        "pre_seed",
-        "series_a",
-        "series_b"
-      ],
-      "sectors": [
-        "ai_infra",
-        "security",
-        "fintech"
-      ],
-      "lat": 37.4419,
-      "lng": -122.143,
-      "inferred": true,
-      "inference_confidence": 1.0,
-      "inference_basis": "ai_infra: \"Investing in seed founders using AI to reimagine how the real world works.\" | security: \"Smarter physical security\" | fintech: \"Unified revenue operations\"",
-      "inference_model": "glm-4.6",
-      "inferred_thesis": "Invests in seed founders using AI to reimagine real-world operations, security, and revenue.",
-      "thesis_confidence": 0.9,
-      "inference_source": "website",
-      "inference_evidence": [
-        {
-          "sector": "ai_infra",
-          "quote": "Investing in seed founders using AI to reimagine how the real world works."
-        },
-        {
-          "sector": "security",
-          "quote": "Smarter physical security"
-        },
-        {
-          "sector": "fintech",
-          "quote": "Unified revenue operations"
-        }
-      ],
-      "thesis_source": "website"
-    },
-    {
       "id": "sec-341549",
       "name": "Permian Capital LLC",
       "address": "595 PACIFIC AVENUE FL 4, San Francisco, CA 94133",
@@ -25032,8 +24936,8 @@
       "address": "2882 SAND HILL ROAD SUITE 140, Menlo Park, CA 94025",
       "sec_crd": "326747",
       "aum_usd": 13717473648,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 06/01/2026)",
+      "aum_as_of": "06/01/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/svb-capital",
@@ -25048,7 +24952,7 @@
         "other"
       ],
       "employee_count": 54,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "06/01/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.453,
@@ -25059,9 +24963,9 @@
       "name": "Pivotal Bioventure Partners",
       "address": "501 SECOND STREET SUITE 200, San Francisco, CA 94107",
       "sec_crd": "287988",
-      "aum_usd": 497461430,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/24/2025)",
-      "aum_as_of": "06/24/2025",
+      "aum_usd": 585983020,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/25/2026)",
+      "aum_as_of": "06/25/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://pivotalbiovp.com",
@@ -25074,7 +24978,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "06/24/2025",
+      "latest_filing_date": "06/25/2026",
       "stages": [
         "series_a",
         "series_b"
@@ -25298,9 +25202,9 @@
       "name": "Point Olema Capital Partners, L.P.",
       "address": "38 KEYES STE 130, San Francisco, CA 94129",
       "sec_crd": "304303",
-      "aum_usd": 2907317093,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/27/2026)",
-      "aum_as_of": "03/27/2026",
+      "aum_usd": 2948080368,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/31/2026)",
+      "aum_as_of": "07/31/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.pointolema.com",
@@ -25315,7 +25219,7 @@
         "hedge"
       ],
       "employee_count": 9,
-      "latest_filing_date": "03/27/2026",
+      "latest_filing_date": "07/31/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -26046,22 +25950,22 @@
       "name": "Quest Venture Partners",
       "address": "855 SANTA CRUZ AVE UNIT A, Menlo Park, CA 94025",
       "sec_crd": "189515",
-      "aum_usd": 107363408,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/30/2025)",
-      "aum_as_of": "06/30/2025",
+      "aum_usd": 111418424,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/18/2026)",
+      "aum_as_of": "05/18/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://www.questvp.com",
       "phone": "650-248-0979",
-      "fund_count": 3,
-      "vc_fund_count": 3,
+      "fund_count": 4,
+      "vc_fund_count": 4,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "06/30/2025",
+      "latest_filing_date": "05/18/2026",
       "stages": [
         "pre_seed",
         "seed"
@@ -26153,8 +26057,8 @@
       "address": "501 2ND STREET SUITE 615, San Francisco, CA 94107",
       "sec_crd": "286038",
       "aum_usd": 1168925229,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/26/2026)",
-      "aum_as_of": "03/26/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/13/2026)",
+      "aum_as_of": "08/13/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.questacapital.com",
@@ -26167,7 +26071,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/26/2026",
+      "latest_filing_date": "08/13/2026",
       "stages": [
         "growth"
       ],
@@ -26372,8 +26276,8 @@
       "address": "474 BRYANT STREET, San Francisco, CA 94107",
       "sec_crd": "293969",
       "aum_usd": 625363384,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/21/2026)",
-      "aum_as_of": "03/21/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/18/2026)",
+      "aum_as_of": "05/18/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.reachcapital.com",
@@ -26386,7 +26290,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/21/2026",
+      "latest_filing_date": "05/18/2026",
       "stages": [
         "pre_seed",
         "seed",
@@ -26472,26 +26376,26 @@
     {
       "id": "sec-143606",
       "name": "Redmile Group",
-      "address": "ONE LETTERMAN DRIVE BLDG D, STE D3-300, San Francisco, CA 94129",
+      "address": "900 LARKSPUR LANDING CIRCLE SUITE 270, Larkspur, CA 94939",
       "sec_crd": "143606",
       "aum_usd": 4701099967,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
-      "county": "San Francisco",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/28/2026)",
+      "aum_as_of": "08/28/2026",
+      "county": "Marin",
       "tier": "lite",
       "website": "http://www.redmilegroup.com",
       "phone": "415-489-9980",
-      "fund_count": 18,
+      "fund_count": 20,
       "vc_fund_count": 7,
       "pe_fund_count": 3,
-      "hedge_fund_count": 8,
+      "hedge_fund_count": 10,
       "firm_type_tags": [
         "vc",
         "pe",
         "hedge"
       ],
       "employee_count": 30,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "08/28/2026",
       "stages": [
         "growth",
         "series_c",
@@ -26502,8 +26406,8 @@
         "bio",
         "therapeutics"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.9341,
+      "lng": -122.5353,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known healthcare/bio focus; 'Growth Investments' fund vehicle name",
@@ -26838,9 +26742,9 @@
       "name": "Revelation Capital Management, LLC",
       "address": "300 TURNEY STREET 2ND FLOOR, Sausalito, CA 94965",
       "sec_crd": "171114",
-      "aum_usd": 1605060063,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_usd": 2318722108,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 05/13/2026)",
+      "aum_as_of": "05/13/2026",
       "county": "Marin",
       "tier": "lite",
       "website": "https://www.revelation-partners.com",
@@ -26853,7 +26757,7 @@
         "vc"
       ],
       "employee_count": 18,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "05/13/2026",
       "stages": [
         "growth"
       ],
@@ -27085,8 +26989,8 @@
       "address": "649 MISSION STREET 5TH FLOOR, San Francisco, CA 94105",
       "sec_crd": "166062",
       "aum_usd": 346724229,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/27/2026)",
-      "aum_as_of": "03/27/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 05/21/2026)",
+      "aum_as_of": "05/21/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.rightsidecapital.com",
@@ -27099,7 +27003,7 @@
         "vc"
       ],
       "employee_count": 12,
-      "latest_filing_date": "03/27/2026",
+      "latest_filing_date": "05/21/2026",
       "stages": [
         "pre_seed",
         "seed"
@@ -27203,22 +27107,22 @@
       "name": "Root Ventures Manager, LLC",
       "address": "2670 HARRISON ST, San Francisco, CA 94110",
       "sec_crd": "175079",
-      "aum_usd": 506808066,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 01/22/2025)",
-      "aum_as_of": "01/22/2025",
+      "aum_usd": 643997057,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/26/2026)",
+      "aum_as_of": "05/26/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.root.vc",
       "phone": "415-416-9071",
-      "fund_count": 31,
-      "vc_fund_count": 31,
+      "fund_count": 32,
+      "vc_fund_count": 32,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "01/22/2025",
+      "latest_filing_date": "05/26/2026",
       "stages": [
         "pre_seed",
         "seed"
@@ -27243,8 +27147,8 @@
       "address": "80 E SIR FRANCIS DRAKE BLVD SUITE 2B, Larkspur, CA 94939",
       "sec_crd": "163820",
       "aum_usd": 55301039,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/14/2025)",
-      "aum_as_of": "05/14/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/02/2026)",
+      "aum_as_of": "06/02/2026",
       "county": "Marin",
       "tier": "lite",
       "website": null,
@@ -27257,7 +27161,7 @@
         "hedge"
       ],
       "employee_count": null,
-      "latest_filing_date": "05/14/2025",
+      "latest_filing_date": "06/02/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.9341,
@@ -27645,9 +27549,9 @@
       "name": "Scenic Management LLC",
       "address": "915 BATTERY STREET FIRST FLOOR, San Francisco, CA 94111",
       "sec_crd": "315808",
-      "aum_usd": 144587688,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/19/2026)",
-      "aum_as_of": "03/19/2026",
+      "aum_usd": 144587687,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/30/2026)",
+      "aum_as_of": "07/30/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://scenicmanagement.co/",
@@ -27660,8 +27564,8 @@
         "vc",
         "other"
       ],
-      "employee_count": null,
-      "latest_filing_date": "03/19/2026",
+      "employee_count": 4,
+      "latest_filing_date": "07/30/2026",
       "stages": [],
       "sectors": [
         "ai_infra"
@@ -28130,6 +28034,58 @@
       ]
     },
     {
+      "id": "sec-330426",
+      "name": "Seifdune Management, LP",
+      "address": "365 TONI STONE XING 3RD FLOOR, San Francisco, CA 94158",
+      "sec_crd": "330426",
+      "aum_usd": 174433942,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/29/2026)",
+      "aum_as_of": "05/29/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "http://www.seifdune.com",
+      "phone": "628-400-4788",
+      "fund_count": 2,
+      "vc_fund_count": 2,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "05/29/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
+      "id": "sec-343762",
+      "name": "Semianalysis Capital Management LLC",
+      "address": "77 FEDERAL STREET SUITE 5, San Francisco, CA 94107",
+      "sec_crd": "343762",
+      "aum_usd": 296620000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/21/2026)",
+      "aum_as_of": "08/21/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": null,
+      "phone": "628-294-4908",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "08/21/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-301371",
       "name": "Sempervirens Ventures LLC",
       "address": "1850 GATEWAY DRIVE 7TH FLOOR, San Mateo, CA 94404",
@@ -28385,8 +28341,8 @@
       "address": "789 UNIVERSITY AVE, Palo Alto, CA 94301",
       "sec_crd": "312767",
       "aum_usd": 262345699,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 02/17/2026)",
-      "aum_as_of": "02/17/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/04/2026)",
+      "aum_as_of": "05/04/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://www.shangbaycapital.com",
@@ -28399,7 +28355,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "02/17/2026",
+      "latest_filing_date": "05/04/2026",
       "stages": [],
       "sectors": [
         "healthcare"
@@ -29141,6 +29097,56 @@
       "thesis_confidence": 1.0
     },
     {
+      "id": "sec-343518",
+      "name": "Solasta Nexus, INC.",
+      "address": "95 3RD ST, STE 292, San Francisco, CA 94103",
+      "sec_crd": "343518",
+      "aum_usd": null,
+      "aum_source": null,
+      "aum_as_of": "09/01/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": null,
+      "phone": "408-204-3916",
+      "fund_count": 0,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [],
+      "employee_count": null,
+      "latest_filing_date": "09/01/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
+      "id": "sec-342903",
+      "name": "Soma Ventures Group, LLC",
+      "address": "2010 EL CAMINO REAL, #833, Santa Clara, CA 95050",
+      "sec_crd": "342903",
+      "aum_usd": 3750699,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/07/2026)",
+      "aum_as_of": "09/07/2026",
+      "county": "Santa Clara",
+      "tier": "lite",
+      "website": null,
+      "phone": "(415) 582-0589",
+      "fund_count": 1,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": 1,
+      "firm_type_tags": [
+        "hedge"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "09/07/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.3541,
+      "lng": -121.9552
+    },
+    {
       "id": "sec-314021",
       "name": "Sonder Capital Management, LLC",
       "address": "661 EL CAMINO REAL #202, San Carlos, CA 94070",
@@ -29189,9 +29195,9 @@
       "name": "South Bay Partners LLC",
       "address": "611 GATEWAY BOULEVARD SUITE 120, South San Francisco, CA 94080",
       "sec_crd": "307534",
-      "aum_usd": 105078097,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 01/28/2026)",
-      "aum_as_of": "01/28/2026",
+      "aum_usd": 109264148,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/27/2026)",
+      "aum_as_of": "05/27/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": null,
@@ -29204,7 +29210,7 @@
         "hedge"
       ],
       "employee_count": null,
-      "latest_filing_date": "01/28/2026",
+      "latest_filing_date": "05/27/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.6547,
@@ -29667,9 +29673,9 @@
       "name": "Sqn Investors LP",
       "address": "1300 EL CAMINO REAL SUITE 100, Menlo Park, CA 94025",
       "sec_crd": "171505",
-      "aum_usd": 76699655,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/27/2026)",
-      "aum_as_of": "03/27/2026",
+      "aum_usd": 59512988,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/27/2026)",
+      "aum_as_of": "07/27/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://www.sqninvestors.com",
@@ -29683,7 +29689,7 @@
         "other"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/27/2026",
+      "latest_filing_date": "07/27/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.453,
@@ -30055,6 +30061,33 @@
       ]
     },
     {
+      "id": "sec-317085",
+      "name": "Stonks Advisors LLC",
+      "address": "2261 MARKET STREET STE 22691, San Francisco, CA 94114",
+      "sec_crd": "317085",
+      "aum_usd": 15523084,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/28/2026)",
+      "aum_as_of": "07/28/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": "https://stonks.fund",
+      "phone": "(408) 475-0440",
+      "fund_count": 39,
+      "vc_fund_count": 35,
+      "pe_fund_count": 4,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc",
+        "pe"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/28/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    {
       "id": "sec-162545",
       "name": "Storm Ventures",
       "address": "532 EMERSON STREET, Palo Alto, CA 94301",
@@ -30250,8 +30283,8 @@
       "address": "1609 BAKER STREET, San Francisco, CA 94115",
       "sec_crd": "171201",
       "aum_usd": 139991376,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/06/2024)",
-      "aum_as_of": "03/06/2024",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/19/2026)",
+      "aum_as_of": "08/19/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.stratimcapital.com/.",
@@ -30264,7 +30297,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/06/2024",
+      "latest_filing_date": "08/19/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -30339,6 +30372,32 @@
       "sectors": [],
       "lat": 37.453,
       "lng": -122.1817
+    },
+    {
+      "id": "sec-343379",
+      "name": "Superintelligence Capital",
+      "address": "2261 MARKET STREET STE 76838, San Francisco, CA 94114",
+      "sec_crd": "343379",
+      "aum_usd": 145075968,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/24/2026)",
+      "aum_as_of": "07/24/2026",
+      "county": "San Francisco",
+      "tier": "lite",
+      "website": null,
+      "phone": "404-432-3193",
+      "fund_count": 3,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": 3,
+      "firm_type_tags": [
+        "hedge"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "07/24/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.7749,
+      "lng": -122.4194
     },
     {
       "id": "sec-317975",
@@ -30432,8 +30491,8 @@
       "address": "660 YORK STREET SUITE 201, San Francisco, CA 94110",
       "sec_crd": "172760",
       "aum_usd": 1310323590,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/26/2026)",
-      "aum_as_of": "03/26/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/27/2026)",
+      "aum_as_of": "05/27/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "http://www.susaventures.com",
@@ -30446,7 +30505,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/26/2026",
+      "latest_filing_date": "05/27/2026",
       "stages": [
         "pre_seed",
         "seed"
@@ -30687,22 +30746,22 @@
       "address": "555 MONTGOMERY ST. STE 1250, San Francisco, CA 94111",
       "sec_crd": "322776",
       "aum_usd": 4379631229,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/27/2026)",
-      "aum_as_of": "03/27/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/27/2026)",
+      "aum_as_of": "07/27/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.syoncap.com",
       "phone": "415-520-7966",
-      "fund_count": 7,
+      "fund_count": 8,
       "vc_fund_count": 6,
-      "pe_fund_count": 1,
+      "pe_fund_count": 2,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc",
         "pe"
       ],
       "employee_count": 17,
-      "latest_filing_date": "03/27/2026",
+      "latest_filing_date": "07/27/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -30861,11 +30920,11 @@
     {
       "id": "sec-297332",
       "name": "Tc Works, LLC",
-      "address": "135 MAIN STREET SUITE 850, San Francisco, CA 94105",
+      "address": "550 CALIFORNIA ST. SUITE 304, San Francisco, CA 94104",
       "sec_crd": "297332",
       "aum_usd": 50369462,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/12/2025)",
-      "aum_as_of": "03/12/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 09/21/2026)",
+      "aum_as_of": "09/21/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/angelpad-llc/",
@@ -30878,7 +30937,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/12/2025",
+      "latest_filing_date": "09/21/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -31521,22 +31580,22 @@
       "name": "The Space Between Mgmt LLC",
       "address": "12B FUNSTON AVE, San Francisco, CA 94129",
       "sec_crd": "330301",
-      "aum_usd": 98048422,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/27/2026)",
-      "aum_as_of": "03/27/2026",
+      "aum_usd": 105455381,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/07/2026)",
+      "aum_as_of": "08/07/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": null,
       "phone": "415-891-7562",
-      "fund_count": 6,
-      "vc_fund_count": 6,
+      "fund_count": 7,
+      "vc_fund_count": 7,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/27/2026",
+      "latest_filing_date": "08/07/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -31670,6 +31729,32 @@
         }
       ],
       "thesis_source": "website"
+    },
+    {
+      "id": "sec-343239",
+      "name": "Third Moment Capital Management LP",
+      "address": "791 MIDDLEFIELD ROAD, SUITE 201, Redwood City, CA 94063",
+      "sec_crd": "343239",
+      "aum_usd": 38200000,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 08/19/2026)",
+      "aum_as_of": "08/19/2026",
+      "county": "San Mateo",
+      "tier": "lite",
+      "website": null,
+      "phone": "415-269-9561",
+      "fund_count": 1,
+      "vc_fund_count": null,
+      "pe_fund_count": null,
+      "hedge_fund_count": 1,
+      "firm_type_tags": [
+        "hedge"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "08/19/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.4852,
+      "lng": -122.2364
     },
     {
       "id": "sec-309442",
@@ -31861,22 +31946,22 @@
       "name": "Toyota Ventures",
       "address": "4440 EL CAMINO REAL, Los Altos, CA 94022",
       "sec_crd": "299431",
-      "aum_usd": 496871065,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/23/2025)",
-      "aum_as_of": "06/23/2025",
+      "aum_usd": 927774584,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/25/2026)",
+      "aum_as_of": "06/25/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://medium.com/toyota-ventures",
       "phone": "650-269-0575",
-      "fund_count": 5,
-      "vc_fund_count": 5,
+      "fund_count": 7,
+      "vc_fund_count": 7,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "06/23/2025",
+      "latest_filing_date": "06/25/2026",
       "stages": [
         "seed",
         "series_a"
@@ -32067,12 +32152,12 @@
       "name": "Translink Capital, LLC",
       "address": "530 LYTTON AVENUE SUITE 300, Palo Alto, CA 94301",
       "sec_crd": "156262",
-      "aum_usd": 711711843,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/23/2026)",
-      "aum_as_of": "03/23/2026",
+      "aum_usd": 712470236,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/09/2026)",
+      "aum_as_of": "06/09/2026",
       "county": "Santa Clara",
       "tier": "lite",
-      "website": "http://translinkcapital.com",
+      "website": "https://www.linkedin.com/COMPANY/TRANSLINK-CAPITAL/",
       "phone": "650-330-7353",
       "fund_count": 8,
       "vc_fund_count": 8,
@@ -32082,7 +32167,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/23/2026",
+      "latest_filing_date": "06/09/2026",
       "stages": [
         "series_a",
         "series_b",
@@ -32205,8 +32290,8 @@
       "address": "400 CONCAR DRIVE, San Mateo, CA 94402",
       "sec_crd": "304697",
       "aum_usd": 3439823691,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 09/16/2026)",
+      "aum_as_of": "09/16/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://twitter.com/tribecap",
@@ -32221,7 +32306,7 @@
         "other"
       ],
       "employee_count": 27,
-      "latest_filing_date": "03/31/2026",
+      "latest_filing_date": "09/16/2026",
       "stages": [
         "seed",
         "series_a"
@@ -32308,8 +32393,8 @@
       "address": "400 S EL CAMINO REAL SUITE 1500, San Mateo, CA 94402",
       "sec_crd": "160095",
       "aum_usd": 74575204,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/26/2026)",
-      "aum_as_of": "03/26/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/30/2026)",
+      "aum_as_of": "06/30/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://www.tridentcapital.com",
@@ -32322,7 +32407,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/26/2026",
+      "latest_filing_date": "06/30/2026",
       "stages": [
         "growth"
       ],
@@ -32777,8 +32862,8 @@
       "address": "115 EVERETT AVENUE, Palo Alto, CA 94301",
       "sec_crd": "286433",
       "aum_usd": 415273243,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/27/2026)",
-      "aum_as_of": "03/27/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/01/2026)",
+      "aum_as_of": "06/01/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://uluventures.com/",
@@ -32791,7 +32876,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/27/2026",
+      "latest_filing_date": "06/01/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
@@ -33270,8 +33355,8 @@
       "address": "333 BUSH STREET STE 2300, San Francisco, CA 94104",
       "sec_crd": "319358",
       "aum_usd": 171908220,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/24/2025)",
-      "aum_as_of": "06/24/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/01/2026)",
+      "aum_as_of": "07/01/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://carta.com",
@@ -33284,7 +33369,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "06/24/2025",
+      "latest_filing_date": "07/01/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.7749,
@@ -33454,21 +33539,22 @@
       "address": "20373 VIA NAPOLI, Cupertino, CA 95014",
       "sec_crd": "334930",
       "aum_usd": 5002000,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 01/18/2026)",
-      "aum_as_of": "01/18/2026",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/24/2026)",
+      "aum_as_of": "07/24/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": null,
       "phone": "669-212-0346",
-      "fund_count": 10,
-      "vc_fund_count": null,
+      "fund_count": 11,
+      "vc_fund_count": 1,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
+        "vc",
         "other"
       ],
       "employee_count": null,
-      "latest_filing_date": "01/18/2026",
+      "latest_filing_date": "07/24/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.323,
@@ -34182,8 +34268,8 @@
       "address": "570 EL CAMINO REAL #150-436, Redwood City, CA 94062",
       "sec_crd": "283804",
       "aum_usd": 125035322,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2025)",
-      "aum_as_of": "03/31/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 07/29/2026)",
+      "aum_as_of": "07/29/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://www.thevrfund.com/",
@@ -34196,7 +34282,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/31/2025",
+      "latest_filing_date": "07/29/2026",
       "stages": [
         "seed"
       ],
@@ -34432,8 +34518,8 @@
       "address": "703 CRESTVIEW DR, San Carlos, CA 94070",
       "sec_crd": "316664",
       "aum_usd": 145303490,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 02/08/2024)",
-      "aum_as_of": "02/08/2024",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/15/2026)",
+      "aum_as_of": "05/15/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/west-coast-equity-partners",
@@ -34446,7 +34532,7 @@
         "pe"
       ],
       "employee_count": null,
-      "latest_filing_date": "02/08/2024",
+      "latest_filing_date": "05/15/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.5072,
@@ -34861,9 +34947,9 @@
       "name": "Wi Harper Group INC",
       "address": "50 CALIFORNIA ST, STE 2580, San Francisco, CA 94111",
       "sec_crd": "161665",
-      "aum_usd": 380709480,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/24/2026)",
-      "aum_as_of": "03/24/2026",
+      "aum_usd": 379472679,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/23/2026)",
+      "aum_as_of": "06/23/2026",
       "county": "San Francisco",
       "tier": "lite",
       "website": "https://wiharper.com/",
@@ -34876,7 +34962,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/24/2026",
+      "latest_filing_date": "06/23/2026",
       "stages": [
         "series_a",
         "series_b"
@@ -34898,9 +34984,9 @@
       "name": "Wil, LLC",
       "address": "636 WAVERLEY STREET SUITE 100, Palo Alto, CA 94301",
       "sec_crd": "170737",
-      "aum_usd": 2265758587,
-      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 03/30/2026)",
-      "aum_as_of": "03/30/2026",
+      "aum_usd": 2300343558,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 08/27/2026)",
+      "aum_as_of": "08/27/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/world-innovation-lab-wil-/",
@@ -34914,7 +35000,7 @@
         "pe"
       ],
       "employee_count": 45,
-      "latest_filing_date": "03/30/2026",
+      "latest_filing_date": "08/27/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
@@ -34925,22 +35011,22 @@
       "name": "Wildcat Venture Partners, LLC",
       "address": "1300 S. EL CAMINO REAL STE 500, San Mateo, CA 94402",
       "sec_crd": "288146",
-      "aum_usd": 122826817,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/17/2026)",
-      "aum_as_of": "03/17/2026",
+      "aum_usd": 131713653,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/08/2026)",
+      "aum_as_of": "06/08/2026",
       "county": "San Mateo",
       "tier": "lite",
       "website": "http://wildcat.vc/",
       "phone": "650-687-5000",
-      "fund_count": 3,
-      "vc_fund_count": 3,
+      "fund_count": 5,
+      "vc_fund_count": 5,
       "pe_fund_count": null,
       "hedge_fund_count": null,
       "firm_type_tags": [
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/17/2026",
+      "latest_filing_date": "06/08/2026",
       "stages": [
         "series_a",
         "series_b"
@@ -35018,12 +35104,12 @@
     {
       "id": "sec-318443",
       "name": "Wndrco Capital Management LLC",
-      "address": "929 MAIN STREET SUITE 100, Redwood City, CA 94063",
+      "address": "19 SOUTH PARK STREET, San Francisco, CA 94107",
       "sec_crd": "318443",
-      "aum_usd": 689215059,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2026)",
-      "aum_as_of": "03/31/2026",
-      "county": "San Mateo",
+      "aum_usd": 1052836560,
+      "aum_source": "SEC Form ADV Item 5.F(2)(c) regulatory AUM (filed 07/10/2026)",
+      "aum_as_of": "07/10/2026",
+      "county": "San Francisco",
       "tier": "lite",
       "website": "https://www.linkedin.com/company/wndrco",
       "phone": "650-542-8778",
@@ -35034,8 +35120,8 @@
       "firm_type_tags": [
         "vc"
       ],
-      "employee_count": null,
-      "latest_filing_date": "03/31/2026",
+      "employee_count": 18,
+      "latest_filing_date": "07/10/2026",
       "stages": [
         "seed",
         "series_a",
@@ -35046,8 +35132,8 @@
         "consumer_social",
         "gaming"
       ],
-      "lat": 37.4852,
-      "lng": -122.2364,
+      "lat": 37.7749,
+      "lng": -122.4194,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio includes Quibi, DAZN, and Headspace; fund names include Seed and Ventures.",
@@ -35255,6 +35341,32 @@
           "filer_name": "Xfund 3, L.P.  (CIK 0001763789)"
         }
       ]
+    },
+    {
+      "id": "sec-341362",
+      "name": "Xnova VC",
+      "address": "97 E BROKAW ROAD STE 310, San Jose, CA 95112",
+      "sec_crd": "341362",
+      "aum_usd": 3493222,
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 06/12/2026)",
+      "aum_as_of": "06/12/2026",
+      "county": "Santa Clara",
+      "tier": "lite",
+      "website": "https://www.xnova.vc",
+      "phone": "4085135068",
+      "fund_count": 1,
+      "vc_fund_count": 1,
+      "pe_fund_count": null,
+      "hedge_fund_count": null,
+      "firm_type_tags": [
+        "vc"
+      ],
+      "employee_count": null,
+      "latest_filing_date": "06/12/2026",
+      "stages": [],
+      "sectors": [],
+      "lat": 37.3382,
+      "lng": -121.8863
     },
     {
       "id": "sec-171730",
@@ -35528,8 +35640,8 @@
       "address": "438 CAMBRIDGE AVE., SUITE 250, Palo Alto, CA 94306",
       "sec_crd": "335964",
       "aum_usd": 62500000,
-      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 03/31/2025)",
-      "aum_as_of": "03/31/2025",
+      "aum_source": "SEC Form ADV Schedule D 7.B(1) private-fund gross assets (filed 05/01/2026)",
+      "aum_as_of": "05/01/2026",
       "county": "Santa Clara",
       "tier": "lite",
       "website": "https://z5capital.com/",
@@ -35542,7 +35654,7 @@
         "vc"
       ],
       "employee_count": null,
-      "latest_filing_date": "03/31/2025",
+      "latest_filing_date": "05/01/2026",
       "stages": [],
       "sectors": [],
       "lat": 37.4419,
