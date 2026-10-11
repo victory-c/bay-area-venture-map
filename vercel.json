@@ -17,7 +17,7 @@
       ]
     },
     {
-      "source": "/(app.js|analytics.js|style.css|firms.json)",
+      "source": "/(app.js|pins.js|analytics.js|style.css|firms.json)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
