@@ -161,6 +161,7 @@ tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
 tbody tr { cursor: pointer; transition: background 0.1s; }
 tbody tr:hover { background: var(--panel); }
 tbody tr.active { background: rgba(247, 129, 102, 0.08); }
+tbody tr:focus-visible { outline: 2px solid var(--accent-2); outline-offset: -2px; }
 tbody td strong { display: block; }
 tbody td .addr { color: var(--muted); font-size: 12px; display: block; margin-top: 2px; }
 
@@ -184,26 +185,31 @@ td[data-aum-bucket="3"] { color: var(--bucket-3); font-weight: 500; }
 td[data-aum-bucket="2"] { color: var(--bucket-2); }
 td[data-aum-bucket="1"] { color: var(--muted); }
 
-/* ── Map pins ── */
-.pin {
-  background: var(--panel-2); color: var(--text);
-  border: 1px solid var(--border); border-radius: 11px;
-  padding: 2px 8px; font-size: 11px; font-weight: 600;
-  letter-spacing: -0.005em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  text-align: center; cursor: pointer; transition: transform 0.1s;
-  width: 110px; height: 22px;
-  display: flex; align-items: center; justify-content: center;
+/* ── Map pins (one canvas, see pins.js) ── */
+.leaflet-container.firm-pin-hover { cursor: pointer; }
+.firm-tip {
+  position: absolute; left: 0; top: 0; z-index: 700;
+  pointer-events: none; white-space: nowrap;
+  background: #fff; color: #222;
+  padding: 6px 9px; border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-size: 12px; line-height: 1.35;
 }
-.pin span { overflow: hidden; text-overflow: ellipsis; }
-.pin:hover { transform: scale(1.1); z-index: 1000; }
-.pin-1 { border-color: var(--bucket-1); }
-.pin-2 { border-color: var(--bucket-2); color: var(--bucket-2); }
-.pin-3 { border-color: var(--bucket-3); color: var(--bucket-3); }
-.pin-4 { border-color: var(--bucket-4); color: var(--bucket-4); }
-.pin-lite { opacity: 0.72; font-weight: 500; border-style: dashed; }
-.pin-lite:hover { opacity: 1; }
+.firm-tip strong { display: block; font-weight: 600; }
+.firm-tip span { color: #555; }
+.firm-tip span[hidden], .firm-tip[hidden] { display: none; }
+/* Leaflet's zoom tween for the ± buttons / double-click; the stock 0.25 s
+   is the single biggest contributor to a "sticky" feel. Loaded after
+   leaflet.css at the same specificity, so this wins. */
+.leaflet-zoom-anim .leaflet-zoom-animated { transition-duration: 0.15s; }
+
+.place-chip { display: inline-flex; align-items: center; gap: 7px; }
+.place-select {
+  max-width: 220px; padding: 4px 8px;
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px; font: inherit; font-size: 12px;
+}
+.place-select:focus { outline: none; border-color: var(--accent-2); }
 
 /* ── Side panel ── */
 .panel {
@@ -221,6 +227,8 @@ td[data-aum-bucket="1"] { color: var(--muted); }
 }
 .panel .close:hover { color: var(--text); }
 .panel h2 { margin: 0 0 4px; font-size: 22px; }
+.panel h2:focus { outline: none; }
+.panel h2:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; border-radius: 3px; }
 .panel .addr { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
 .panel h3 {
   font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;

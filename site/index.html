@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bay Area VCs · Founder Map</title>
   <meta name="description" content="Interactive map and table of every venture capital firm in the 5-county San Francisco Bay Area — names, AUM, and contact info." />
+  <!-- Start the data download with the HTML instead of after Alpine boots. -->
+  <link rel="preload" href="firms.json" as="fetch" crossorigin="anonymous" />
 
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -12,9 +14,12 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Alpine.js (for filtering reactivity) -->
-  <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"
-          integrity="sha384-l8f0VcPi/M1iHPv8egOnY/15TDwqgbOR1anMIJWvU6nLRgZVLTLSaNqi/TOoT5Fh"
+  <!-- Alpine.js (for filtering reactivity). 3.17+ fixes an x-if teardown
+       leak (effects of nested x-if clones were never released), which made
+       every open/close of the firm panel accumulate dead effects that re-ran
+       on the next selection and threw. -->
+  <script defer src="https://unpkg.com/alpinejs@3.17.4/dist/cdn.min.js"
+          integrity="sha384-5/joNqFnRyVWzXp99bHot6RHG+EksGp+USSgZwPar7T9SD9PKKER37n/8bXBAZGd"
           crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="style.css" />
@@ -68,18 +73,37 @@
       <label>AUM
         <span class="aum-range" x-text="`$${formatShort(aumMin)} – $${formatShort(aumMax)}`"></span>
       </label>
+      <!-- Debounced: a drag fires dozens of input events per second and each
+           one used to re-run the whole filter pipeline and table render. -->
       <input type="range" min="0" max="100000000000" step="500000000"
              aria-label="Minimum AUM"
-             :value="aumMin" @input="setAumMin($event.target.value)" />
+             :value="aumMin" @input.debounce.100ms="setAumMin($event.target.value)" />
       <input type="range" min="0" max="100000000000" step="500000000"
              aria-label="Maximum AUM"
-             :value="aumMax" @input="setAumMax($event.target.value)" />
+             :value="aumMax" @input.debounce.100ms="setAumMax($event.target.value)" />
     </div>
 
     <div class="filter-group toggle">
       <button class="chip" :class="{ active: verifiedOnly }" @click="verifiedOnly = !verifiedOnly"
               title="When on, only the hand-verified marquee firms match sector/stage filters (AI-inferred tags excluded)">✓ Verified only</button>
       <button class="reset" @click="resetFilters">Reset</button>
+    </div>
+
+    <!-- Location filter: one map site (firms sharing a coordinate). Set by
+         clicking a multi-firm site on the map, or here for keyboard users. -->
+    <div class="filter-group">
+      <label for="place-select">Location</label>
+      <select id="place-select" class="place-select"
+              :value="placeFilter || ''" @change="applyPlaceKey($event.target.value)">
+        <option value="">Anywhere</option>
+        <template x-for="o in placeOptions" :key="o.key">
+          <option :value="o.key" x-text="o.label"></option>
+        </template>
+      </select>
+      <button class="chip active place-chip" x-show="placeFilter" x-cloak @click="clearPlace()"
+              title="Showing the firms at this map site. Click to clear.">
+        <span x-text="placeName"></span><span aria-hidden="true">×</span>
+      </button>
     </div>
   </section>
 
@@ -112,9 +136,15 @@
             <th>Recent</th>
           </tr>
         </thead>
-        <tbody>
+        <!-- Rows are the keyboard path to a firm (the map pins are canvas
+             drawings and are not focusable). Enter/Space are handled once
+             here rather than per row: every directive on the row template
+             is paid again for each of the ~700 rows a filter change creates. -->
+        <tbody @keydown.enter.prevent="selectRow($event)" @keydown.space.prevent="selectRow($event)">
           <template x-for="firm in visibleFirms" :key="firm.id">
-            <tr @click="select(firm)" :class="{ active: selectedFirm?.id === firm.id }">
+            <tr tabindex="0" @click="select(firm)"
+                :aria-current="selectedFirm?.id === firm.id ? 'true' : null"
+                :class="{ active: selectedFirm?.id === firm.id }">
               <td>
                 <strong x-text="firm.name"></strong>
                 <template x-if="firm._act">
@@ -162,8 +192,10 @@
       </div>
 
       <!-- Empty state: the active filters matched no firm. Offer one-click
-           ways out instead of a blank table. -->
-      <div class="empty-state" x-show="!loadError && firms.length && !visibleFirms.length" x-cloak>
+           ways out instead of a blank table. x-if, not x-show: its suggestion
+           getters rescan every firm, and they only need to exist when shown. -->
+      <template x-if="!loadError && firms.length && !visibleFirms.length">
+      <div class="empty-state">
         <div class="empty-emoji">🔍</div>
         <p class="empty-title">No firms match these filters</p>
         <!-- The AUM range is the one filter that can hide everything without
@@ -212,20 +244,27 @@
           <button class="chip" x-show="canClearAumHelp" @click="resetAum()">Reset AUM range</button>
           <button class="chip" x-show="canClearStageHelp" @click="clearStage()">Clear stage filter</button>
           <button class="chip" x-show="canClearSectorHelp" @click="clearSector()">Clear sector filter</button>
+          <button class="chip" x-show="placeFilter" @click="clearPlace()">Clear location</button>
           <button class="reset" x-show="hasActiveFilters" @click="resetFilters()">Reset all filters</button>
         </div>
       </div>
+      </template>
     </section>
   </main>
 
   <!-- Side panel with full firm detail -->
-  <aside class="panel" x-show="selectedFirm" @click.outside="selectedFirm = null">
+  <!-- Clicks on the map or a table row are selections, not dismissals: without
+       the guard the same click that selected firm B also closed the panel. -->
+  <aside class="panel" x-show="selectedFirm"
+         @keydown.escape.window="selectedFirm = null"
+         @click.outside="if (!$event.target.closest('#map, tbody tr')) selectedFirm = null">
     <div class="panel-resizer" data-resize="panel" role="separator"
          aria-orientation="vertical" aria-label="Resize firm detail panel" tabindex="0"></div>
     <template x-if="selectedFirm">
       <div>
-        <button class="close" @click="selectedFirm = null">×</button>
-        <h2>
+        <button class="close" @click="selectedFirm = null" aria-label="Close">×</button>
+        <!-- Focus lands here when the panel opens (keyboard path from a row). -->
+        <h2 tabindex="-1">
           <span x-text="selectedFirm.name"></span>
           <template x-if="selectedFirm.firm_role === 'platform'">
             <span class="role-pill" title="Filings on this firm are third-party raises, not its own investments">Platform</span>
@@ -560,6 +599,7 @@
     <br>This is informational, not investment advice.
   </footer>
 
+  <script src="pins.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

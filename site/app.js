@@ -3,6 +3,27 @@
 
 const AUM_CEILING = 100_000_000_000;
 
+// Leaflet objects live outside Alpine's reactive state. Reading a Leaflet
+// object through Alpine's Proxy pays a tracked trap on every internal
+// property access (measured at 110–320 ms per marker refresh with the old
+// DOM markers) and breaks the `this` identity Leaflet's event system keys on.
+const mapState = { map: null, tiles: null, pins: null, pendingFly: null };
+
+// Continuous per-frame wheel zoom (see L.Map.SmoothWheelZoom in pins.js).
+// Off: Leaflet's stock stepped wheel handler with quarter-level snaps.
+const SMOOTH_WHEEL = true;
+
+// The five-county Bay Area; the initial view fits this before any data
+// arrives, so tiles stream while firms.json downloads. A plain array (not an
+// L.latLngBounds) so this file still evaluates if Leaflet failed to load.
+const BAY_BOUNDS = [
+  [37.22, -122.75],
+  [38.12, -121.8],
+];
+
+// Memo for the visibleFirms getter (see there).
+let visibleCache = { key: null, list: [] };
+
 const STAGE_LABELS = {
   pre_seed: "Pre-seed",
   seed: "Seed",
@@ -155,20 +176,6 @@ function dedupeInPlace(obj, key, keyFn) {
   if (out.length !== list.length) obj[key] = out;
 }
 
-// Escape untrusted text before interpolating into HTML strings (Leaflet
-// divIcon `html` and bindTooltip render their content as HTML, not text).
-// Firm names originate from the SEC Form ADV bulk scrape and are
-// filer-controlled, so they must never be treated as trusted markup.
-function escapeHtml(value) {
-  return String(value ?? "").replace(/[&<>"']/g, (ch) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;",
-  })[ch]);
-}
-
 document.addEventListener("alpine:init", () => {
   Alpine.data("vcApp", () => ({
     firms: [],
@@ -182,11 +189,21 @@ document.addEventListener("alpine:init", () => {
     sortDir: -1,
     selectedFirm: null,
     loadError: null,
-    map: null,
-    markers: {},
+    // Location filter: the key of one map site (firms sharing a coordinate),
+    // set by clicking a multi-firm site or from the Location select.
+    placeFilter: null,
+    placeSite: null, // { key, city, top, hub } of the chosen site
+    placeOptions: [], // every multi-firm site, for the select (built once)
 
     async init() {
       this.initSplitters();
+      // Map and tiles first, so tiles stream while firms.json downloads. A
+      // missing Leaflet must not take the table down with it.
+      try {
+        this.initMap();
+      } catch (err) {
+        console.error("map init failed:", err);
+      }
       let data;
       try {
         const resp = await fetch("firms.json");
@@ -226,14 +243,49 @@ document.addEventListener("alpine:init", () => {
         // Stamp Form D fund-raising activity once (recency is "now"-relative
         // but stable for the page session), so table rows read a cached value.
         f._act = this.fundActivity(f);
+        // Site key shared with the pin layer: firms at one coordinate form
+        // one site, and the location filter matches on it.
+        f._site = f.lat && f.lng ? L.FirmPinLayer.siteKey(f.lat, f.lng) : null;
+        // Records never change after this point. Freezing them makes Alpine's
+        // reactivity engine hand them back raw instead of wrapping every read
+        // in a tracked Proxy (measured: ~20 ms less per filter change). This
+        // is a sloppy-mode script, so a later accidental write to a firm
+        // would fail silently — stamp any new field above this line.
+        Object.freeze(f);
       });
       this.firms = data.firms;
-      this.renderMap();
-      // Re-render markers whenever the visible set changes
-      this.$watch("visibleFirms", () => this.refreshMarkers());
+      this.placeOptions = this.buildPlaceOptions(data.firms);
+      this.syncMap();
+      // One short string instead of deep-watching the whole visible list.
+      this.$watch("filterKey", () => this.syncMap());
       this.$watch("selectedFirm", (firm) => {
-        if (firm && this.map && firm.lat && firm.lng) {
-          this.map.flyTo([firm.lat, firm.lng], 16, { duration: 0.6 });
+        if (mapState.pins) mapState.pins.setSelected(firm ? firm.id : null);
+        const panel = document.querySelector(".panel");
+        if (firm) {
+          mapState.pendingFly = null;
+          const active = document.activeElement;
+          mapState.returnFocus = active && active.closest("tbody tr") ? active : null;
+          // Alpine shows the panel on a 0 ms timer (x-show); queue behind it
+          // so the flight can measure the panel and focus can move into it.
+          setTimeout(() => {
+            if (this.selectedFirm !== firm) return;
+            this.flyToFirm(firm);
+            const heading = panel && panel.querySelector("h2");
+            if (heading) heading.focus({ preventScroll: true });
+          }, 0);
+        } else {
+          // Hand keyboard focus back to the row the panel was opened from.
+          // By now the panel's content is gone, so focus has fallen to body.
+          const back = mapState.returnFocus;
+          mapState.returnFocus = null;
+          const lost = document.activeElement === document.body || (panel && panel.contains(document.activeElement));
+          if (back && back.isConnected && lost) back.focus({ preventScroll: true });
+          if (mapState.pendingFly) {
+            // On narrow screens the panel covered the map; show the firm now.
+            const f = mapState.pendingFly;
+            mapState.pendingFly = null;
+            this.flyToFirm(f, { force: true });
+          }
         }
       });
     },
@@ -291,7 +343,7 @@ document.addEventListener("alpine:init", () => {
               target.style.flex = `0 0 ${newSize}px`;
               target.style[dim] = newSize + "px";
             }
-            if (axis === "x" && this.map) this.map.invalidateSize();
+            if (axis === "x" && mapState.map) mapState.map.invalidateSize();
           };
           const onUp = () => {
             document.removeEventListener("pointermove", onMove);
@@ -300,7 +352,7 @@ document.addEventListener("alpine:init", () => {
             document.body.classList.remove("is-resizing", `is-resizing-${axis}`);
             const finalSize = target.style[dim];
             if (finalSize) localStorage.setItem(key, finalSize);
-            if (axis === "x" && this.map) this.map.invalidateSize();
+            if (axis === "x" && mapState.map) mapState.map.invalidateSize();
           };
           document.addEventListener("pointermove", onMove);
           document.addEventListener("pointerup", onUp);
@@ -312,7 +364,7 @@ document.addEventListener("alpine:init", () => {
           target.style[dim] = "";
           target.style.flex = "";
           localStorage.removeItem(key);
-          if (axis === "x" && this.map) this.map.invalidateSize();
+          if (axis === "x" && mapState.map) mapState.map.invalidateSize();
         });
       });
     },
@@ -343,7 +395,10 @@ document.addEventListener("alpine:init", () => {
       const aumMin = opts.aumMin ?? this.aumMin;
       const aumMax = opts.aumMax ?? this.aumMax;
       const q = opts.q ?? this.search.trim().toLowerCase();
+      // `placeF: null` means "ignore the location filter" (the map uses it).
+      const placeF = opts.placeF === undefined ? this.placeFilter : opts.placeF;
 
+      if (placeF && f._site !== placeF) return false;
       if (stageF.size && !(f.stages || []).some((s) => stageF.has(s))) return false;
       if (sectorF.size && !(f.sectors || []).some((s) => sectorF.has(s))) return false;
       // "Verified only": AI-inferred firms don't satisfy sector/stage filters
@@ -365,9 +420,29 @@ document.addEventListener("alpine:init", () => {
       return true;
     },
 
-    get visibleFirms() {
-      let firms = this.firms.filter((f) => this.matches(f));
+    // Every input that can change which firms are visible, as one string.
+    // Watching this costs a string compare; watching visibleFirms made Alpine
+    // deep-serialise up to 695 records on every change.
+    get filterKey() {
+      return [
+        this.search.trim().toLowerCase(),
+        [...this.stageFilter].sort().join(","),
+        [...this.sectorFilter].sort().join(","),
+        this.aumMin,
+        this.aumMax,
+        this.verifiedOnly,
+        this.placeFilter || "",
+      ].join("|");
+    },
 
+    get visibleFirms() {
+      // Memoised: the header count, the table, the empty state and the map
+      // all read this on the same change. The key covers every input,
+      // including the dataset itself (firms is assigned once, after load).
+      const key = `${this.filterKey}|${this.sortKey}|${this.sortDir}|${this.firms.length}`;
+      if (visibleCache.key === key) return visibleCache.list;
+
+      const firms = this.firms.filter((f) => this.matches(f));
       const k = this.sortKey;
       const d = this.sortDir;
       firms.sort((a, b) => {
@@ -376,6 +451,7 @@ document.addEventListener("alpine:init", () => {
         if (typeof av === "string") return d * av.localeCompare(bv);
         return d * (av - bv);
       });
+      visibleCache = { key, list: firms };
       return firms;
     },
 
@@ -429,6 +505,8 @@ document.addEventListener("alpine:init", () => {
     },
 
     resetFilters() {
+      this.placeFilter = null;
+      this.placeSite = null;
       this.search = "";
       this.stageFilter = new Set();
       this.sectorFilter = new Set();
@@ -443,7 +521,8 @@ document.addEventListener("alpine:init", () => {
         this.stageFilter.size > 0 ||
         this.sectorFilter.size > 0 ||
         this.aumMin > 0 ||
-        this.aumMax < AUM_CEILING
+        this.aumMax < AUM_CEILING ||
+        !!this.placeFilter
       );
     },
 
@@ -530,8 +609,92 @@ document.addEventListener("alpine:init", () => {
       this.sectorFilter = new Set();
     },
 
+    // Keyboard activation delegated from <tbody>: the focused row's x-for
+    // scope holds its firm.
+    selectRow(event) {
+      const row = event.target.closest("tbody tr");
+      const scope = row && Alpine.$data(row);
+      if (scope && scope.firm) this.select(scope.firm);
+    },
+
     select(firm) {
+      // Picking a firm outside the listed location drops that filter, so the
+      // table and the map agree again.
+      if (this.placeFilter && firm._site !== this.placeFilter) this.clearPlace();
       this.selectedFirm = firm;
+    },
+
+    // Click on a multi-firm map site: list exactly those firms in the table.
+    togglePlace(site) {
+      if (this.placeFilter === site.key) {
+        this.clearPlace();
+        return;
+      }
+      this.setPlace({
+        key: site.key,
+        city: site.city,
+        top: site.top.name,
+        hub: site.n >= L.FirmPinLayer.HUB_MIN && !!site.city,
+      });
+    },
+
+    // The Location select: a keyboard-reachable way to the same filter.
+    applyPlaceKey(key) {
+      const opt = key ? this.placeOptions.find((o) => o.key === key) : null;
+      if (opt) this.setPlace(opt);
+      else this.clearPlace();
+    },
+
+    setPlace(site) {
+      this.placeFilter = site.key;
+      this.placeSite = { key: site.key, city: site.city, top: site.top, hub: site.hub };
+      this.selectedFirm = null;
+    },
+
+    clearPlace() {
+      this.placeFilter = null;
+      this.placeSite = null;
+    },
+
+    // Label for the active location: the count follows the table, so it
+    // stays right when another filter narrows the site.
+    get placeName() {
+      const p = this.placeSite;
+      if (!p) return "";
+      const n = this.visibleFirms.length;
+      if (p.hub) return `${p.city} · ${n}`;
+      return n > 1 ? `${p.top} +${n - 1}` : p.top;
+    },
+
+    // Every coordinate shared by two or more firms, biggest first; the same
+    // grouping and labels the map uses.
+    buildPlaceOptions(firms) {
+      const groups = new Map();
+      firms.forEach((f) => {
+        if (!f._site) return;
+        let g = groups.get(f._site);
+        if (!g) {
+          g = { key: f._site, firms: [] };
+          groups.set(f._site, g);
+        }
+        g.firms.push(f);
+      });
+      const out = [];
+      groups.forEach((g) => {
+        if (g.firms.length < 2) return;
+        g.firms.sort((a, b) => {
+          const ra = a.tier === "lite" ? 1 : 0;
+          const rb = b.tier === "lite" ? 1 : 0;
+          if (ra !== rb) return ra - rb;
+          return (b.aum_usd ?? -1) - (a.aum_usd ?? -1);
+        });
+        const top = g.firms[0];
+        const city = L.FirmPinLayer.cityOf(top.address);
+        const n = g.firms.length;
+        const hub = n >= L.FirmPinLayer.HUB_MIN && !!city;
+        out.push({ key: g.key, city, top: top.name, hub, n, label: hub ? `${city} · ${n}` : `${top.name} +${n - 1}` });
+      });
+      return out.sort((a, b) => b.n - a.n);
     },
 
     formatShort(n) {
@@ -617,74 +780,96 @@ document.addEventListener("alpine:init", () => {
       };
     },
 
-    renderMap() {
-      // Centered on Sand Hill Rd, zoomed to show the whole cluster.
-      this.map = L.map("map", { scrollWheelZoom: true }).setView([37.65, -122.30], 10);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    initMap() {
+      const map = L.map("map", {
+        // Continuous wheel zoom (pins.js) replaces Leaflet's stepped handler.
+        scrollWheelZoom: !SMOOTH_WHEEL,
+        smoothWheelZoom: SMOOTH_WHEEL,
+        // Quarter-level steps for the ± buttons, keyboard and fitBounds.
+        zoomSnap: 0.25,
+        // Normalised wheel px per zoom level, for either wheel handler: a
+        // comfortable trackpad swipe is ~0.4 level, a flick ~1.2.
+        wheelPxPerZoomLevel: 80,
+        // Stock handler only (SMOOTH_WHEEL off).
+        wheelDebounceTime: 20,
+      });
+      if (SMOOTH_WHEEL && L.Map.SmoothWheelZoom) {
+        map.addHandler("smoothWheelZoom", L.Map.SmoothWheelZoom);
+      }
+      mapState.tiles = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
         attribution: "© OpenStreetMap contributors",
-      }).addTo(this.map);
-      this.refreshMarkers();
-      this.fitVisibleBounds();
+      }).addTo(map);
+      // Fit the Bay once, without animation, before any data arrives. A
+      // zero-sized container (hidden tab) would make fitBounds pick a
+      // nonsense zoom, so set a sane view first and refit on the first real
+      // resize (Leaflet only emits resize once a view exists).
+      map.setView([37.65, -122.3], 9, { animate: false });
+      const fit = () => map.fitBounds(BAY_BOUNDS, { padding: [40, 40], maxZoom: 13, animate: false });
+      const size = map.getSize();
+      if (size.x > 0 && size.y > 0) fit();
+      else map.once("resize", fit);
+      mapState.pins = L.firmPinLayer({
+        aumBucket: (aum) => this.aumBucket(aum),
+        formatShort: (n) => this.formatShort(n),
+        prettyStage: (stage) => this.prettyStage(stage),
+        onSelect: (firm) => {
+          if (firm) this.select(firm);
+          else this.selectedFirm = null;
+        },
+        onSelectSite: (site) => this.togglePlace(site),
+      }).addTo(map);
+      mapState.map = map;
     },
 
-    fitVisibleBounds() {
-      const markers = Object.values(this.markers);
-      if (!markers.length) return;
-      const bounds = L.featureGroup(markers).getBounds();
-      if (bounds.isValid()) {
-        this.map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
+    // Push the current firm set to the pin layer. With a location filter
+    // active the map keeps every other site, dimmed, so the rest of the Bay
+    // stays visible for context and clickable to switch.
+    syncMap() {
+      if (!mapState.pins || !this.firms.length) return;
+      const place = this.placeFilter;
+      const list = place ? this.firms.filter((f) => this.matches(f, { placeF: null })) : this.visibleFirms;
+      mapState.pins.setFirms(list, place);
+    },
+
+    // Bring a firm into view. Zoom 15 shows a neighbourhood rather than one
+    // roof; the centre is shifted so the firm lands in the part of the map
+    // the detail panel does not cover; a short pan replaces the flight when
+    // the firm is already on screen.
+    flyToFirm(firm, { force = false } = {}) {
+      const map = mapState.map;
+      if (!map || !firm.lat || !firm.lng) return;
+      if (!force && window.matchMedia("(max-width: 880px)").matches) {
+        // The panel covers the whole map on narrow screens; fly when it closes.
+        mapState.pendingFly = firm;
+        return;
       }
-    },
-
-    refreshMarkers() {
-      if (!this.map) return;
-      const visibleIds = new Set(this.visibleFirms.map((f) => f.id));
-
-      // Remove markers for firms no longer visible
-      Object.entries(this.markers).forEach(([id, marker]) => {
-        if (!visibleIds.has(id)) {
-          this.map.removeLayer(marker);
-          delete this.markers[id];
-        }
-      });
-
-      // Add markers for visible firms
-      this.visibleFirms.forEach((f) => {
-        if (!f.lat || !f.lng) return;
-        if (this.markers[f.id]) return;
-        const bucket = this.aumBucket(f.aum_usd);
-        const label = f.name.length > 14 ? f.name.slice(0, 13) + "…" : f.name;
-        const liteCls = f.tier === "lite" ? " pin-lite" : "";
-        const icon = L.divIcon({
-          className: `pin pin-${bucket}${liteCls}`,
-          html: `<span>${escapeHtml(label)}</span>`,
-          iconSize: [110, 22],
-          iconAnchor: [55, 11],
-        });
-        // Pin already shows the (possibly truncated) name. Only bind a tooltip
-        // when it actually adds info — full name if truncated, AUM, or stages.
-        // Skip Leaflet's `title:` option entirely so the native browser tooltip
-        // doesn't fire a third copy of the name after a 1s hover.
-        const parts = [];
-        if (f.name.length > 14) parts.push(`<strong>${escapeHtml(f.name)}</strong>`);
-        if (f.aum_usd) parts.push(`$${this.formatShort(f.aum_usd)}`);
-        if (f.stages && f.stages.length) {
-          parts.push(f.stages.map((s) => this.prettyStage(s)).join(", "));
-        }
-        const marker = L.marker([f.lat, f.lng], { icon });
-        if (parts.length) {
-          marker.bindTooltip(parts.join(" · "), { direction: "top", opacity: 0.95 });
-        }
-        marker.on("click", () => this.select(f));
-        marker.addTo(this.map);
-        this.markers[f.id] = marker;
-      });
+      const latlng = L.latLng(firm.lat, firm.lng);
+      const current = map.getZoom();
+      const zoom = current >= 15 ? current : 15;
+      const mapRect = map.getContainer().getBoundingClientRect();
+      const panel = document.querySelector(".panel");
+      let covered = 0;
+      if (panel) {
+        // A hidden panel (display: none) reports an empty rect → no offset.
+        const pr = panel.getBoundingClientRect();
+        covered = Math.max(0, Math.min(mapRect.right, pr.right) - Math.max(mapRect.left, pr.left));
+      }
+      const center = map.unproject(map.project(latlng, zoom).add([covered / 2, 0]), zoom);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        map.setView(center, zoom, { animate: false });
+        return;
+      }
+      if (zoom === current && map.getBounds().pad(-0.2).contains(latlng)) {
+        map.panTo(center, { duration: 0.35 });
+        return;
+      }
+      map.flyTo(center, zoom, { duration: 0.8 });
     },
 
     downloadJson() {
-      // Strip the internal _hay search index before exporting.
-      const cleanFirms = this.firms.map(({ _hay, _act, ...rest }) => rest);
+      // Strip the internal search index and other stamped fields before exporting.
+      const cleanFirms = this.firms.map(({ _hay, _act, _site, ...rest }) => rest);
       const blob = new Blob(
         [JSON.stringify({ firm_count: cleanFirms.length, firms: cleanFirms }, null, 2)],
         { type: "application/json" },
