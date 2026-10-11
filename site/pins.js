@@ -43,7 +43,7 @@
   const HUB_MIN = 10; // sites with at least this many firms are labelled "City · N"
   const CLUSTER_PX = 30; // sites whose dots would overlap at this distance merge
   const CLUSTER_MAX_ZOOM = 16.5; // beyond this every site stands alone
-  const FAN_MAX = 12; // same-address stacks up to this size fan out on click
+  const FAN_MAX = 18; // same-address stacks up to this size fan out on click (two columns)
   const FAN_PITCH = 24; // vertical spacing of fanned chips
   // Scratch space reused by label placement so a dense frame allocates nothing
   // per candidate: eight candidate spots and two rectangles.
@@ -342,8 +342,9 @@
         s.bucket = String(this.options.aumBucket(s.aum || null));
         s.r = s.n === 1 ? (s.rich ? DOT_R_RICH : DOT_R_LITE) : Math.min(16, Math.round(6 + 1.4 * Math.log2(s.n)));
         s.city = cityOf(top.address);
-        s.label =
-          s.n === 1 ? top.name : s.n >= HUB_MIN && s.city ? `${s.city} · ${s.n}` : `${top.name} +${s.n - 1}`;
+        // One address, so never the city form a cluster gets ("Menlo Park · 17"
+        // would read as the whole city, not one building).
+        s.label = s.n === 1 ? top.name : `${top.name} +${s.n - 1}`;
         s.pri = priority(s);
         sites.push(s);
       });
@@ -793,13 +794,14 @@
       const ctx = this._ctx;
       const t = this._theme;
       const firms = fan.firms;
-      const rightCount = Math.min(firms.length, 6);
+      // Balanced columns: the first half to the right of the dot, the rest left.
+      const rightCount = Math.ceil(firms.length / 2);
       const leftCount = firms.length - rightCount;
       let hovered = null;
       for (let i = 0; i < firms.length; i++) {
         const f = firms[i];
-        const right = i < 6;
-        const idx = right ? i : i - 6;
+        const right = i < rightCount;
+        const idx = right ? i : i - rightCount;
         const count = right ? rightCount : leftCount;
         const rich = f.tier !== "lite";
         const m = this._fit(f.name, rich, 0);
