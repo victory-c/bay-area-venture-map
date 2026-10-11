@@ -784,6 +784,7 @@ def fetch_bay_area_vc_firms(
             if coords is not None:
                 firm["lat"] = coords.lat
                 firm["lng"] = coords.lng
+                firm["geo_source"] = "nominatim"
 
     # City-centroid fallback for any firm that didn't get geocoded.
     fallback_hits = 0
@@ -795,6 +796,9 @@ def fetch_bay_area_vc_firms(
             lat, lng = CITY_TO_LATLNG[city]
             firm["lat"] = lat
             firm["lng"] = lng
+            # Marks the point as approximate so build.carry_forward_enrichment
+            # can replace it with a street-level one from the previous payload.
+            firm["geo_source"] = "city_centroid"
             fallback_hits += 1
     if fallback_hits:
         log.info("Applied city-centroid fallback to %d firms", fallback_hits)

@@ -45,6 +45,13 @@ jobs:
           SCRAPER_CONTACT: ${{ vars.SCRAPER_CONTACT }}
         run: uv run python -m scraper.build --enrich sec_bulk
 
+      - name: Street-level coordinates for new SEC firms
+        # The SEC scrape only knows a firm's city, so new firms land on a city
+        # centroid; this resolves their addresses through the Census Bureau's
+        # batch geocoder (no key, one request). Firms already resolved are
+        # carried forward by the build and skipped here.
+        run: uv run python -m scraper.census_geocode
+
       - name: Sanity-check output
         run: |
           set -euo pipefail
