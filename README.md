@@ -75,6 +75,14 @@ Refresh AUM from SEC Form ADV (live network):
 uv run python -m scraper.build --enrich edgar
 ```
 
+Street-level coordinates for the SEC-sourced firms (US Census batch geocoder,
+no key, one request for all addresses; the monthly refresh runs this too):
+
+```bash
+uv run python -m scraper.census_geocode --dry-run   # hit rate only
+uv run python -m scraper.census_geocode             # write data/ and site/ firms.json
+```
+
 Refresh coordinates via OpenStreetMap Nominatim (live network, slow — 1 req/s):
 
 ```bash

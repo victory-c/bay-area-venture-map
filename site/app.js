@@ -24,6 +24,13 @@ const BAY_BOUNDS = [
 // Memo for the visibleFirms getter (see there).
 let visibleCache = { key: null, list: [] };
 
+// Location filter values are "city:<name>" (from the Location select) or
+// "site:<coordinate key>" (a same-address stack the map could not fan out).
+function placeMatches(firm, place) {
+  const value = place.slice(place.indexOf(":") + 1);
+  return place.startsWith("city:") ? firm._city === value : firm._site === value;
+}
+
 const STAGE_LABELS = {
   pre_seed: "Pre-seed",
   seed: "Seed",
@@ -192,8 +199,8 @@ document.addEventListener("alpine:init", () => {
     // Location filter: the key of one map site (firms sharing a coordinate),
     // set by clicking a multi-firm site or from the Location select.
     placeFilter: null,
-    placeSite: null, // { key, city, top, hub } of the chosen site
-    placeOptions: [], // every multi-firm site, for the select (built once)
+    placeInfo: null, // { kind, value, city, top } of the chosen location
+    placeOptions: [], // every city with two or more firms, for the select
 
     async init() {
       this.initSplitters();
@@ -246,6 +253,7 @@ document.addEventListener("alpine:init", () => {
         // Site key shared with the pin layer: firms at one coordinate form
         // one site, and the location filter matches on it.
         f._site = f.lat && f.lng ? L.FirmPinLayer.siteKey(f.lat, f.lng) : null;
+        f._city = L.FirmPinLayer.cityOf(f.address);
         // Records never change after this point. Freezing them makes Alpine's
         // reactivity engine hand them back raw instead of wrapping every read
         // in a tracked Proxy (measured: ~20 ms less per filter change). This
@@ -398,7 +406,7 @@ document.addEventListener("alpine:init", () => {
       // `placeF: null` means "ignore the location filter" (the map uses it).
       const placeF = opts.placeF === undefined ? this.placeFilter : opts.placeF;
 
-      if (placeF && f._site !== placeF) return false;
+      if (placeF && !placeMatches(f, placeF)) return false;
       if (stageF.size && !(f.stages || []).some((s) => stageF.has(s))) return false;
       if (sectorF.size && !(f.sectors || []).some((s) => sectorF.has(s))) return false;
       // "Verified only": AI-inferred firms don't satisfy sector/stage filters
@@ -506,7 +514,7 @@ document.addEventListener("alpine:init", () => {
 
     resetFilters() {
       this.placeFilter = null;
-      this.placeSite = null;
+      this.placeInfo = null;
       this.search = "";
       this.stageFilter = new Set();
       this.sectorFilter = new Set();
@@ -620,81 +628,66 @@ document.addEventListener("alpine:init", () => {
     select(firm) {
       // Picking a firm outside the listed location drops that filter, so the
       // table and the map agree again.
-      if (this.placeFilter && firm._site !== this.placeFilter) this.clearPlace();
+      if (this.placeFilter && !placeMatches(firm, this.placeFilter)) this.clearPlace();
       this.selectedFirm = firm;
     },
 
-    // Click on a multi-firm map site: list exactly those firms in the table.
+    // A same-address stack too big to fan out on the map: list exactly those
+    // firms in the table.
     togglePlace(site) {
-      if (this.placeFilter === site.key) {
+      const key = "site:" + site.key;
+      if (this.placeFilter === key) {
         this.clearPlace();
         return;
       }
-      this.setPlace({
-        key: site.key,
-        city: site.city,
-        top: site.top.name,
-        hub: site.n >= L.FirmPinLayer.HUB_MIN && !!site.city,
-      });
+      this.setPlace({ key, kind: "site", value: site.key, city: site.city, top: site.top.name });
     },
 
-    // The Location select: a keyboard-reachable way to the same filter.
+    // The Location select: narrow the table (and dim the map) to one city.
     applyPlaceKey(key) {
       const opt = key ? this.placeOptions.find((o) => o.key === key) : null;
       if (opt) this.setPlace(opt);
       else this.clearPlace();
     },
 
-    setPlace(site) {
-      this.placeFilter = site.key;
-      this.placeSite = { key: site.key, city: site.city, top: site.top, hub: site.hub };
+    setPlace(place) {
+      this.placeFilter = place.key;
+      this.placeInfo = { kind: place.kind, value: place.value, city: place.city, top: place.top };
       this.selectedFirm = null;
     },
 
     clearPlace() {
       this.placeFilter = null;
-      this.placeSite = null;
+      this.placeInfo = null;
+    },
+
+    // What the map dims against while a location filter is active.
+    get placeFocus() {
+      const p = this.placeInfo;
+      return p ? { kind: p.kind, value: p.value } : null;
     },
 
     // Label for the active location: the count follows the table, so it
-    // stays right when another filter narrows the site.
+    // stays right when another filter narrows the selection.
     get placeName() {
-      const p = this.placeSite;
+      const p = this.placeInfo;
       if (!p) return "";
       const n = this.visibleFirms.length;
-      if (p.hub) return `${p.city} · ${n}`;
+      if (p.kind === "city") return `${p.city} · ${n}`;
       return n > 1 ? `${p.top} +${n - 1}` : p.top;
     },
 
-    // Every coordinate shared by two or more firms, biggest first; the same
-    // grouping and labels the map uses.
+    // Every city with two or more firms, biggest first.
     buildPlaceOptions(firms) {
-      const groups = new Map();
+      const counts = new Map();
       firms.forEach((f) => {
-        if (!f._site) return;
-        let g = groups.get(f._site);
-        if (!g) {
-          g = { key: f._site, firms: [] };
-          groups.set(f._site, g);
-        }
-        g.firms.push(f);
+        if (f._city) counts.set(f._city, (counts.get(f._city) || 0) + 1);
       });
       const out = [];
-      groups.forEach((g) => {
-        if (g.firms.length < 2) return;
-        g.firms.sort((a, b) => {
-          const ra = a.tier === "lite" ? 1 : 0;
-          const rb = b.tier === "lite" ? 1 : 0;
-          if (ra !== rb) return ra - rb;
-          return (b.aum_usd ?? -1) - (a.aum_usd ?? -1);
-        });
-        const top = g.firms[0];
-        const city = L.FirmPinLayer.cityOf(top.address);
-        const n = g.firms.length;
-        const hub = n >= L.FirmPinLayer.HUB_MIN && !!city;
-        out.push({ key: g.key, city, top: top.name, hub, n, label: hub ? `${city} · ${n}` : `${top.name} +${n - 1}` });
+      counts.forEach((n, city) => {
+        if (n >= 2) out.push({ key: "city:" + city, kind: "city", value: city, city, top: "", n, label: `${city} · ${n}` });
       });
-      return out.sort((a, b) => b.n - a.n);
+      return out.sort((a, b) => b.n - a.n || a.city.localeCompare(b.city));
     },
 
     formatShort(n) {
@@ -829,7 +822,7 @@ document.addEventListener("alpine:init", () => {
       if (!mapState.pins || !this.firms.length) return;
       const place = this.placeFilter;
       const list = place ? this.firms.filter((f) => this.matches(f, { placeF: null })) : this.visibleFirms;
-      mapState.pins.setFirms(list, place);
+      mapState.pins.setFirms(list, this.placeFocus);
     },
 
     // Bring a firm into view. Zoom 15 shows a neighbourhood rather than one
@@ -869,7 +862,7 @@ document.addEventListener("alpine:init", () => {
 
     downloadJson() {
       // Strip the internal search index and other stamped fields before exporting.
-      const cleanFirms = this.firms.map(({ _hay, _act, _site, ...rest }) => rest);
+      const cleanFirms = this.firms.map(({ _hay, _act, _site, _city, ...rest }) => rest);
       const blob = new Blob(
         [JSON.stringify({ firm_count: cleanFirms.length, firms: cleanFirms }, null, 2)],
         { type: "application/json" },

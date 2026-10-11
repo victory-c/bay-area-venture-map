@@ -45,8 +45,20 @@ TRACKED_FIELDS = (
 )
 
 
+#: Street-level coordinates come from an out-of-band pass
+#: (``scraper.census_geocode``); a refresh that forgot to carry them forward
+#: would silently put every SEC firm back on its city centroid.
+STREET_LEVEL_GEO_SOURCES = ("census", "nominatim")
+DERIVED_FIELDS = {
+    "street_level_coords": lambda firm: firm.get("geo_source") in STREET_LEVEL_GEO_SOURCES,
+}
+
+
 def coverage(firms: list[dict]) -> dict[str, int]:
-    return {f: sum(1 for firm in firms if firm.get(f)) for f in TRACKED_FIELDS}
+    out = {f: sum(1 for firm in firms if firm.get(f)) for f in TRACKED_FIELDS}
+    for name, test in DERIVED_FIELDS.items():
+        out[name] = sum(1 for firm in firms if test(firm))
+    return out
 
 
 def main() -> int:
@@ -74,7 +86,7 @@ def main() -> int:
     before, after = coverage(prev_firms), coverage(new_firms)
     failures: list[str] = []
     print(f"\n{'field':24} {'before':>8} {'after':>8}  status")
-    for field in TRACKED_FIELDS:
+    for field in (*TRACKED_FIELDS, *DERIVED_FIELDS):
         b, a = before[field], after[field]
         floor = int(b * (1 - TOLERANCE))
         if a < floor:
