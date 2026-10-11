@@ -4145,8 +4145,8 @@
       "latest_filing_date": "03/24/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.450669,
+      "lng": -122.177379,
       "form_d_total_filings": 7,
       "form_d_latest_filing_date": "2026-03-26",
       "form_d_distinct_funds": [
@@ -4199,7 +4199,9 @@
           "cik": "1920111",
           "filer_name": "Aestus Capital II Feeder, L.P.  (CIK 0001920111)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-285601",
@@ -6356,8 +6358,10 @@
       "latest_filing_date": "03/30/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817
+      "lat": 37.455057,
+      "lng": -122.185496,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-307972",
@@ -6388,14 +6392,16 @@
         "climate",
         "deep_tech"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.455057,
+      "lng": -122.185496,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm website and public profile emphasize climate tech and deep tech early stage investments.",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed and Series A startups tackling climate challenges through deep technology innovation.",
-      "thesis_confidence": 0.9
+      "thesis_confidence": 0.9,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-317485",
@@ -6673,8 +6679,10 @@
       "latest_filing_date": "07/07/2025",
       "stages": [],
       "sectors": [],
-      "lat": 37.6624,
-      "lng": -121.8747
+      "lat": 37.661334,
+      "lng": -121.900094,
+      "geo_source": "nominatim",
+      "geo_match": "Exact"
     },
     {
       "id": "sec-328902",
@@ -6705,8 +6713,8 @@
         "security",
         "fintech"
       ],
-      "lat": 37.3541,
-      "lng": -121.9552,
+      "lat": 37.403242,
+      "lng": -121.966992,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "security: \"Cyber security for the age of AI.\" | fintech: \"The future of global payments.\"",
@@ -6724,7 +6732,9 @@
           "quote": "The future of global payments."
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Exact"
     },
     {
       "id": "sec-343097",
@@ -6749,8 +6759,10 @@
       "latest_filing_date": "06/15/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.6624,
-      "lng": -121.8747
+      "lat": 37.661334,
+      "lng": -121.900094,
+      "geo_source": "nominatim",
+      "geo_match": "Exact"
     },
     {
       "id": "sec-304938",
@@ -6955,8 +6967,8 @@
         "defense",
         "deep_tech"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "defense: \"By synchronizing the DoD strategic priorities\" | deep_tech: \"investing in a new generation of essential systems\"",
@@ -6974,7 +6986,9 @@
           "quote": "investing in a new generation of essential systems"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-285846",
@@ -7316,8 +7330,8 @@
       "sectors": [
         "security"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.450669,
+      "lng": -122.177379,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Publicly known cybersecurity-focused firm investing in early-stage startups",
@@ -7376,7 +7390,9 @@
           "cik": "2004592",
           "filer_name": "Ballistic Ventures II Advisors, LP  (CIK 0002004592)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-323761",
@@ -7527,8 +7543,8 @@
       "latest_filing_date": "03/26/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.455057,
+      "lng": -122.185496,
       "form_d_total_filings": 9,
       "form_d_latest_filing_date": "2026-03-26",
       "form_d_distinct_funds": [
@@ -7577,7 +7593,9 @@
           "cik": "2032239",
           "filer_name": "Base4 Private Ventures IV LP  (CIK 0002032239)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-313162",
@@ -8078,8 +8096,8 @@
         "enterprise_saas",
         "industrial"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.450669,
+      "lng": -122.177379,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "ai_infra: \"growing impactful, global enterprise AI startups\" | enterprise_saas: \"build global B2B technology companies\" | industrial: \"leapfrog shifts in enterprise automation\"",
@@ -8101,7 +8119,9 @@
           "quote": "leapfrog shifts in enterprise automation"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-322319",
@@ -8126,8 +8146,10 @@
       "latest_filing_date": "03/27/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 37.802026,
+      "lng": -122.449945,
+      "geo_source": "nominatim",
+      "geo_match": "Exact"
     },
     {
       "id": "sec-335651",
@@ -8983,14 +9005,16 @@
         "dev_tools",
         "data"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.79233,
+      "lng": -122.404833,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Firm website and public profile emphasize early-stage B2B software and infrastructure.",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed and Series A enterprise SaaS, dev tools, and data startups.",
-      "thesis_confidence": 1.0
+      "thesis_confidence": 1.0,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-166060",
@@ -9165,8 +9189,10 @@
       "latest_filing_date": "04/02/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817
+      "lat": 37.423468,
+      "lng": -122.221118,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-312922",
@@ -10225,8 +10251,8 @@
       "sectors": [
         "security"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "security: \"software companies that can drive disruptions in IoT, Big Data, and Security\"",
@@ -10240,7 +10266,9 @@
           "quote": "software companies that can drive disruptions in IoT, Big Data, and Security"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-322367",
@@ -11271,14 +11299,16 @@
         "deep_tech",
         "enterprise_saas"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Public portfolio and investment focus on AI, deep tech, and early-stage enterprise.",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed to Series B startups in AI infrastructure, deep tech, and enterprise SaaS.",
-      "thesis_confidence": 0.9
+      "thesis_confidence": 0.9,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-310088",
@@ -11464,8 +11494,8 @@
         "bio",
         "healthcare"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "bio: \"early-stage life science companies\" | healthcare: \"growth stage healthcare companies\"",
@@ -11483,7 +11513,9 @@
           "quote": "growth stage healthcare companies"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-167441",
@@ -11708,14 +11740,16 @@
       "sectors": [
         "healthcare"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.798404,
+      "lng": -122.459486,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known early-stage healthcare/digital health focus",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed and Series A healthcare startups.",
-      "thesis_confidence": 1.0
+      "thesis_confidence": 1.0,
+      "geo_source": "nominatim",
+      "geo_match": "Exact"
     },
     {
       "id": "sec-290048",
@@ -12631,8 +12665,10 @@
       "latest_filing_date": "03/31/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 37.774931,
+      "lng": -122.420791,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-162461",
@@ -13663,14 +13699,16 @@
       "sectors": [
         "enterprise_saas"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.79828,
+      "lng": -122.396344,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for SaaS and cloud computing investments",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs Series A, Series B, and growth-stage enterprise SaaS startups.",
-      "thesis_confidence": 1.0
+      "thesis_confidence": 1.0,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-341342",
@@ -13696,8 +13734,10 @@
       "latest_filing_date": "05/11/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 37.800452,
+      "lng": -122.451173,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-307613",
@@ -13758,14 +13798,16 @@
         "security",
         "data"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio includes Cylance, Sumo Logic, and Nimble Storage",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs Series A, Series B, and growth-stage enterprise SaaS, security, and data startups.",
-      "thesis_confidence": 0.9
+      "thesis_confidence": 0.9,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-328575",
@@ -15117,8 +15159,8 @@
         "enterprise_saas",
         "deep_tech"
       ],
-      "lat": 37.3852,
-      "lng": -122.1141,
+      "lat": 37.397513,
+      "lng": -122.106797,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Known for Series A/B enterprise and deep tech investments.",
@@ -15148,7 +15190,9 @@
           "cik": "1543731",
           "filer_name": "Formation8 Partners Fund I, L.P.  (CIK 0001543731)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-166012",
@@ -15174,8 +15218,10 @@
       "latest_filing_date": "03/27/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.2872,
-      "lng": -121.95
+      "lat": 37.287767,
+      "lng": -121.935195,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-155462",
@@ -15247,14 +15293,16 @@
         "enterprise_saas",
         "consumer"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and thesis emphasizing B2B and consumer tech",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed and Series A enterprise SaaS and consumer startups.",
-      "thesis_confidence": 1.0
+      "thesis_confidence": 1.0,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-287858",
@@ -15373,14 +15421,16 @@
         "bio",
         "therapeutics"
       ],
-      "lat": 37.4419,
-      "lng": -122.143,
+      "lat": 37.417828,
+      "lng": -122.145815,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "Publicly known dedicated life sciences and biotech investor",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs Series A through C healthcare, bio, and therapeutics companies.",
-      "thesis_confidence": 1.0
+      "thesis_confidence": 1.0,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-170229",
@@ -15509,14 +15559,16 @@
         "fintech",
         "enterprise_saas"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.79233,
+      "lng": -122.404833,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known for growth equity in financial services and enterprise tech",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Growth equity firm partnering with profitable fintech and enterprise SaaS companies at Series C and D stages.",
-      "thesis_confidence": 0.9
+      "thesis_confidence": 0.9,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-163821",
@@ -15884,8 +15936,8 @@
         "ai_infra",
         "marketplace"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.802192,
+      "lng": -122.398118,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "data: \"startups that build their competitive advantage through proprietary data and intelligence\" | ai_infra: \"The Data Networked Platform opportunity is entering an accelerated growth cycle in the coming 10 years driven \" | marketplace: \"DNPs can come in the form of pure platform plays, marketplaces and user networks.\"",
@@ -15954,7 +16006,9 @@
           "cik": "1641861",
           "filer_name": "Fyrfly Venture Partners Fund II, L.P.  (CIK 0001641861)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-334985",
@@ -16199,8 +16253,10 @@
       "latest_filing_date": "02/23/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.4419,
-      "lng": -122.143
+      "lat": 37.424163,
+      "lng": -122.14124,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-300617",
@@ -16455,8 +16511,8 @@
       "latest_filing_date": "03/26/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.454941,
+      "lng": -122.185614,
       "form_d_total_filings": 50,
       "form_d_latest_filing_date": "2026-03-05",
       "form_d_distinct_funds": [
@@ -16515,7 +16571,9 @@
           "cik": "1589500",
           "filer_name": "Glynn Public Equity Fund, LLC  (CIK 0001589500)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-162072",
@@ -17062,8 +17120,10 @@
       "latest_filing_date": "03/31/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817
+      "lat": 37.455057,
+      "lng": -122.185496,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-165941",
@@ -17660,8 +17720,8 @@
         "ai_infra",
         "bio"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "healthcare: \"Healthier Capital partners with technology-powered healthcare innovators\" | ai_infra: \"Building an advanced, reliable, and safe generative AI infrastructure platform for healthcare\" | bio: \"Developing the next\u2013generation discovery and diagnostics platform for complex and deadly diseases\"",
@@ -17683,7 +17743,9 @@
           "quote": "Developing the next\u2013generation discovery and diagnostics platform for complex and deadly diseases"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-191513",
@@ -17873,8 +17935,8 @@
       "sectors": [
         "enterprise_saas"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.450669,
+      "lng": -122.177379,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "enterprise_saas: \"emerging enterprise and infrastructure software companies\"",
@@ -17937,7 +17999,9 @@
           "cik": "1559461",
           "filer_name": "HighBAR Partners II, L.P.  (CIK 0001559461)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-284959",
@@ -18849,8 +18913,10 @@
       "latest_filing_date": "04/03/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.3541,
-      "lng": -121.9552
+      "lat": 37.413807,
+      "lng": -121.977228,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-283782",
@@ -18973,8 +19039,10 @@
       "latest_filing_date": "09/17/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 37.801957,
+      "lng": -122.45055,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-308889",
@@ -19006,8 +19074,8 @@
       "sectors": [
         "healthcare"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.455057,
+      "lng": -122.185496,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "healthcare: \"focused on digital health, fintech, and vertical applications of AI\"",
@@ -19021,7 +19089,9 @@
           "quote": "focused on digital health, fintech, and vertical applications of AI"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-170329",
@@ -19261,8 +19331,8 @@
         "ai_infra",
         "healthcare"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.795299,
+      "lng": -122.396207,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "ai_infra: \"Auditoria\u2019s purpose-built LLM and domain-specific workflows delivered automation\" | healthcare: \"xCures' AI platform finds a patient's disparate health records\"",
@@ -19280,7 +19350,9 @@
           "quote": "xCures' AI platform finds a patient's disparate health records"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-315207",
@@ -19362,8 +19434,8 @@
       "latest_filing_date": "03/28/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "form_d_total_filings": 1,
       "form_d_latest_filing_date": "2012-06-29",
       "form_d_distinct_funds": [
@@ -19380,7 +19452,9 @@
           "cik": "1550180",
           "filer_name": "Institutional Venture Partners XIV, L.P.  (CIK 0001550180)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-236786",
@@ -19412,8 +19486,8 @@
         "enterprise_saas",
         "consumer"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "IVP is a well-known late-stage growth and tech investor",
@@ -19445,7 +19519,9 @@
           "cik": "1640274",
           "filer_name": "Institutional Venture Partners XV, L.P.  (CIK 0001640274)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-290647",
@@ -19477,8 +19553,8 @@
         "enterprise_saas",
         "consumer"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "IVP is a well-known late-stage growth and expansion investor.",
@@ -19501,7 +19577,9 @@
           "cik": "1716992",
           "filer_name": "Institutional Venture Partners XVI, L.P.  (CIK 0001716992)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-310356",
@@ -19533,8 +19611,8 @@
         "enterprise_saas",
         "consumer"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Institutional Venture Partners (IVP) known for late-stage tech",
@@ -19557,7 +19635,9 @@
           "cik": "1813239",
           "filer_name": "Institutional Venture Partners XVII, L.P.  (CIK 0001813239)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-324257",
@@ -19582,8 +19662,8 @@
       "latest_filing_date": "03/28/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "form_d_total_filings": 3,
       "form_d_latest_filing_date": "2024-03-20",
       "form_d_distinct_funds": [
@@ -19616,7 +19696,9 @@
           "cik": "1931085",
           "filer_name": "Institutional Venture Partners XVIII, L.P.  (CIK 0001931085)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-160677",
@@ -19709,8 +19791,10 @@
       "latest_filing_date": "02/10/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 37.775434,
+      "lng": -122.388726,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-170928",
@@ -21088,8 +21172,8 @@
         "bio",
         "industrial"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "healthcare: \"A premier healthcare investment platform\" | bio: \"next-generation R&D services\" | industrial: \"critical healthcare supply chain assets\"",
@@ -21111,7 +21195,9 @@
           "quote": "critical healthcare supply chain assets"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-301792",
@@ -22649,8 +22735,8 @@
         "bio",
         "therapeutics"
       ],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.760282,
+      "lng": -122.383801,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "bio: \"We find and fund innovative life sciences companies\" | therapeutics: \"support breakthrough therapeutics, diagnostics\"",
@@ -22668,7 +22754,9 @@
           "quote": "support breakthrough therapeutics, diagnostics"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-164391",
@@ -23092,8 +23180,8 @@
         "defense",
         "ai_infra"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.455057,
+      "lng": -122.185496,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "defense: \"Aerospace & Defense\" | ai_infra: \"Enterprise AI\"",
@@ -23174,7 +23262,9 @@
           "cik": "2128040",
           "filer_name": "MVPSARD26, a series of MVP II Co-Invest LLC  (CIK 0002128040)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-325591",
@@ -23432,14 +23522,16 @@
         "deep_tech",
         "enterprise_saas"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.455057,
+      "lng": -122.185496,
       "inferred": true,
       "inference_confidence": 0.8,
       "inference_basis": "Public portfolio and website focus on deep tech and early-stage enterprise.",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs seed and Series A deep tech and enterprise SaaS startups.",
-      "thesis_confidence": 1.0
+      "thesis_confidence": 1.0,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-156640",
@@ -23525,8 +23617,10 @@
       "latest_filing_date": "03/25/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817
+      "lat": 37.423468,
+      "lng": -122.221118,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-301829",
@@ -23790,8 +23884,8 @@
         "ai_infra",
         "consumer"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "security: \"From Exit to Restart: How Torq\u2019s Repeat Founders are Reimagining the Future of Security Operations\" | ai_infra: \"The Vertical Moment Has Arrived in Generative Media\" | consumer: \"How Quince Built a Better Retail Model to Democratize Quality\"",
@@ -23862,7 +23956,9 @@
           "cik": "2052065",
           "filer_name": "Notable Capital Holdings, L.L.C.  (CIK 0002052065)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-333205",
@@ -28312,8 +28408,10 @@
       "latest_filing_date": "04/01/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.4419,
-      "lng": -122.143
+      "lat": 37.424163,
+      "lng": -122.14124,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-298152",
@@ -28984,8 +29082,10 @@
       "latest_filing_date": "05/29/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 37.775434,
+      "lng": -122.388726,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-343762",
@@ -29130,8 +29230,8 @@
       "latest_filing_date": "03/31/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194,
+      "lat": 37.79233,
+      "lng": -122.404833,
       "form_d_total_filings": 3,
       "form_d_latest_filing_date": "2026-03-10",
       "form_d_distinct_funds": [
@@ -29164,7 +29264,9 @@
           "cik": "2052270",
           "filer_name": "Series X Capital Fund I, L.P.  (CIK 0002052270)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-336685",
@@ -29525,8 +29627,10 @@
       "latest_filing_date": "03/25/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.2872,
-      "lng": -121.95
+      "lat": 37.287767,
+      "lng": -121.935195,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-164249",
@@ -29556,8 +29660,8 @@
       "sectors": [
         "enterprise_saas"
       ],
-      "lat": 37.2872,
-      "lng": -121.95,
+      "lat": 37.287767,
+      "lng": -121.935195,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "enterprise_saas: \"We primarily invest in: Software-as-a-Service\"",
@@ -29604,7 +29708,9 @@
           "cik": "1521171",
           "filer_name": "Sigma Prime Partners IX, L.P.  (CIK 0001521171)"
         }
-      ]
+      ],
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-194512",
@@ -30004,14 +30110,16 @@
         "bio",
         "therapeutics"
       ],
-      "lat": 37.453,
-      "lng": -122.1817,
+      "lat": 37.423468,
+      "lng": -122.221118,
       "inferred": true,
       "inference_confidence": 0.9,
       "inference_basis": "Publicly known life sciences and healthcare investment focus",
       "inference_model": "glm-4.6",
       "inferred_thesis": "Backs Series A through C healthcare, bio, and therapeutics companies.",
-      "thesis_confidence": 0.9
+      "thesis_confidence": 0.9,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-160391",
@@ -30135,8 +30243,8 @@
       "sectors": [
         "healthcare"
       ],
-      "lat": 37.5072,
-      "lng": -122.2603,
+      "lat": 37.507045,
+      "lng": -122.259711,
       "inferred": true,
       "inference_confidence": 1.0,
       "inference_basis": "healthcare: \"medical device, diagnostic and healthtech sectors\"",
@@ -30150,7 +30258,9 @@
           "quote": "medical device, diagnostic and healthtech sectors"
         }
       ],
-      "thesis_source": "website"
+      "thesis_source": "website",
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-307534",
@@ -30672,8 +30782,10 @@
       "latest_filing_date": "07/27/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817
+      "lat": 37.455057,
+      "lng": -122.185496,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-134660",
@@ -34420,8 +34532,10 @@
       "latest_filing_date": "03/27/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 37.795549,
+      "lng": -122.393475,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-336309",
@@ -35117,8 +35231,10 @@
       "latest_filing_date": "03/30/2026",
       "stages": [],
       "sectors": [],
-      "lat": 37.453,
-      "lng": -122.1817
+      "lat": 37.455057,
+      "lng": -122.185496,
+      "geo_source": "nominatim",
+      "geo_match": "Non_Exact"
     },
     {
       "id": "sec-282513",

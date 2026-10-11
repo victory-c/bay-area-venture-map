@@ -29,6 +29,9 @@ MIN_INTERVAL_SECONDS = 1.1  # respect 1 req/s policy with margin
 class Coordinates:
     lat: float
     lng: float
+    #: Nominatim's ``addresstype`` for the match ("building", "road",
+    #: "city", …), or ``None`` for cache entries written before it was kept.
+    kind: Optional[str] = None
 
 
 class Geocoder:
@@ -48,7 +51,7 @@ class Geocoder:
             entry = self._cache[address]
             if entry.get("lat") is None:
                 return None
-            return Coordinates(lat=entry["lat"], lng=entry["lng"])
+            return Coordinates(lat=entry["lat"], lng=entry["lng"], kind=entry.get("type"))
 
         elapsed = time.monotonic() - self._last_request
         if elapsed < MIN_INTERVAL_SECONDS:
@@ -64,8 +67,15 @@ class Geocoder:
             self._cache[address] = {"lat": None, "lng": None}
             self._save_cache()
             return None
-        coords = Coordinates(lat=float(results[0]["lat"]), lng=float(results[0]["lon"]))
-        self._cache[address] = {"lat": coords.lat, "lng": coords.lng}
+        coords = Coordinates(
+            lat=float(results[0]["lat"]),
+            lng=float(results[0]["lon"]),
+            kind=results[0].get("addresstype"),
+        )
+        entry: dict = {"lat": coords.lat, "lng": coords.lng}
+        if coords.kind:
+            entry["type"] = coords.kind
+        self._cache[address] = entry
         self._save_cache()
         return coords
 
