@@ -433,13 +433,28 @@ def _iter_csv_from_zip_bytes(blob: bytes) -> Iterable[dict]:
                 yield row
 
 
+#: Street-name typos as filers typed them into Form ADV, keyed by the wrong
+#: spelling. There is no "El Camino Road" anywhere in the Bay Area, and the
+#: misspelling defeats both geocoders (the firm ends up on a city centroid).
+STREET_FIXES: dict[str, str] = {
+    "EL CAMINO ROAD": "EL CAMINO REAL",
+}
+_STREET_FIX_RE = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in STREET_FIXES) + r")\b", re.IGNORECASE,
+)
+
+
+def _fix_street(street: str) -> str:
+    return _STREET_FIX_RE.sub(lambda m: STREET_FIXES[m.group(1).upper()], street)
+
+
 def _format_address(row: dict) -> str:
     line1 = (row.get("Main Office Street Address 1") or "").strip()
     line2 = (row.get("Main Office Street Address 2") or "").strip()
     city = (row.get("Main Office City") or "").strip()
     state = (row.get("Main Office State") or "").strip()
     postal = (row.get("Main Office Postal Code") or "").strip().split("-")[0]
-    street = f"{line1} {line2}".strip() if line2 else line1
+    street = _fix_street(f"{line1} {line2}".strip() if line2 else line1)
     parts = [p for p in [street, _titlecase_city(city), f"{state} {postal}".strip()] if p]
     return ", ".join(parts)
 
